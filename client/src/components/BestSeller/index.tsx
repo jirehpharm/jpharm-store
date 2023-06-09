@@ -1,4 +1,3 @@
-import React from "react";
 import ProductOverView from "../ProductOverView";
 const data = [
   {

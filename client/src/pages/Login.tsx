@@ -1,8 +1,8 @@
 import { startCase } from "lodash";
 
 import "../style/index.css";
-import Button from "../components/Button";
-import Heading from "../components/Heading";
+import Button from "../components/Common/Button";
+import Heading from "../components/Common/Heading";
 
 export default function Login() {
   const fields = [
@@ -13,8 +13,8 @@ export default function Login() {
     <>
       <section className="section-title text-center space-y-20">
         <Heading
-          heading=" Sign In To Your Account"
-          subHeading="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit aliquid, Non distinctio vel iste."
+          title="Sign In To Your Account"
+          subtitle="Please enter your email and password to access your account."
         />
         <div className="grid grid-cols-2 gap-20 max-w-6xl mx-auto">
           <div className="px-10">

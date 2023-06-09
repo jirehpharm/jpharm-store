@@ -1,4 +1,4 @@
-import FeaturedProductCard from "./FeaturedProductCard";
+import FeaturedProductCard from "../Cards/FeaturedProductCard";
 
 const attributes = [
   {

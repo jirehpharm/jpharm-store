@@ -1,28 +1,16 @@
-const HeroSection = () => {
-  interface DataProps {
-    offer: string;
-    title: string;
-    price: string;
-    buttonUrl: string;
-  }
+import { IHeroProps } from "./types";
 
-  const data: DataProps = {
-    offer: "Up To 50% Off Today Only!",
-    title: "Gold Standard Pre-Workout",
-    price: "Starting at &16.99",
-    buttonUrl: "#",
-  };
-
+const HeroSection = ({ offer, title, price, buttonUrl }: IHeroProps) => {
   return (
     <div className="max-w-7xl mx-auto my-14 grid grid-cols-5 text-center gap-7">
       {/* <div className="col-span-3"> */}
       <div className="col-span-3 flex items-center bg-[url(placeholder/1408x993.jpg)]">
         <div className="ml-10 w-[40%] text-left">
-          <p className="text-secondary font-bold">{data.offer}</p>
-          <h1 className="">{data.title}</h1>
-          <p className="text-yellow-600 font-bold">{data.price}</p>
+          <p className="text-secondary font-bold">{offer}</p>
+          <h1 className="">{title}</h1>
+          <p className="text-yellow-600 font-bold">{price}</p>
           <div>
-            <a href="#" className="btn">
+            <a href={buttonUrl} className="btn">
               Shop now
             </a>
           </div>

@@ -1,5 +1,12 @@
 const HeroSection = () => {
-  const data = {
+  interface DataProps {
+    offer: string;
+    title: string;
+    price: string;
+    buttonUrl: string;
+  }
+
+  const data: DataProps = {
     offer: "Up To 50% Off Today Only!",
     title: "Gold Standard Pre-Workout",
     price: "Starting at &16.99",

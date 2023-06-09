@@ -6,12 +6,14 @@ import PrimaryNav from "./components/Common/PrimaryNav";
 import Footer from "./components/Common/Footer";
 import CTA from "./components/Common/CTA";
 import "./style/App.css";
+import SecondaryNav from "./components/Common/SecondaryNav";
 
 function App() {
   return (
     <>
       <ContactNav />
       <PrimaryNav />
+      <SecondaryNav />
       <BrowserRouter>
         <Routes>
           <Route path="*" element={<AppContainer />} />

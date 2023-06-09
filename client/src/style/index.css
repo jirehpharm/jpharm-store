@@ -46,7 +46,7 @@ body {
 .btn:hover,
 .btn:focus,
 .btn:active {
-  @apply bg-primary text-white
+  @apply bg-primary text-white;
 }
 
 .btn:last-child {
@@ -58,7 +58,7 @@ body {
 }
 
 .theme-btn-1:hover {
-  @apply bg-primary text-white
+  @apply bg-primary text-white;
 }
 
 .theme-btn-2 {
@@ -66,7 +66,7 @@ body {
 }
 
 .theme-btn-2:hover {
-  @apply bg-secondary text-white
+  @apply bg-secondary text-white;
 }
 
 .btn-white {
@@ -74,7 +74,7 @@ body {
 }
 
 .btn-white:hover {
-  @apply bg-primary text-white
+  @apply bg-primary text-white;
 }
 
 h1 {
@@ -135,7 +135,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 pre,
@@ -144,7 +144,7 @@ kbd,
 tt,
 var,
 samp {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 pre {
@@ -197,13 +197,21 @@ ol li {
 }
 
 .product-badge li:first {
-  @apply mt-0
+  @apply mt-0;
 }
 
 .product-badge li::before {
-  @apply absolute content-[""] border-l-secondary w-0 h-0 hidden border-l-8 border-b-8 border-b-transparent border-solid left-0 -bottom-2
+  @apply absolute content-[""] border-l-secondary w-0 h-0 hidden border-l-8 border-b-8 border-b-transparent border-solid left-0 -bottom-2;
 }
 
 .product-badge li .soldout-badge {
   @apply bg-red-500;
+}
+
+.dropdown ul {
+  display: none;
+}
+
+.dropdown:hover ul {
+  display: block;
 }

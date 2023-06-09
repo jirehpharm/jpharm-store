@@ -13,17 +13,32 @@ export default function ProductOverView() {
         <div className="product-hover-action">
           <ul>
             <li>
-              <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+              <a
+                href="#"
+                title="Quick View"
+                data-bs-toggle="modal"
+                data-bs-target="#quick_view_modal"
+              >
                 <i className="far fa-eye"></i>
               </a>
             </li>
             <li>
-              <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
+              <a
+                href="#"
+                title="Add to Cart"
+                data-bs-toggle="modal"
+                data-bs-target="#add_to_cart_modal"
+              >
                 <i className="fas fa-shopping-cart"></i>
               </a>
             </li>
             <li>
-              <a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
+              <a
+                href="#"
+                title="Wishlist"
+                data-bs-toggle="modal"
+                data-bs-target="#liton_wishlist_modal"
+              >
                 <i className="far fa-heart"></i>
               </a>
             </li>

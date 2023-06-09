@@ -3,7 +3,6 @@ FROM node:bullseye-slim
 WORKDIR /usr/src/app
 
 COPY client/package*.json ./
-COPY client/.env ./
 RUN npm install
 
 COPY . .

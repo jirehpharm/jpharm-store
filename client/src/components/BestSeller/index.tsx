@@ -1,4 +1,4 @@
-import ProductOverView from "../ProductOverView";
+import ProductOverViewCard from "../Cards/ProductOverViewCard";
 const data = [
   {
     isNew: true,
@@ -74,7 +74,8 @@ export default function BestSeller() {
         <h1 className="text-center mb-11 text-5xl">Best Selling Item</h1>
         <div className="grid grid-cols-4 gap-5 ">
           {data.map((item: ProductProps, index: number) => (
-            <ProductOverView
+            <ProductOverViewCard
+              isText={false}
               isNew={item.isNew}
               image={item.image}
               quickView={item.quickView}
@@ -84,6 +85,8 @@ export default function BestSeller() {
               productName={item.productName}
               price={item.price}
               originalPrice={item.originalPrice}
+              showStars={true}
+              key={index}
             />
           ))}
         </div>

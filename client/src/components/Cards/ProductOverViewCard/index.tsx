@@ -1,7 +1,9 @@
 import { AiOutlineEye, AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai";
-import getStars from "../getStars";
+import getStars from "../../getStars";
 
 interface ProductProps {
+  showStars: boolean;
+  isText: boolean;
   isNew: boolean;
   image: string;
   quickView: string;
@@ -12,7 +14,9 @@ interface ProductProps {
   price: string;
   originalPrice: string;
 }
-export default function ProductOverView({
+export default function ProductOverViewCard({
+  showStars = true,
+  isText = false,
   isNew = false,
   image = "",
   quickView = "#",
@@ -56,8 +60,8 @@ export default function ProductOverView({
           </ul>
         </div>
       </div>
-      <div className="product-info">
-        <div className="flex">{getStars({ stars })}</div>
+      <div className={`product-info ${isText ? "text-center" : ""}`}>
+        {showStars && <div className="flex">{getStars({ stars })}</div>}
         <h2 className="product-title text-base">
           <a href="product-details.html" className="text-primary hover:text-secondary">
             {productName}

@@ -16,18 +16,11 @@ export default function Home() {
     price: "Starting at &16.99",
     buttonUrl: "#",
   };
-  const slideData = categoryData.map((item, idx: number) => (
-    <Category key={idx} Icon={item.Icon} title={item.title} />
-  ))
+  const slideData = categoryData.map((item, idx: number) => <Category key={idx} Icon={item.Icon} title={item.title} />);
 
   return (
     <div>
-      <HeroSection
-        offer={data.offer}
-        title={data.title}
-        price={data.price}
-        buttonUrl={data.buttonUrl}
-      />
+      <HeroSection offer={data.offer} title={data.title} price={data.price} buttonUrl={data.buttonUrl} />
       <FeaturedProduct />
       <BestSeller />
       <Carousel slidesPreview={7} slides={slideData} />

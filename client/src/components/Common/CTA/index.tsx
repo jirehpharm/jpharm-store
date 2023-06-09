@@ -1,4 +1,4 @@
-export default function CTC() {
+export default function CTA() {
   return (
     <div className="-mb-24 mt-5">
       <div className="ltn__call-to-action-area call-to-action-6 before-bg-bottom" data-bs-bg="img/1.jpg--">

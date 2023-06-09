@@ -1,7 +1,7 @@
 //import React from "react";
 import {FaUser, FaEnvelope, FaEye, FaPhone } from "react-icons/fa";
 
-import Heading from "../Heading";
+import Heading from "../Common/Heading";
 import "../../style/index.css";
 
 export default function ContactMessage() {

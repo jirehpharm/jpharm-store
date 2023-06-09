@@ -2,9 +2,8 @@ FROM node:bullseye-slim
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
-COPY .env ./
-
+COPY client/package*.json ./
+COPY client/.env ./
 RUN npm install
 
 COPY . .

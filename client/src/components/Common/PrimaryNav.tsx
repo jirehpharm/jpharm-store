@@ -3,14 +3,14 @@ import {
   ShoppingCartIcon,
   UserIcon,
 } from "@heroicons/react/24/outline";
-import Badge from "./Common/Badge";
+import Badge from "./Badge";
 
 export default function PrimaryNav() {
   return (
     <div className="mx-auto max-w-6xl flex flex-row justify-between py-7">
       <div className="flex items-center">
-        <img src="full_logo.png" alt="logo" className="w-[250px]" />
-        {/* <h2 className="font-bold text-black mb-0">JirehPharm</h2> */}
+        <img src="favicon.png" alt="logo" className="w-10" />
+        <h2 className="font-bold text-black mb-0">JirehPharm</h2>
       </div>
       <div className="flex items-center gap-4 text-light">
         <div className="min-w-[500px] rounded-full shadow-light">

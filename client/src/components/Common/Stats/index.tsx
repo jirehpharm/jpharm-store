@@ -1,4 +1,3 @@
-import React from "react";
 const data = [
   {
     title: "Free shipping",
@@ -27,7 +26,7 @@ export default function Stats() {
       <div className="max-w-6xl mx-auto">
         <div className=" grid grid-cols-4">
           {data.map((item: { title: string; description: string; image: string }, index: number) => (
-            <div className="flex items-center mt-5">
+            <div className="flex items-center mt-5" key={index}>
               <div className="mb-5 mr-2 flex w-[20%]">
                 <img src={item.image} alt="#" className="" />
               </div>

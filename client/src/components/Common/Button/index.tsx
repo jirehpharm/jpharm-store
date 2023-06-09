@@ -9,7 +9,7 @@ const theme: any = {
 };
 export default function Button(props: any) {
   const cls = "btn";
-  const { className, children, onClick, type = "button", color = "btn", ...otherProps } = props;
+  const { className, children, onClick, type = "button", color = "btn" } = props;
   return (
     <button type={type} className={classNames(cls, className, theme.color[color])} onClick={onClick}>
       {children}

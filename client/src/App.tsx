@@ -1,10 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./style/App.css";
+
 import AppContainer from "./components/AppContainer";
-import ContactNav from "./components/ContactNav";
-import PrimaryNav from "./components/PrimaryNav";
-import Footer from "./components/Footer";
-import CTC from "./components/CTC";
+import ContactNav from "./components/Common/ContactNav";
+import PrimaryNav from "./components/Common/PrimaryNav";
+import Footer from "./components/Common/Footer";
+import CTA from "./components/Common/CTA";
+import "./style/App.css";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <Route path="*" element={<AppContainer />} />
         </Routes>
       </BrowserRouter>
-      <CTC />
+      <CTA />
       <Footer />
     </>
   );

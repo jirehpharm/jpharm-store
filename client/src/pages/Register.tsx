@@ -1,6 +1,6 @@
 import { startCase } from "lodash";
-import Button from "../components/Button";
-import Heading from "../components/Heading";
+import Button from "../components/Common/Button";
+import Heading from "../components/Common/Heading";
 /**
  * Renders a registration form with input fields for first name, last name, email, password, and confirm password.
  *

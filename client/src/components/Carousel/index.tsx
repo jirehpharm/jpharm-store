@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Keyboard, Pagination, Navigation } from "swiper";
+import { Keyboard, Navigation } from "swiper";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -12,18 +12,16 @@ interface ICarouselProps {
 
 export default function Carousel({ slidesPreview, slides = [] }: ICarouselProps) {
   return (
-    <div className="mx-32 relative">
+    <div className="mx-auto max-w-6xl relative">
       <Swiper
         slidesPerView={slidesPreview}
         spaceBetween={0}
+        loop={false}
         keyboard={{
           enabled: true,
         }}
-        pagination={{
-          clickable: true,
-        }}
         navigation={true}
-        modules={[Keyboard, Pagination, Navigation]}
+        modules={[Keyboard, Navigation]}
 
       >
         {

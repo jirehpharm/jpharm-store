@@ -28,9 +28,10 @@ export default function Home() {
         price={data.price}
         buttonUrl={data.buttonUrl}
       />
+      {/* Category Carousel */}
+      <Carousel slidesPreview={7} slides={slideData} />
       <FeaturedProduct />
       <BestSeller />
-      <Carousel slidesPreview={7} slides={slideData} />
       {/* TODO: Need to Find a way to fetch the Banner Information */}
       <OfferBanner
         offerEndDate="2023-06-20"

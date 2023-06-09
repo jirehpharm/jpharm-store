@@ -71,7 +71,7 @@ export default function FeaturedProduct() {
   return (
     <section className=" bg-[#F2F6F7] py-20"> 
       <h1 className="text-center">Featured Products</h1>
-      <div className="max-w-7xl mx-auto my-14">
+      <div className="max-w-6xl mx-auto my-14">
         <div className="grid grid-cols-3 gap-10 ">
           {/* FeaturedProductCard has productName, discountedPrise and originalPrise props */}
           <FeaturedProductCard />

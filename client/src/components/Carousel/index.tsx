@@ -1,20 +1,24 @@
-// Import Swiper React components
 import { Swiper as Carousel, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// import required modules
 import { Keyboard, Pagination, Navigation } from "swiper";
 
-export default function index({ slidesPreview = 3 }) {
+interface ICarousel {
+  slidesPreview: number,
+  slides: object[]
+}
+
+export default function index(props: ICarousel) {
+  const { slidesPreview, slides } = props;
   return (
-    <>
+    <div className="mx-32 relative">
       <Carousel
+        className=" bg-blue-200"
         slidesPerView={slidesPreview}
-        spaceBetween={30}
+        spaceBetween={0}
         keyboard={{
           enabled: true,
         }}
@@ -23,18 +27,14 @@ export default function index({ slidesPreview = 3 }) {
         }}
         navigation={true}
         modules={[Keyboard, Pagination, Navigation]}
-        className="mySwiper"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        {
+          slides.map((item:any, idx: number) => (
+            <SwiperSlide key={idx}>{item}</SwiperSlide>
+          ))
+        }
       </Carousel>
-    </>
+    </div>
+
   );
 }

@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function ProductOverView() {
   return (
     <div className="ltn__product-item ltn__product-item-3 text-left">

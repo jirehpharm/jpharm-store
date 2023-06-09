@@ -12,7 +12,7 @@ export interface ITheme {
   };
 }
 
-export type TButtonvariants =
+export type TButtonVariants =
   | "default"
   | "primary"
   | "secondary"

@@ -24,7 +24,7 @@ const navigation: TNavigation = [
     ],
   },
   {
-    name: "Custom Care",
+    name: "Customer Care",
     list: [
       { name: "Login", href: "#" },
       { name: "My account", href: "#" },

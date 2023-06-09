@@ -1,22 +1,19 @@
-import { Swiper as Carousel, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Keyboard, Pagination, Navigation } from "swiper";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { Keyboard, Pagination, Navigation } from "swiper";
-
-interface ICarousel {
+interface ICarouselProps {
   slidesPreview: number,
-  slides: object[]
+  slides: React.ReactNode[]
 }
 
-export default function index(props: ICarousel) {
-  const { slidesPreview, slides } = props;
+export default function Carousel({ slidesPreview, slides = [] }: ICarouselProps) {
   return (
     <div className="mx-32 relative">
-      <Carousel
-        className=" bg-blue-200"
+      <Swiper
         slidesPerView={slidesPreview}
         spaceBetween={0}
         keyboard={{
@@ -27,13 +24,14 @@ export default function index(props: ICarousel) {
         }}
         navigation={true}
         modules={[Keyboard, Pagination, Navigation]}
+
       >
         {
-          slides.map((item:any, idx: number) => (
+          slides.map((item, idx: number) => (
             <SwiperSlide key={idx}>{item}</SwiperSlide>
           ))
         }
-      </Carousel>
+      </Swiper>
     </div>
 
   );

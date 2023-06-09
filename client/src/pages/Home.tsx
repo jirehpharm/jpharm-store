@@ -8,8 +8,7 @@ import Category from "../components/Cards/Category/Category";
 import { categoryData } from "../components/Cards/Category/content";
 
 export default function Home() {
-
-  const SlidesData = categoryData.map((item: any, idx: number) => (
+  const SlidesData = categoryData.map((item, idx: number) => (
     <Category key={idx} Icon={item.Icon} title={item.title} />
   ))
 

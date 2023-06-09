@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #071c1f;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #fff;
+  }
+}
+
+.btn-wrapper {
+  @apply block mt-[30px];
+}
+
+.btn {
+  @apply inline-block text-base bg-secondary text-white font-bold text-center cursor-pointer transition-all duration-[0.3s] ease-[ease] delay-[0s] z-[1] mr-[15px] px-10 py-[17px] rounded-none;
+}
+
+.btn:hover {
+  @apply bg-primary text-white
+}
+
+.btn:last-child {
+  @apply mr-0;
+}
+
+.theme-btn-1 {
+  @apply bg-primary text-white;
+}
+
+.theme-btn-1:hover {
+  @apply bg-primary text-white
+}
+
+.theme-btn-2 {
+  @apply bg-primary text-white;
+}
+
+.theme-btn-2:hover {
+  @apply bg-secondary text-white
+}
+
+.btn-white {
+  @apply bg-white text-primary shadow;
+}
+
+.btn-white:hover {
+  @apply bg-primary text-white
+}
+
+h1 {
+  @apply text-4xl leading-[1.2];
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+h4 {
+  @apply text-xl;
+}
+
+h5 {
+  @apply text-lg;
+}
+
+h6 {
+  @apply text-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-primary clear-both font-bold leading-[1.3] mb-[15px];
+}
+
+p {
+  @apply text-primary mb-[1.5em];
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+a {
+  @apply text-inherit no-underline text-primary transition-all duration-[0.3s] ease-[ease] delay-[0s];
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  @apply no-underline text-inherit text-secondary;
+  outline: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: 'Open Sans', sans-serif;
+}
+
+pre,
+code,
+kbd,
+tt,
+var,
+samp {
+  font-family: 'Open Sans', sans-serif;
+}
+
+pre {
+  word-break: break-word;
+}
+
+a i {
+  @apply px-0.5 py-0;
+}
+
+img {
+  @apply max-w-full;
+}
+
+pre {
+  @apply bg-neutral-100 pt-[35px] pb-2.5 px-0;
+}
+
+ul li,
+ol li {
+  @apply mt-2.5;
+}
+
+.ltn__feature-item-box-wrap-2 {
+  @apply flex justify-center shadow-none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-box-shadow: none;
+}
+
+.ltn__feature-item-box-wrap-2 .ltn__feature-item-8 {
+  @apply min-w-[280px];
+}
+
+.product-badge {
+  @apply absolute right-[18px] top-[15px];
+}
+
+.product-badge ul {
+  @apply m-0 p-0;
+}
+
+.product-badge li {
+  @apply inline-block text-[13px] font-semibold bg-secondary text-white uppercase leading-[25px] pt-[3px] pb-0 px-[15px];
+  list-style: none;
+}
+
+.product-badge li:first {
+  @apply mt-0
+}
+
+.product-badge li::before {
+  @apply absolute content-[""] border-l-secondary w-0 h-0 hidden border-l-8 border-b-8 border-b-transparent border-solid left-0 -bottom-2
+}
+
+.product-badge li .soldout-badge {
+  @apply bg-red-500;
+}

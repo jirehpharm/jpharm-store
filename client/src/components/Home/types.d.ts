@@ -22,3 +22,14 @@ export interface IFeaturedProductProps {
   image: string;
   stars?: number;
 }
+export interface IProductProps {
+  isNew: boolean;
+  image: string;
+  quickView: string;
+  addToCard: string;
+  wishlist: string;
+  stars: number;
+  productName: string;
+  price: string;
+  originalPrice: string;
+}

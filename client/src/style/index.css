@@ -303,3 +303,32 @@ ol li {
 .dropdown:hover ul {
   display: block;
 }
+
+.swiper-button-next:after {
+  content: url("img/icons/svg/right-arrow.svg") !important;
+  @apply w-[30px];
+}
+
+.swiper-button-next:hover:after {
+  content: url("img/icons/svg/right-arrow-white.svg") !important;
+  @apply w-[30px];
+}
+
+
+.swiper-button-prev:after {
+  content: url("img/icons/svg/left-arrow.svg") !important;
+  @apply w-[30px];
+}
+
+.swiper-button-prev:hover:after {
+  content: url("img/icons/svg/left-arrow-white.svg") !important;
+  @apply w-[30px];
+}
+
+.swiper-button-next, .swiper-button-prev {
+  @apply rounded-[50%] h-10 w-10 shadow-xl !important;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+  @apply rounded-[50%] bg-secondary h-10 w-10;
+}

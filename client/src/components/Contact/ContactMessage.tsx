@@ -46,7 +46,7 @@ export default function ContactMessage() {
               {ContactMessage.map((con, index) => (
                 <div
                   key={index}
-                  className="relative border-2 border-[#E4ECF2] flex items-center pr-3"
+                  className="relative border-2 border-borderColor flex items-center pr-3"
                 >
                   <input
                     key={index}
@@ -62,7 +62,7 @@ export default function ContactMessage() {
                 <textarea
                   name="message"
                   placeholder="Enter message"
-                  className="border-2 border-[#E4ECF2] w-full p-5 mb-7 pr-10 pl-5 px-5 py-3"
+                  className="border-2 border-borderColor w-full p-5 mb-7 pr-10 pl-5 px-5 py-3"
                 ></textarea>
               </div>
               <p className="col-span-2">

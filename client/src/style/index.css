@@ -208,6 +208,94 @@ ol li {
   @apply bg-red-500;
 }
 
+.product-hover-action {
+  @apply absolute text-center -translate-y-2/4 opacity-0 invisible transition-all duration-[0.3s] ease-[ease] delay-[0s] top-[60%] inset-x-0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+}
+
+.ltn__product-item:hover .product-hover-action {
+  @apply opacity-100 visible top-2/4;
+}
+
+.product-hover-action ul {
+  @apply inline-block shadow m-0 p-0;
+}
+
+.product-hover-action li {
+  @apply h-[50px] w-[50px] leading-[50px] text-sm text-center float-left border-r-[#d1dae0] mr-0 mt-0 border-r border-solid;
+  list-style: none;
+}
+
+.product-hover-action li:last-child {
+  @apply mr-0 border-r-0
+}
+
+.product-hover-action li a {
+  @apply bg-white text-light font-bold h-full w-full flex justify-center items-center;
+}
+
+.product-hover-action li:hover a {
+  @apply bg-secondary text-white;
+}
+
+.ltn__product-item-3 {
+  @apply border-[#f6f6f6] transition-all duration-[0.3s] ease-[ease] delay-[0s] border-2 border-solid;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+}
+
+.ltn__product-item-3:hover {
+  @apply shadow-xl
+}
+
+.ltn__product-item-3 .product-img::before {
+  @apply hidden;
+}
+
+.ltn__product-item-3 .product-info {
+  @apply pt-[25px] pb-[15px] px-[30px];
+}
+
+.ltn__product-item-3 .product-price {
+  @apply text-sm text-secondary font-bold;
+}
+
+.ltn__product-item-3 .product-price del {
+  @apply text-[13px] opacity-60;
+}
+
+.ltn__product-item-3 .product-info-brief {
+  @apply border-[#f6f6f6] max-w-[400px] mb-[15px] border-t-2 border-solid;
+}
+
+.ltn__product-item-3 .product-info-brief ul {
+  @apply flex justify-between m-0 p-0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+}
+
+.ltn__product-item-3 .product-info-brief ul li {
+  @apply inline-block text-sm font-bold;
+  list-style: none;
+}
+
+.ltn__product-item-3 .product-info-brief ul li i {
+  @apply text-secondary mr-[5px];
+}
+
+.ltn__product-item-3:hover {
+  @apply shadow;
+}
+
+.ltn__product-item-3:hover .product-hover-action {
+  @apply top-[70%];
+}
+
 .dropdown ul {
   display: none;
 }

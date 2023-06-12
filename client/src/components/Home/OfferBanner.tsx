@@ -1,16 +1,6 @@
 import { useEffect, useState } from "react";
 import { map } from "lodash";
-import React from "react";
-
-interface IOfferBannerProps {
-  offerEndDate: string;
-  title: string;
-  image?: string;
-  subtitle1?: string;
-  subtitle2?: string;
-  description1?: string;
-  description2?: string;
-}
+import { IOfferBannerProps } from "./types";
 
 const initialCountDown = {
   days: 0,
@@ -54,7 +44,7 @@ export default function OfferBanner({
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [offerEndDate]);
 
   return (
     <section className=" mt-12 mb-14 bg-[url(/placeholder/1920x623.png)] p-20">

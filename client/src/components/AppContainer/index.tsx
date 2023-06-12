@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+
 import Login from "../../pages/Login";
 import Home from "../../pages/Home";
 import Register from "../../pages/Register";
@@ -11,7 +12,7 @@ export default function AppContainer() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact/>} />
+        <Route path="/contact" element={<Contact />} />
       </Route>
     </Routes>
   );

@@ -1,68 +1,128 @@
-export const aboutList = [
+import { GiCampingTent } from "react-icons/gi";
+import { TbDental } from "react-icons/tb";
+import { FiTarget } from "react-icons/fi";
+import { BsStack } from "react-icons/bs";
+
+import { ICategory, INavData, INavList, INavSubListGroup } from "./types";
+
+export const coldMedicine: INavData[] = [
   {
-    title: "services",
+    title: "Herbal",
     link: "#",
   },
   {
-    title: "Gallery",
+    title: "Sore throat",
     link: "#",
   },
 ];
 
-export const shopList = [
+export const digestive: INavData[] = [
   {
-    title: "services",
-    link: "#",
-  },
-  {
-    title: "Gallery",
-    link: "#",
-  },
-  {
-    title: "services",
-    link: "#",
-  },
-  {
-    title: "Gallery",
-    link: "#",
-  },
-];
-export const newsList = [
-  {
-    title: "services",
-    link: "#",
-  },
-  {
-    title: "Gallery",
-    link: "#",
-  },
-];
-export const pagesList = [
-  {
-    title: "services",
-    link: "#",
-  },
-  {
-    title: "Gallery",
+    title: "Digestive enzymes",
     link: "#",
   },
 ];
 
-export const CategoryOptions = [
+export const bandages: INavData[] = [
   {
-    label: "Medical Cap",
-    href: "#",
+    title: "Tick/pest avoidance",
+    link: "#",
   },
   {
-    label: "Dental",
-    href: "#",
+    title: "Wet band",
+    link: "#",
   },
   {
-    label: "Best Deals",
-    href: "#",
+    title: "Dressing bands",
+    link: "#",
   },
   {
-    label: "All Products",
-    href: "#",
+    title: "Disposal band",
+    link: "#",
+  },
+];
+
+export const hygiene: INavData[] = [
+  {
+    title: "General Facilities and equipment",
+    link: "#",
+  },
+  {
+    title: "Cold/warm appliance",
+    link: "#",
+  },
+];
+
+export const shopList: INavSubListGroup[] = [
+  {
+    title: "Cold Medicine",
+    link: "#",
+    subList: coldMedicine,
+  },
+  {
+    title: "Wound/disinfection",
+    link: "#",
+  },
+  {
+    title: "Digestive",
+    link: "#",
+    subList: digestive,
+  },
+  {
+    title: "Heartburn",
+    link: "#",
+  },
+];
+
+export const CategoryOptions:ICategory[] = [
+  {
+    title: "Medical Cap",
+    link: "#",
+    icon: GiCampingTent,
+  },
+  {
+    title: "Dental",
+    link: "#",
+    icon: TbDental,
+  },
+  {
+    title: "Best Deals",
+    link: "#",
+    icon: FiTarget,
+  },
+  {
+    title: "All Products",
+    link: "#",
+    icon: BsStack,
+  },
+];
+
+export const navbarData: INavList = [
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "About",
+    link: "#",
+  },
+  {
+    title: "Shop",
+    link: "",
+    list: shopList,
+  },
+  {
+    title: "Bandages",
+    link: "",
+    list: coldMedicine,
+  },
+  {
+    title: "Hygiene",
+    link: "",
+    list: hygiene,
+  },
+  {
+    title: "Contact",
+    link: "#",
   },
 ];

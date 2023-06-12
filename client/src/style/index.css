@@ -303,3 +303,19 @@ ol li {
 .dropdown:hover ul {
   display: block;
 }
+
+.sub-dropdown ul {
+  display: none!important;
+}
+
+.sub-dropdown:hover ul  {
+  display: block!important;
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+
+.dropdown{
+  display:inline-block; 
+  position:relative;
+}

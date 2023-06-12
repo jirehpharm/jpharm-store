@@ -1,6 +1,6 @@
 export interface IHeroSectionProps {
   offer?: string;
-  title?: string;
+  title: string;
   price?: string;
   buttonUrl?: string;
 }

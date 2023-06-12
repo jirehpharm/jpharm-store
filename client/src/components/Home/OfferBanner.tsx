@@ -47,7 +47,7 @@ export default function OfferBanner({
   }, [offerEndDate]);
 
   return (
-    <section className={`mt-12 mb-14 bg-[url(${image})]`}>
+    <section className=" mt-12 mb-14 bg-[url(/placeholder/1920x623.png)] p-20">
       <div className=" max-w-6xl mx-auto grid grid-cols-2">
         <div className="pt-16 pb-16 relative px-4">
           <div>

@@ -4,7 +4,6 @@ import { TbWashGentle } from "react-icons/tb"
 export default function Banner() {
   return (
     <section className="bg-[url(/placeholder/1920x623.png)] p-20">
-      {/* <img src="/placeholder/1920x623.png" /> */}
       <div className="max-w-6xl mx-auto grid grid-cols-2">
         <div>
           <div>

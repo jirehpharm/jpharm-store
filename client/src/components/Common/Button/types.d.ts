@@ -1,5 +1,5 @@
 export interface ITheme {
-  varient: {
+  variant: {
     primary?: string;
     secondary?: string;
     success?: string;
@@ -12,7 +12,7 @@ export interface ITheme {
   };
 }
 
-export type TButtonVarients =
+export type TButtonVariants =
   | "default"
   | "primary"
   | "secondary"
@@ -29,5 +29,5 @@ export interface IButtonProps {
   isLoading?: true | false;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
-  varient?: TButtonVariants;
+  variant?: TButtonVariants;
 }

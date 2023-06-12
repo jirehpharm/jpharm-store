@@ -2,7 +2,7 @@ import SocialLinks from "../SocialLinks";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { AiOutlineTwitter } from "react-icons/ai";
 
-const navigation = [
+const navigation: TNavigation = [
   {
     name: "Company",
     list: [
@@ -11,7 +11,7 @@ const navigation = [
       { name: "All Products", href: "#" },
       { name: "Location Map", href: "#" },
       { name: "FAQ", href: "#" },
-      { name: "Conntact Us", href: "#" },
+      { name: "Contact Us", href: "#" },
     ],
   },
   {
@@ -26,7 +26,7 @@ const navigation = [
     ],
   },
   {
-    name: "Custome Care",
+    name: "Customer Care",
     list: [
       { name: "Login", href: "#" },
       { name: "My account", href: "#" },
@@ -52,6 +52,11 @@ const socialData = [
     icon: AiOutlineTwitter,
   },
 ];
+const email = "info@mail.com";
+const phone = "+0123-456789";
+const location = "Brooklyn, New York, United States";
+const companyInfo =
+  "Jireh Pharm offers a diverse portfolio of pharmaceutical products and services designed to meet the evolving needs of patients, healthcare providers, and partners. Our range of medications spans various therapeutic areas";
 
 export default function Footer() {
   return (
@@ -60,31 +65,23 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-3   lg:grid-cols-7 gap-4 p-9">
           <div className="col-span-2">
             <img src="/logos/logo-2.png" />
-            <p className=" text-white py-3 m-0">
-              Lorem Ipsum is simply dummy text of the and typesetting industry.
-              Lorem Ipsum is dummy text of the printing.
-            </p>
+            <p className=" text-white py-3 m-0">{companyInfo}</p>
             <div>
               <ul>
                 <li>
-                  <p className=" text-white">
-                    Brooklyn, New York, United States
-                  </p>
+                  <p className=" text-white">{location}</p>
                 </li>
                 <li>
                   <p>
                     <a className=" text-white" href="tel:+0123-456789">
-                      +0123-456789
+                      {phone}
                     </a>
                   </p>
                 </li>
                 <li>
                   <p>
-                    <a
-                      className=" text-white"
-                      href="mailto:example@example.com"
-                    >
-                      example@example.com
+                    <a className=" text-white" href={`mailto:${email}`}>
+                      {email}
                     </a>
                   </p>
                 </li>
@@ -97,10 +94,10 @@ export default function Footer() {
             <div key={index}>
               <h4 className="text-white">{category.name}</h4>
               <ul className="mt-6">
-                {category.list.map((items: any, index: number) => (
+                {category.list.map((item:any, index: number) => (
                   <li key={index} className="mb-6">
-                    <a href={items.href} className=" text-white">
-                      {items.name}
+                    <a href={item.href} className=" text-white">
+                      {item.name}
                     </a>
                   </li>
                 ))}

@@ -1,6 +1,6 @@
-import { IHeroProps } from "./types";
+import { IHeroSectionProps } from "./types";
 
-const HeroSection = ({ offer, title, price, buttonUrl }: IHeroProps) => {
+const HeroSection = ({ offer, title, price, buttonUrl }: IHeroSectionProps) => {
   return (
     <div className="max-w-6xl mx-auto my-14 grid grid-cols-5 text-center gap-7">
       {/* <div className="col-span-3"> */}

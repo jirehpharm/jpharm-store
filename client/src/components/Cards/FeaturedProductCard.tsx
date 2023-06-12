@@ -1,21 +1,52 @@
 import getStars from "../getStars";
 
-export default function FeaturedProductCard({ productName = "Antiseptic Spray", discountedPrise = "$129.00", originalPrise = "$140.00", image = "/placeholder/600x701.png", stars = 0 }) {
+interface FeaturedProductCardProps {
+  productName: string;
+  discountedPrice?: string;
+  originalPrice?: string;
+  image?: string;
+  stars?: number;
+}
+
+/**
+ * Renders a featured product card.
+ *
+ * @param productName - The name of the product to display.
+ * @param discountedPrice - The discounted price of the product.
+ * @param originalPrice - The original price of the product.
+ * @param image - The URL of the image to display for the product.
+ * @param stars - The number of stars to display for the product.
+ *
+ * @returns The rendered product card.
+ */
+export default function FeaturedProductCard({
+  productName,
+  discountedPrice,
+  image,
+  originalPrice,
+  stars,
+}: FeaturedProductCardProps): JSX.Element {
   return (
-    <section className=" bg-white">
+    <section className="bg-white">
       <div className="border border-gray-300 h-[190px] p-8 flex">
         <div className="small-product-item-img">
-          <a href="#"><img src={image} className="w-[111px] h-[131px]" alt="Image" /></a>
+          <a href="#">
+            <img src={image} className="w-[111px] h-[131px]" alt="Image" />
+          </a>
         </div>
         <div className="p-5">
           <div className="flex items-center pb-3">
-            {getStars({ stars })}
+            {getStars({ stars: stars || 0 })}
           </div>
-          <h5 className="text-base"><a className=" text-[#071c1f]" href="#">{productName}</a></h5>
-          <span className="text-sm text-[#0a9a73]">{discountedPrise}</span>
-          <del className="text-xs mx-2 text-[#0a9a73]">{originalPrise}</del>
+          <h5 className="text-base">
+            <a className="text-primary" href="#">
+              {productName}
+            </a>
+          </h5>
+          <span className="text-sm text-secondary">{discountedPrice}</span>
+          <del className="text-xs mx-2 text-secondary">{originalPrice}</del>
         </div>
       </div>
     </section>
-  )
+  );
 }

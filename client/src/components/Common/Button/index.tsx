@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { IButtonProps, ITheme } from "./types";
 
 const theme: ITheme = {
-  varient: {
+  variant: {
     default: "btn",
     light: "btn-white",
     primary: "theme-btn-1",
@@ -18,7 +18,7 @@ const theme: ITheme = {
  * @param onClick - The function to be called when the button is clicked.
  * @param isLoading - Whether the button is loading or not.
  * @param type - The type of the button.
- * @param varient - The varient of the button.
+ * @param variant - The variant of the button.
  *
  * @returns The button component.
  */
@@ -29,13 +29,13 @@ export default function Button(props: IButtonProps): JSX.Element {
     children,
     onClick,
     type = "button",
-    varient = "default",
+    variant = "default",
     isLoading = false,
   } = props;
   return (
     <button
       type={type}
-      className={classNames(cls, className, theme.varient[varient])}
+      className={classNames(cls, className, theme.variant[variant])}
       onClick={onClick}
     >
       {isLoading ? "Loading..." : children}

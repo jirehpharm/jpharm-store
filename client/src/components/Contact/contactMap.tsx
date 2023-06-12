@@ -1,0 +1,12 @@
+import React from "react";
+
+export default function ContactMap() {
+  return (
+    <section className="h-[500px] mb-28 mx-auto gap-3">
+      <iframe
+        className="absolute top-[1250px] h-[800px] -z-[3] w-full"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9334.271551495209!2d-73.97198251485975!3d40.668170674982946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25b0456b5a2e7%3A0x68bdf865dda0b669!2sBrooklyn%20Botanic%20Garden%20Shop!5e0!3m2!1sen!2sbd!4v1590597267201!5m2!1sen!2sbd"
+      ></iframe>
+    </section>
+  );
+}

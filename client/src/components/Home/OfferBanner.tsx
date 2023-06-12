@@ -11,7 +11,6 @@ const initialCountDown = {
 
 export default function OfferBanner({
   offerEndDate,
-  image,
   title,
   subtitle1,
   subtitle2,

@@ -7,12 +7,18 @@ import Stats from "../components/Common/Stats";
 import HeroSection from "../components/Home/HeroSection";
 import Category from "../components/Cards/Category/Category";
 import { categoryData } from "../components/Cards/Category/content";
-import { heroSectionData, offerSectionData } from "../components/Home/constants";
+import TrendingBlog from "../components/Blog/TrendingBlog";
+import {
+  heroSectionData,
+  offerSectionData,
+} from "../components/Home/constants";
 import TrendingProduct from "../components/Home/TrendingProduct";
 import FeaturedProduct2 from "../components/Home/FeaturedProduct2";
 
 export default function Home() {
-  const slideData = categoryData.map((item, idx: number) => <Category key={idx} Icon={item.Icon} title={item.title} />);
+  const slideData = categoryData.map((item, idx: number) => (
+    <Category key={idx} Icon={item.Icon} title={item.title} />
+  ));
 
   {
     /* TODO: Need to Find a way to fetch the data from the server */
@@ -27,6 +33,7 @@ export default function Home() {
       <BestSeller />
       <OfferBanner {...offerSectionData} />
       <Banner />
+      <TrendingBlog />
       <Stats />
     </div>
   );

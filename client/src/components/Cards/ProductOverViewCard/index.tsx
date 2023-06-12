@@ -1,6 +1,6 @@
 import { AiOutlineEye, AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai";
 import getStars from "../../getStars";
-import { IProductProps } from "./type";
+import { IProductProps } from "./types";
 
 export default function ProductOverViewCard({
   showStars = true,

@@ -9,6 +9,7 @@ import Category from "../components/Cards/Category/Category";
 import { categoryData } from "../components/Cards/Category/content";
 import { heroSectionData, offerSectionData } from "../components/Home/constants";
 import TrendingProduct from "../components/Home/TrendingProduct";
+import FeaturedProduct2 from "../components/Home/FeaturedProduct2";
 
 export default function Home() {
   const slideData = categoryData.map((item, idx: number) => <Category key={idx} Icon={item.Icon} title={item.title} />);
@@ -19,10 +20,11 @@ export default function Home() {
   return (
     <div>
       <HeroSection {...heroSectionData} />
+      <Carousel slidesPerView={7} slides={slideData} />
+      <FeaturedProduct2 />
       <TrendingProduct />
       <FeaturedProduct />
       <BestSeller />
-      <Carousel slidesPerView={7} slides={slideData} />
       <OfferBanner {...offerSectionData} />
       <Banner />
       <Stats />

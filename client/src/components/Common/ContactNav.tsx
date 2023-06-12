@@ -1,8 +1,8 @@
 import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/outline";
-
-import SocialLinks from "./SocialLinks";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { AiOutlineTwitter } from "react-icons/ai";
+
+import SocialLinks from "./SocialLinks";
 
 const email = "info@mail.com";
 const emailSubject = "Flower greetings to you";

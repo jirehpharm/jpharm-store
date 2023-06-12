@@ -5,8 +5,8 @@ import ContactNav from "./components/Common/ContactNav";
 import PrimaryNav from "./components/Common/PrimaryNav";
 import Footer from "./components/Common/Footer";
 import CTA from "./components/Common/CTA";
-import "./style/App.css";
 import SecondaryNav from "./components/Common/SecondaryNav";
+import "./style/App.css";
 
 function App() {
   return (

@@ -1,6 +1,7 @@
-import SocialLinks from "../SocialLinks";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { AiOutlineTwitter } from "react-icons/ai";
+
+import SocialLinks from "../SocialLinks";
 
 const navigation: TNavigation = [
   {

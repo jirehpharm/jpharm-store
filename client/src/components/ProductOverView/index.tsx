@@ -2,7 +2,7 @@ export default function ProductOverView() {
   return (
     <div className="ltn__product-item ltn__product-item-3 text-left">
       <div className="product-img">
-        <a href="product-details.html">
+        <a href="product-details">
           <img src="img/product/10.png" alt="#" />
         </a>
         <div className="product-badge">
@@ -76,7 +76,7 @@ export default function ProductOverView() {
           </ul>
         </div>
         <h2 className="product-title">
-          <a href="product-details.html">Antiseptic Spray</a>
+          <a href="product-details">Antiseptic Spray</a>
         </h2>
         <div className="product-price">
           <span>$32.00</span>

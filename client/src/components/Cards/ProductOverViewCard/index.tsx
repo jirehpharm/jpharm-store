@@ -18,7 +18,7 @@ export default function ProductOverViewCard({
   return (
     <div className="ltn__product-item relative ltn__product-item-3 text-left hover:shadow-xl">
       <div className="product-img relative">
-        <a href="product-details.html">
+        <a href="product-details">
           <img src={image} alt="#" />
         </a>
         {isNew && (
@@ -51,7 +51,7 @@ export default function ProductOverViewCard({
       <div className={`product-info ${isTextCenter ? "text-center" : ""}`}>
         {showStars && <div className="flex">{getStars({ stars })}</div>}
         <h2 className="product-title text-base">
-          <a href="product-details.html" className="text-primary hover:text-secondary">
+          <a href="product-details" className="text-primary hover:text-secondary">
             {productName}
           </a>
         </h2>

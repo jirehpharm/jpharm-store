@@ -331,19 +331,20 @@ ol li {
 
 .swiper-button-next:hover, .swiper-button-prev:hover {
   @apply rounded-[50%] bg-secondary h-10 w-10;
+}
 
-  .sub-dropdown ul {
-    display: none !important;
-  }
+.sub-dropdown ul {
+  display: none !important;
+}
 
-  .sub-dropdown:hover ul {
-    display: block !important;
-    position: absolute;
-    left: 100%;
-    top: 0;
-  }
+.sub-dropdown:hover ul {
+  display: block !important;
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
 
-  .dropdown {
-    display: inline-block;
-    position: relative;
-  }
+.dropdown {
+  display: inline-block;
+  position: relative;
+}

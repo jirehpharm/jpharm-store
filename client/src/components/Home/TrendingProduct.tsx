@@ -1,4 +1,7 @@
 import ProductOverViewCard from "../Cards/ProductOverViewCard";
+import Carousel from "../Carousel";
+import { IProductProps } from "./types";
+
 const data = [
   {
     isNew: true,
@@ -56,27 +59,14 @@ const data = [
     originalPrice: "$46.00",
   },
 ];
-interface IProductProps {
-  isNew: boolean;
-  image: string;
-  quickView: string;
-  addToCard: string;
-  wishlist: string;
-  stars: number;
-  productName: string;
-  price: string;
-  originalPrice: string;
-}
-export default function BestSeller() {
+const content = data.map((item: IProductProps, index: number) => <ProductOverViewCard isTextCenter={false} {...item} showStars={true} key={index} />);
+
+export default function TrendingProduct() {
   return (
     <section>
       <div className="max-w-6xl mx-auto py-14">
-        <h1 className="text-center mb-11 text-5xl">Best Selling Item</h1>
-        <div className="grid grid-cols-4 gap-5 ">
-          {data.map((item: IProductProps, index: number) => (
-            <ProductOverViewCard isTextCenter={false} {...item} showStars={true} key={index} />
-          ))}
-        </div>
+        <h1 className="text-center mb-11 text-5xl">Trending Products</h1>
+        <Carousel slidesPerView={4} spaceBetween={25} slides={content} />
       </div>
     </section>
   );

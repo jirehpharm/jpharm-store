@@ -1,19 +1,7 @@
 import { AiOutlineEye, AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai";
 import getStars from "../../getStars";
+import { IProductProps } from "./type";
 
-interface ProductProps {
-  showStars: boolean;
-  isTextCenter: boolean;
-  isNew: boolean;
-  image: string;
-  quickView: string;
-  addToCard: string;
-  wishlist: string;
-  stars: number;
-  productName: string;
-  price: string;
-  originalPrice: string;
-}
 export default function ProductOverViewCard({
   showStars = true,
   isTextCenter = false,
@@ -26,7 +14,7 @@ export default function ProductOverViewCard({
   productName = "",
   price = "",
   originalPrice = "",
-}: ProductProps) {
+}: IProductProps) {
   return (
     <div className="ltn__product-item relative ltn__product-item-3 text-left hover:shadow-xl">
       <div className="product-img relative">

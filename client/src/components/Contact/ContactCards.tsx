@@ -1,5 +1,7 @@
 //import React from 'react'
+import React from "react";
 import ContactMessage from "./ContactMessage";
+import ContactMap from "./contactMap";
 
 export default function Contact() {
   const contact = [
@@ -42,6 +44,7 @@ export default function Contact() {
         ))}
       </section>
       <ContactMessage />
+      <ContactMap />
     </>
   );
 }

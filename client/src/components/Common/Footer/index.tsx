@@ -1,3 +1,6 @@
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { AiOutlineTwitter } from "react-icons/ai";
+
 import SocialLinks from "../SocialLinks";
 
 const navigation: TNavigation = [
@@ -36,6 +39,20 @@ const navigation: TNavigation = [
   },
 ];
 
+const socialData = [
+  {
+    url: "#",
+    icon: FaFacebook,
+  },
+  {
+    url: "#",
+    icon: FaInstagram,
+  },
+  {
+    url: "#",
+    icon: AiOutlineTwitter,
+  },
+];
 const email = "info@mail.com";
 const phone = "+0123-456789";
 const location = "Brooklyn, New York, United States";
@@ -71,14 +88,14 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <SocialLinks />
+            <SocialLinks socialData={socialData} />
           </div>
 
-          {navigation.map((category, index: number) => (
+          {navigation.map((category: any, index: number) => (
             <div key={index}>
               <h4 className="text-white">{category.name}</h4>
               <ul className="mt-6">
-                {category.list.map((item, index: number) => (
+                {category.list.map((item:any, index: number) => (
                   <li key={index} className="mb-6">
                     <a href={item.href} className=" text-white">
                       {item.name}

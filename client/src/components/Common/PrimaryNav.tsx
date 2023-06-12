@@ -9,7 +9,9 @@ export default function PrimaryNav() {
   return (
     <div className="mx-auto max-w-6xl flex flex-row justify-between py-7">
       <div className="flex items-center">
-        <img src="full_logo.png" alt="logo" className="w-[250px]"/>
+        <a href="/" className="cursor-pointer">
+          <img src="full_logo.png" alt="logo" className="w-[250px]" />
+        </a>
       </div>
       <div className="flex items-center gap-4 text-light">
         <div className="min-w-[500px] rounded-full shadow-light">

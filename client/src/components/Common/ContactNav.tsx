@@ -1,10 +1,27 @@
 import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/outline";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { AiOutlineTwitter } from "react-icons/ai";
 
 import SocialLinks from "./SocialLinks";
 
 const email = "info@mail.com";
 const emailSubject = "Flower greetings to you";
 const location = "15/A, Nest Tower, NYC";
+
+const socialData = [
+  {
+    url: "#",
+    icon: FaFacebook,
+  },
+  {
+    url: "#",
+    icon: FaInstagram,
+  },
+  {
+    url: "#",
+    icon: AiOutlineTwitter,
+  },
+];
 
 export default function ContactNav() {
   return (
@@ -30,7 +47,7 @@ export default function ContactNav() {
             </a>
           </li>
         </ul>
-        <SocialLinks />
+        <SocialLinks socialData={socialData} />
       </div>
     </div>
   );

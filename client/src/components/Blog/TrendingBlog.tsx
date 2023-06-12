@@ -1,6 +1,6 @@
 import BlogCard from "../Cards/BlogCard/BlogCard";
 import Carousel from "../Carousel";
-import { ITrendingBlogProps } from "./type";
+import { ITrendingBlogProps } from "./types";
 
 export default function TrendingBlog() {
   const blogDetails = [
@@ -49,9 +49,11 @@ export default function TrendingBlog() {
       date: "june 12, 2023",
     },
   ];
+
   const content = blogDetails.map((item: ITrendingBlogProps, index: number) => (
     <BlogCard {...item} key={index} />
   ));
+
   return (
     <section className="pt-28 pb-[70px] mx-auto max-w-6xl">
       <div className="relative px-4">

@@ -32,7 +32,6 @@ export default function Home() {
       <OfferBanner {...offerSectionData} />
       <Banner />
       <TrendingBlog />
-
       <Stats />
     </div>
   );

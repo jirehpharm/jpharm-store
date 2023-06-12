@@ -1,5 +1,6 @@
 import { FaUser, FaTag, FaCalendarAlt } from "react-icons/fa";
-import { ITrendingBlogProps } from "../../Blog/type";
+import { ITrendingBlogProps } from "../../Blog/types";
+
 export default function BlogCard({
   bloglink,
   src,

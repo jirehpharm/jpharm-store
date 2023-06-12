@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function ContactMap() {
   return (
     <section className="h-[500px] mb-28 mx-auto gap-3">

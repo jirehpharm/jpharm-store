@@ -1,5 +1,3 @@
-//import React from 'react'
-import React from "react";
 import ContactMessage from "./ContactMessage";
 import ContactMap from "./contactMap";
 

@@ -3,7 +3,7 @@ import getStars from "../../getStars";
 
 interface ProductProps {
   showStars: boolean;
-  isText: boolean;
+  isTextCenter: boolean;
   isNew: boolean;
   image: string;
   quickView: string;
@@ -16,7 +16,7 @@ interface ProductProps {
 }
 export default function ProductOverViewCard({
   showStars = true,
-  isText = false,
+  isTextCenter = false,
   isNew = false,
   image = "",
   quickView = "#",
@@ -60,7 +60,7 @@ export default function ProductOverViewCard({
           </ul>
         </div>
       </div>
-      <div className={`product-info ${isText ? "text-center" : ""}`}>
+      <div className={`product-info ${isTextCenter ? "text-center" : ""}`}>
         {showStars && <div className="flex">{getStars({ stars })}</div>}
         <h2 className="product-title text-base">
           <a href="product-details.html" className="text-primary hover:text-secondary">

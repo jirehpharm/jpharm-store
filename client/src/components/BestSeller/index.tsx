@@ -56,7 +56,7 @@ const data = [
     originalPrice: "$46.00",
   },
 ];
-interface ProductProps {
+interface IProductProps {
   isNew: boolean;
   image: string;
   quickView: string;
@@ -73,21 +73,8 @@ export default function BestSeller() {
       <div className="max-w-6xl mx-auto py-14">
         <h1 className="text-center mb-11 text-5xl">Best Selling Item</h1>
         <div className="grid grid-cols-4 gap-5 ">
-          {data.map((item: ProductProps, index: number) => (
-            <ProductOverViewCard
-              isText={false}
-              isNew={item.isNew}
-              image={item.image}
-              quickView={item.quickView}
-              addToCard={item.addToCard}
-              wishlist={item.wishlist}
-              stars={item.stars}
-              productName={item.productName}
-              price={item.price}
-              originalPrice={item.originalPrice}
-              showStars={true}
-              key={index}
-            />
+          {data.map((item: IProductProps, index: number) => (
+            <ProductOverViewCard isTextCenter={false} {...item} showStars={true} key={index} />
           ))}
         </div>
       </div>

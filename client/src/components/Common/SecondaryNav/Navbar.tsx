@@ -26,7 +26,7 @@ export default function Navbar(props: INavProps) {
                 list?.subList ? (
                   <div
                     className="font-bold sub-dropdown relative hover:text-secondary"
-                    key={idx}
+                    key={index}
                   >
                     <a
                       href={list.link}
@@ -44,9 +44,8 @@ export default function Navbar(props: INavProps) {
                     <ul className="absolute right-0 bg-white min-w-[200px] mt-5">
                       <div className="h-1 bg-secondary"></div>
                       {list?.subList?.map((item: any, index: number) => (
-                        <a href={item.link} className="text-light font-medium">
+                        <a href={item.link} className="text-light font-medium" key={index}>
                           <li
-                            key={index}
                             className="w-full items-center flex p-3 mt-0"
                           >
                             {item.title}

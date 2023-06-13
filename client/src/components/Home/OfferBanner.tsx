@@ -4,22 +4,13 @@ import { IOfferBannerProps } from "./types";
 
 const initialCountDown = {
   days: 0,
-  hours: 0,
-  minutes: 0,
-  seconds: 0,
+  hrs: 0,
+  mins: 0,
+  secs: 0,
 };
 
-export default function OfferBanner({
-  offerEndDate,
-  title,
-  subtitle1,
-  subtitle2,
-  description1,
-  description2,
-}: IOfferBannerProps) {
-  const [countDownObj, setCountDownObj] = useState<{ [key: string]: number }>(
-    initialCountDown
-  );
+export default function OfferBanner({ offerEndDate, title, subtitle1, subtitle2, description1, description2 }: IOfferBannerProps) {
+  const [countDownObj, setCountDownObj] = useState<{ [key: string]: number }>(initialCountDown);
 
   useEffect(() => {
     const countdownDate = new Date(`${offerEndDate}`).getTime();
@@ -30,9 +21,9 @@ export default function OfferBanner({
 
       setCountDownObj({
         days: Math.floor(timer / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((timer % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-        minutes: Math.floor((timer % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((timer % (1000 * 60)) / 1000),
+        hrs: Math.floor((timer % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        mins: Math.floor((timer % (1000 * 60 * 60)) / (1000 * 60)),
+        secs: Math.floor((timer % (1000 * 60)) / 1000),
       });
 
       if (timer < 0) {
@@ -51,31 +42,22 @@ export default function OfferBanner({
         <div className="pt-16 pb-16 relative px-4">
           <div>
             <h6 className="text-secondary font-rajdhani-sans">{title}</h6>
-            <h1 className="text-primary font-josefin-sans">
+            <h1 className="text-primary text-5xl font-josefin-sans">
               {subtitle1}
               <br />
               {subtitle2}
             </h1>
-            <p className="font-{'Josefin Sans'|sans-serif}">
+            <p className="font-{'Josefin Sans'|sans-serif} text-light">
               {description1}
               <br />
               {description2}
             </p>
           </div>
-          <div
-            className="inline-block shadow mt-7 pt-6 pb-1 px-2
-              box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28) p-0;
-              box-shadow: none"
-            data-countdown={offerEndDate}
-          >
+          <div className="inline-block  mt-7 pt-6 pb-1 px-2" data-countdown={offerEndDate}>
             {map(countDownObj, (value: number, key: string) => (
-              <div className="inline-block mr-7 last:mr-0" key={key}>
-                <h1 className="h-12 w-14 text-2xl leading-10 mb-1 text-center bg-white text-secondary">
-                  {value.toString().padStart(2, "0")}
-                </h1>
-                <p className="text-center text-lg text-primary capitalize">
-                  {key}
-                </p>
+              <div className="inline-block mr-7 last:mr-0 " key={key}>
+                <h1 className="h-12 w-14 text-2xl leading-10 mb-1 text-center bg-white text-secondary shadow">{value.toString().padStart(2, "0")}</h1>
+                <p className="text-center text-lg text-light capitalize ">{key}</p>
               </div>
             ))}
           </div>

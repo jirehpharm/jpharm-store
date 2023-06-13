@@ -348,3 +348,7 @@ ol li {
   display: inline-block;
   position: relative;
 }
+
+.paginationActive a {
+  @apply text-white bg-secondary border-0
+}

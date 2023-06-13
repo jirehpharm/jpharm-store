@@ -8,13 +8,8 @@ import { useState } from "react";
 import Badge from "./Badge";
 import ViewCartDrawer from "./CartDrawer/ViewCartDrawer";
 
-export default function PrimaryNav() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  // function setIsOpen(arg0: boolean): void {
-  //   throw new Error("Function not implemented.");
-  // }
-
+export default function PrimaryNav(): JSX.Element {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <div className="mx-auto max-w-6xl flex flex-row justify-between py-7">
       <div className="flex items-center">
@@ -65,6 +60,7 @@ export default function PrimaryNav() {
             viewCartLink={""}
             checkOutCartLink={""}
             productCount={undefined}
+            closeDrawer={setIsOpen}
           />
         )}
       </div>

@@ -9,4 +9,5 @@ export interface IViewCartDrawer {
   productCount: Int;
   viewCartLink: string;
   checkOutCartLink: string;
+  closeDrawer?: any;
 }

@@ -1,11 +1,12 @@
 import { IViewCartDrawer } from "./types";
-import { FaTimes } from "react-icons/fa";
+import { AiOutlineClose } from "react-icons/ai";
 import CartItems from "../../Cards/CartCards/cartItems";
 
 export default function ViewCartDrawer({
   viewCartLink,
   checkOutCartLink,
   productCount,
+  closeDrawer,
 }: IViewCartDrawer) {
   const product = [
     {
@@ -48,9 +49,12 @@ export default function ViewCartDrawer({
   return (
     <section className="fixed top-0 right-0 left-auto z-[10] overflow-y-auto bg-white h-screen py-5 pl-7 pr-2">
       <div className="flex justify-between touch-auto pl-7 py-5 pr-2 ">
-        <span className="font-extrabold text-light">Cart</span>
-        <button className="absolute right-2 font-extrabold text-black pr-3">
-          <FaTimes size={20} />
+        <span className="text-xl font-semibold text-light">Cart</span>
+        <button
+          className="absolute right-2 font-extrabold text-black pr-3"
+          onClick={() => closeDrawer(false)}
+        >
+          <AiOutlineClose size={20} />
         </button>
       </div>
       <div className="space-y-3">

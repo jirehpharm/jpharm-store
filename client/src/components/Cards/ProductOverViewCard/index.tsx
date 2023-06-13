@@ -49,15 +49,14 @@ export default function ProductOverViewCard({
         </div>
       </div>
       <div className={`product-info ${isTextCenter ? "text-center" : ""}`}>
-        {showStars && <div className="flex">{getStars({ stars })}</div>}
+        {showStars && <div className={`flex ${isTextCenter ? "text-center" : ""}`}>{getStars({ stars })}</div>}
         <h2 className="product-title text-base">
           <a href="product-details" className="text-primary hover:text-secondary">
             {productName}
           </a>
         </h2>
         <div className="product-price text-sm">
-          <span>{price}</span>
-          <del>{originalPrice}</del>
+          <span>{price}</span> <del>{originalPrice}</del>
         </div>
       </div>
     </div>

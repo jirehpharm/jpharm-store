@@ -1,6 +1,11 @@
 import BreadcrumbBanner from "../components/Common/BreadcrumbBanner";
 import Details from "../components/Products/Details";
+import Categories from "../components/Products/Categories";
 import RelatedProducts from "../components/Products/RelatedProducts";
+import { listData } from "../components/Products/constant";
+import TopRatedProductCard from "../components/Cards/TopRatedProductCard";
+import WidgetLayout from "../components/Products/WidgetLayout";
+import { topRated } from "../components/Cards/TopRatedProductCard/constants";
 
 export default function ProductDetails() {
   return (
@@ -10,7 +15,12 @@ export default function ProductDetails() {
         <div className="col-span-4">
           <Details />
         </div>
-        <div className="col-span-2">sidebar</div>
+        <div className="col-span-2">
+          <Categories title={"Product Categories"} list={listData} />
+          <WidgetLayout title={"Top Rated Products"}>
+            <TopRatedProductCard productData={topRated} />
+          </WidgetLayout>
+        </div>
       </div>
       <RelatedProducts />
     </>

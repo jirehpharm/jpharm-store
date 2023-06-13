@@ -5,6 +5,20 @@ export interface IHeroSectionProps {
   buttonUrl?: string;
 }
 
+export interface IWidgetsProps {
+  icon: React.ElementType;
+  title: string;
+}
+
+export interface IBannerProps {
+  bgImage: string;
+  miniTitle: string;
+  title: string;
+  description: string;
+  widgets: IWidgetsProps[];
+  link: string;
+}
+
 export interface IOfferBannerProps {
   offerEndDate?: string;
   image?: string;

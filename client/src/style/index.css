@@ -58,7 +58,7 @@ body {
 }
 
 .theme-btn-1:hover {
-  @apply bg-primary text-white;
+  @apply bg-white text-secondary border border-secondary;
 }
 
 .theme-btn-2 {
@@ -230,7 +230,7 @@ ol li {
 }
 
 .product-hover-action li:last-child {
-  @apply mr-0 border-r-0
+  @apply mr-0 border-r-0;
 }
 
 .product-hover-action li a {
@@ -248,7 +248,7 @@ ol li {
 }
 
 .ltn__product-item-3:hover {
-  @apply shadow-xl
+  @apply shadow-xl;
 }
 
 .ltn__product-item-3 .product-img::before {
@@ -314,7 +314,6 @@ ol li {
   @apply w-[30px];
 }
 
-
 .swiper-button-prev:after {
   content: url("img/icons/svg/left-arrow.svg") !important;
   @apply w-[30px];
@@ -325,11 +324,13 @@ ol li {
   @apply w-[30px];
 }
 
-.swiper-button-next, .swiper-button-prev {
+.swiper-button-next,
+.swiper-button-prev {
   @apply rounded-[50%] h-10 w-10 shadow-xl !important;
 }
 
-.swiper-button-next:hover, .swiper-button-prev:hover {
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
   @apply rounded-[50%] bg-secondary h-10 w-10;
 }
 

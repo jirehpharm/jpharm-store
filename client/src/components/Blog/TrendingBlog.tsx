@@ -61,9 +61,6 @@ export default function TrendingBlog() {
           <h6 className="font-semibold text-secondary">News & Blogs</h6>
           <h1>Leatest News Feeds</h1>
           <Carousel slidesPerView={3} slides={content} />
-          {/* {BlogDetails.map((item: ITrendingBlogProps, index: number) => (
-            <BlogCard {...item} key={index} />
-          ))} */}
         </div>
       </div>
       {/* blog items starts */}

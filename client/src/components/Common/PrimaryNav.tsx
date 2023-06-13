@@ -3,9 +3,13 @@ import {
   ShoppingCartIcon,
   UserIcon,
 } from "@heroicons/react/24/outline";
-import Badge from "./Badge";
+import { useState } from "react";
 
-export default function PrimaryNav() {
+import Badge from "./Badge";
+import ViewCartDrawer from "./CartDrawer/ViewCartDrawer";
+
+export default function PrimaryNav(): JSX.Element {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <div className="mx-auto max-w-6xl flex flex-row justify-between py-7">
       <div className="flex items-center">
@@ -38,9 +42,27 @@ export default function PrimaryNav() {
             <Badge value={2} />
           </span>
         </div>
-        <a href="#" className="flex items-center space-x-2 text-black">
+        <button
+          onClick={() => setIsOpen(true)}
+          className="flex items-center space-x-2 text-black"
+        >
           <h6 className="mb-0 hover:text-secondary">View Cart</h6>
-        </a>
+        </button>
+        {isOpen && (
+          <ViewCartDrawer
+            productName={""}
+            productLink={""}
+            productImageSrc={""}
+            productImageAltText={""}
+            productPrice={""}
+            productQuantity={0}
+            amount={undefined}
+            viewCartLink={""}
+            checkOutCartLink={""}
+            productCount={undefined}
+            closeDrawer={setIsOpen}
+          />
+        )}
       </div>
     </div>
   );

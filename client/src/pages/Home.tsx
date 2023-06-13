@@ -11,8 +11,10 @@ import TrendingBlog from "../components/Blog/TrendingBlog";
 import {
   heroSectionData,
   offerSectionData,
+  widgetsData,
 } from "../components/Home/constants";
 import TrendingProduct from "../components/Home/TrendingProduct";
+import FeaturedProduct2 from "../components/Home/FeaturedProduct2";
 
 export default function Home() {
   const slideData = categoryData.map((item, idx: number) => (
@@ -25,12 +27,13 @@ export default function Home() {
   return (
     <div>
       <HeroSection {...heroSectionData} />
+      <Carousel slidesPerView={7} slides={slideData} />
+      <FeaturedProduct2 />
+      <OfferBanner {...offerSectionData} />
       <TrendingProduct />
       <FeaturedProduct />
       <BestSeller />
-      <Carousel slidesPerView={7} slides={slideData} />
-      <OfferBanner {...offerSectionData} />
-      <Banner />
+      <Banner miniTitle={"N95 Facial Covering Mask"} title={"Grade A Safety Masks For Sale. Hurry Up! "} description={"Over 39,000 people work for us in more than 70 countries all over the This breadth of global coverage, combined with specialist services"} widgets={widgetsData} link={"#"} bgImage={"/placeholder/1920x623.png"} />
       <TrendingBlog />
       <Stats />
     </div>

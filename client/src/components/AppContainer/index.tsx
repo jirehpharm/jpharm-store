@@ -4,7 +4,7 @@ import Home from "../../pages/Home";
 import Register from "../../pages/Register";
 import Contact from "../../components/Contact/ContactCards";
 import ForgotPassword from "../../pages/ForgotPassword";
-import ProductDeatils from "../../pages/ProductDeatils";
+import ProductDetails from "../../pages/ProductDetails";
 import Login from "../../pages/Login";
 
 export default function AppContainer() {
@@ -16,7 +16,7 @@ export default function AppContainer() {
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/product-details" element={<ProductDeatils />} />
+        <Route path="/product-details" element={<ProductDetails />} />
       </Route>
     </Routes>
   );

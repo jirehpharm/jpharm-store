@@ -1,7 +1,8 @@
 import BreadcrumbBanner from "../components/Common/BreadcrumbBanner";
 import Details from "../components/Products/Details";
+import RelatedProducts from "../components/Products/RelatedProducts";
 
-export default function ProductDeatils() {
+export default function ProductDetails() {
   return (
     <>
       <BreadcrumbBanner title={"Antiseptic Spray"} />
@@ -11,6 +12,7 @@ export default function ProductDeatils() {
         </div>
         <div className="col-span-2">sidebar</div>
       </div>
+      <RelatedProducts />
     </>
   );
 }

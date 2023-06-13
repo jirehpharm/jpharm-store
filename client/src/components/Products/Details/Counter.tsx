@@ -7,7 +7,7 @@ export default function Counter() {
     <div className="flex items-center my-3 border border-gray-300 divide-x divide-gray-300 w-fit">
       <button
         onClick={() => (count > 0 ? setCount(count - 1) : setCount(0))}
-        className="p-4 text-light font-bold text-xl"
+        className="p-4 text-light font-bold text-xl focus-visible:ring-0"
       >
         -
       </button>

@@ -10,7 +10,7 @@ export default function Register(): JSX.Element {
   const fields = [
     { name: "First Name", type: "text" },
     { name: "Last Name", type: "text" },
-    { name: "Email", type: "text" },
+    { name: "Email", type: "email" },
     { name: "Password", type: "password" },
     { name: "Confirm Password", type: "password" },
   ];

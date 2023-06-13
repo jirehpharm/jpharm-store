@@ -1,6 +1,6 @@
 import BreadcrumbBanner from "../components/Common/BreadcrumbBanner";
-import Details from "../components/Products/Details";
-import RelatedProducts from "../components/Products/RelatedProducts";
+import Details from "../components/products/Details";
+import RelatedProducts from "../components/products/RelatedProducts";
 
 export default function ProductDetails() {
   return (

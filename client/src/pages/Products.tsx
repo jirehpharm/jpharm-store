@@ -4,7 +4,7 @@ import ProductsGrid from "../components/products/ProductsGrid";
 export default function Products() {
   return (
     <div>
-      <BreadcrumbBanner title={"Antiseptic Spray"} bgImage={"https://themexriver.com/wp/vicodin/wp-content/themes/vicodin/assets/images/bg/14.jpg"} />
+      <BreadcrumbBanner title={"Antiseptic Spray"} />
       <div className="grid grid-cols-6 gap-5 max-w-6xl mx-auto">
         <div className="col-span-4">
           <ProductsGrid />

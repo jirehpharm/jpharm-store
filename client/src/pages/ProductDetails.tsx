@@ -2,6 +2,7 @@ import BreadcrumbBanner from "../components/Common/BreadcrumbBanner";
 import Details from "../components/products/Details";
 import Categories from "../components/products/Categories";
 import RelatedProducts from "../components/products/RelatedProducts";
+import ProductTab from "../components/products/ProductTab";
 import { listData } from "../components/products/constant";
 import TopRatedProductCard from "../components/Cards/TopRatedProductCard";
 import WidgetLayout from "../components/products/WidgetLayout";
@@ -14,6 +15,7 @@ export default function ProductDetails() {
       <div className="grid grid-cols-6 gap-5 mx-auto max-w-6xl my-20">
         <div className="col-span-4">
           <Details />
+          <ProductTab />
         </div>
         <div className="col-span-2">
           <Categories title={"Product Categories"} list={listData} />

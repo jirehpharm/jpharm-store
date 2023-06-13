@@ -1,3 +1,5 @@
+import { IListProps } from "./Categories/types";
+
 export const featuredProductDetails = [
   {
     showStars: true,
@@ -89,6 +91,37 @@ export const featuredProductDetails = [
     productName: "React Product ",
     price: "$124",
     originalPrice: "$156 ",
+  },
+];
+
+export const listData: IListProps[] = [
+  {
+    title: "Accessories",
+    link: "#",
+  },
+  {
+    title: "Clothing",
+    link: "#",
+  },
+  {
+    title: "Decor",
+    link: "#",
+  },
+  {
+    title: "Hoodies",
+    link: "#",
+  },
+  {
+    title: "Music",
+    link: "#",
+  },
+  {
+    title: "Tshirts",
+    link: "#",
+  },
+  {
+    title: "Uncategorized",
+    link: "#",
   },
 ];
 

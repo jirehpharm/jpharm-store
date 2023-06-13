@@ -3,14 +3,13 @@ import { FaHome } from "react-icons/fa";
 
 interface IBreadcrumbProps {
   title: string;
-  bgImage: string;
 }
 
 export default function BreadcrumbBanner(props: IBreadcrumbProps) {
-  const { title, bgImage } = props;
+  const { title } = props;
   return (
     <div
-      className={`bg-[url(${bgImage})] bg-cover py-28`}
+      className={`bg-[url(https://themexriver.com/wp/vicodin/wp-content/themes/vicodin/assets/images/bg/14.jpg)] bg-cover py-28`}
     >
       <div className="mx-auto max-w-6xl">
         <h1>{title}</h1>

@@ -11,11 +11,11 @@ export default function Navbar(props: INavProps) {
     <>
       {navbarData?.map((nav, idx: number) =>
         nav?.list ? (
-          <div className="font-bold dropdown hover:text-secondary" key={idx}>
-            <button>
+          <div className="font-bold dropdown group hover:text-secondary" key={idx}>
+            <a className="text-black group-hover:text-secondary cursor-pointer" href={nav.link}>
               {nav.title}{" "}
               <ChevronDownIcon className="inline w-4 h-4 text-primary font-bold" />
-            </button>
+            </a>
 
             {/* list */}
             <ul className="absolute bg-white min-w-[200px] pt-3">

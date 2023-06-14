@@ -24,13 +24,6 @@ export default function ProductDetails() {
       <div className="grid grid-cols-6 gap-5 mx-auto max-w-6xl my-20">
         <div className="col-span-4">
           <Details />
-          <Modal
-            ModalTrigger={
-              <Widgets Icon={ArrowsRightLeftIcon} tittle={"Compare"} />
-            }
-            ModalTitle={<h3>test modal</h3>}
-            ModalContent={<p>this is test modal</p>}
-          />
           <ProductTab tabsData={tabsData} />
           <RelatedProducts />
         </div>

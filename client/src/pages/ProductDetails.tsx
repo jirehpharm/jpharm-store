@@ -1,11 +1,11 @@
 import BreadcrumbBanner from "../components/Common/BreadcrumbBanner";
-import Details from "../components/products/Details";
-import Categories from "../components/products/Categories";
-import RelatedProducts from "../components/products/RelatedProducts";
-import ProductTab from "../components/products/ProductTab";
-import { listData } from "../components/products/constant";
+import Details from "../components/Products/Details";
+import Categories from "../components/Products/Categories";
+import RelatedProducts from "../components/Products/RelatedProducts";
+import ProductTab from "../components/Products/ProductTab";
+import { listData } from "../components/Products/constant";
 import TopRatedProductCard from "../components/Cards/TopRatedProductCard";
-import WidgetLayout from "../components/products/WidgetLayout";
+import WidgetLayout from "../components/Products/WidgetLayout";
 import { topRated } from "../components/Cards/TopRatedProductCard/constants";
 
 export default function ProductDetails() {

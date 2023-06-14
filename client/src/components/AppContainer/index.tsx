@@ -7,6 +7,7 @@ import Products from "../../pages/Products";
 import ForgotPassword from "../../pages/ForgotPassword";
 import ProductDetails from "../../pages/ProductDetails";
 import Login from "../../pages/Login";
+import Checkout from "../../pages/Checkout";
 
 export default function AppContainer() {
   return (
@@ -19,6 +20,7 @@ export default function AppContainer() {
         <Route path="/contact" element={<Contact />} />
         <Route path="products" element={<Products />} />
         <Route path="/product-details" element={<ProductDetails />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Route>
     </Routes>
   );

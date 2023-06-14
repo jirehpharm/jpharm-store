@@ -1,8 +1,4 @@
-interface InputProps {
-  placeholder: string;
-  type?: string | "text";
-  Icon?: React.ReactSVGElement | any;
-}
+import { InputProps } from "./types";
 
 export const InputField = (props: InputProps) => {
   const { placeholder, type, Icon } = props;

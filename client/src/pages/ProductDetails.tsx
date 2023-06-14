@@ -2,6 +2,7 @@ import BreadcrumbBanner from "../components/Common/BreadcrumbBanner";
 import Details from "../components/Products/Details";
 import Categories from "../components/Products/Categories";
 import RelatedProducts from "../components/Products/RelatedProducts";
+
 import ProductTab from "../components/Products/ProductTab";
 import { listData } from "../components/Products/constant";
 import TopRatedProductCard from "../components/Cards/TopRatedProductCard";

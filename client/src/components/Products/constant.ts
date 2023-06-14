@@ -897,3 +897,49 @@ export const gridData = [
     originalPrice: "$46.00",
   },
 ];
+
+export const reviewData = {
+  totalReviews: 80,
+  comments: [
+    {
+      image: "/placeholder/user.png",
+      name: "Adam Smit",
+      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus,
+            omnis fugit corporis iste magnam ratione.`,
+      date: "September 3, 2020",
+      stars: 3,
+    },
+    {
+      image: "/placeholder/user.png",
+      name: "Smit",
+      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus,
+    omnis fugit corporis iste magnam ratione.`,
+      date: "September 3, 2020",
+      stars: 4,
+    },
+    {
+      image: "/placeholder/user.png",
+      name: "Adam",
+      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus,
+    omnis fugit corporis iste magnam ratione.`,
+      date: "September 3, 2020",
+      stars: 5,
+    },
+  ],
+};
+
+
+export const additionalInfo = [
+  {
+    name: "Weight",
+    value: "	1.5 kg",
+  },
+  {
+    name: "Dimensions",
+    value: "10 × 8 × 3 cm",
+  },
+  {
+    name: "Logo",
+    value: "Yes, No",
+  },
+];

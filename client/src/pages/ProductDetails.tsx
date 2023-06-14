@@ -11,6 +11,7 @@ import PopularTags from "../components/products/PopularTags/index";
 import { popularTags } from "../components/products/PopularTags/constants";
 import SaleWidgetCard from "../components/Cards/SaleWidgetCard/saleWidgetCard";
 import { salesWidgetCard } from "../components/Cards/SaleWidgetCard/constants";
+import { tabsData } from "../components/Products/ProductTab/content";
 
 export default function ProductDetails() {
   return (
@@ -19,7 +20,7 @@ export default function ProductDetails() {
       <div className="grid grid-cols-6 gap-5 mx-auto max-w-6xl my-20">
         <div className="col-span-4">
           <Details />
-          <ProductTab />
+          <ProductTab tabsData={tabsData} />
           <RelatedProducts />
         </div>
         <div className="col-span-2">

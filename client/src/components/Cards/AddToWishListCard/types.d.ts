@@ -4,5 +4,4 @@ export interface IAddToWishListCardProps {
   productLink: string;
   btnLink: string;
   wishListLink: string;
-  closeWishList?: any;
 }

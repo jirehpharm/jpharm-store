@@ -80,7 +80,7 @@ export default function Detail() {
               <Widgets Icon={HeartIcon} tittle={"Add to Wishlist"} />
             }
             ModalTitle={<></>}
-            ModalContent={<AddToWishList addWhish={addWish} />}
+            ModalContent={<AddToWishList wishList={addWish} />}
           />
           <Widgets Icon={ArrowsRightLeftIcon} tittle={"Compare"} />
         </div>

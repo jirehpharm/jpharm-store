@@ -3,7 +3,7 @@ import Details from "../components/products/Details";
 import Categories from "../components/products/Categories";
 import RelatedProducts from "../components/products/RelatedProducts";
 import ProductTab from "../components/products/ProductTab";
-import { listData } from "../components/products/constant";
+import { listData } from "../components/Products/constants";
 import TopRatedProductCard from "../components/Cards/TopRatedProductCard";
 import WidgetLayout from "../components/products/WidgetLayout";
 import { topRated } from "../components/Cards/TopRatedProductCard/constants";

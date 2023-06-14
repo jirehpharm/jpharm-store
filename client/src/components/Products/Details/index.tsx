@@ -7,6 +7,9 @@ import Button from "../../Common/Button";
 import getStars from "../../getStars";
 import Widgets from "./Widgets";
 import SocialLinks from "../../Common/SocialLinks";
+import Modal from "../../Modal";
+import AddToWishList from "../../Cards/AddToWishListCard/AddToWishList";
+import { addWish } from "../../Cards/AddToWishListCard/constants";
 
 const socialData = [
   {
@@ -61,7 +64,13 @@ export default function Detail() {
           </Button>
         </div>
         <div className="flex space-x-6 py-4 border-b border-gray-100">
-          <Widgets Icon={HeartIcon} tittle={"Add to Wishlist"} />
+          <Modal
+            ModalTrigger={
+              <Widgets Icon={HeartIcon} tittle={"Add to Wishlist"} />
+            }
+            ModalTitle={<></>}
+            ModalContent={<AddToWishList addWhish={addWish} />}
+          />
           <Widgets Icon={ArrowsRightLeftIcon} tittle={"Compare"} />
         </div>
         <div className="flex items-center space-x-6 py-4 border-b border-gray-100">

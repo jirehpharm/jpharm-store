@@ -1,5 +1,6 @@
 import ProductOverViewCard from "../Cards/ProductOverViewCard";
 import { IProductProps } from "../Home/types";
+import { gridData } from "./constant";
 
 import ReactPaginate from "react-paginate";
 import React, { useEffect, useState } from "react";

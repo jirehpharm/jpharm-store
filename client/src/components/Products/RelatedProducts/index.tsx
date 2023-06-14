@@ -1,6 +1,6 @@
 import ProductOverViewCard from "../../Cards/ProductOverViewCard";
 import Carousel from "../../Carousel";
-import { featuredProductDetails } from "../constants";
+import { featuredProductDetails } from "../constant";
 import { IFeaturedProductProps } from "./types";
 
 export default function index() {

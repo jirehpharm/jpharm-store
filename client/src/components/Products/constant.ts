@@ -897,3 +897,24 @@ export const gridData = [
     originalPrice: "$46.00",
   },
 ];
+
+export const productPreview = [
+  {
+    imgSrc: "placeholder/600x701.png",
+  },
+  {
+    imgSrc: "placeholder/600x701.png",
+  },
+  {
+    imgSrc: "placeholder/600x701.png",
+  },
+  {
+    imgSrc: "placeholder/600x701.png",
+  },
+  {
+    imgSrc: "placeholder/600x701.png",
+  },
+  {
+    imgSrc: "placeholder/600x701.png",
+  },
+];

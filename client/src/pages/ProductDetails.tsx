@@ -2,7 +2,6 @@ import BreadcrumbBanner from "../components/Common/BreadcrumbBanner";
 import Details from "../components/Products/Details";
 import Categories from "../components/Products/Categories";
 import RelatedProducts from "../components/Products/RelatedProducts";
-import { ArrowsRightLeftIcon } from "@heroicons/react/24/outline";
 
 import ProductTab from "../components/Products/ProductTab";
 import { listData } from "../components/Products/constant";
@@ -13,8 +12,6 @@ import PopularTags from "../components/Products/PopularTags/index";
 import { popularTags } from "../components/Products/PopularTags/constants";
 import SaleWidgetCard from "../components/Cards/SaleWidgetCard/saleWidgetCard";
 import { salesWidgetCard } from "../components/Cards/SaleWidgetCard/constants";
-import Modal from "../components/Modal";
-import Widgets from "../components/Products/Details/Widgets";
 import { tabsData } from "../components/Products/ProductTab/content";
 
 export default function ProductDetails() {

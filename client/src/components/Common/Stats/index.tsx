@@ -1,4 +1,4 @@
-const data = [
+const statsData = [
   {
     title: "Free shipping",
     description: "On all orders over $49.00",
@@ -25,17 +25,22 @@ export default function Stats() {
     <div className="ltn__feature-area bg-sectionColor mt-24 py-7 lg:mt-16">
       <div className="max-w-6xl mx-auto">
         <div className=" grid grid-cols-4">
-          {data.map((item: { title: string; description: string; image: string }, index: number) => (
-            <div className="flex items-center mt-5" key={index}>
-              <div className="mb-5 mr-2 flex w-[20%]">
-                <img src={item.image} alt="#" className="" />
+          {statsData.map(
+            (
+              item: { title: string; description: string; image: string },
+              index: number
+            ) => (
+              <div className="flex items-center mt-5" key={index}>
+                <div className="mb-5 mr-2 flex w-[20%]">
+                  <img src={item.image} alt="#" />
+                </div>
+                <div>
+                  <h4>{item.title}</h4>
+                  <p>{item.description}</p>
+                </div>
               </div>
-              <div>
-                <h4>{item.title}</h4>
-                <p>{item.description}</p>
-              </div>
-            </div>
-          ))}
+            )
+          )}
         </div>
       </div>
     </div>

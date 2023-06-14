@@ -11,7 +11,7 @@ export default function Index({ title, subtitle }: IHeadingProps): JSX.Element {
   return (
     <div className="flex justify-center flex-col items-center ">
       <h1 className="text-center">{title}</h1>
-      {subtitle && <p className="text-center w-[400px]">{subtitle}</p>}
+      {subtitle && <p className="text-center w-[450px]">{subtitle}</p>}
       <br />
     </div>
   );

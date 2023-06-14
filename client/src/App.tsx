@@ -5,6 +5,7 @@ import ContactNav from "./components/Common/ContactNav";
 import PrimaryNav from "./components/Common/PrimaryNav";
 import Footer from "./components/Common/Footer";
 import CTA from "./components/Common/CTA";
+import SecondaryNav from "./components/Common/SecondaryNav";
 import "./style/App.css";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <>
       <ContactNav />
       <PrimaryNav />
+      <SecondaryNav />
       <BrowserRouter>
         <Routes>
           <Route path="*" element={<AppContainer />} />

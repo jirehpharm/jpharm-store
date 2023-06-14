@@ -43,8 +43,10 @@ body {
   @apply inline-block text-base bg-secondary text-white font-bold text-center cursor-pointer transition-all duration-[0.3s] ease-[ease] delay-[0s] z-[1] mr-[15px] px-10 py-[17px] rounded-none;
 }
 
-.btn:hover {
-  @apply bg-primary text-white
+.btn:hover,
+.btn:focus,
+.btn:active {
+  @apply bg-primary text-white;
 }
 
 .btn:last-child {
@@ -56,7 +58,7 @@ body {
 }
 
 .theme-btn-1:hover {
-  @apply bg-primary text-white
+  @apply bg-white text-secondary border border-secondary;
 }
 
 .theme-btn-2 {
@@ -64,7 +66,7 @@ body {
 }
 
 .theme-btn-2:hover {
-  @apply bg-secondary text-white
+  @apply bg-secondary text-white;
 }
 
 .btn-white {
@@ -72,7 +74,7 @@ body {
 }
 
 .btn-white:hover {
-  @apply bg-primary text-white
+  @apply bg-primary text-white;
 }
 
 h1 {
@@ -133,7 +135,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 pre,
@@ -142,7 +144,7 @@ kbd,
 tt,
 var,
 samp {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 pre {
@@ -195,13 +197,159 @@ ol li {
 }
 
 .product-badge li:first {
-  @apply mt-0
+  @apply mt-0;
 }
 
 .product-badge li::before {
-  @apply absolute content-[""] border-l-secondary w-0 h-0 hidden border-l-8 border-b-8 border-b-transparent border-solid left-0 -bottom-2
+  @apply absolute content-[""] border-l-secondary w-0 h-0 hidden border-l-8 border-b-8 border-b-transparent border-solid left-0 -bottom-2;
 }
 
 .product-badge li .soldout-badge {
   @apply bg-red-500;
+}
+
+.product-hover-action {
+  @apply absolute text-center -translate-y-2/4 opacity-0 invisible transition-all duration-[0.3s] ease-[ease] delay-[0s] top-[60%] inset-x-0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+}
+
+.ltn__product-item:hover .product-hover-action {
+  @apply opacity-100 visible top-2/4;
+}
+
+.product-hover-action ul {
+  @apply inline-block shadow m-0 p-0;
+}
+
+.product-hover-action li {
+  @apply h-[50px] w-[50px] leading-[50px] text-sm text-center float-left border-r-[#d1dae0] mr-0 mt-0 border-r border-solid;
+  list-style: none;
+}
+
+.product-hover-action li:last-child {
+  @apply mr-0 border-r-0;
+}
+
+.product-hover-action li a {
+  @apply bg-white text-light font-bold h-full w-full flex justify-center items-center;
+}
+
+.product-hover-action li:hover a {
+  @apply bg-secondary text-white;
+}
+
+.ltn__product-item-3 {
+  @apply border-[#f6f6f6] transition-all duration-[0.3s] ease-[ease] delay-[0s] border-2 border-solid;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+}
+
+.ltn__product-item-3:hover {
+  @apply shadow-xl;
+}
+
+.ltn__product-item-3 .product-img::before {
+  @apply hidden;
+}
+
+.ltn__product-item-3 .product-info {
+  @apply pt-[25px] pb-[15px] px-[30px];
+}
+
+.ltn__product-item-3 .product-price {
+  @apply text-sm text-secondary font-bold;
+}
+
+.ltn__product-item-3 .product-price del {
+  @apply text-[13px] opacity-60;
+}
+
+.ltn__product-item-3 .product-info-brief {
+  @apply border-[#f6f6f6] max-w-[400px] mb-[15px] border-t-2 border-solid;
+}
+
+.ltn__product-item-3 .product-info-brief ul {
+  @apply flex justify-between m-0 p-0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+}
+
+.ltn__product-item-3 .product-info-brief ul li {
+  @apply inline-block text-sm font-bold;
+  list-style: none;
+}
+
+.ltn__product-item-3 .product-info-brief ul li i {
+  @apply text-secondary mr-[5px];
+}
+
+.ltn__product-item-3:hover {
+  @apply shadow;
+}
+
+.ltn__product-item-3:hover .product-hover-action {
+  @apply top-[70%];
+}
+
+.dropdown ul {
+  display: none;
+}
+
+.dropdown:hover ul {
+  display: block;
+}
+
+.swiper-button-next:after {
+  content: url("img/icons/svg/right-arrow.svg") !important;
+  @apply w-[30px];
+}
+
+.swiper-button-next:hover:after {
+  content: url("img/icons/svg/right-arrow-white.svg") !important;
+  @apply w-[30px];
+}
+
+.swiper-button-prev:after {
+  content: url("img/icons/svg/left-arrow.svg") !important;
+  @apply w-[30px];
+}
+
+.swiper-button-prev:hover:after {
+  content: url("img/icons/svg/left-arrow-white.svg") !important;
+  @apply w-[30px];
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  @apply rounded-[50%] h-10 w-10 shadow-xl !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  @apply rounded-[50%] bg-secondary h-10 w-10;
+}
+
+.sub-dropdown ul {
+  display: none !important;
+}
+
+.sub-dropdown:hover ul {
+  display: block !important;
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.paginationActive a {
+  @apply text-white bg-secondary border-0
 }

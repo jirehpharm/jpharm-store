@@ -1,15 +1,14 @@
 import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/outline";
-import { GlobeAltIcon } from "@heroicons/react/24/outline";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { AiOutlineTwitter } from "react-icons/ai";
 
 import SocialLinks from "./SocialLinks";
 
+const email = "info@mail.com";
+const emailSubject = "Flower greetings to you";
+const location = "15/A, Nest Tower, NYC";
+
 const socialData = [
-  {
-    url: "#",
-    icon: GlobeAltIcon,
-  },
   {
     url: "#",
     icon: FaFacebook,
@@ -31,21 +30,24 @@ export default function ContactNav() {
         <ul className="flex space-x-4 text-sm">
           <li className="font-bold">
             <a
-              href="mailto:info@mail.com?Subject=Flower%20greetings%20to%20you"
+              href={`mailto:${email}?subject=${emailSubject}`}
               className="flex items-center text-light gap-1 hover:text-secondary"
             >
-              <EnvelopeIcon className="h-4 w-4 inline text-secondary" />{" "}
-              info@mail.com
+              <EnvelopeIcon className="h-4 w-4 inline text-secondary" />
+              {email}
             </a>
           </li>
           <li className="text-light font-bold">
-            <a href="locations.html" className="flex items-center gap-1 text-light">
-              <MapPinIcon className="h-4 w-4 inline text-secondary" /> 15/A,
-              Nest Tower, NYC
+            <a
+              href="locations.html"
+              className="flex items-center gap-1 text-light"
+            >
+              <MapPinIcon className="h-4 w-4 inline text-secondary" />
+              {location}
             </a>
           </li>
         </ul>
-        <SocialLinks socialData={socialData}/>
+        <SocialLinks socialData={socialData} />
       </div>
     </div>
   );

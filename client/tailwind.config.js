@@ -8,6 +8,7 @@ export default {
         secondary: "#0a9a73",
         light: "#657984",
         sectionColor: "#F2F6F7",
+        borderColor: "#E4ECF2",
       },
       backgroundColor: {
         background: "#f3f4f6",

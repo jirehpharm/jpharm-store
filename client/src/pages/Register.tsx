@@ -10,7 +10,7 @@ export default function Register(): JSX.Element {
   const fields = [
     { name: "First Name", type: "text" },
     { name: "Last Name", type: "text" },
-    { name: "Email", type: "text" },
+    { name: "Email", type: "email" },
     { name: "Password", type: "password" },
     { name: "Confirm Password", type: "password" },
   ];
@@ -27,7 +27,7 @@ export default function Register(): JSX.Element {
           {fields.map(({ name, type }, index) => (
             <input
               key={index}
-              className="block border-2 border-[#E4ECF2] focus:border-[#0A9A73] focus-visible:outline-0 bg-white w-full p-5 mb-4"
+              className="block border-2 border-borderColor focus:border-secondary focus-visible:outline-0 bg-white w-full p-5 mb-4"
               type={type}
               name={name}
               placeholder={name}
@@ -57,7 +57,7 @@ export default function Register(): JSX.Element {
           </div>
           <br />
           <div className="flex justify-center">
-            <Button type="submit" varient="default">
+            <Button type="submit" variant="default">
               CREATE ACCOUNT
             </Button>
           </div>

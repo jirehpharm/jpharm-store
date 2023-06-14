@@ -15,7 +15,7 @@ export default function PriceRange({
     <div>
       <div className="grid grid-cols-2 text-light">
         <p className="text-light">Your Range:</p>
-        <p className="font-black text-light">
+        <p className="font-bold text-light">
           ${range.lowestPrice}-${range.highestPrice}
         </p>
       </div>
@@ -35,8 +35,8 @@ export default function PriceRange({
         <Slider.Track className="bg-light relative grow rounded-full h-[3px]">
           <Slider.Range className="absolute bg-secondary rounded-full h-full" />
         </Slider.Track>
-        <Slider.Thumb className="block w-5 h-5 bg-white shadow-[0_2px_10px] shadow-blackA7 rounded-[10px]" aria-label="Volume" />
-        <Slider.Thumb className="block w-5 h-5 bg-white shadow-[0_2px_10px] shadow-blackA7 rounded-[10px]" aria-label="Volume" />
+        <Slider.Thumb className="block w-4 h-4 bg-secondary shadow-[0_1px_4px]  rounded-[10px]" aria-label="Volume" />
+        <Slider.Thumb className="block w-4 h-4 bg-secondary shadow-[0_1px_4px]  rounded-[10px]" aria-label="Volume" />
       </Slider.Root>
     </div>
   );

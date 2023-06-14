@@ -104,6 +104,7 @@ function PaginatedItems({ items, itemsPerPage }: IPaginatedItemsProps) {
 export default function ProductsGrid({ gridData }: { gridData: IProductProps[] }) {
   const [selectedSortOption, setSelectedSortOption] = useState<string>("default");
   const [sortedGridData, setSortedGridData] = useState(gridData);
+
   useEffect(() => {
     setSortedGridData(gridData);
   }, [gridData]);

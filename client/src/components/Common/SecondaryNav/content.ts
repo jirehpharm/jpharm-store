@@ -56,7 +56,7 @@ export const hygiene: INavData[] = [
 export const shopList: INavSubListGroup[] = [
   {
     title: "Cold Medicine",
-    link: "#",
+    link: "/product-details",
     subList: coldMedicine,
   },
   {
@@ -99,8 +99,8 @@ export const CategoryOptions:ICategory[] = [
 
 export const navbarData: INavList = [
   {
-    title: "Home",
-    link: "/",
+    title: "Login",
+    link: "/login",
   },
   {
     title: "About",
@@ -108,7 +108,7 @@ export const navbarData: INavList = [
   },
   {
     title: "Shop",
-    link: "",
+    link: "/products",
     list: shopList,
   },
   {
@@ -123,6 +123,6 @@ export const navbarData: INavList = [
   },
   {
     title: "Contact",
-    link: "#",
+    link: "/contact",
   },
 ];

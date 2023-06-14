@@ -1,6 +1,5 @@
 import ProductOverViewCard from "../Cards/ProductOverViewCard";
 import { IProductProps } from "../Home/types";
-import { gridData } from "./constant";
 
 import ReactPaginate from "react-paginate";
 import React, { useEffect, useState } from "react";
@@ -62,7 +61,7 @@ function Items({ currentItems }: IItemsProps) {
 }
 
 function PaginatedItems({ items, itemsPerPage }: IPaginatedItemsProps) {
-  const [currentItems, setCurrentItems] = useState<IProductProps[] | null>(null);
+  const [currentItems, setCurrentItems] = useState<IProductProps[] | null>(items);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
 
@@ -105,6 +104,10 @@ function PaginatedItems({ items, itemsPerPage }: IPaginatedItemsProps) {
 export default function ProductsGrid({ gridData }: { gridData: IProductProps[] }) {
   const [selectedSortOption, setSelectedSortOption] = useState<string>("default");
   const [sortedGridData, setSortedGridData] = useState(gridData);
+  useEffect(() => {
+    setSortedGridData(gridData);
+  }, [gridData]);
+
   const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const value = event.target.value;
     setSelectedSortOption(value);

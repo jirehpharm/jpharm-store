@@ -5,6 +5,8 @@ import ProductsGrid from "../components/Products/ProductsGrid";
 import WidgetLayout from "../components/Products/WidgetLayout";
 import { gridData, listData } from "../components/Products/constant";
 import PriceRange from "../components/Products/PriceRange";
+import SaleWidgetCard from "../components/Cards/SaleWidgetCard/saleWidgetCard";
+import { salesWidgetCard } from "../components/Cards/SaleWidgetCard/constants";
 
 export default function Products() {
   const [sortedGridData, setSortedGridData] = useState(gridData);
@@ -43,6 +45,7 @@ export default function Products() {
           <WidgetLayout title={"Filter By Price"}>
             <PriceRange highestPrice={highestPrice} lowestPrice={lowestPrice} setRange={setRange} range={range} />
           </WidgetLayout>
+          <SaleWidgetCard saleWidgetCard={[salesWidgetCard]} />
         </div>
       </div>
     </div>

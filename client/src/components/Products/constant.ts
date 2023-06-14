@@ -519,7 +519,7 @@ export const gridData = [
     wishlist: "#",
     stars: 5,
     productName: "Antiseptic Spray",
-    price: "$32.00",
+    price: "$20.00",
     originalPrice: "$46.00",
   },
   {
@@ -563,7 +563,7 @@ export const gridData = [
     wishlist: "#",
     stars: 3,
     productName: "Antiseptic Spray",
-    price: "$32.00",
+    price: "$24.00",
     originalPrice: "$46.00",
   },
   {
@@ -898,6 +898,51 @@ export const gridData = [
   },
 ];
 
+export const reviewData = {
+  totalReviews: 80,
+  comments: [
+    {
+      image: "/placeholder/user.png",
+      name: "Adam Smit",
+      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus,
+            omnis fugit corporis iste magnam ratione.`,
+      date: "September 3, 2020",
+      stars: 3,
+    },
+    {
+      image: "/placeholder/user.png",
+      name: "Smit",
+      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus,
+    omnis fugit corporis iste magnam ratione.`,
+      date: "September 3, 2020",
+      stars: 4,
+    },
+    {
+      image: "/placeholder/user.png",
+      name: "Adam",
+      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus,
+    omnis fugit corporis iste magnam ratione.`,
+      date: "September 3, 2020",
+      stars: 5,
+    },
+  ],
+};
+
+
+export const additionalInfo = [
+  {
+    name: "Weight",
+    value: "	1.5 kg",
+  },
+  {
+    name: "Dimensions",
+    value: "10 × 8 × 3 cm",
+  },
+  {
+    name: "Logo",
+    value: "Yes, No",
+  },
+];
 export const productPreview = [
   {
     imgSrc: "placeholder/600x701.png",

@@ -32,6 +32,7 @@ export default function Products() {
 
   let highestPrice = parseFloat(get(gridData, "[0].price", "").replace("$", ""));
   let lowestPrice = parseFloat(get(gridData, "[0].price", "").replace("$", ""));
+
   for (let i = 1; i < gridData.length; i++) {
     const price = parseFloat(gridData[i].price.replace("$", ""));
     if (price > highestPrice) {

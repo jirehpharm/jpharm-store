@@ -7,6 +7,10 @@ import { listData } from "../components/Products/constant";
 import TopRatedProductCard from "../components/Cards/TopRatedProductCard";
 import WidgetLayout from "../components/Products/WidgetLayout";
 import { topRated } from "../components/Cards/TopRatedProductCard/constants";
+import PopularTags from "../components/products/PopularTags/index";
+import { popularTags } from "../components/products/PopularTags/constants";
+import SaleWidgetCard from "../components/Cards/SaleWidgetCard/saleWidgetCard";
+import { salesWidgetCard } from "../components/Cards/SaleWidgetCard/constants";
 
 export default function ProductDetails() {
   return (
@@ -22,6 +26,10 @@ export default function ProductDetails() {
           <WidgetLayout title={"Top Rated Products"}>
             <TopRatedProductCard productData={topRated} />
           </WidgetLayout>
+          <WidgetLayout title="Popular Tags">
+            <PopularTags tags={popularTags} />
+          </WidgetLayout>
+          <SaleWidgetCard saleWidgetCard={[salesWidgetCard]} />
         </div>
       </div>
       <RelatedProducts />

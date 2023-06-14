@@ -1,5 +1,5 @@
 import BreadcrumbBanner from "../components/Common/BreadcrumbBanner";
-import ProductsGrid from "../components/products/ProductsGrid";
+import ProductsGrid from "../components/Products/ProductsGrid";
 
 export default function Products() {
   return (

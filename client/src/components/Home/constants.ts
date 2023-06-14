@@ -3,10 +3,22 @@ import { FaDumbbell, FaMountain } from "react-icons/fa";
 import { TbWashGentle } from "react-icons/tb";
 
 export const heroSectionData = {
-  offer: "Up To 50% Off Today Only!",
-  title: "Gold Standard Pre-Workout",
-  price: "Starting at &16.99",
-  buttonUrl: "#",
+  carouselData: [
+    {
+      offer: "Up To 50% Off Today Only!",
+      title: "Gold Standard Pre-Workout",
+      price: "Starting at &16.99",
+      buttonUrl: "#",
+      image: `placeholder/1408x993.jpg`,
+    },
+    {
+      offer: "Up To 70% Off Today Only!",
+      title: "Standard Pre-Workout",
+      price: "Starting at &16.99",
+      buttonUrl: "#",
+      image: `placeholder/1408x993.jpg`,
+    },
+  ],
 };
 
 export const offerSectionData = {
@@ -15,10 +27,8 @@ export const offerSectionData = {
   title: "Today's Hot Offer",
   subtitle1: "Free Covid-19 Vaccine",
   subtitle2: "Campaign Ticket",
-  description1:
-    "Get vaccinated against Covid-19 for free and protect yourself and others. Don't miss out on this opportunity!",
-  description2:
-    "Join our campaign and get a chance to win an exclusive ticket to an exciting event. Experience it like never before!",
+  description1: "Get vaccinated against Covid-19 for free and protect yourself and others. Don't miss out on this opportunity!",
+  description2: "Join our campaign and get a chance to win an exclusive ticket to an exciting event. Experience it like never before!",
 };
 
 export const featuredProductsData = [
@@ -98,4 +108,3 @@ export const widgetsData = [
     title: "Rewashes & Reusable",
   },
 ];
-

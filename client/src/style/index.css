@@ -334,6 +334,10 @@ ol li {
   @apply rounded-[50%] bg-secondary h-10 w-10;
 }
 
+.swiper-pagination-bullet-active {
+  @apply bg-secondary !important;
+}
+
 .sub-dropdown ul {
   display: none !important;
 }

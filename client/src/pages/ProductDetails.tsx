@@ -2,6 +2,7 @@ import BreadcrumbBanner from "../components/Common/BreadcrumbBanner";
 import Details from "../components/Products/Details";
 import Categories from "../components/Products/Categories";
 import RelatedProducts from "../components/Products/RelatedProducts";
+
 import ProductTab from "../components/Products/ProductTab";
 import { listData } from "../components/Products/constant";
 import TopRatedProductCard from "../components/Cards/TopRatedProductCard";
@@ -11,6 +12,7 @@ import PopularTags from "../components/Products/PopularTags/index";
 import { popularTags } from "../components/Products/PopularTags/constants";
 import SaleWidgetCard from "../components/Cards/SaleWidgetCard/saleWidgetCard";
 import { salesWidgetCard } from "../components/Cards/SaleWidgetCard/constants";
+import { tabsData } from "../components/Products/ProductTab/content";
 
 export default function ProductDetails() {
   return (
@@ -19,8 +21,7 @@ export default function ProductDetails() {
       <div className="grid grid-cols-6 gap-5 mx-auto max-w-6xl my-20">
         <div className="col-span-4">
           <Details />
-          <ProductTab />
-          <RelatedProducts />
+          <ProductTab tabsData={tabsData} />
         </div>
         <div className="col-span-2">
           <Categories title={"Product Categories"} list={listData} />
@@ -33,6 +34,7 @@ export default function ProductDetails() {
           <SaleWidgetCard saleWidgetCard={[salesWidgetCard]} />
         </div>
       </div>
+      <RelatedProducts />
     </>
   );
 }

@@ -1,8 +1,12 @@
-export interface IHeroSectionProps {
+export interface IHeroSectionPropsData {
   offer?: string;
   title: string;
   price?: string;
   buttonUrl?: string;
+  image?: string;
+}
+export interface IHeroSectionProps {
+  carouselData: IHeroSectionPropsData[];
 }
 
 export interface IWidgetsProps {

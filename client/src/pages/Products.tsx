@@ -7,6 +7,7 @@ import WidgetLayout from "../components/Products/WidgetLayout";
 import { gridData, listData } from "../components/Products/constant";
 import PriceRange from "../components/Products/PriceRange";
 import Search from "../components/Products/Search";
+import { get } from "lodash";
 
 export default function Products() {
   const [sortedGridData, setSortedGridData] = useState(gridData);
@@ -29,8 +30,8 @@ export default function Products() {
     setSortedGridData(filteredData);
   }, [searchText, range]);
 
-  let highestPrice = parseFloat(gridData[0].price.replace("$", ""));
-  let lowestPrice = parseFloat(gridData[0].price.replace("$", ""));
+  let highestPrice = parseFloat(get(gridData, "[0].price", "").replace("$", ""));
+  let lowestPrice = parseFloat(get(gridData, "[0].price", "").replace("$", ""));
   for (let i = 1; i < gridData.length; i++) {
     const price = parseFloat(gridData[i].price.replace("$", ""));
     if (price > highestPrice) {

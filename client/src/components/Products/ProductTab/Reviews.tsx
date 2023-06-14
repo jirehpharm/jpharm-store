@@ -1,3 +1,4 @@
+import ReviewForm from "../../ReviewForm";
 import getStars from "../../getStars";
 import { IReviewsProp } from "./types";
 
@@ -41,6 +42,7 @@ export default function Reviews(props: IReviews) {
           </div>
         </div>
       ))}
+      <ReviewForm />
     </div>
   );
 }

@@ -519,7 +519,7 @@ export const gridData = [
     wishlist: "#",
     stars: 5,
     productName: "Antiseptic Spray",
-    price: "$32.00",
+    price: "$20.00",
     originalPrice: "$46.00",
   },
   {
@@ -563,7 +563,7 @@ export const gridData = [
     wishlist: "#",
     stars: 3,
     productName: "Antiseptic Spray",
-    price: "$32.00",
+    price: "$24.00",
     originalPrice: "$46.00",
   },
   {
@@ -941,5 +941,25 @@ export const additionalInfo = [
   {
     name: "Logo",
     value: "Yes, No",
+  },
+];
+export const productPreview = [
+  {
+    imgSrc: "placeholder/600x701.png",
+  },
+  {
+    imgSrc: "placeholder/600x701.png",
+  },
+  {
+    imgSrc: "placeholder/600x701.png",
+  },
+  {
+    imgSrc: "placeholder/600x701.png",
+  },
+  {
+    imgSrc: "placeholder/600x701.png",
+  },
+  {
+    imgSrc: "placeholder/600x701.png",
   },
 ];

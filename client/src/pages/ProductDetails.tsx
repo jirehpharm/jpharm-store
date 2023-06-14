@@ -1,14 +1,14 @@
 import BreadcrumbBanner from "../components/Common/BreadcrumbBanner";
-import Details from "../components/Products/Details";
-import Categories from "../components/Products/Categories";
-import RelatedProducts from "../components/Products/RelatedProducts";
-import ProductTab from "../components/Products/ProductTab";
-import { listData } from "../components/Products/constant";
+import Details from "../components/ProductsComponents/Details";
+import Categories from "../components/ProductsComponents/Categories";
+import RelatedProducts from "../components/ProductsComponents/RelatedProducts";
+import ProductTab from "../components/ProductsComponents/ProductTab";
+import { listData } from "../components/ProductsComponents/constant";
 import TopRatedProductCard from "../components/Cards/TopRatedProductCard";
-import WidgetLayout from "../components/Products/WidgetLayout";
+import WidgetLayout from "../components/ProductsComponents/WidgetLayout";
 import { topRated } from "../components/Cards/TopRatedProductCard/constants";
-import PopularTags from "../components/products/PopularTags/index";
-import { popularTags } from "../components/products/PopularTags/constants";
+import PopularTags from "../components/ProductsComponents/PopularTags/index";
+import { popularTags } from "../components/ProductsComponents/PopularTags/constants";
 import SaleWidgetCard from "../components/Cards/SaleWidgetCard/saleWidgetCard";
 import { salesWidgetCard } from "../components/Cards/SaleWidgetCard/constants";
 

@@ -353,3 +353,7 @@ ol li {
 .paginationActive a {
   @apply text-white bg-secondary border-0
 }
+
+input[type="text"], input[type="email"], input[type="password"], input[type="submit"], textarea {
+  background-color: #ffffff;
+}

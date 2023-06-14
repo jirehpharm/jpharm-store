@@ -1,3 +1,5 @@
+import { IProductProps } from "../Home/types";
+
 export interface IPaginationProps {
   pageCount: number;
   onPageChange: (event: { selected: number }) => void;

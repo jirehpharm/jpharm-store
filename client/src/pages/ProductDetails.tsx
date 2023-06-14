@@ -15,6 +15,7 @@ import SaleWidgetCard from "../components/Cards/SaleWidgetCard/saleWidgetCard";
 import { salesWidgetCard } from "../components/Cards/SaleWidgetCard/constants";
 import Modal from "../components/Modal";
 import Widgets from "../components/Products/Details/Widgets";
+import { tabsData } from "../components/Products/ProductTab/content";
 
 export default function ProductDetails() {
   return (
@@ -30,7 +31,7 @@ export default function ProductDetails() {
             ModalTitle={<h3>test modal</h3>}
             ModalContent={<p>this is test modal</p>}
           />
-          <ProductTab />
+          <ProductTab tabsData={tabsData} />
           <RelatedProducts />
         </div>
         <div className="col-span-2">

@@ -7,6 +7,9 @@ import Button from "../../Common/Button";
 import getStars from "../../getStars";
 import Widgets from "./Widgets";
 import SocialLinks from "../../Common/SocialLinks";
+import { productPreview } from "../constant";
+import Carousel from "../../Carousel";
+import { IProductPreviewProps } from "./types";
 import Modal from "../../Modal";
 import AddToWishList from "../../Cards/AddToWishListCard/AddToWishList";
 import { addWish } from "../../Cards/AddToWishListCard/constants";
@@ -30,11 +33,19 @@ const socialData = [
   },
 ];
 
+const content = productPreview?.map(
+  (item: IProductPreviewProps, index: number) => (
+    <div key={index} className="relative p-2">
+      <img src={item.imgSrc} alt="image" className="h-20 w-20" />
+    </div>
+  )
+);
 export default function Detail() {
   return (
     <div className="grid grid-cols-2 gap-4 pr-4">
       <div className="px-5">
         <img src="/placeholder/600x701.png" alt="600x701" />
+        <Carousel slidesPerView={4} slides={content} />
       </div>
       <div>
         <div className="flex items-center">

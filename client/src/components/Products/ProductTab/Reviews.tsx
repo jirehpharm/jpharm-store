@@ -1,3 +1,4 @@
+import ReviewForm from "../../ReviewForm";
 import getStars from "../../getStars";
 
 export default function Review() {
@@ -31,6 +32,7 @@ export default function Review() {
           </p>
         </div>
       </div>
+      <ReviewForm/>
     </div>
   );
 }

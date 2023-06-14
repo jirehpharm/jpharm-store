@@ -58,7 +58,7 @@ export default function PrimaryNav(): JSX.Element {
             productQuantity={0}
             amount={undefined}
             viewCartLink={"/cart"}
-            checkOutCartLink={""}
+            checkOutCartLink={"/checkout"}
             productCount={undefined}
             closeDrawer={setIsOpen}
           />

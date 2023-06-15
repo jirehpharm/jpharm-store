@@ -12,7 +12,7 @@ const navigation: TNavigation = [
       { name: "All Products", href: "#" },
       { name: "Location Map", href: "#" },
       { name: "FAQ", href: "#" },
-      { name: "Contact Us", href: "#" },
+      { name: "Contact Us", href: "/contact" },
     ],
   },
   {
@@ -20,7 +20,7 @@ const navigation: TNavigation = [
     list: [
       { name: "Order tracking", href: "/order-tracking" },
       { name: "Wish List", href: "#" },
-      { name: "Login", href: "#" },
+      { name: "Login", href: "/login" },
       { name: "My Account", href: "#" },
       { name: "Terms & Conditions", href: "#" },
       { name: "Promotional Offers", href: "#" },
@@ -29,12 +29,12 @@ const navigation: TNavigation = [
   {
     name: "Customer Care",
     list: [
-      { name: "Login", href: "#" },
+      { name: "Login", href: "/login" },
       { name: "My account", href: "#" },
       { name: "Wish List", href: "#" },
       { name: "Order tracking", href: "#" },
       { name: "FAQ", href: "#" },
-      { name: "Contact us", href: "#" },
+      { name: "Contact us", href: "/contact" },
     ],
   },
 ];

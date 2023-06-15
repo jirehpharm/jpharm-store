@@ -1,11 +1,11 @@
+import { useState } from "react";
 import { GlobeAltIcon, PencilIcon, UserIcon } from "@heroicons/react/20/solid";
 import { IoCall } from "react-icons/io5";
 import { RiMailFill } from "react-icons/ri";
 import { InputField } from "../Form/InputField";
 import SelectField from "../Form/SelectField";
-import { selectData } from "./constants";
-import { useState } from "react";
 import { OptionProps } from "../Form/types";
+import { selectData } from "./constants";
 
 export default function BillingDetails() {
   const [selected, setSelected] = useState<OptionProps>();

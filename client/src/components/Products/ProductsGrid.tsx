@@ -2,7 +2,7 @@ import ProductOverViewCard from "../Cards/ProductOverViewCard";
 import { IProductProps } from "../Home/types";
 
 import ReactPaginate from "react-paginate";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { IItemsProps, IPaginatedItemsProps, IPaginationProps } from "./types";
 import SelectField from "../Form/SelectField";
 import { selectData } from "./constant";
@@ -59,14 +59,21 @@ function Items({ currentItems }: IItemsProps) {
     <div className="items grid grid-cols-3 gap-5">
       {currentItems &&
         currentItems.map((item: IProductProps, index: number) => (
-          <ProductOverViewCard isTextCenter={false} {...item} showStars={true} key={index} />
+          <ProductOverViewCard
+            isTextCenter={false}
+            {...item}
+            showStars={true}
+            key={index}
+          />
         ))}
     </div>
   );
 }
 
 function PaginatedItems({ items, itemsPerPage }: IPaginatedItemsProps) {
-  const [currentItems, setCurrentItems] = useState<IProductProps[] | null>(items);
+  const [currentItems, setCurrentItems] = useState<IProductProps[] | null>(
+    items
+  );
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
 
@@ -106,7 +113,11 @@ function PaginatedItems({ items, itemsPerPage }: IPaginatedItemsProps) {
   );
 }
 
-export default function ProductsGrid({ gridData }: { gridData: IProductProps[] }) {
+export default function ProductsGrid({
+  gridData,
+}: {
+  gridData: IProductProps[];
+}) {
   const [sortedGridData, setSortedGridData] = useState(gridData);
   const [selected, setSelected] = useState<OptionProps>();
 
@@ -126,11 +137,15 @@ export default function ProductsGrid({ gridData }: { gridData: IProductProps[] }
       sortedData.sort((a, b) => b.stars - a.stars);
     } else if (value === "lowToHigh") {
       sortedData.sort(
-        (a, b) => parseFloat(a.price.replace("$", "")) - parseFloat(b.price.replace("$", ""))
+        (a, b) =>
+          parseFloat(a.price.replace("$", "")) -
+          parseFloat(b.price.replace("$", ""))
       );
     } else if (value === "highToLow") {
       sortedData.sort(
-        (a, b) => parseFloat(b.price.replace("$", "")) - parseFloat(a.price.replace("$", ""))
+        (a, b) =>
+          parseFloat(b.price.replace("$", "")) -
+          parseFloat(a.price.replace("$", ""))
       );
     }
 
@@ -140,7 +155,11 @@ export default function ProductsGrid({ gridData }: { gridData: IProductProps[] }
   return (
     <div className="my-10">
       <div className="mb-10 flex justify-end">
-        <SelectField selectData={selectData} handleSelect={handleSelect} selected={selected} />
+        <SelectField
+          selectData={selectData}
+          handleSelect={handleSelect}
+          selected={selected}
+        />
       </div>
       <PaginatedItems items={sortedGridData} itemsPerPage={9} />
     </div>

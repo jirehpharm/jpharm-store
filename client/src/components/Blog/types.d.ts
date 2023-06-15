@@ -1,10 +1,10 @@
 export interface ITrendingBlogProps {
-  bloglink: string;
+  blogLink: string;
   src: string;
   alt: string;
   adminLink: string;
   adminName: string;
-  taglink: string;
+  tagLink: string;
   tagName: string;
   blogTitle: string;
   date: string;

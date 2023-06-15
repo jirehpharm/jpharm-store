@@ -10,6 +10,7 @@ import Table from "../Products/ProductTab/Table";
 import { additionalInfo, reviewData } from "../Products/constant";
 import Reviews from "../Products/ProductTab/Reviews";
 import Address from "../MyAccount/Address";
+import { addressData } from "../MyAccount/constants";
 
 export const tabsData: HTabsProp[] = [
   {
@@ -80,7 +81,7 @@ export const verticalTabData = [
   {
     title: "Address",
     icon: IoLocationSharp,
-    content: <Address />
+    content: <Address data={addressData} />
   },
   {
     title: "Account Details",

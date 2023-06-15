@@ -17,7 +17,7 @@ export default function AppContainer() {
   return (
     <Routes>
       <Route>
-        <Route path="/forgotPassword" element={<ForgotPassword />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
@@ -26,7 +26,7 @@ export default function AppContainer() {
         <Route path="/product-details" element={<ProductDetails />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path='/myAccount' element={<MyAccount />} />
+        <Route path='/my-account' element={<MyAccount />} />
         <Route
           path="/order-tracking"
           element={<OrderTracking order={orderTracking} />}

@@ -21,7 +21,7 @@ const navigation: TNavigation = [
       { name: "Order tracking", href: "/order-tracking" },
       { name: "Wish List", href: "#" },
       { name: "Login", href: "/login" },
-      { name: "My Account", href: "/myAccount" },
+      { name: "My Account", href: "/my-account" },
       { name: "Terms & Conditions", href: "#" },
       { name: "Promotional Offers", href: "#" },
     ],
@@ -30,7 +30,7 @@ const navigation: TNavigation = [
     name: "Customer Care",
     list: [
       { name: "Login", href: "#" },
-      { name: "My account", href: "/myAccount" },
+      { name: "My account", href: "/my-account" },
       { name: "Wish List", href: "#" },
       { name: "Order tracking", href: "#" },
       { name: "FAQ", href: "#" },

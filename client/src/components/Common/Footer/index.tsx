@@ -30,8 +30,6 @@ const navigation: TNavigation = [
     name: "Customer Care",
     list: [
       { name: "Login", href: "/login" },
-      { name: "My account", href: "#" },
-      { name: "Login", href: "#" },
       { name: "My account", href: "/my-account" },
       { name: "Wish List", href: "#" },
       { name: "Order tracking", href: "#" },
@@ -111,18 +109,10 @@ export default function Footer() {
           <div className="col-span-2">
             <div>
               <h4 className=" text-white">Newsletter</h4>
-              <p className=" text-white">
-                Subscribe to our weekly Newsletter and receive updates via
-                email.
-              </p>
+              <p className=" text-white">Subscribe to our weekly Newsletter and receive updates via email.</p>
               <div className="pb-4">
                 <form action="#">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email*"
-                    className="bg-white p-3"
-                  />
+                  <input type="email" name="email" placeholder="Email*" className="bg-white p-3" />
                   <button type="submit" className="bg-secondary p-3">
                     Submit
                   </button>

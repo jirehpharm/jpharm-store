@@ -11,7 +11,7 @@ const VerticalTab = (props: TabProps) => {
   return (
     <div className="max-w-6xl mx-auto my-24">
       <Tabs.Root className="mt-4 grid grid-cols-11 gap-10" defaultValue={get(tabsData, "0.title")} orientation="vertical">
-        <Tabs.List className="border-b border-gray-200 col-span-3">
+        <Tabs.List className="col-span-3">
           {tabsData?.map((item, idx) => (
             <Tabs.Trigger
               key={idx}

@@ -11,12 +11,6 @@ export interface IReviewsProp {
   comments: ICommentsProps[];
 }
 
-export interface ITabsProp {
-  tabTitle: string;
-  title: string;
-  content: React.ReactElement<any>;
-}
-
 export interface ITableProp {
   name: string;
   value: string;

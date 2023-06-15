@@ -1,6 +1,6 @@
 import BreadcrumbBanner from "../components/Common/BreadcrumbBanner";
-import VerticalTab from "../components/Common/VerticalTabs";
-import { verticalTabData } from "../components/Common/constants";
+import VerticalTab from "../components/Tabs/VerticalTabs";
+import { verticalTabData } from "../components/Tabs/constants";
 
 export default function MyAccount() {
   return (

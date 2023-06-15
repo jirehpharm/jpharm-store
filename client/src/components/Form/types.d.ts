@@ -10,7 +10,8 @@ export interface InputProps {
 
 export interface OptionProps {
   id: number;
-  name: string;
+  label: string;
+  value: string;
 }
 
 export interface SelectFieldProps {

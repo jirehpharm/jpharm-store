@@ -5,8 +5,8 @@ import { RiMailFill } from "react-icons/ri";
 
 import { InputField } from "../Form/InputField";
 import SelectField from "../Form/SelectField";
-import { selectData } from "./constants";
 import { OptionProps } from "../Form/types";
+import { selectData } from "./constants";
 
 export default function BillingDetails() {
   const [selected, setSelected] = useState<OptionProps>();

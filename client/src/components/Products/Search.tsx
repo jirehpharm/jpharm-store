@@ -6,7 +6,7 @@ export default function Search({ setSearchText }: any) {
       <input
         type="text"
         placeholder="Search"
-        className="h-[60px] w-full bg-sectionColor font-semibold text-sm mb-0 focus-visible:outline-0 "
+        className="h-[60px] w-full  font-semibold text-sm mb-0 focus-visible:outline-0 bg-sectionColor "
         onChange={(e: React.FormEvent<HTMLInputElement>) => {
           setSearchText(e.currentTarget.value);
         }}

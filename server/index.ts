@@ -1,10 +1,10 @@
 import express, { Express, Request, Response } from "express";
+import bodyParser from "body-parser";
 import dotenv from "dotenv";
 dotenv.config();
-import bodyParser from "body-parser";
 
-import routes from "./routes";
-import pg from "./database";
+import routes from "./src/routes";
+import pg from "./src/utils/database";
 
 declare global {
   namespace NodeJS {

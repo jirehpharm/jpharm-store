@@ -9,6 +9,7 @@ import ProductDetails from "../../pages/ProductDetails";
 import Login from "../../pages/Login";
 import Checkout from "../../pages/Checkout";
 import Cart from "../../pages/Cart";
+import MyAccount from "../../pages/MyAccount";
 
 export default function AppContainer() {
   return (
@@ -22,7 +23,8 @@ export default function AppContainer() {
         <Route path="products" element={<Products />} />
         <Route path="/product-details" element={<ProductDetails />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/cart" element={<Cart/>} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path='/myAccount' element={<MyAccount />} />
       </Route>
     </Routes>
   );

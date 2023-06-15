@@ -23,7 +23,7 @@ export default function OrderTracking(props: IOrderTracking): JSX.Element {
                 your receipt and in the confirmation email you should have
                 received.
               </p>
-              {order.map((item, index) => (
+              {order?.map((item, index) => (
                 <>
                   <label
                     key={index}

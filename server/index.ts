@@ -1,10 +1,30 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
-
 dotenv.config();
+import bodyParser from "body-parser";
+
+import routes from "./routes";
+import pg from "./database";
+
+declare global {
+  namespace NodeJS {
+    interface Global {
+      pg: typeof pg;
+    }
+  }
+}
+
+// Declare the type of global object
+declare const global: NodeJS.Global & { pg: typeof pg };
+global.pg = pg;
 
 const app: Express = express();
 const port = process.env.PORT || 4001;
+
+app.use(bodyParser.json({ limit: "5mb" }));
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(routes());
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");

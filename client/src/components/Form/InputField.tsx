@@ -1,12 +1,18 @@
 import { InputProps } from "./types";
+import classNames from "classnames";
 
 export const InputField = (props: InputProps) => {
-  const { placeholder, type, Icon } = props;
+  const { placeholder, type, Icon, id, name, className } = props;
   return (
     <div className="relative">
       <input
         type={type}
-        className="relative border-2 border-borderColor pl-5 pr-10 py-5 text-base w-full text-light focus:outline-0 focus:border focus:border-secondary focus-visible:outine-0"
+        id={id}
+        name={name}
+        className={classNames(
+          "relative border-2 border-borderColor pl-5 pr-10 py-5 text-base w-full text-light focus:outline-0 focus:border focus:border-secondary focus-visible:outine-0",
+          className
+        )}
         placeholder={placeholder}
       />
       {Icon && (

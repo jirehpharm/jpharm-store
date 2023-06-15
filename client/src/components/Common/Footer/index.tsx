@@ -18,7 +18,7 @@ const navigation: TNavigation = [
   {
     name: "Services",
     list: [
-      { name: "Order tracking", href: "#" },
+      { name: "Order tracking", href: "/order-tracking" },
       { name: "Wish List", href: "#" },
       { name: "Login", href: "#" },
       { name: "My Account", href: "#" },
@@ -95,7 +95,7 @@ export default function Footer() {
             <div key={index}>
               <h4 className="text-white">{category.name}</h4>
               <ul className="mt-6">
-                {category.list.map((item:any, index: number) => (
+                {category.list.map((item: any, index: number) => (
                   <li key={index} className="mb-6">
                     <a href={item.href} className=" text-white">
                       {item.name}

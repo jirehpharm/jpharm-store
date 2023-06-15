@@ -15,4 +15,6 @@ export interface OptionProps {
 
 export interface SelectFieldProps {
   selectData: OptionProps[];
+  handleSelect: any;
+  selected: any;
 }

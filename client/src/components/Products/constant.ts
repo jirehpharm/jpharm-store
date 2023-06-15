@@ -1,5 +1,12 @@
 import { IListProps } from "./Categories/types";
 
+export const selectData = [
+  { id: 1, name: "Default sorting" },
+  { id: 2, name: "Sort by popularity" },
+  { id: 3, name: "Sort by price: low to high" },
+  { id: 4, name: "Sort by price: high to low" },
+];
+
 export const featuredProductDetails = [
   {
     showStars: true,
@@ -927,7 +934,6 @@ export const reviewData = {
     },
   ],
 };
-
 
 export const additionalInfo = [
   {

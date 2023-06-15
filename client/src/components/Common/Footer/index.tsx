@@ -19,7 +19,7 @@ const navigation: TNavigation = [
     name: "Services",
     list: [
       { name: "Order tracking", href: "/order-tracking" },
-      { name: "Wish List", href: "#" },
+      { name: "Wish List", href: "/wishlist" },
       { name: "Login", href: "/login" },
       { name: "My Account", href: "/my-account" },
       { name: "Terms & Conditions", href: "#" },

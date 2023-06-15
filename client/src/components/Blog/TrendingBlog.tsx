@@ -2,53 +2,12 @@ import BlogCard from "../Cards/BlogCard/BlogCard";
 import Carousel from "../Carousel";
 import { ITrendingBlogProps } from "./types";
 
-export default function TrendingBlog() {
-  const blogDetails = [
-    {
-      bloglink: "#",
-      src: "img/blog/1.jpg",
-      alt: "Blog Image",
-      adminLink: "#",
-      adminName: "by: Admin",
-      taglink: "#",
-      tagName: "corporate",
-      blogTitle: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
-      date: "june 12, 2023",
-    },
-    {
-      bloglink: "#",
-      src: "img/blog/1.jpg",
-      alt: "Blog Image",
-      adminLink: "#",
-      adminName: "by: Admin",
-      taglink: "#",
-      tagName: "Corporate",
-      blogTitle: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
-      date: "june 12, 2023",
-    },
-    {
-      bloglink: "",
-      src: "img/blog/1.jpg",
-      alt: "Blog Image",
-      adminLink: "#",
-      adminName: "by: Admin",
-      taglink: "#",
-      tagName: "Corporate",
-      blogTitle: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
-      date: "june 12, 2023",
-    },
-    {
-      bloglink: "#",
-      src: "img/blog/1.jpg",
-      alt: "Blog Image",
-      adminLink: "#",
-      adminName: "by: Admin",
-      taglink: "#",
-      tagName: "Corporate",
-      blogTitle: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
-      date: "june 12, 2023",
-    },
-  ];
+interface ITrendingBlog {
+  blogDetails: ITrendingBlogProps[];
+}
+
+export default function TrendingBlog(props: ITrendingBlog) {
+  const { blogDetails } = props;
 
   const content = blogDetails.map((item: ITrendingBlogProps, index: number) => (
     <BlogCard {...item} key={index} />

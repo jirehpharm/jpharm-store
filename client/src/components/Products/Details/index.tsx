@@ -90,10 +90,7 @@ export default function Detail() {
         </div>
         <div className="pt-2 my-auto border-b border-gray-100">
           <h5 className="mb-3">Guaranteed Safe Checkout</h5>
-          <img
-            src="http://127.0.0.1:5501/vicodin/img/icons/payment-2.png"
-            alt="image"
-          />
+          <img src="public/payment-2.png" alt="image" />
         </div>
       </div>
     </div>

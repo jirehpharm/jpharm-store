@@ -20,7 +20,7 @@ export default function cartItems({
                 <img src={productImageSrc} alt={productImageAltText} />
               </a>
               <span className="absolute h-5 w-5 block leading-5 bg-white text-center cursor-pointer  rounded-full -right-2 -top-2 p-1 hover:text-red-500">
-                <FaTimes classname="text-primary" size={15} />
+                <FaTimes className="text-primary" size={15} />
               </span>
             </div>
             <div className="overflow-hidden p-5 top-0">

@@ -1,12 +1,12 @@
 import * as Tabs from "@radix-ui/react-tabs";
 import { get } from "lodash";
-import { ITabsProp } from "./types";
+import { HTabsProp } from "./types";
 
 interface TabProps {
-  tabsData: ITabsProp[];
+  tabsData: HTabsProp[];
 }
 
-const Tab = (props: TabProps) => {
+const HorizontalTab = (props: TabProps) => {
   const { tabsData } = props;
   return (
     <Tabs.Root
@@ -40,4 +40,4 @@ const Tab = (props: TabProps) => {
   );
 };
 
-export default Tab;
+export default HorizontalTab;

@@ -8,6 +8,8 @@ import { gridData, listData } from "../components/Products/constant";
 import PriceRange from "../components/Products/PriceRange";
 import Search from "../components/Products/Search";
 import { get } from "lodash";
+import SaleWidgetCard from "../components/Cards/SaleWidgetCard/saleWidgetCard";
+import { salesWidgetCard } from "../components/Cards/SaleWidgetCard/constants";
 
 export default function Products() {
   const [sortedGridData, setSortedGridData] = useState(gridData);
@@ -65,6 +67,8 @@ export default function Products() {
           <WidgetLayout title={"Search Objects"}>
             <Search setSearchText={setSearchText} />
           </WidgetLayout>
+          <SaleWidgetCard saleWidgetCard={[salesWidgetCard]} />
+
         </div>
       </div>
     </div>

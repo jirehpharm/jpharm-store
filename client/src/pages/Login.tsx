@@ -1,13 +1,17 @@
-import { startCase } from "lodash";
-
 import "../style/index.css";
 import Button from "../components/Common/Button";
 import Heading from "../components/Common/Heading";
+import { InputField } from "../components/Form/InputField";
 
 export default function Login() {
   const fields = [
-    { name: "email", type: "email" },
-    { name: "password", type: "password" },
+    { name: "email", type: "email", placeholder: "Email*", required: true },
+    {
+      name: "password",
+      type: "password",
+      placeholder: "Password*",
+      required: true,
+    },
   ];
   return (
     <>
@@ -20,12 +24,13 @@ export default function Login() {
           <div className="px-10">
             <form action="#">
               {fields.map((field, index) => (
-                <input
+                <InputField
                   key={index}
                   className="block border-2  border-borderColor focus:border-secondary focus-visible:outline-0 bg-white w-full p-5 mb-4"
                   type={field.type}
                   name={field.name}
-                  placeholder={startCase(field.name)}
+                  placeholder={field.placeholder}
+                  required={field.required}
                 />
               ))}
               <div>

@@ -12,7 +12,7 @@ const navigation: TNavigation = [
       { name: "All Products", href: "#" },
       { name: "Location Map", href: "#" },
       { name: "FAQ", href: "#" },
-      { name: "Contact Us", href: "#" },
+      { name: "Contact Us", href: "/contact" },
     ],
   },
   {
@@ -29,12 +29,14 @@ const navigation: TNavigation = [
   {
     name: "Customer Care",
     list: [
+      { name: "Login", href: "/login" },
+      { name: "My account", href: "#" },
       { name: "Login", href: "#" },
       { name: "My account", href: "/myAccount" },
       { name: "Wish List", href: "#" },
       { name: "Order tracking", href: "#" },
       { name: "FAQ", href: "#" },
-      { name: "Contact us", href: "#" },
+      { name: "Contact us", href: "/contact" },
     ],
   },
 ];

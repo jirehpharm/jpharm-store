@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { ArrowDownIcon } from "@heroicons/react/20/solid";
 import classNames from "classnames";
+import { get } from "lodash";
 
 import { SelectFieldProps } from "./types";
 
@@ -12,7 +13,7 @@ export default function SelectField({ selectData, handleSelect, selected }: Sele
         <>
           <div className="relative mt-2">
             <Listbox.Button className="relative w-full text-left border-2 bg-white border-borderColor pl-5 pr-10 py-4 text-base text-light focus:outline-0  focus-visible:outine-0">
-              <span className="block truncate text-gray-500 font-bold text-sm">{selected ? selected.name : selectData[0]?.name}</span>
+              <span className="block truncate text-gray-500 font-bold text-sm">{selected ? selected.name : get(selectData, "[0].name", "")}</span>
               <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                 <ArrowDownIcon className="h-5 w-5 text-secondary" aria-hidden="true" />
               </span>

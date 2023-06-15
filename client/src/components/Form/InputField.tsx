@@ -11,7 +11,7 @@ export const InputField = (props: InputProps) => {
         name={name}
         required={required}
         className={classNames(
-          "relative border-2 border-borderColor pl-5 pr-10 py-5 text-base w-full text-light focus:outline-0 focus:border focus:border-secondary focus-visible:outine-0",
+          "relative border-2 placeholder:text-sm border-borderColor pl-5 pr-10 py-5 text-base w-full text-light focus:outline-0 focus:border focus:border-secondary focus-visible:outine-0",
           className
         )}
         placeholder={placeholder}

@@ -1,5 +1,6 @@
 import Button from "../components/Common/Button";
 import Heading from "../components/Common/Heading";
+import { InputField } from "../components/Form/InputField";
 
 /**
  * Renders a registration form with input fields for first name, last name, email, password, and confirm password.
@@ -8,11 +9,21 @@ import Heading from "../components/Common/Heading";
  */
 export default function Register(): JSX.Element {
   const fields = [
-    { name: "First Name", type: "text" },
-    { name: "Last Name", type: "text" },
-    { name: "Email", type: "email" },
-    { name: "Password", type: "password" },
-    { name: "Confirm Password", type: "password" },
+    { name: "First Name", type: "text", placeholder: "First Name" },
+    { name: "Last Name", type: "text", placeholder: "Last Name" },
+    { name: "Email", type: "email", placeholder: "Email*", required: true },
+    {
+      name: "Password",
+      type: "password",
+      placeholder: "Password*",
+      required: true,
+    },
+    {
+      name: "Confirm Password",
+      type: "password",
+      placeholder: "Confirm Password*",
+      required: true,
+    },
   ];
 
   return (
@@ -24,13 +35,14 @@ export default function Register(): JSX.Element {
 
       <div className="w-[470px]">
         <form action="#" className="ltn__form-box contact-form-box">
-          {fields.map(({ name, type }, index) => (
-            <input
+          {fields.map(({ name, type, placeholder, required }, index) => (
+            <InputField
               key={index}
               className="block border-2 border-borderColor focus:border-secondary focus-visible:outline-0 bg-white w-full p-5 mb-4"
               type={type}
               name={name}
-              placeholder={name}
+              placeholder={placeholder}
+              required={required}
             />
           ))}
           <br />

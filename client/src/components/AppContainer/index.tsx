@@ -9,6 +9,7 @@ import ProductDetails from "../../pages/ProductDetails";
 import Login from "../../pages/Login";
 import Checkout from "../../pages/Checkout";
 import Cart from "../../pages/Cart";
+import OrderTrackingPage from "../../pages/OrderTrackingPage";
 import MyAccount from "../../pages/MyAccount";
 import OrderTracking from "../OrderTracking/OrderTracking";
 import { orderTracking } from "../OrderTracking/constant";
@@ -31,6 +32,7 @@ export default function AppContainer() {
           path="/order-tracking"
           element={<OrderTracking order={orderTracking} />}
         />
+        <Route path="/order-tracking" element={<OrderTrackingPage />} />
       </Route>
     </Routes>
   );

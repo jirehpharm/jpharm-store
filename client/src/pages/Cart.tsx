@@ -2,6 +2,7 @@ import CartItems from "../components/Cart/CartItems";
 import CartTotal from "../components/Cart/CartTotal";
 import { cardTotalData, cartData } from "../components/Cart/constants";
 import BreadcrumbBanner from "../components/Common/BreadcrumbBanner";
+import Button from "../components/Common/Button";
 
 export default function Cart() {
   return (
@@ -9,9 +10,16 @@ export default function Cart() {
       <BreadcrumbBanner title={"Cart"} />
       <div className="my-24">
         <CartItems data={cartData} />
-        <CartTotal data={cardTotalData} />
+        <div className="grid grid-cols-11 mx-auto mt-16 max-w-6xl">
+          <div className="col-span-7"></div>
+          <div className="col-span-4">
+            <CartTotal data={cardTotalData} />
+            <a href="/checkout">
+              <Button className=" mt-5 w-full">Proceed to Checkout</Button>
+            </a>
+          </div>
+        </div>
       </div>
     </>
-
-  )
+  );
 }

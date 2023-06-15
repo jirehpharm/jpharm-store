@@ -21,5 +21,6 @@ export default {
   plugins: [
     require("tailwind-scrollbar")({ nocompatible: true }),
     require("./plugins/tailwind-scrollbar-hide"),
+    require("@tailwindcss/forms"),
   ],
 };

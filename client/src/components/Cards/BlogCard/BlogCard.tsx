@@ -2,12 +2,12 @@ import { FaUser, FaTag, FaCalendarAlt } from "react-icons/fa";
 import { ITrendingBlogProps } from "../../Blog/types";
 
 export default function BlogCard({
-  bloglink,
+  blogLink,
   src,
   alt,
   adminLink,
   adminName,
-  taglink,
+  tagLink,
   tagName,
   blogTitle,
   date,
@@ -18,7 +18,7 @@ export default function BlogCard({
         <div className=" relative mb-7  mx-auto bg-white shadow-lg">
           <div className="relative b-radius-b-35px">
             <>
-              <a href={bloglink}>
+              <a href={blogLink}>
                 <img
                   src={src}
                   className="relative w-full h-full hover:scale-130"
@@ -41,7 +41,7 @@ export default function BlogCard({
                       <FaTag className="text-secondary my-auto" />
                       <a
                         className="flex flex-wrap p-2 relative text-light"
-                        href={taglink}
+                        href={tagLink}
                       >
                         {tagName}
                       </a>
@@ -49,7 +49,7 @@ export default function BlogCard({
                   </ul>
                 </div>
                 <h3 className="mb-5 text-xl text-justify font-semibold">
-                  <a href={bloglink} className="text-black">
+                  <a href={blogLink} className="text-black">
                     {blogTitle}
                     <br />
                     <br />
@@ -66,7 +66,7 @@ export default function BlogCard({
                     </ul>
                   </div>
                   <div className="flex">
-                    <a href={bloglink} className="my-auto font-bold">
+                    <a href={blogLink} className="my-auto font-bold">
                       READ MORE
                     </a>
                   </div>

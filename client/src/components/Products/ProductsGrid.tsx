@@ -134,7 +134,7 @@ export default function ProductsGrid({ gridData }: { gridData: IProductProps[] }
   return (
     <div className="my-10">
       <div className="mb-10 flex justify-end">
-        <SelectField selectData={selectData} handleSelect={handleSelect} selected={selected} className="w-[35%]" />
+        <SelectField selectData={selectData} handleSelect={handleSelect} selected={selected} />
       </div>
       <PaginatedItems items={sortedGridData} itemsPerPage={9} />
     </div>

@@ -1,11 +1,11 @@
-import ProductOverViewCard from "../Cards/ProductOverViewCard";
-import { IProductProps } from "../Home/types";
-
 import ReactPaginate from "react-paginate";
-import React, { useEffect, useState } from "react";
-import { IItemsProps, IPaginatedItemsProps, IPaginationProps } from "./types";
+import { useEffect, useState } from "react";
+
+import ProductOverViewCard from "../Cards/ProductOverViewCard";
 import SelectField from "../Form/SelectField";
 import { selectData } from "./constant";
+import { IProductProps } from "../Home/types";
+import { IItemsProps, IPaginatedItemsProps, IPaginationProps } from "./types";
 import { OptionProps } from "../Form/types";
 
 function Pagination({
@@ -58,9 +58,7 @@ function Items({ currentItems }: IItemsProps) {
   return (
     <div className="items grid grid-cols-3 gap-5">
       {currentItems &&
-        currentItems.map((item: IProductProps, index: number) => (
-          <ProductOverViewCard isTextCenter={false} {...item} showStars={true} key={index} />
-        ))}
+        currentItems.map((item: IProductProps, index: number) => <ProductOverViewCard isTextCenter={false} {...item} showStars={true} key={index} />)}
     </div>
   );
 }
@@ -125,13 +123,9 @@ export default function ProductsGrid({ gridData }: { gridData: IProductProps[] }
     if (value === "popularity") {
       sortedData.sort((a, b) => b.stars - a.stars);
     } else if (value === "lowToHigh") {
-      sortedData.sort(
-        (a, b) => parseFloat(a.price.replace("$", "")) - parseFloat(b.price.replace("$", ""))
-      );
+      sortedData.sort((a, b) => parseFloat(a.price.replace("$", "")) - parseFloat(b.price.replace("$", "")));
     } else if (value === "highToLow") {
-      sortedData.sort(
-        (a, b) => parseFloat(b.price.replace("$", "")) - parseFloat(a.price.replace("$", ""))
-      );
+      sortedData.sort((a, b) => parseFloat(b.price.replace("$", "")) - parseFloat(a.price.replace("$", "")));
     }
 
     setSortedGridData(sortedData);
@@ -140,7 +134,7 @@ export default function ProductsGrid({ gridData }: { gridData: IProductProps[] }
   return (
     <div className="my-10">
       <div className="mb-10 flex justify-end">
-        <SelectField selectData={selectData} handleSelect={handleSelect} selected={selected} />
+        <SelectField selectData={selectData} handleSelect={handleSelect} selected={selected} className="w-[35%]" />
       </div>
       <PaginatedItems items={sortedGridData} itemsPerPage={9} />
     </div>

@@ -65,7 +65,9 @@ export default function Footer() {
       <footer className="ltn__footer-area bg-primary text-white pt-28">
         <div className="grid grid-cols-2 md:grid-cols-3   lg:grid-cols-7 gap-4 p-9">
           <div className="col-span-2">
-            <img src="/logos/logo-2.png" />
+            <a href="/" className="cursor-pointer">
+              <img src="full_logo.png" alt="logo" className="w-[250px]" />
+            </a>
             <p className=" text-white py-3 m-0">{companyInfo}</p>
             <div>
               <ul>

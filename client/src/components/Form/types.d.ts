@@ -18,4 +18,5 @@ export interface SelectFieldProps {
   selectData: OptionProps[];
   handleSelect: any;
   selected: any;
+  className?: string;
 }

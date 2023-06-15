@@ -6,12 +6,12 @@ import { get } from "lodash";
 
 import { SelectFieldProps } from "./types";
 
-export default function SelectField({ selectData, handleSelect, selected }: SelectFieldProps): JSX.Element {
+export default function SelectField({ selectData, handleSelect, selected, className }: SelectFieldProps): JSX.Element {
   return (
     <Listbox value={selected} onChange={handleSelect}>
       {({ open }) => (
         <>
-          <div className="relative mt-2">
+          <div className={classNames("relative", className)}>
             <Listbox.Button className="relative w-full text-left border-2 bg-white border-borderColor pl-5 pr-10 py-4 text-base text-light focus:outline-0  focus-visible:outine-0">
               <span className="block truncate text-gray-500 font-bold text-sm">{selected ? selected.label : get(selectData, "[0].label", "")}</span>
               <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">

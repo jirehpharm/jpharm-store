@@ -56,9 +56,6 @@ export default function Products() {
     <div>
       <BreadcrumbBanner title={"Antiseptic Spray"} />
       <div className="grid grid-cols-6 gap-5 max-w-6xl mx-auto">
-        <div className="col-span-4">
-          <ProductsGrid gridData={sortedGridData} />
-        </div>
         <div className="col-span-2 my-10">
           <Categories title={"Product Categories"} list={listData} />
           <WidgetLayout title={"Filter By Price"}>
@@ -68,7 +65,9 @@ export default function Products() {
             <Search setSearchText={setSearchText} />
           </WidgetLayout>
           <SaleWidgetCard saleWidgetCard={[salesWidgetCard]} />
-
+        </div>
+        <div className="col-span-4">
+          <ProductsGrid gridData={sortedGridData} />
         </div>
       </div>
     </div>

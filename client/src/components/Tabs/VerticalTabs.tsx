@@ -1,9 +1,9 @@
 import * as Tabs from "@radix-ui/react-tabs";
 import { get } from "lodash";
-import { IVerticalTabsProps } from "./types";
+import { VTabsProp } from "./types";
 
 interface TabProps {
-  tabsData: IVerticalTabsProps[];
+  tabsData: VTabsProp[];
 }
 
 const VerticalTab = (props: TabProps) => {

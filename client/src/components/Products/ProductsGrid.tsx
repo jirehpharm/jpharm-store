@@ -58,7 +58,9 @@ function Items({ currentItems }: IItemsProps) {
   return (
     <div className="items grid grid-cols-3 gap-5">
       {currentItems &&
-        currentItems.map((item: IProductProps, index: number) => <ProductOverViewCard isTextCenter={false} {...item} showStars={true} key={index} />)}
+        currentItems.map((item: IProductProps, index: number) => (
+          <ProductOverViewCard isTextCenter={false} {...item} showStars={true} key={index} />
+        ))}
     </div>
   );
 }
@@ -110,7 +112,7 @@ export default function ProductsGrid({ gridData }: { gridData: IProductProps[] }
 
   const handleSelect = (event: OptionProps) => {
     setSelected(event);
-    sortGridData(event.name);
+    sortGridData(event.value);
   };
 
   useEffect(() => {
@@ -120,12 +122,16 @@ export default function ProductsGrid({ gridData }: { gridData: IProductProps[] }
   const sortGridData = (value: string) => {
     let sortedData = [...gridData];
 
-    if (value === "Sort by popularity") {
+    if (value === "popularity") {
       sortedData.sort((a, b) => b.stars - a.stars);
-    } else if (value === "Sort by price: low to high") {
-      sortedData.sort((a, b) => parseFloat(a.price.replace("$", "")) - parseFloat(b.price.replace("$", "")));
-    } else if (value === "Sort by price: high to low") {
-      sortedData.sort((a, b) => parseFloat(b.price.replace("$", "")) - parseFloat(a.price.replace("$", "")));
+    } else if (value === "lowToHigh") {
+      sortedData.sort(
+        (a, b) => parseFloat(a.price.replace("$", "")) - parseFloat(b.price.replace("$", ""))
+      );
+    } else if (value === "highToLow") {
+      sortedData.sort(
+        (a, b) => parseFloat(b.price.replace("$", "")) - parseFloat(a.price.replace("$", ""))
+      );
     }
 
     setSortedGridData(sortedData);

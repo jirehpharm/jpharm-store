@@ -10,8 +10,6 @@ import WidgetLayout from "../components/Products/WidgetLayout";
 import { topRated } from "../components/Cards/TopRatedProductCard/constants";
 import PopularTags from "../components/Products/PopularTags/index";
 import { popularTags } from "../components/Products/PopularTags/constants";
-import SaleWidgetCard from "../components/Cards/SaleWidgetCard/saleWidgetCard";
-import { salesWidgetCard } from "../components/Cards/SaleWidgetCard/constants";
 import { tabsData } from "../components/Products/ProductTab/content";
 
 export default function ProductDetails() {
@@ -31,7 +29,6 @@ export default function ProductDetails() {
           <WidgetLayout title="Popular Tags">
             <PopularTags tags={popularTags} />
           </WidgetLayout>
-          <SaleWidgetCard saleWidgetCard={[salesWidgetCard]} />
         </div>
       </div>
       <RelatedProducts />

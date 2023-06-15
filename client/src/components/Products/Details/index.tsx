@@ -88,6 +88,13 @@ export default function Detail() {
           <p className="mb-0 text-light">Share:</p>
           <SocialLinks socialData={socialData} />
         </div>
+        <div className="pt-2 my-auto border-b border-gray-100">
+          <h5 className="mb-3">Guaranteed Safe Checkout</h5>
+          <img
+            src="http://127.0.0.1:5501/vicodin/img/icons/payment-2.png"
+            alt="image"
+          />
+        </div>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import BreadcrumbBanner from "../components/Common/BreadcrumbBanner";
 import Details from "../components/Products/Details";
 import Categories from "../components/Products/Categories";
 import RelatedProducts from "../components/Products/RelatedProducts";
+
 import ProductTab from "../components/Products/ProductTab";
 import { listData } from "../components/Products/constant";
 import TopRatedProductCard from "../components/Cards/TopRatedProductCard";
@@ -21,7 +22,6 @@ export default function ProductDetails() {
         <div className="col-span-4">
           <Details />
           <ProductTab tabsData={tabsData} />
-          <RelatedProducts />
         </div>
         <div className="col-span-2">
           <Categories title={"Product Categories"} list={listData} />
@@ -34,6 +34,7 @@ export default function ProductDetails() {
           <SaleWidgetCard saleWidgetCard={[salesWidgetCard]} />
         </div>
       </div>
+      <RelatedProducts />
     </>
   );
 }

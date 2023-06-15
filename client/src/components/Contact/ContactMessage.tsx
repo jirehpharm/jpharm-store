@@ -1,41 +1,18 @@
-//import React from "react";
-import { FaUser, FaEnvelope, FaEye, FaPhone } from "react-icons/fa";
-
 import Heading from "../Common/Heading";
 import "../../style/index.css";
+import { IContactMessageFormProps } from "./types";
+import { InputField } from "../Form/InputField";
 
-export default function ContactMessage() {
-  const ContactMessage = [
-    {
-      name: "name",
-      type: "text",
-      placeholder: "Enter email address",
-      icon: <FaUser />,
-    },
-    {
-      type: "email",
-      name: "email",
-      placeholder: "Enter the Email",
-      icon: <FaEnvelope />,
-    },
-    {
-      type: "text",
-      name: "subject",
-      placeholder: "Enter the subject",
-      icon: <FaEye />,
-    },
-    {
-      type: "text",
-      name: "phone",
-      placeholder: "Enter the Phone Number",
-      icon: <FaPhone />,
-    },
-  ];
+interface IContactMessage {
+  contactMessage: IContactMessageFormProps[];
+}
+export default function ContactMessage(props: IContactMessage) {
+  const { contactMessage } = props;
   return (
     <>
-      <section className="max-w-5xl mx-auto">
-        <div className="contact-msg max-w-5xl mx-auto gap-3 mb--25 mb-10">
-          <div className=" mb--25 mb-40 relative mt-7 z-[1] pt-10 pb-12 px-12 shadow -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.1) bg-white">
+      <section className=" max-w-5xl mx-auto">
+        <div className="relative max-w-5xl mx-auto gap-3 mb--25 mb-10">
+          <div className="mb--25 mb-40 mt-7 z-[1] pt-10 pb-12 px-12 shadow-lg bg-white">
             <Heading title="Get A Quote" />
             <form
               id="contact-form"
@@ -43,19 +20,18 @@ export default function ContactMessage() {
               method="post"
               className="grid grid-cols-2 gap-8 mb-7 mx-1 p-3"
             >
-              {ContactMessage.map((con, index) => (
+              {contactMessage.map((con, index) => (
                 <div
                   key={index}
-                  className="relative border-2 border-borderColor flex items-center pr-3"
+                  className="relative border-2 border-borderColor"
                 >
-                  <input
+                  <InputField
                     key={index}
-                    className="focus:border-secondary focus-visible:outline-0 bg-white w-full p-5 py-5 pr-10 pl-5"
-                    type={con.type}
-                    name={con.type}
                     placeholder={con.placeholder}
+                    type={con.type}
+                    name={con.name}
+                    Icon={con.icon}
                   />
-                  {con.icon && <span className="">{con.icon}</span>}
                 </div>
               ))}
               <div className=" top-7 col-span-2">

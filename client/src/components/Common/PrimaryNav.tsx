@@ -37,7 +37,10 @@ export default function PrimaryNav(): JSX.Element {
       <div className="flex items-center gap-4">
         <UserIcon className="h-8 w-6" />
         <div>
-          <span className="flex items-center cursor-pointer">
+          <span
+            className="flex items-center cursor-pointer"
+            onClick={() => setIsOpen(true)}
+          >
             <ShoppingCartIcon className="h-8 w-6 relative hover:text-black" />
             <Badge value={2} />
           </span>

@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 
 import Home from "../../pages/Home";
 import Register from "../../pages/Register";
-import Contact from "../../components/Contact/ContactCards";
+import Contact from "../../components/Contact/ContactDetails";
 import Products from "../../pages/Products";
 import ForgotPassword from "../../pages/ForgotPassword";
 import ProductDetails from "../../pages/ProductDetails";
@@ -29,7 +29,7 @@ export default function AppContainer() {
         <Route path="/product-details" element={<ProductDetails />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path='/my-account' element={<MyAccount />} />
+        <Route path="/my-account" element={<MyAccount />} />
         <Route
           path="/order-tracking"
           element={<OrderTracking order={orderTracking} />}

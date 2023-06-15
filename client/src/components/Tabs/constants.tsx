@@ -13,6 +13,7 @@ import Address from "../MyAccount/Address";
 import Orders from "../Account/Orders";
 import { downloadData, ordersData } from "../Account/constant";
 import Download from "../Account/Download";
+import { addressData } from "../MyAccount/constants";
 
 export const tabsData: HTabsProp[] = [
   {
@@ -67,7 +68,7 @@ export const verticalTabData = [
   {
     title: "Address",
     icon: IoLocationSharp,
-    content: <Address />,
+    content: <Address data={addressData} />,
   },
   {
     title: "Account Details",

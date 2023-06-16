@@ -31,9 +31,9 @@ const navigation: TNavigation = [
     list: [
       { name: "Login", href: "/login" },
       { name: "My account", href: "/my-account" },
-      { name: "Wish List", href: "#" },
-      { name: "Order tracking", href: "#" },
-      { name: "FAQ", href: "#" },
+      { name: "Wish List", href: "/wishlist" },
+      { name: "Order tracking", href: "/order-tracking" },
+      { name: "Privacy Policy", href: "/privacy-policy" },
       { name: "Contact us", href: "/contact" },
     ],
   },

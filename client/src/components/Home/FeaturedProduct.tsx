@@ -10,7 +10,9 @@ export default function FeaturedProduct() {
         <div className="grid grid-cols-3 gap-10 ">
           {featuredProductsData.map(
             (product: IFeaturedProductProps, index: number) => (
-              <FeaturedProductCard key={index} {...product} />
+              <div className="hover:shadow hover:shadow-light">
+                <FeaturedProductCard key={index} {...product} />
+              </div>
             )
           )}
         </div>

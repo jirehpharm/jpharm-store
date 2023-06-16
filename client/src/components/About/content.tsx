@@ -1,4 +1,6 @@
-import { FaHandHoldingMedical, FaMicroscope, FaStethoscope } from "react-icons/fa";
+import { BsFillGiftFill, BsPersonFillAdd } from "react-icons/bs";
+import { FaHandHoldingMedical, FaMapMarkedAlt, FaMicroscope, FaStethoscope } from "react-icons/fa";
+import { MdTableBar } from "react-icons/md";
 
 export const questionCategory = [
   {
@@ -147,5 +149,28 @@ export const whyChooseUsData = [
     icon: FaStethoscope,
     title: "Pesticide Free Goods",
     description: "Lorem ipsum dolor sit ame it, consectetur adipisicing elit, sed do eiusmod te mp or incididunt ut labore.",
+  },
+];
+
+export const statsData = [
+  {
+    icon: BsPersonFillAdd,
+    number: "733+",
+    description: "Active Clients",
+  },
+  {
+    icon: MdTableBar,
+    number: "33K+",
+    description: "Cup Of Coffee",
+  },
+  {
+    icon: BsFillGiftFill,
+    number: "100+",
+    description: "Get Rewards",
+  },
+  {
+    icon: FaMapMarkedAlt,
+    number: "21+",
+    description: "Country Cover",
   },
 ];

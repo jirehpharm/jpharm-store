@@ -16,6 +16,10 @@ import {
 import TrendingProduct from "../components/Home/TrendingProduct";
 import FeaturedProduct2 from "../components/Home/FeaturedProduct2";
 import { blogDetails } from "../components/Blog/constant";
+import { statsData } from "../components/Common/Stats/constants";
+import { bestSellerData } from "../components/Home/constants";
+import OfferCard from "../components/Cards/OfferCard/OfferCard";
+import { offerCardData } from "../components/Cards/OfferCard/constants";
 
 export default function Home() {
   const slideData = categoryData.map((item, idx: number) => (
@@ -31,11 +35,12 @@ export default function Home() {
       <div className="mx-auto max-w-6xl">
         <Carousel slidesPerView={7} slides={slideData} />
       </div>
-      <FeaturedProduct2 />
+      <FeaturedProduct2 data={bestSellerData} />
       <OfferBanner {...offerSectionData} />
-      <TrendingProduct />
+      <TrendingProduct data={bestSellerData} />
+      <OfferCard data={offerCardData} />
       <FeaturedProduct />
-      <BestSeller />
+      <BestSeller data={bestSellerData} />
       <Banner
         miniTitle={"N95 Facial Covering Mask"}
         title={"Grade A Safety Masks For Sale. Hurry Up! "}
@@ -47,7 +52,7 @@ export default function Home() {
         bgImage={"/placeholder/1920x623.png"}
       />
       <TrendingBlog blogDetails={blogDetails} />
-      <Stats />
+      <Stats stats={statsData} />
     </div>
   );
 }

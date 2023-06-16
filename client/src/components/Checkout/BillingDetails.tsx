@@ -5,13 +5,15 @@ import { RiMailFill } from "react-icons/ri";
 
 import { InputField } from "../Form/InputField";
 import SelectField from "../Form/SelectField";
-import { OptionProps } from "../Form/types";
+import { IOptionProps } from "../Form/types";
 import { selectData } from "./constants";
+import Textarea from "../Form/Textarea";
+import Checkbox from "../Form/Checkbox";
 
 export default function BillingDetails() {
-  const [selected, setSelected] = useState<OptionProps>();
+  const [selected, setSelected] = useState<IOptionProps>();
 
-  const handleSelect = (event: OptionProps) => {
+  const handleSelect = (event: IOptionProps) => {
     setSelected(event);
   };
 
@@ -54,7 +56,7 @@ export default function BillingDetails() {
           </div>
         </div>
         <div className="mt-4">
-          <input type="checkbox" id="accept" name="accept" value="accept" className="bg-white" />
+          <Checkbox name={"accept"} id="accept"/>
           <label htmlFor="accept" className="text-light">
             {" "}
             Create an account?
@@ -62,10 +64,13 @@ export default function BillingDetails() {
         </div>
         <div className="mt-8">
           <h5 className="text-base">Order Notes (optional)</h5>
-          <div className="relative">
-            <textarea className="relative border-2 border-borderColor bg-white pl-5 pr-10 py-5 text-base w-full text-light focus:outline-0 focus:border focus:border-secondary focus-visible:outine-0 h-[130px]"></textarea>
-            <PencilIcon className="h-5 w-5 text-secondary absolute right-3 top-2" />
-          </div>
+          <Textarea
+            placeholder={
+              "Notes about your order, e.g. special notes for delivery."
+            }
+            Icon={PencilIcon}
+            name={"orderNotes"}
+          />
         </div>
       </div>
     </div>

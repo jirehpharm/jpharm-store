@@ -6,7 +6,7 @@ import SelectField from "../Form/SelectField";
 import { selectData } from "./constant";
 import { IProductProps } from "../Home/types";
 import { IItemsProps, IPaginatedItemsProps, IPaginationProps } from "./types";
-import { OptionProps } from "../Form/types";
+import { IOptionProps } from "../Form/types";
 
 function Pagination({
   pageCount,
@@ -106,9 +106,9 @@ function PaginatedItems({ items, itemsPerPage }: IPaginatedItemsProps) {
 
 export default function ProductsGrid({ gridData }: { gridData: IProductProps[] }) {
   const [sortedGridData, setSortedGridData] = useState(gridData);
-  const [selected, setSelected] = useState<OptionProps>();
+  const [selected, setSelected] = useState<IOptionProps>();
 
-  const handleSelect = (event: OptionProps) => {
+  const handleSelect = (event: IOptionProps) => {
     setSelected(event);
     sortGridData(event.value);
   };

@@ -5,7 +5,7 @@ export const productCartCard = [
     imageSrc: "img/product/10.png",
     imageAlt: "product image",
     productPrice: "$10.00",
-    productQuantity: "1",
+    productQuantity: 1,
     amount: 10,
   },
   {
@@ -39,6 +39,6 @@ export const productCartCard = [
 
 export const drawerItems = {
   productCount: 2,
-  viewCartLink: "#" /* TODO: create the view Cart Link */,
-  checkOutCartLink: "#" /* TODO: create the checkout Cart Link */,
+  viewCartLink: "/cart" /* TODO: create the view Cart Link */,
+  checkOutCartLink: "/checkout" /* TODO: create the checkout Cart Link */,
 };

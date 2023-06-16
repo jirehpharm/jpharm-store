@@ -4,9 +4,9 @@ import { ArrowDownIcon } from "@heroicons/react/20/solid";
 import classNames from "classnames";
 import { get } from "lodash";
 
-import { SelectFieldProps } from "./types";
+import { ISelectFieldProps } from "./types";
 
-export default function SelectField({ selectData, handleSelect, selected, className }: SelectFieldProps): JSX.Element {
+export default function SelectField({ selectData, handleSelect, selected, className }: ISelectFieldProps): JSX.Element {
   return (
     <Listbox value={selected} onChange={handleSelect}>
       {({ open }) => (

@@ -4,8 +4,8 @@ export interface IViewCartCardProps {
   imageSrc: string;
   imageAlt?: string;
   productPrice: string;
-  productQuantity: Int;
-  amount: Int;
+  productQuantity: number;
+  amount: number;
   closeDrawer?: any;
 }
 
@@ -13,6 +13,6 @@ export interface ICartDrawerProps {
   setDrawer: any;
   checkOutCartLink: string;
   viewCartLink: string;
-  productCount?: Int;
+  productCount?: number;
   closeDrawer?: any;
 }

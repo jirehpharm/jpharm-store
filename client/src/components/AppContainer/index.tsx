@@ -9,6 +9,7 @@ import Login from "../../pages/Login";
 import Checkout from "../../pages/Checkout";
 import Cart from "../../pages/Cart";
 import OrderTrackingPage from "../../pages/OrderTrackingPage";
+import About from "../../pages/About";
 import MyAccount from "../../pages/MyAccount";
 import Wishlist from "../../pages/Wishlist";
 import Contact from "../../pages/Contact";
@@ -18,6 +19,7 @@ export default function AppContainer() {
   return (
     <Routes>
       <Route>
+        <Route path="/about" element={<About />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />

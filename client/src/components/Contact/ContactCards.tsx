@@ -1,4 +1,3 @@
-import BreadcrumbBanner from "../Common/BreadcrumbBanner";
 import { IContactCardDetailsProps } from "./types";
 
 interface IContactCardDetails {
@@ -9,9 +8,7 @@ export default function ContactCards(props: IContactCardDetails) {
   const { contact } = props;
   return (
     <>
-      <BreadcrumbBanner title={"Contact"} />
       <section className="grid grid-row-3 grid-flow-col max-w-5xl mx-auto mt-20 gap-7 mb-20">
-        {/*  <div className=""> */}
         {contact?.map((con, index) => (
           <div
             key={index}

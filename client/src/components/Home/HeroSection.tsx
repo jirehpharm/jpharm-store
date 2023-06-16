@@ -37,11 +37,11 @@ const HeroSection = ({ carouselData }: IHeroSectionProps) => {
         />
       </div>
       <div className="col-span-2 space-y-7">
-        <div className={`bg-(url[img/Herosection/bg-1.png])`}>
-          <img src={"img/Herosection/P1.png"} alt="Image" />
+        <div className={`bg-(url[img/herosection/bg-1.png])`}>
+          <img src={"img/herosection/p-1.png"} alt="Image" />
         </div>
         <div>
-          <img src={"img/Herosection/p2.png"} alt="Image" className="" />
+          <img src={"/img/herosection/p-2.png"} alt="Image" className="" />
         </div>
       </div>
     </div>

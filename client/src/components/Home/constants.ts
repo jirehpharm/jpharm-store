@@ -9,14 +9,14 @@ export const heroSectionData = {
       title: "SGold Standard Pre-Workout",
       price: "Starting at &16.99",
       buttonUrl: "#",
-      image: `/img/herosection/hero1.png`,
+      image: "/img/herosection/p-1.png",
     },
     {
       offer: "Up To 70% Off Today Only!",
       title: "Standard Pre-Workout",
       price: "Starting at &16.99",
       buttonUrl: "#",
-      image: `/img/herosection/hero1.png`,
+      image: "/img/herosection/p-2.png",
     },
   ],
 };
@@ -175,7 +175,7 @@ export const featureProduct2 = [
     description: "50% off in covid Vaccine",
     buyNowLink: "#" /* TODO: add buy now link */,
     imgSrc:
-      "img/Banner/mask.png" /* TODO: add img src img\salesWidgetbanner\banner-2.jpg/*/,
+      "img/banner/mask.png" /* TODO: add img src img\salesWidgetbanner\banner-2.jpg/*/,
     imgAlt: "mask image",
   },
   {
@@ -183,7 +183,7 @@ export const featureProduct2 = [
     description: "Antiseptic Dry Hand Gel",
     buyNowLink: "#" /* TODO: add buy now link */,
     imgSrc:
-      "img/Banner/bottle.png" /* TODO: add img src img\salesWidgetbanner\banner-2.jpg/*/,
+      "img/banner/bottle.png" /* TODO: add img src img\salesWidgetbanner\banner-2.jpg/*/,
     imgAlt: "bottle image",
   },
 ];

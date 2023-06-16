@@ -19,11 +19,7 @@ export default function BlogCard({
           <div className="relative b-radius-b-35px">
             <>
               <a href={blogLink}>
-                <img
-                  src={src}
-                  className="relative w-full h-full hover:scale-130"
-                  alt={alt}
-                />
+                <img src={src} className="relative w-full h-full" alt={alt} />
               </a>
               <div className="p-8 ">
                 <div className="mb-5">

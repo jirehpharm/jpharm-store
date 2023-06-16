@@ -1,27 +1,24 @@
 import ProductOverViewCard from "../Cards/ProductOverViewCard";
+import SaleWidgetCard from "../Cards/SaleWidgetCard/saleWidgetCard";
 import { IProductProps } from "./types";
+import { ISaleWidgetCardProps } from "../Cards/SaleWidgetCard/types";
 
-const promationsImages = [
-  { image: "placeholder/540x688.jpg", link: "#" },
-  { image: "placeholder/540x884.jpg", link: "#" },
-];
-
-export default function FeaturedProduct2({ data }: { data: IProductProps[] }) {
+export default function FeaturedProduct2({
+  data,
+  featureProduct2,
+}: {
+  data: IProductProps[];
+  featureProduct2: ISaleWidgetCardProps[];
+}) {
   return (
     <section>
       <div className="max-w-6xl mx-auto py-14">
         <h1 className="text-center mb-11 text-5xl">Featured Product</h1>
         <div className="grid grid-cols-4 gap-5 ">
           <div className="flex flex-col justify-between">
-            {promationsImages.map(
-              (item: { image: string; link: string }, index: number) => (
-                <div>
-                  <a href={item.link} key={index}>
-                    <img src={item.image} alt="error" />
-                  </a>
-                </div>
-              )
-            )}
+            {featureProduct2?.map((item, index) => (
+              <SaleWidgetCard saleWidgetCard={item} key={index} />
+            ))}
           </div>
           <div className="col-span-3 grid grid-cols-3 gap-5 ">
             {data.map((item: IProductProps, index: number) => (

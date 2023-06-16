@@ -9,6 +9,7 @@ import Category from "../components/Cards/Category/Category";
 import { categoryData } from "../components/Cards/Category/content";
 import TrendingBlog from "../components/Blog/TrendingBlog";
 import {
+  featureProduct2,
   heroSectionData,
   offerSectionData,
   widgetsData,
@@ -35,7 +36,10 @@ export default function Home() {
       <div className="mx-auto max-w-6xl">
         <Carousel slidesPerView={7} slides={slideData} />
       </div>
-      <FeaturedProduct2 data={bestSellerData} />
+      <FeaturedProduct2
+        data={bestSellerData}
+        featureProduct2={featureProduct2}
+      />
       <OfferBanner {...offerSectionData} />
       <TrendingProduct data={bestSellerData} />
       <OfferCard data={offerCardData} />

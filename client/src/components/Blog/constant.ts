@@ -1,7 +1,7 @@
 export const blogDetails = [
   {
     blogLink: "#",
-    src: "img/blog/1.jpg",
+    src: "img/blog/TB-1.png",
     alt: "Blog Image",
     adminLink: "#",
     adminName: "by: Admin",
@@ -12,7 +12,7 @@ export const blogDetails = [
   },
   {
     blogLink: "#",
-    src: "img/blog/1.jpg",
+    src: "img/blog/TB-2.png",
     alt: "Blog Image",
     adminLink: "#",
     adminName: "by: Admin",
@@ -23,7 +23,7 @@ export const blogDetails = [
   },
   {
     blogLink: "#",
-    src: "img/blog/1.jpg",
+    src: "img/blog/TB-3.png",
     alt: "Blog Image",
     adminLink: "#",
     adminName: "by: Admin",
@@ -34,7 +34,7 @@ export const blogDetails = [
   },
   {
     blogLink: "#",
-    src: "img/blog/1.jpg",
+    src: "img/blog/TB-4.png",
     alt: "Blog Image",
     adminLink: "#",
     adminName: "by: Admin",

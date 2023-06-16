@@ -44,7 +44,7 @@ export default function Detail() {
   return (
     <div className="grid grid-cols-2 gap-4 pr-4">
       <div className="px-5">
-        <img src="/placeholder/600x701.png" alt="600x701" />
+        <img src="/img/product/produc1.png" alt="600x701" />
         <Carousel slidesPerView={4} slides={content} />
       </div>
       <div>

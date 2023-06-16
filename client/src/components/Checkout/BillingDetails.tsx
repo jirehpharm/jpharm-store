@@ -5,15 +5,15 @@ import { RiMailFill } from "react-icons/ri";
 
 import { InputField } from "../Form/InputField";
 import SelectField from "../Form/SelectField";
-import { OptionProps } from "../Form/types";
+import { IOptionProps } from "../Form/types";
 import { selectData } from "./constants";
 import Textarea from "../Form/Textarea";
 import Checkbox from "../Form/Checkbox";
 
 export default function BillingDetails() {
-  const [selected, setSelected] = useState<OptionProps>();
+  const [selected, setSelected] = useState<IOptionProps>();
 
-  const handleSelect = (event: OptionProps) => {
+  const handleSelect = (event: IOptionProps) => {
     setSelected(event);
   };
 

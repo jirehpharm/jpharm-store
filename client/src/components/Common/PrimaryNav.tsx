@@ -48,8 +48,8 @@ export default function PrimaryNav(): JSX.Element {
         {isOpen && (
           <ViewCartDrawer
             closeDrawer={setIsOpen}
-            checkOutCartLink={"#"}
-            viewCartLink={"#"}
+            checkOutCartLink={"/checkout"}
+            viewCartLink={"/cart"}
             setDrawer={setIsOpen}
           />
         )}

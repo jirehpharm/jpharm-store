@@ -9,6 +9,7 @@ import { faqCategory } from "../components/Faq/constants";
 
 export default function Faqs() {
   const [searchText, setSearchText] = useState("");
+  console.log("%c 🍿 searchText: ", "font-size:12px;background-color: #7F2B82;color:#fff;", searchText);
 
   return (
     <div>

@@ -1,10 +1,13 @@
 import express, { Express, Request, Response } from "express";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
+
 dotenv.config();
 
 import routes from "./src/routes";
 import pg from "./src/utils/database";
+import "./src/utils/graphql"; // Initializing and Starting the GraphQL Server
+
 
 declare global {
   namespace NodeJS {
@@ -31,5 +34,5 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+  console.log(`⚡️[Express]: Server is running at http://localhost:${port}/`);
 });

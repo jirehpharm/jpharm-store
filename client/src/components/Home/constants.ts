@@ -9,14 +9,14 @@ export const heroSectionData = {
       title: "SGold Standard Pre-Workout",
       price: "Starting at &16.99",
       buttonUrl: "#",
-      image: `/img/Herosection/hero1.png`,
+      image: `/img/herosection/hero1.png`,
     },
     {
       offer: "Up To 70% Off Today Only!",
       title: "Standard Pre-Workout",
       price: "Starting at &16.99",
       buttonUrl: "#",
-      image: `/img/Herosection/hero1.png`,
+      image: `/img/herosection/hero1.png`,
     },
   ],
 };

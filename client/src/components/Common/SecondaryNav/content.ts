@@ -104,7 +104,7 @@ export const navbarData: INavList = [
   },
   {
     title: "About",
-    link: "#",
+    link: "/about",
   },
   {
     title: "Shop",

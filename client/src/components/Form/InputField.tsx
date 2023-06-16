@@ -1,7 +1,7 @@
-import { InputProps } from "./types";
+import { IInputProps } from "./types";
 import classNames from "classnames";
 
-export const InputField = (props: InputProps) => {
+export const InputField = (props: IInputProps) => {
   const { placeholder, type, Icon, id, name, className, required } = props;
   return (
     <div className="relative">

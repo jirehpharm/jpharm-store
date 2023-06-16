@@ -7,6 +7,7 @@ import { useState } from "react";
 
 import Badge from "./Badge";
 import ViewCartDrawer from "./CartDrawer/ViewCartDrawer";
+import { InputField } from "../Form/InputField";
 
 export default function PrimaryNav(): JSX.Element {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -18,21 +19,14 @@ export default function PrimaryNav(): JSX.Element {
         </a>
       </div>
       <div className="flex items-center gap-4 text-light">
-        <div className="min-w-[500px] rounded-full shadow-light">
-          <form className="flex h-10">
-            <input
-              type="search"
-              placeholder="Search here..."
-              className="w-full bg-white pl-4 pr-8 rounded-full focus-visible:outline-0"
-            />
-            <button
-              type="submit"
-              className="p-2 border-0 focus-visible:outline-0"
-            >
-              <MagnifyingGlassIcon className="h-6 w-6" />
-            </button>
-          </form>
-        </div>
+        <form className="flex h-10">
+          <InputField
+            placeholder={"Search here..."}
+            type="search"
+            Icon={MagnifyingGlassIcon}
+            className="rounded-full w-[500px] h-[30px]"
+          />
+        </form>
       </div>
       <div className="flex items-center gap-4">
         <UserIcon className="h-8 w-6" />
@@ -53,17 +47,10 @@ export default function PrimaryNav(): JSX.Element {
         </button>
         {isOpen && (
           <ViewCartDrawer
-            productName={""}
-            productLink={""}
-            productImageSrc={""}
-            productImageAltText={""}
-            productPrice={""}
-            productQuantity={0}
-            amount={undefined}
-            viewCartLink={"/cart"}
-            checkOutCartLink={"/checkout"}
-            productCount={undefined}
             closeDrawer={setIsOpen}
+            checkOutCartLink={"#"}
+            viewCartLink={"#"}
+            setDrawer={setIsOpen}
           />
         )}
       </div>

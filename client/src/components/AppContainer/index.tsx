@@ -2,20 +2,18 @@ import { Route, Routes } from "react-router-dom";
 
 import Home from "../../pages/Home";
 import Register from "../../pages/Register";
-import Contact from "../../components/Contact/ContactDetails";
 import Products from "../../pages/Products";
 import ForgotPassword from "../../pages/ForgotPassword";
 import ProductDetails from "../../pages/ProductDetails";
 import Login from "../../pages/Login";
 import Checkout from "../../pages/Checkout";
 import Cart from "../../pages/Cart";
-import PrivacyPolicy from "../../pages/PrivacyPolicy";
-import Wishlist from "../../pages/Wishlist";
-import MyAccount from "../../pages/MyAccount";
-import { orderTracking } from "../OrderTracking/constant";
 import OrderTrackingPage from "../../pages/OrderTrackingPage";
-import OrderTracking from "../OrderTracking/OrderTracking";
 import About from "../../pages/About";
+import MyAccount from "../../pages/MyAccount";
+import Wishlist from "../../pages/Wishlist";
+import Contact from "../../pages/Contact";
+import PrivacyPolicy from "../../pages/PrivacyPolicy";
 
 export default function AppContainer() {
   return (
@@ -34,10 +32,6 @@ export default function AppContainer() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/my-account" element={<MyAccount />} />
-        <Route
-          path="/order-tracking"
-          element={<OrderTracking order={orderTracking} />}
-        />
         <Route path="/order-tracking" element={<OrderTrackingPage />} />
       </Route>
     </Routes>

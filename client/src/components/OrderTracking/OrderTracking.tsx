@@ -15,9 +15,9 @@ export default function OrderTracking(props: IOrderTracking): JSX.Element {
           <div className="bg-white">
             <form
               action="#"
-              className="mt-7 pt-10 pr-12 pb-12 pl-12 z-[1] bg-sectionColor"
+              className="mt-7 p-10 z-[1] bg-sectionColor"
             >
-              <p className="text-center flex flex-wrap text-light text-xl font-normal">
+              <p className="text-light text-center block">
                 To track your order please enter your Order ID in the box below
                 and press the "Track Order" button. This was given to you on
                 your receipt and in the confirmation email you should have
@@ -28,7 +28,7 @@ export default function OrderTracking(props: IOrderTracking): JSX.Element {
                   <label
                     key={index}
                     htmlFor="order-id"
-                    className=" text-light leading-6 text-center text-lg "
+                    className=" text-light leading-6 text-center text-base"
                   >
                     {item.inputLabel}
                   </label>
@@ -37,7 +37,7 @@ export default function OrderTracking(props: IOrderTracking): JSX.Element {
                     type={item.inputType}
                     id={item.inputId}
                     name={item.inputName}
-                    className="placeholder:text-[#8cb2b2] placeholder:font-semibold mb-7"
+                    className="placeholder:text-[#8cb2b2] placeholder:font-normal mb-7 mt-1 text-sm"
                   />
                 </>
               ))}

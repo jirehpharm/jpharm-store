@@ -5,6 +5,7 @@ dotenv.config();
 
 import routes from "./src/routes";
 import pg from "./src/utils/database";
+import "../server/src/graphql"
 
 declare global {
   namespace NodeJS {

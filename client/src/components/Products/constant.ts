@@ -1,3 +1,6 @@
+import { GlobeAltIcon, UserIcon } from "@heroicons/react/20/solid";
+import { RiMailFill } from "react-icons/ri";
+
 import { IListProps } from "./Categories/types";
 
 export const selectData = [
@@ -12,7 +15,7 @@ export const featuredProductDetails = [
     showStars: true,
     isTextCenter: true,
     isNew: false,
-    image: "/placeholder/600x701.png ",
+    image: "/img/product/produc1.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -967,5 +970,26 @@ export const productPreview = [
   },
   {
     imgSrc: "placeholder/600x701.png",
+  },
+];
+
+export const fields = [
+  {
+    placeholder: "Type your name...",
+    type: "text",
+    name: "name",
+    Icon: UserIcon,
+  },
+  {
+    placeholder: "Type your email...",
+    type: "email",
+    name: "email",
+    Icon: RiMailFill,
+  },
+  {
+    placeholder: "Type your website...",
+    type: "text",
+    name: "website",
+    Icon: GlobeAltIcon,
   },
 ];

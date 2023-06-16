@@ -20,3 +20,19 @@ export interface SelectFieldProps {
   selected: any;
   className?: string;
 }
+
+export interface TextareaProps {
+  placeholder: string;
+  Icon?: React.ReactSVGElement | any;
+  id?: string;
+  className?: string;
+  required?: boolean;
+  name: string;
+}
+
+export interface CheckboxProps {
+  id?: string;
+  className?: string;
+  required?: boolean;
+  name: string;
+}

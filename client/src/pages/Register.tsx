@@ -1,5 +1,6 @@
 import Button from "../components/Common/Button";
 import Heading from "../components/Common/Heading";
+import Checkbox from "../components/Form/Checkbox";
 import { InputField } from "../components/Form/InputField";
 
 /**
@@ -48,7 +49,7 @@ export default function Register(): JSX.Element {
           <br />
           <div className="flex items-start">
             <div className="flex items-center h-5">
-              <input type="checkbox" className="w-4 h-4" />
+              <Checkbox name={"consent"} id="consent" />
             </div>
             <div className="ml-3 text-sm">
               <label>
@@ -61,7 +62,7 @@ export default function Register(): JSX.Element {
           <br />
           <div className="flex items-start">
             <div className="flex items-center h-5">
-              <input type="checkbox" className="w-4 h-4" />
+              <Checkbox name={"consent"} id="consent" />
             </div>
             <div className="ml-3 text-sm">
               <label>I consent to the privacy policy.</label>

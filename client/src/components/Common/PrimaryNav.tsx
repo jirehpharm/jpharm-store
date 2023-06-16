@@ -53,17 +53,10 @@ export default function PrimaryNav(): JSX.Element {
         </button>
         {isOpen && (
           <ViewCartDrawer
-            productName={""}
-            productLink={""}
-            productImageSrc={""}
-            productImageAltText={""}
-            productPrice={""}
-            productQuantity={0}
-            amount={undefined}
-            viewCartLink={"/cart"}
-            checkOutCartLink={"/checkout"}
-            productCount={undefined}
             closeDrawer={setIsOpen}
+            checkOutCartLink={"#"}
+            viewCartLink={"#"}
+            setDrawer={setIsOpen}
           />
         )}
       </div>

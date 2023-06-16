@@ -169,4 +169,21 @@ export const bestSellerData = [
   },
 ];
 
-export const featureProduct2 = [];
+export const featureProduct2 = [
+  {
+    title: "sanitizer",
+    description: "50% off in covid Vaccine",
+    buyNowLink: "#" /* TODO: add buy now link */,
+    imgSrc:
+      "img/Banner/mask.png" /* TODO: add img src img\salesWidgetbanner\banner-2.jpg/*/,
+    imgAlt: "mask image",
+  },
+  {
+    title: "- 29% OFF",
+    description: "Antiseptic Dry Hand Gel",
+    buyNowLink: "#" /* TODO: add buy now link */,
+    imgSrc:
+      "img/Banner/bottle.png" /* TODO: add img src img\salesWidgetbanner\banner-2.jpg/*/,
+    imgAlt: "bottle image",
+  },
+];

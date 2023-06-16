@@ -25,14 +25,17 @@ export default function Products() {
       const productName = item.productName.toLowerCase();
       const price = parseFloat(item.price.replace("$", ""));
       const isMatchingSearch = productName.includes(searchText.toLowerCase());
-      const isWithinPriceRange = price >= range.lowestPrice && price <= range.highestPrice;
+      const isWithinPriceRange =
+        price >= range.lowestPrice && price <= range.highestPrice;
       return isMatchingSearch && isWithinPriceRange;
     });
 
     setSortedGridData(filteredData);
   }, [searchText, range]);
 
-  let highestPrice = parseFloat(get(gridData, "[0].price", "").replace("$", ""));
+  let highestPrice = parseFloat(
+    get(gridData, "[0].price", "").replace("$", "")
+  );
   let lowestPrice = parseFloat(get(gridData, "[0].price", "").replace("$", ""));
 
   for (let i = 1; i < gridData.length; i++) {
@@ -59,12 +62,17 @@ export default function Products() {
         <div className="col-span-2 my-10">
           <Categories title={"Product Categories"} list={listData} />
           <WidgetLayout title={"Filter By Price"}>
-            <PriceRange highestPrice={highestPrice} lowestPrice={lowestPrice} setRange={setRange} range={range} />
+            <PriceRange
+              highestPrice={highestPrice}
+              lowestPrice={lowestPrice}
+              setRange={setRange}
+              range={range}
+            />
           </WidgetLayout>
           <WidgetLayout title={"Search Objects"}>
             <Search setSearchText={setSearchText} />
           </WidgetLayout>
-          <SaleWidgetCard saleWidgetCard={[salesWidgetCard]} />
+          <SaleWidgetCard saleWidgetCard={salesWidgetCard} />
         </div>
         <div className="col-span-4">
           <ProductsGrid gridData={sortedGridData} />

@@ -21,7 +21,7 @@ export default function BlogCard({
               <a href={blogLink}>
                 <img
                   src={src}
-                  className="relative w-full h-full hover:scale-130"
+                  className="relative w-full h-full hover:scale-125 ease-out"
                   alt={alt}
                 />
               </a>

@@ -108,6 +108,32 @@ export const questionCategory = [
   },
 ];
 
+export const testimonialsData = [
+  {
+    name: "Rosalina D. William",
+    post: "Founder",
+    image: "/placeholder/about-page-testimonials.jpg",
+    description: "Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    name: "Rosalina D. William",
+    post: "Founder",
+    image: "/placeholder/about-page-testimonials2.jpg",
+    description: "Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    name: "Rosalina D. William",
+    post: "Founder",
+    image: "/placeholder/about-page-testimonials.jpg",
+    description: "Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    name: "Rosalina D. William",
+    post: "Founder",
+    image: "/placeholder/about-page-testimonials2.jpg",
+    description: "Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+];
 export const whyChooseUsData = [
   {
     icon: FaHandHoldingMedical,
@@ -124,7 +150,7 @@ export const whyChooseUsData = [
     title: "Pesticide Free Goods",
     description: "Lorem ipsum dolor sit ame it, consectetur adipisicing elit, sed do eiusmod te mp or incididunt ut labore.",
   },
-]
+];
 
 export const statsData = [
   {
@@ -147,4 +173,4 @@ export const statsData = [
     number: "21+",
     description: "Country Cover",
   },
-]
+];

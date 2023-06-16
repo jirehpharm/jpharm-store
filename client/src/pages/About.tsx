@@ -1,6 +1,7 @@
+import ClientsFeedBack from "../components/About/ClientsFeedBack";
 import QuestionsSection from "../components/About/QuestionsSection";
 import WhyChooseUs from "../components/About/WhyChooseUs";
-import { questionCategory, statsData, whyChooseUsData } from "../components/About/content";
+import { questionCategory, whyChooseUsData, testimonialsData, statsData } from "../components/About/content";
 import TrendingBlog from "../components/Blog/TrendingBlog";
 import { blogDetails } from "../components/Blog/constant";
 import CoreFeatureCard from "../components/Cards/CoreFeatureCard";
@@ -16,7 +17,8 @@ export default function About() {
       <BreadcrumbBanner title={"About"} />
       <OfferBanner {...offerSectionData} />
       <CoreFeatureCard data={coreFeatureData} />
-      <Stats data={statsData}/>
+      <Stats data={statsData} />
+      <ClientsFeedBack testimonialsData={testimonialsData} />
       <QuestionsSection faqCategory={questionCategory}></QuestionsSection>
       <WhyChooseUs data={whyChooseUsData} />
       <TrendingBlog blogDetails={blogDetails} />

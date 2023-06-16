@@ -23,13 +23,10 @@ export default function ReviewForm() {
             name={"comment"}
             Icon={PencilIcon}
           />
-          {fields.map((field, index) => (
+          {fields?.map((field, index) => (
             <InputField
               key={index}
-              type={field.type}
-              name={field.name}
-              placeholder={field.placeholder}
-              Icon={field.Icon}
+              {...field}
             />
           ))}
         </div>

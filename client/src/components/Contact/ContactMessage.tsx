@@ -1,9 +1,10 @@
+import { PencilIcon } from "@heroicons/react/20/solid";
+
 import { IContactMessageFormProps } from "./types";
 import Heading from "../Common/Heading";
 import { InputField } from "../Form/InputField";
 import Textarea from "../Form/Textarea";
 import Checkbox from "../Form/Checkbox";
-import "../../style/index.css";
 
 interface IContactMessage {
   contactMessage: IContactMessageFormProps[];
@@ -33,7 +34,11 @@ export default function ContactMessage(props: IContactMessage) {
                 />
               ))}
               <div className=" top-7 col-span-2">
-                <Textarea placeholder={"Enter message"} name={"message"} />
+                <Textarea
+                  placeholder={"Enter message"}
+                  name={"message"}
+                  Icon={PencilIcon}
+                />
               </div>
               <p className="col-span-2">
                 <label className="input-info-save mb-0  text-sm ">

@@ -1,31 +1,16 @@
-const statsData = [
-  {
-    title: "Free shipping",
-    description: "On all orders over $49.00",
-    image: "img/icons/svg/8-trolley.svg",
-  },
-  {
-    title: "15 days returns",
-    description: "Moneyback guarantee",
-    image: "img/icons/svg/9-money.svg",
-  },
-  {
-    title: "Secure checkout",
-    description: "Protected by Paypal",
-    image: "img/icons/svg/10-credit-card.svg",
-  },
-  {
-    title: "Offer & gift here",
-    description: "On all orders over",
-    image: "img/icons/svg/11-gift-card.svg",
-  },
-];
-export default function Stats() {
+import { IStatsDataProps } from "./types";
+
+interface IStatsData {
+  stats: IStatsDataProps[];
+}
+
+export default function Stats(props: IStatsData) {
+  const { stats } = props;
   return (
     <div className="ltn__feature-area bg-sectionColor mt-24 py-7 lg:mt-16">
       <div className="max-w-6xl mx-auto">
         <div className=" grid grid-cols-4">
-          {statsData.map(
+          {stats?.map(
             (
               item: { title: string; description: string; image: string },
               index: number

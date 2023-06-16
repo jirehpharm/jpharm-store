@@ -15,7 +15,7 @@ export default function Contact(props: IContactCardDetails) {
       <BreadcrumbBanner title={"Contact"} />
       <section className="grid grid-row-3 grid-flow-col max-w-5xl mx-auto mt-20 gap-7 mb-20">
         {/*  <div className=""> */}
-        {contact.map((con, index) => (
+        {contact?.map((con, index) => (
           <div
             key={index}
             className="text-center mb-7 pt-12 px-7 pb-7 shadow-lg"

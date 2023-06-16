@@ -1,3 +1,5 @@
+import { FaHandHoldingMedical, FaMicroscope, FaStethoscope } from "react-icons/fa";
+
 export const questionCategory = [
   {
     categoryName: "",
@@ -103,3 +105,21 @@ export const questionCategory = [
     ],
   },
 ];
+
+export const whyChooseUsData = [
+  {
+    icon: FaHandHoldingMedical,
+    title: "All Kind Brand",
+    description:"Lorem ipsum dolor sit ame it, consectetur adipisicing elit, sed do eiusmod te mp or incididunt ut labore.",
+  },
+  {
+    icon: FaMicroscope,
+    title: "Curated Products",
+    description:"Lorem ipsum dolor sit ame it, consectetur adipisicing elit, sed do eiusmod te mp or incididunt ut labore.",
+  },
+  {
+    icon: FaStethoscope,
+    title: "Pesticide Free Goods",
+    description:"Lorem ipsum dolor sit ame it, consectetur adipisicing elit, sed do eiusmod te mp or incididunt ut labore.",
+  },
+]

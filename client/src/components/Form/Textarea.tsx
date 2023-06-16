@@ -1,7 +1,7 @@
 import classNames from "classnames";
-import { TextareaProps } from "./types";
+import { ITextareaProps } from "./types";
 
-export default function Textarea(props: TextareaProps) {
+export default function Textarea(props: ITextareaProps) {
   const { placeholder, Icon, id, className, required, name } = props;
 
   return (

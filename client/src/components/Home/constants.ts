@@ -114,7 +114,7 @@ export const widgetsData = [
 export const bestSellerData = [
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/produc1.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -125,7 +125,7 @@ export const bestSellerData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product2.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -136,7 +136,7 @@ export const bestSellerData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product3.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -147,7 +147,7 @@ export const bestSellerData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -158,7 +158,7 @@ export const bestSellerData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product2.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -168,3 +168,5 @@ export const bestSellerData = [
     originalPrice: "$46.00",
   },
 ];
+
+export const featureProduct2 = [];

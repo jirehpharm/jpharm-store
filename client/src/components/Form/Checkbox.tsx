@@ -1,8 +1,8 @@
 import classNames from "classnames";
 
-import { CheckboxProps } from "./types";
+import { ICheckboxProps } from "./types";
 
-export default function Checkbox(props: CheckboxProps) {
+export default function Checkbox(props: ICheckboxProps) {
   const { id, className, required, name } = props;
 
   return (

@@ -1,4 +1,4 @@
-export interface InputProps {
+export interface IInputProps {
   placeholder: string;
   type?: string | "text";
   Icon?: React.ReactSVGElement | any;
@@ -8,20 +8,20 @@ export interface InputProps {
   required?: boolean;
 }
 
-export interface OptionProps {
+export interface IOptionProps {
   id: number;
   label: string;
   value: string;
 }
 
-export interface SelectFieldProps {
-  selectData: OptionProps[];
+export interface ISelectFieldProps {
+  selectData: IOptionProps[];
   handleSelect: any;
   selected: any;
   className?: string;
 }
 
-export interface TextareaProps {
+export interface ITextareaProps {
   placeholder: string;
   Icon?: React.ReactSVGElement | any;
   id?: string;
@@ -30,7 +30,7 @@ export interface TextareaProps {
   name: string;
 }
 
-export interface CheckboxProps {
+export interface ICheckboxProps {
   id?: string;
   className?: string;
   required?: boolean;

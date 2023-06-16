@@ -9,7 +9,7 @@ const HeroSection = ({ carouselData }: IHeroSectionProps) => {
   const content = carouselData.map(
     (items: IHeroSectionPropsData, index: number) => (
       <div
-        className={` h-full flex items-center bg-[url(img/Herosection/hero1.png)]`}
+        className={` h-full flex items-center bg-[url(img/herosection/hero1.png)]`}
         key={index}
       >
         <div className="ml-10 w-[40%] text-left">

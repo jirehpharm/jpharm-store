@@ -6,7 +6,7 @@ interface IViewCartCard {
   product: IViewCartCardProps[];
 }
 
-export default function cartItems(props: IViewCartCard) {
+export default function CartItems(props: IViewCartCard) {
   const { product } = props;
   return (
     <section className="overflow-y-auto scrollbar-thin scrollbar-track-rounded-full scrollbar-thumb-rounded-md scrollbar-thumb-gray-200 max-h-96">

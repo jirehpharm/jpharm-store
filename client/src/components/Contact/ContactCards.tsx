@@ -1,14 +1,11 @@
 import BreadcrumbBanner from "../Common/BreadcrumbBanner";
-import ContactMessage from "./ContactMessage";
-import { contactMessageForm } from "./constants";
-import ContactMap from "./contactMap";
 import { IContactCardDetailsProps } from "./types";
 
 interface IContactCardDetails {
   contact: IContactCardDetailsProps[];
 }
 
-export default function Contact(props: IContactCardDetails) {
+export default function ContactCards(props: IContactCardDetails) {
   const { contact } = props;
   return (
     <>
@@ -31,8 +28,6 @@ export default function Contact(props: IContactCardDetails) {
           </div>
         ))}
       </section>
-      <ContactMessage contactMessage={contactMessageForm} />
-      <ContactMap />
     </>
   );
 }

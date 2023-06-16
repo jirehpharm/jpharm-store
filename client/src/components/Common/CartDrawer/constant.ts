@@ -2,7 +2,7 @@ export const productCartCard = [
   {
     productName: "Antiseptic Spray",
     productLink: "#" /* TODO: create the products Link page */,
-    imageSrc: "img/product/10.png",
+    imageSrc: "/img/product/produc1.png",
     imageAlt: "product image",
     productPrice: "$10.00",
     productQuantity: 1,
@@ -11,7 +11,7 @@ export const productCartCard = [
   {
     productName: "Asthetic spray",
     productLink: "#",
-    imageSrc: "img/product/10.png",
+    imageSrc: "/img/product/product2.png",
     imageAlt: "image",
     productPrice: "$20",
     productQuantity: 1,
@@ -20,7 +20,7 @@ export const productCartCard = [
   {
     productName: "Asthetic spray",
     productLink: "#",
-    imageSrc: "img/product/10.png",
+    imageSrc: "/img/product/product3.png",
     imageAlt: "image",
     productPrice: "$20",
     productQuantity: 1,
@@ -29,7 +29,7 @@ export const productCartCard = [
   {
     productName: "Asthetic spray",
     productLink: "#",
-    imageSrc: "img/product/10.png",
+    imageSrc: "/img/product/product4.png",
     imageAlt: "image",
     productPrice: "$20",
     productQuantity: 1,

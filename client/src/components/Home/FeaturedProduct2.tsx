@@ -1,24 +1,19 @@
 import ProductOverViewCard from "../Cards/ProductOverViewCard";
 import { IProductProps } from "./types";
 
-interface IFeatureProduct2 {
-  data: IProductProps[];
-}
-
-const promationsimages = [
+const promationsImages = [
   { image: "placeholder/540x688.jpg", link: "#" },
   { image: "placeholder/540x884.jpg", link: "#" },
 ];
 
-export default function FeaturedProduct2(props: IFeatureProduct2) {
-  const { data } = props;
+export default function FeaturedProduct2({ data }: { data: IProductProps[] }) {
   return (
     <section>
       <div className="max-w-6xl mx-auto py-14">
         <h1 className="text-center mb-11 text-5xl">Featured Product</h1>
         <div className="grid grid-cols-4 gap-5 ">
           <div className="flex flex-col justify-between">
-            {promationsimages.map(
+            {promationsImages.map(
               (item: { image: string; link: string }, index: number) => (
                 <div>
                   <a href={item.link} key={index}>

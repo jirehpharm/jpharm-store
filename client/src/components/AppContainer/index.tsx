@@ -12,6 +12,7 @@ import OrderTrackingPage from "../../pages/OrderTrackingPage";
 import About from "../../pages/About";
 import MyAccount from "../../pages/MyAccount";
 import Wishlist from "../../pages/Wishlist";
+import Faqs from "../../pages/Faqs";
 import Contact from "../../pages/Contact";
 import PrivacyPolicy from "../../pages/PrivacyPolicy";
 
@@ -33,6 +34,7 @@ export default function AppContainer() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/my-account" element={<MyAccount />} />
         <Route path="/order-tracking" element={<OrderTrackingPage />} />
+        <Route path="/faq" element={<Faqs />} />
       </Route>
     </Routes>
   );

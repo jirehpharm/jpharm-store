@@ -9,6 +9,7 @@ import Category from "../components/Cards/Category/Category";
 import { categoryData } from "../components/Cards/Category/content";
 import TrendingBlog from "../components/Blog/TrendingBlog";
 import {
+  featuredProductsData,
   heroSectionData,
   offerSectionData,
   widgetsData,
@@ -18,6 +19,8 @@ import FeaturedProduct2 from "../components/Home/FeaturedProduct2";
 import { blogDetails } from "../components/Blog/constant";
 import { statsData } from "../components/Common/Stats/constants";
 import { bestSellerData } from "../components/Home/constants";
+import OfferCard from "../components/Cards/OfferCard/OfferCard";
+import { offerCardData } from "../components/Cards/OfferCard/constants";
 
 export default function Home() {
   const slideData = categoryData.map((item, idx: number) => (
@@ -36,6 +39,7 @@ export default function Home() {
       <FeaturedProduct2 data={bestSellerData} />
       <OfferBanner {...offerSectionData} />
       <TrendingProduct data={bestSellerData} />
+      <OfferCard data={offerCardData} />
       <FeaturedProduct />
       <BestSeller data={bestSellerData} />
       <Banner

@@ -7,7 +7,7 @@ const navigation: TNavigation = [
   {
     name: "Company",
     list: [
-      { name: "About", href: "#" },
+      { name: "About", href: "/about" },
       { name: "Blog", href: "#" },
       { name: "All Products", href: "#" },
       { name: "Location Map", href: "#" },

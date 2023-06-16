@@ -15,11 +15,13 @@ import MyAccount from "../../pages/MyAccount";
 import { orderTracking } from "../OrderTracking/constant";
 import OrderTrackingPage from "../../pages/OrderTrackingPage";
 import OrderTracking from "../OrderTracking/OrderTracking";
+import About from "../../pages/About";
 
 export default function AppContainer() {
   return (
     <Routes>
       <Route>
+        <Route path="/about" element={<About />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />

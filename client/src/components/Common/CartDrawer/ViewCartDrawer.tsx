@@ -1,15 +1,13 @@
 import { ICartDrawerProps } from "./types";
 import { AiOutlineClose } from "react-icons/ai";
-import CartItems from "../../Cards/CartCards/cartItems";
+import CartItems from "../../Cards/CartCards/CartItems";
 import { productCartCard } from "./constant";
-//import { useState } from "react";
 
 export default function ViewCartDrawer(product: ICartDrawerProps) {
   function closeDrawer(drawer: boolean) {
     product.setDrawer(drawer);
   }
 
-  //const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <section className="fixed top-0 right-0 left-auto z-[10] overflow-y-auto  bg-white h-screen py-5 pl-7 pr-2">
       <div className="flex justify-between touch-auto pl-7 py-5 pr-2 ">

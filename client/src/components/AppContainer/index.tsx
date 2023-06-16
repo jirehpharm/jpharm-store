@@ -14,6 +14,7 @@ import MyAccount from "../../pages/MyAccount";
 import OrderTracking from "../OrderTracking/OrderTracking";
 import { orderTracking } from "../OrderTracking/constant";
 import Wishlist from "../../pages/Wishlist";
+import Faqs from "../../pages/Faqs";
 
 export default function AppContainer() {
   return (
@@ -30,11 +31,9 @@ export default function AppContainer() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/my-account" element={<MyAccount />} />
-        <Route
-          path="/order-tracking"
-          element={<OrderTracking order={orderTracking} />}
-        />
+        <Route path="/order-tracking" element={<OrderTracking order={orderTracking} />} />
         <Route path="/order-tracking" element={<OrderTrackingPage />} />
+        <Route path="/faq" element={<Faqs />} />
       </Route>
     </Routes>
   );

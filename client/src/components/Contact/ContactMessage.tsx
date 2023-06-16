@@ -1,11 +1,14 @@
-import Heading from "../Common/Heading";
-import "../../style/index.css";
 import { IContactMessageFormProps } from "./types";
+import Heading from "../Common/Heading";
 import { InputField } from "../Form/InputField";
+import Textarea from "../Form/Textarea";
+import Checkbox from "../Form/Checkbox";
+import "../../style/index.css";
 
 interface IContactMessage {
   contactMessage: IContactMessageFormProps[];
 }
+
 export default function ContactMessage(props: IContactMessage) {
   const { contactMessage } = props;
   return (
@@ -21,30 +24,22 @@ export default function ContactMessage(props: IContactMessage) {
               className="grid grid-cols-2 gap-8 mb-7 mx-1 p-3"
             >
               {contactMessage.map((con, index) => (
-                <div
+                <InputField
                   key={index}
-                  className="relative border-2 border-borderColor"
-                >
-                  <InputField
-                    key={index}
-                    placeholder={con.placeholder}
-                    type={con.type}
-                    name={con.name}
-                    Icon={con.icon}
-                  />
-                </div>
+                  placeholder={con.placeholder}
+                  type={con.type}
+                  name={con.name}
+                  Icon={con.icon}
+                />
               ))}
               <div className=" top-7 col-span-2">
-                <textarea
-                  name="message"
-                  placeholder="Enter message"
-                  className="border-2 border-borderColor w-full p-5 mb-7 pr-10 pl-5 px-5 py-3"
-                ></textarea>
+                <Textarea placeholder={"Enter message"} name={"message"} />
               </div>
               <p className="col-span-2">
                 <label className="input-info-save mb-0  text-sm ">
-                  <input type="checkbox" name="agree" /> Save my name, email,
-                  and website in this browser for the next time I comment.
+                  <Checkbox name={"agree"} id={"agree"} className="mr-2" />
+                  Save my name, email, and website in this browser for the next
+                  time I comment.
                 </label>
               </p>
               <div className="btn-wrapper mt-0 col-span-2">

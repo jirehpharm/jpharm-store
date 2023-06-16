@@ -1,12 +1,15 @@
-import Heading from "../Common/Heading";
-import "../../style/index.css";
-import { IContactMessageFormProps } from "./types";
-import { InputField } from "../Form/InputField";
 import { PencilIcon } from "@heroicons/react/20/solid";
+
+import { IContactMessageFormProps } from "./types";
+import Heading from "../Common/Heading";
+import { InputField } from "../Form/InputField";
+import Textarea from "../Form/Textarea";
+import Checkbox from "../Form/Checkbox";
 
 interface IContactMessage {
   contactMessage: IContactMessageFormProps[];
 }
+
 export default function ContactMessage(props: IContactMessage) {
   const { contactMessage } = props;
   return (
@@ -21,30 +24,27 @@ export default function ContactMessage(props: IContactMessage) {
               method="post"
               className="grid grid-cols-2 gap-8 mb-7 mx-1 p-3"
             >
-              {contactMessage?.map((con, index) => (
-                <div
+              {contactMessage.map((con, index) => (
+                <InputField
                   key={index}
-                  className="relative border-2 border-borderColor"
-                >
-                  <InputField
-                    key={index}
-                    placeholder={con.placeholder}
-                    type={con.type}
-                    name={con.name}
-                    Icon={con.icon}
-                  />
-                </div>
+                  placeholder={con.placeholder}
+                  type={con.type}
+                  name={con.name}
+                  Icon={con.icon}
+                />
               ))}
               <div className=" top-7 col-span-2">
-                <div className="relative">
-                  <textarea className="relative border-2 border-borderColor bg-white pl-5 pr-10 py-5 text-base w-full text-light focus:outline-0 focus:border focus:border-secondary focus-visible:outine-0 h-[130px]"></textarea>
-                  <PencilIcon className="h-5 w-5 text-secondary absolute right-3 top-2" />
-                </div>
+                <Textarea
+                  placeholder={"Enter message"}
+                  name={"message"}
+                  Icon={PencilIcon}
+                />
               </div>
               <p className="col-span-2">
                 <label className="input-info-save mb-0  text-sm ">
-                  <input type="checkbox" name="agree" /> Save my name, email,
-                  and website in this browser for the next time I comment.
+                  <Checkbox name={"agree"} id={"agree"} className="mr-2" />
+                  Save my name, email, and website in this browser for the next
+                  time I comment.
                 </label>
               </p>
               <div className="btn-wrapper mt-0 col-span-2">

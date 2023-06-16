@@ -12,7 +12,7 @@ export const featuredProductDetails = [
     showStars: true,
     isTextCenter: true,
     isNew: false,
-    image: "/placeholder/600x701.png ",
+    image: "/img/product/produc1.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",

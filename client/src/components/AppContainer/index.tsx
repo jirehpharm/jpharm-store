@@ -11,7 +11,7 @@ import Cart from "../../pages/Cart";
 import OrderTrackingPage from "../../pages/OrderTrackingPage";
 import MyAccount from "../../pages/MyAccount";
 import Wishlist from "../../pages/Wishlist";
-import Contact from "../../pages/contact";
+import Contact from "../../pages/Contact";
 
 export default function AppContainer() {
   return (

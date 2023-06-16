@@ -2,6 +2,7 @@ import Heading from "../Common/Heading";
 import "../../style/index.css";
 import { IContactMessageFormProps } from "./types";
 import { InputField } from "../Form/InputField";
+import { PencilIcon } from "@heroicons/react/20/solid";
 
 interface IContactMessage {
   contactMessage: IContactMessageFormProps[];
@@ -20,7 +21,7 @@ export default function ContactMessage(props: IContactMessage) {
               method="post"
               className="grid grid-cols-2 gap-8 mb-7 mx-1 p-3"
             >
-              {contactMessage.map((con, index) => (
+              {contactMessage?.map((con, index) => (
                 <div
                   key={index}
                   className="relative border-2 border-borderColor"
@@ -35,11 +36,10 @@ export default function ContactMessage(props: IContactMessage) {
                 </div>
               ))}
               <div className=" top-7 col-span-2">
-                <textarea
-                  name="message"
-                  placeholder="Enter message"
-                  className="border-2 border-borderColor w-full p-5 mb-7 pr-10 pl-5 px-5 py-3"
-                ></textarea>
+                <div className="relative">
+                  <textarea className="relative border-2 border-borderColor bg-white pl-5 pr-10 py-5 text-base w-full text-light focus:outline-0 focus:border focus:border-secondary focus-visible:outine-0 h-[130px]"></textarea>
+                  <PencilIcon className="h-5 w-5 text-secondary absolute right-3 top-2" />
+                </div>
               </div>
               <p className="col-span-2">
                 <label className="input-info-save mb-0  text-sm ">

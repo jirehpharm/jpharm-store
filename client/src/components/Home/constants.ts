@@ -27,8 +27,10 @@ export const offerSectionData = {
   title: "Today's Hot Offer",
   subtitle1: "Free Covid-19 Vaccine",
   subtitle2: "Campaign Ticket",
-  description1: "Get vaccinated against Covid-19 for free and protect yourself and others. Don't miss out on this opportunity!",
-  description2: "Join our campaign and get a chance to win an exclusive ticket to an exciting event. Experience it like never before!",
+  description1:
+    "Get vaccinated against Covid-19 for free and protect yourself and others. Don't miss out on this opportunity!",
+  description2:
+    "Join our campaign and get a chance to win an exclusive ticket to an exciting event. Experience it like never before!",
 };
 
 export const featuredProductsData = [
@@ -106,5 +108,63 @@ export const widgetsData = [
   {
     icon: TbWashGentle,
     title: "Rewashes & Reusable",
+  },
+];
+
+export const bestSellerData = [
+  {
+    isNew: true,
+    image: "img/product/5.png",
+    quickView: "#",
+    addToCard: "#",
+    wishlist: "#",
+    stars: 5,
+    productName: "Antiseptic Spray",
+    price: "$32.00",
+    originalPrice: "$46.00",
+  },
+  {
+    isNew: true,
+    image: "img/product/5.png",
+    quickView: "#",
+    addToCard: "#",
+    wishlist: "#",
+    stars: 3,
+    productName: "Antiseptic Spray",
+    price: "$32.00",
+    originalPrice: "$46.00",
+  },
+  {
+    isNew: false,
+    image: "img/product/5.png",
+    quickView: "#",
+    addToCard: "#",
+    wishlist: "#",
+    stars: 4,
+    productName: "Antiseptic Spray",
+    price: "$32.00",
+    originalPrice: "$46.00",
+  },
+  {
+    isNew: true,
+    image: "img/product/5.png",
+    quickView: "#",
+    addToCard: "#",
+    wishlist: "#",
+    stars: 2,
+    productName: "Antiseptic Spray",
+    price: "$32.00",
+    originalPrice: "$46.00",
+  },
+  {
+    isNew: false,
+    image: "img/product/5.png",
+    quickView: "#",
+    addToCard: "#",
+    wishlist: "#",
+    stars: 3,
+    productName: "Antiseptic Spray",
+    price: "$32.00",
+    originalPrice: "$46.00",
   },
 ];

@@ -9,7 +9,6 @@ import Category from "../components/Cards/Category/Category";
 import { categoryData } from "../components/Cards/Category/content";
 import TrendingBlog from "../components/Blog/TrendingBlog";
 import {
-  featuredProductsData,
   heroSectionData,
   offerSectionData,
   widgetsData,

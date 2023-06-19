@@ -9,7 +9,7 @@ interface IHeadingProps {
 export default function Layout(props: IHeadingProps) {
   const { title, subtitle, children } = props;
   return (
-    <section className="mx-auto max-w-2xl sm:max-w-md lg:max-w-6xl flex flex-col items-center p-4 mt-4 lg:py-10">
+    <section className="mx-auto max-w-2xl sm:max-w-md lg:max-w-6xl flex flex-col items-center p-4 mt-4 lg:mt-0 lg:py-10">
       <a href="/" className="cursor-pointer">
         <img
           src="full_logo.png"

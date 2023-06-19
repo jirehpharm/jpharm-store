@@ -1,9 +1,5 @@
 // Importing the `objectType` function from the `nexus` module
-import { extendType, intArg, nonNull, objectType, stringArg } from "nexus";
-import { collection } from "nexus-prisma";
-import { prisma } from "../../utils/prisma";
-
-import { NexusGenObjects } from "../nexus-typegen";
+import { extendType, objectType } from "nexus";
 
 // Declaring a GraphQL object type named `Link` using the `objectType` function
 export const Collection = objectType({
@@ -22,18 +18,13 @@ export const Collection = objectType({
   },
 });
 
-export const collections: any = async function getCollections(): Promise<any> {
-  const collection = await prisma.collection.findMany();
-  return collection;
-};
-
 export const collectionQuery = extendType({
   type: "Query",
   definition(t) {
-    t.nonNull.list.nonNull.field("listCollection", {
+    t.nonNull.list.nonNull.field("listCollections", {
       type: "Collection",
-      async resolve(parent, arg, context, info) {
-        return await collections();
+      resolve(parent, args, context, info) {
+        return context.prisma.collection.findMany() as any[];
       },
     });
   },

@@ -53,7 +53,7 @@ export default function Home() {
         }
         widgets={widgetsData}
         link={"#"}
-        bgImage={"/placeholder/1920x623.png"}
+        bgImage={"/img/banner/N95.png"}
       />
       <TrendingBlog blogDetails={blogDetails} />
       <Stats stats={statsData} />

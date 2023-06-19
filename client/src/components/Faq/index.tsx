@@ -8,7 +8,7 @@ export interface IFaqDataPorps {
 }
 export default function Faq({ faqCategory }: { faqCategory: IFaqDataPorps[] }) {
   return (
-    <div className="max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl ">
+    <div className="">
       {faqCategory.map((category) => (
         <>
           {!isEmpty(category.categoryName) && <h3 className="mt-5 text-center">{category.categoryName}</h3>}

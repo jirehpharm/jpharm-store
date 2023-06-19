@@ -8,24 +8,16 @@ import HeroSection from "../components/Home/HeroSection";
 import Category from "../components/Cards/Category/Category";
 import { categoryData } from "../components/Cards/Category/content";
 import TrendingBlog from "../components/Blog/TrendingBlog";
-import {
-  featureProduct2,
-  heroSectionData,
-  offerSectionData,
-  widgetsData,
-} from "../components/Home/constants";
+import { featureProduct2, heroSectionData, offerCardData, offerSectionData, widgetsData } from "../components/Home/constants";
 import TrendingProduct from "../components/Home/TrendingProduct";
 import FeaturedProduct2 from "../components/Home/FeaturedProduct2";
 import { blogDetails } from "../components/Blog/constant";
 import { statsData } from "../components/Common/Stats/constants";
 import { bestSellerData } from "../components/Home/constants";
 import OfferCard from "../components/Cards/OfferCard/OfferCard";
-import { offerCardData } from "../components/Cards/OfferCard/constants";
 
 export default function Home() {
-  const slideData = categoryData.map((item, idx: number) => (
-    <Category key={idx} Icon={item.Icon} title={item.title} />
-  ));
+  const slideData = categoryData.map((item, idx: number) => <Category key={idx} Icon={item.Icon} title={item.title} />);
 
   {
     /* TODO: Need to Find a way to fetch the data from the server */
@@ -36,13 +28,14 @@ export default function Home() {
       <div className="mx-auto max-w-6xl">
         <Carousel slidesPerView={7} slides={slideData} />
       </div>
-      <FeaturedProduct2
-        data={bestSellerData}
-        featureProduct2={featureProduct2}
-      />
+      <FeaturedProduct2 data={bestSellerData} featureProduct2={featureProduct2} />
       <OfferBanner {...offerSectionData} />
       <TrendingProduct data={bestSellerData} />
-      <OfferCard data={offerCardData} />
+      <div className="pb-20 max-w-6xl mx-auto grid grid-cols-3 gap-5">
+        {offerCardData.map((item, index) => (
+          <OfferCard data={item} key={index} />
+        ))}
+      </div>
       <FeaturedProduct />
       <BestSeller data={bestSellerData} />
       <Banner

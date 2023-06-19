@@ -83,12 +83,6 @@ export interface NexusGenObjects {
     updated_at?: string | null; // String
     uuid: string; // String!
   }
-  Link: { // root type
-    description: string; // String!
-    id: number; // Int!
-    imageUrl: string; // String!
-    url: string; // String!
-  }
   Mutation: {};
   Query: {};
 }
@@ -161,21 +155,11 @@ export interface NexusGenFieldTypes {
     updated_at: string | null; // String
     uuid: string; // String!
   }
-  Link: { // field return type
-    description: string; // String!
-    id: number; // Int!
-    imageUrl: string; // String!
-    url: string; // String!
-  }
   Mutation: { // field return type
     createCustomer: NexusGenRootTypes['Customer']; // Customer!
-    deleteLink: NexusGenRootTypes['Link']; // Link!
-    post: NexusGenRootTypes['Link']; // Link!
     updateCustomer: NexusGenRootTypes['Customer']; // Customer!
-    updateLink: NexusGenRootTypes['Link']; // Link!
   }
   Query: { // field return type
-    feed: NexusGenRootTypes['Link'][]; // [Link!]!
     getAdminById: NexusGenRootTypes['AdminUser']; // AdminUser!
     getCustomerByIdOrEmail: NexusGenRootTypes['Customer']; // Customer!
     listAdminUsers: NexusGenRootTypes['AdminUser'][]; // [AdminUser!]!
@@ -244,21 +228,11 @@ export interface NexusGenFieldTypeNames {
     updated_at: 'String'
     uuid: 'String'
   }
-  Link: { // field return type name
-    description: 'String'
-    id: 'Int'
-    imageUrl: 'String'
-    url: 'String'
-  }
   Mutation: { // field return type name
     createCustomer: 'Customer'
-    deleteLink: 'Link'
-    post: 'Link'
     updateCustomer: 'Customer'
-    updateLink: 'Link'
   }
   Query: { // field return type name
-    feed: 'Link'
     getAdminById: 'AdminUser'
     getCustomerByIdOrEmail: 'Customer'
     listAdminUsers: 'AdminUser'
@@ -276,25 +250,11 @@ export interface NexusGenArgTypes {
       fullName: string; // String!
       password: string; // String!
     }
-    deleteLink: { // args
-      id: number; // Int!
-    }
-    post: { // args
-      description: string; // String!
-      imageUrl: string; // String!
-      url: string; // String!
-    }
     updateCustomer: { // args
       customerId: number; // Int!
       email: string; // String!
       fullName: string; // String!
       password: string; // String!
-    }
-    updateLink: { // args
-      description: string; // String!
-      id: number; // Int!
-      imageUrl: string; // String!
-      url: string; // String!
     }
   }
   Query: {

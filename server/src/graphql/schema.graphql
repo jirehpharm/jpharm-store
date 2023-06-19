@@ -64,23 +64,12 @@ type CustomerGroup {
   uuid: String!
 }
 
-type Link {
-  description: String!
-  id: Int!
-  imageUrl: String!
-  url: String!
-}
-
 type Mutation {
   createCustomer(email: String!, fullName: String!, password: String!): Customer!
-  deleteLink(id: Int!): Link!
-  post(description: String!, imageUrl: String!, url: String!): Link!
   updateCustomer(customerId: Int!, email: String!, fullName: String!, password: String!): Customer!
-  updateLink(description: String!, id: Int!, imageUrl: String!, url: String!): Link!
 }
 
 type Query {
-  feed: [Link!]!
   getAdminById(id: Int!): AdminUser!
   getCustomerByIdOrEmail(customerId: Int, email: String): Customer!
   listAdminUsers: [AdminUser!]!

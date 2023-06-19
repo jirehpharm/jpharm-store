@@ -15,17 +15,21 @@ export default function PrimaryNav(): JSX.Element {
     <div className="mx-auto max-w-6xl flex flex-row justify-between py-7">
       <div className="flex items-center">
         <a href="/" className="cursor-pointer">
-          <img src="full_logo.png" alt="logo" className="w-[250px]" />
+          <div className="w-[200px]">
+            <img src="full_logo.png" alt="logo" className="w-full h-full object-contain" />
+          </div>
         </a>
       </div>
       <div className="flex items-center gap-4 text-light">
         <form className="flex h-10">
-          <InputField
-            placeholder={"Search here..."}
-            type="search"
-            Icon={MagnifyingGlassIcon}
-            className="rounded-full w-[500px] h-[30px]"
-          />
+          <div className="w-[500px]">
+            <InputField
+              placeholder={"Search here..."}
+              type="search"
+              Icon={MagnifyingGlassIcon}
+              className="rounded-full h-[30px]"
+            />
+          </div>
         </form>
       </div>
       <div className="flex items-center gap-4">
@@ -43,7 +47,9 @@ export default function PrimaryNav(): JSX.Element {
           onClick={() => setIsOpen(true)}
           className="flex items-center space-x-2 text-black"
         >
-          <h6 className="mb-0 hover:text-secondary">View Cart</h6>
+          <p className="mb-0 hover:text-secondary font-bold text-sm">
+            YOUR CART
+          </p>
         </button>
         {isOpen && (
           <ViewCartDrawer

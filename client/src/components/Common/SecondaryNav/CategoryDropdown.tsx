@@ -14,10 +14,10 @@ export default function CategoryDropdown({ options }: CategoryDropdownProps) {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="bg-secondary text-white font-bold w-full hover:bg-secondary focus:bg-secondary flex gap-6 items-center px-4 py-4">
-          <div>
+        <Menu.Button className="bg-secondary text-white font-bold w-full hover:bg-secondary focus:bg-secondary flex gap-6 items-center px-4  py-4">
+          <div className="pr-8">
             <Bars3Icon className="h-6 w-5 inline mr-2 font-bold" />
-            ALL CATEGORIES
+            CATEGORIES
           </div>
           <PlayIcon className="h-3 w-3 inline rotate-90" aria-hidden="true" />
         </Menu.Button>

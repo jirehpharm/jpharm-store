@@ -17,7 +17,7 @@ export default function SaleWidgetCard({
             <h2>{saleWidgetCard.description}</h2>
             <a
               href={saleWidgetCard.buyNowLink}
-              className="bg-[#e3efed] flex items-center font-medium hover:text-primar "
+              className="bg-[#e3efed] flex items-center font-medium hover:text-primary"
             >
               Buy Now
               <BsFillArrowRightCircleFill className="my-auto pl-1" size={20} />

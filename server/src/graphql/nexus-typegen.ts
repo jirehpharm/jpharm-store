@@ -29,10 +29,10 @@ export interface NexusGenScalars {
 
 export interface NexusGenObjects {
   AdminUser: { // root type
+    admin_user_id: number; // Int!
     created_at?: string | null; // String
     email: string; // String!
     full_name: string; // String!
-    id: number; // Int!
     password: string; // String!
     status: boolean; // Boolean!
     updated_at?: string | null; // String
@@ -47,11 +47,41 @@ export interface NexusGenObjects {
     updated_at?: string | null; // String
     uuid: string; // String!
   }
-  Link: { // root type
-    description: string; // String!
-    id: number; // Int!
-    imageUrl: string; // String!
-    url: string; // String!
+  Customer: { // root type
+    created_at?: string | null; // String
+    customer_id: number; // Int!
+    email: string; // String!
+    full_name?: string | null; // String
+    group_id?: number | null; // Int
+    password: string; // String!
+    status: number; // Int!
+    updated_at?: string | null; // String
+    uuid: string; // String!
+  }
+  CustomerAddress: { // root type
+    address_1?: string | null; // String
+    address_2?: string | null; // String
+    city?: string | null; // String
+    country: string; // String!
+    created_at?: string | null; // String
+    customer?: NexusGenRootTypes['AdminUser'] | null; // AdminUser
+    customer_address_id: number; // Int!
+    customer_id: number; // Int!
+    full_name?: string | null; // String
+    is_default?: number | null; // Int
+    postcode?: string | null; // String
+    province?: string | null; // String
+    telephone?: string | null; // String
+    updated_at?: string | null; // String
+    uuid: string; // String!
+  }
+  CustomerGroup: { // root type
+    created_at?: string | null; // String
+    customer?: Array<NexusGenRootTypes['CustomerGroup'] | null> | null; // [CustomerGroup]
+    customer_group_id: number; // Int!
+    group_name: string; // String!
+    updated_at?: string | null; // String
+    uuid: string; // String!
   }
   Mutation: {};
   Query: {};
@@ -69,10 +99,10 @@ export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
   AdminUser: { // field return type
+    admin_user_id: number; // Int!
     created_at: string | null; // String
     email: string; // String!
     full_name: string; // String!
-    id: number; // Int!
     password: string; // String!
     status: boolean; // Boolean!
     updated_at: string | null; // String
@@ -87,30 +117,65 @@ export interface NexusGenFieldTypes {
     updated_at: string | null; // String
     uuid: string; // String!
   }
-  Link: { // field return type
-    description: string; // String!
-    id: number; // Int!
-    imageUrl: string; // String!
-    url: string; // String!
+  Customer: { // field return type
+    created_at: string | null; // String
+    customer_address: Array<NexusGenRootTypes['CustomerAddress'] | null> | null; // [CustomerAddress]
+    customer_group: NexusGenRootTypes['CustomerGroup'] | null; // CustomerGroup
+    customer_id: number; // Int!
+    email: string; // String!
+    full_name: string | null; // String
+    group_id: number | null; // Int
+    password: string; // String!
+    status: number; // Int!
+    updated_at: string | null; // String
+    uuid: string; // String!
+  }
+  CustomerAddress: { // field return type
+    address_1: string | null; // String
+    address_2: string | null; // String
+    city: string | null; // String
+    country: string; // String!
+    created_at: string | null; // String
+    customer: NexusGenRootTypes['AdminUser'] | null; // AdminUser
+    customer_address_id: number; // Int!
+    customer_id: number; // Int!
+    full_name: string | null; // String
+    is_default: number | null; // Int
+    postcode: string | null; // String
+    province: string | null; // String
+    telephone: string | null; // String
+    updated_at: string | null; // String
+    uuid: string; // String!
+  }
+  CustomerGroup: { // field return type
+    created_at: string | null; // String
+    customer: Array<NexusGenRootTypes['CustomerGroup'] | null> | null; // [CustomerGroup]
+    customer_group_id: number; // Int!
+    group_name: string; // String!
+    updated_at: string | null; // String
+    uuid: string; // String!
   }
   Mutation: { // field return type
-    deleteLink: NexusGenRootTypes['Link']; // Link!
-    post: NexusGenRootTypes['Link']; // Link!
-    updateLink: NexusGenRootTypes['Link']; // Link!
+    createCustomer: NexusGenRootTypes['Customer']; // Customer!
+    updateCustomer: NexusGenRootTypes['Customer']; // Customer!
   }
   Query: { // field return type
-    feed: NexusGenRootTypes['Link'][]; // [Link!]!
+    getAdminById: NexusGenRootTypes['AdminUser']; // AdminUser!
+    getCustomerByIdOrEmail: NexusGenRootTypes['Customer']; // Customer!
     listAdminUsers: NexusGenRootTypes['AdminUser'][]; // [AdminUser!]!
-    listCollection: NexusGenRootTypes['Collection'][]; // [Collection!]!
+    listCollections: NexusGenRootTypes['Collection'][]; // [Collection!]!
+    listCustomerAddresses: Array<NexusGenRootTypes['CustomerAddress'] | null> | null; // [CustomerAddress]
+    listCustomerGroups: Array<NexusGenRootTypes['CustomerGroup'] | null>; // [CustomerGroup]!
+    listCustomers: Array<NexusGenRootTypes['Customer'] | null>; // [Customer]!
   }
 }
 
 export interface NexusGenFieldTypeNames {
   AdminUser: { // field return type name
+    admin_user_id: 'Int'
     created_at: 'String'
     email: 'String'
     full_name: 'String'
-    id: 'Int'
     password: 'String'
     status: 'Boolean'
     updated_at: 'String'
@@ -125,39 +190,80 @@ export interface NexusGenFieldTypeNames {
     updated_at: 'String'
     uuid: 'String'
   }
-  Link: { // field return type name
-    description: 'String'
-    id: 'Int'
-    imageUrl: 'String'
-    url: 'String'
+  Customer: { // field return type name
+    created_at: 'String'
+    customer_address: 'CustomerAddress'
+    customer_group: 'CustomerGroup'
+    customer_id: 'Int'
+    email: 'String'
+    full_name: 'String'
+    group_id: 'Int'
+    password: 'String'
+    status: 'Int'
+    updated_at: 'String'
+    uuid: 'String'
+  }
+  CustomerAddress: { // field return type name
+    address_1: 'String'
+    address_2: 'String'
+    city: 'String'
+    country: 'String'
+    created_at: 'String'
+    customer: 'AdminUser'
+    customer_address_id: 'Int'
+    customer_id: 'Int'
+    full_name: 'String'
+    is_default: 'Int'
+    postcode: 'String'
+    province: 'String'
+    telephone: 'String'
+    updated_at: 'String'
+    uuid: 'String'
+  }
+  CustomerGroup: { // field return type name
+    created_at: 'String'
+    customer: 'CustomerGroup'
+    customer_group_id: 'Int'
+    group_name: 'String'
+    updated_at: 'String'
+    uuid: 'String'
   }
   Mutation: { // field return type name
-    deleteLink: 'Link'
-    post: 'Link'
-    updateLink: 'Link'
+    createCustomer: 'Customer'
+    updateCustomer: 'Customer'
   }
   Query: { // field return type name
-    feed: 'Link'
+    getAdminById: 'AdminUser'
+    getCustomerByIdOrEmail: 'Customer'
     listAdminUsers: 'AdminUser'
-    listCollection: 'Collection'
+    listCollections: 'Collection'
+    listCustomerAddresses: 'CustomerAddress'
+    listCustomerGroups: 'CustomerGroup'
+    listCustomers: 'Customer'
   }
 }
 
 export interface NexusGenArgTypes {
   Mutation: {
-    deleteLink: { // args
+    createCustomer: { // args
+      email: string; // String!
+      fullName: string; // String!
+      password: string; // String!
+    }
+    updateCustomer: { // args
+      customerId: number; // Int!
+      email: string; // String!
+      fullName: string; // String!
+      password: string; // String!
+    }
+  }
+  Query: {
+    getAdminById: { // args
       id: number; // Int!
     }
-    post: { // args
-      description: string; // String!
-      imageUrl: string; // String!
-      url: string; // String!
-    }
-    updateLink: { // args
-      description: string; // String!
-      id: number; // Int!
-      imageUrl: string; // String!
-      url: string; // String!
+    getCustomerByIdOrEmail: { // args
+      customerId?: number | null; // Int
+      email?: string | null; // String
     }
   }
 }

@@ -7,6 +7,7 @@ export interface IHeroSectionPropsData {
 }
 export interface IHeroSectionProps {
   carouselData: IHeroSectionPropsData[];
+  offerCardData: IOfferCardProps[];
 }
 
 export interface IWidgetsProps {

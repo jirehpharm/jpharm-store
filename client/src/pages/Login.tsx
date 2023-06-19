@@ -1,9 +1,27 @@
-import "../style/index.css";
+import {  useState } from "react";
+import { gql, useQuery } from "@apollo/client";
+
 import Button from "../components/Common/Button";
 import { InputField } from "../components/Form/InputField";
 import Layout from "../components/Common/Layout";
+import "../style/index.css";
+
+const GET_USER = gql`
+  query Query($email: String) {
+    getCustomerByIdOrEmail(email: $email) {
+      full_name
+      password
+      email
+      status
+    }
+  }
+`;
 
 export default function Login() {
+  const [loginInputs, setLoginInputs] = useState({
+    email: "",
+    password: "",
+  });
   const fields = [
     { name: "email", type: "email", placeholder: "Email*", required: true },
     {
@@ -13,13 +31,37 @@ export default function Login() {
       required: true,
     },
   ];
+
+  const {
+    loading,
+    error,
+    data: userData,
+  } = useQuery(GET_USER, {
+    variables: { email: loginInputs?.email },
+    skip: loginInputs?.email === "",
+  });
+    console.log("color: ~ userData:", userData)
+  console.log("color: ~ loading:", loading);
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    setLoginInputs({
+      email,
+      password,
+    });
+  };
+
   return (
     <Layout
       title={"Sign In To Your Account"}
       subtitle={"Please enter your email and password to access your account."}
     >
       <div className="sm:w-full lg:w-[40%]">
-        <form action="#">
+        <form action="#" onSubmit={handleSubmit}>
           {fields.map((field, index) => (
             <InputField
               key={index}

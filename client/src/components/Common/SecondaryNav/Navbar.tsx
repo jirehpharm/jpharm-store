@@ -18,7 +18,7 @@ export default function Navbar(props: INavProps) {
             </a>
 
             {/* list */}
-            <ul className="absolute bg-white min-w-[200px] pt-3">
+            <ul className="absolute bg-white min-w-[200px] pt-3 z-[100]">
               <div className="h-1 bg-secondary"></div>
 
               {nav?.list?.map((list, index: number) =>
@@ -68,7 +68,7 @@ export default function Navbar(props: INavProps) {
             </ul>
           </div>
         ) : (
-          <a href={nav.link} className="text-black font-bold">
+          <a href={nav.link} className="text-black font-bold font-nunito text-base">
             <li className="list-none">{nav.title}</li>
           </a>
         )

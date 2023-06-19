@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { RiMailFill } from "react-icons/ri";
 import { MdPassword } from "react-icons/md";
 import { gql, useQuery } from "@apollo/client";
@@ -25,13 +25,19 @@ export default function Login() {
     password: "",
   });
   const fields = [
-    { name: "email", type: "email", placeholder: "Email*", required: true, Icon: RiMailFill },
+    {
+      name: "email",
+      type: "email",
+      placeholder: "Email*",
+      required: true,
+      Icon: RiMailFill,
+    },
     {
       name: "password",
       type: "password",
       placeholder: "Password*",
       required: true,
-      Icon: MdPassword
+      Icon: MdPassword,
     },
   ];
 
@@ -43,8 +49,9 @@ export default function Login() {
     variables: { email: loginInputs?.email },
     skip: loginInputs?.email === "",
   });
-    console.log("color: ~ userData:", userData)
+  console.log("color: ~ userData:", userData);
   console.log("color: ~ loading:", loading);
+  console.log("color: ~ error:", error);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -64,7 +71,11 @@ export default function Login() {
       subtitle={"Please enter your email and password to access your account."}
     >
       <div className="sm:w-full lg:w-[470px]">
-        <form action="#" onSubmit={handleSubmit} className="flex flex-col space-y-4">
+        <form
+          action="#"
+          onSubmit={handleSubmit}
+          className="flex flex-col space-y-4"
+        >
           {fields.map((field, index) => (
             <InputField
               key={index}

@@ -1,3 +1,5 @@
+import { useEffect, useLayoutEffect, useState } from "react";
+
 import BestSeller from "../components/Home/BestSeller";
 import Banner from "../components/Home/Banner";
 import OfferBanner from "../components/Home/OfferBanner";
@@ -18,6 +20,28 @@ import OfferCard from "../components/Cards/OfferCard/OfferCard";
 
 export default function Home() {
   const slideData = categoryData.map((item, idx: number) => <Category key={idx} Icon={item.Icon} title={item.title} />);
+  const [screensize, setScreensize] = useState(window.innerWidth);
+  const [cardNo, setCardNo] = useState<any>(7);
+
+  useLayoutEffect(() => {
+    window.addEventListener("resize", () => {
+      setScreensize(window.innerWidth);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (screensize < 640) {
+      setCardNo(2);
+    } else if (screensize >= 640 && screensize < 770) {
+      setCardNo(3);
+    } else if (screensize >= 770 && screensize < 1024) {
+      setCardNo(4);
+    } else if (screensize >= 1024 && screensize < 1280) {
+      setCardNo(5);
+    } else if (screensize > 1280) {
+      setCardNo(7);
+    }
+  }, [screensize]);
 
   {
     /* TODO: Need to Find a way to fetch the data from the server */
@@ -25,8 +49,8 @@ export default function Home() {
   return (
     <div>
       <HeroSection {...heroSectionData} />
-      <div className="mx-auto max-w-6xl">
-        <Carousel slidesPerView={7} slides={slideData} />
+      <div className="mx-auto max-w-sm md:max-w-2xl lg:max-w-5xl xl:max-w-6xl">
+        <Carousel slidesPerView={cardNo} slides={slideData} />
       </div>
       <FeaturedProduct2 data={bestSellerData} featureProduct2={featureProduct2} />
       <OfferBanner {...offerSectionData} />

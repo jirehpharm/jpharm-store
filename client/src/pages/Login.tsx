@@ -1,4 +1,6 @@
 import {  useState } from "react";
+import { RiMailFill } from "react-icons/ri";
+import { MdPassword } from "react-icons/md";
 import { gql, useQuery } from "@apollo/client";
 
 import Button from "../components/Common/Button";
@@ -23,12 +25,13 @@ export default function Login() {
     password: "",
   });
   const fields = [
-    { name: "email", type: "email", placeholder: "Email*", required: true },
+    { name: "email", type: "email", placeholder: "Email*", required: true, Icon: RiMailFill },
     {
       name: "password",
       type: "password",
       placeholder: "Password*",
       required: true,
+      Icon: MdPassword
     },
   ];
 
@@ -60,8 +63,8 @@ export default function Login() {
       title={"Sign In To Your Account"}
       subtitle={"Please enter your email and password to access your account."}
     >
-      <div className="sm:w-full lg:w-[40%]">
-        <form action="#" onSubmit={handleSubmit}>
+      <div className="sm:w-full lg:w-[470px]">
+        <form action="#" onSubmit={handleSubmit} className="flex flex-col space-y-4">
           {fields.map((field, index) => (
             <InputField
               key={index}
@@ -69,7 +72,8 @@ export default function Login() {
               name={field.name}
               placeholder={field.placeholder}
               required={field.required}
-              className="mb-4 h-[50px] w-full"
+              className="h-[50px] w-full"
+              Icon={field.Icon}
             />
           ))}
           <div className="flex justify-between items-center">

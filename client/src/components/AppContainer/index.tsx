@@ -1,11 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 
 import Home from "../../pages/Home";
-import Register from "../../pages/Register";
 import Products from "../../pages/Products";
-import ForgotPassword from "../../pages/ForgotPassword";
 import ProductDetails from "../../pages/ProductDetails";
-import Login from "../../pages/Login";
 import Checkout from "../../pages/Checkout";
 import Cart from "../../pages/Cart";
 import OrderTrackingPage from "../../pages/OrderTrackingPage";
@@ -23,9 +20,7 @@ export default function AppContainer() {
         <Route path="/about" element={<About />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="products" element={<Products />} />

@@ -1,7 +1,7 @@
 import "../style/index.css";
 import Button from "../components/Common/Button";
-import Heading from "../components/Common/Heading";
 import { InputField } from "../components/Form/InputField";
+import Layout from "../components/Common/Layout";
 
 export default function Login() {
   const fields = [
@@ -13,55 +13,43 @@ export default function Login() {
       required: true,
     },
   ];
-
-  const pDescription =
-    "Add items to your wishlistget personalised recommendations check out more quickly track your orders register";
   return (
-    <>
-      <section className="section-title text-center space-y-20">
-        <Heading
-          title="Sign In To Your Account"
-          subtitle="Please enter your email and password to access your account."
-        />
-        <div className="grid lg:grid-cols-2 gap-20 md:max-w-xl lg:max-w-6xl mx-auto">
-          <div className="px-10">
-            <form action="#">
-              {fields?.map((field, index) => (
-                <InputField
-                  key={index}
-                  className="block border-2  border-borderColor focus:border-secondary focus-visible:outline-0 bg-white w-full p-5 mb-4"
-                  type={field.type}
-                  name={field.name}
-                  placeholder={field.placeholder}
-                  required={field.required}
-                />
-              ))}
-              <div className="flex flex-row">
-                <Button type="submit" className="btn">
-                  SIGN IN
-                </Button>
-              </div>
-              <div className="mt-5 flex ">
-                <a href="#" className="text-xs md:text-sm lg:text-base">
-                  <small>FORGOTTEN YOUR PASSWORD?</small>
-                </a>
-              </div>
-            </form>
+    <Layout
+      title={"Sign In To Your Account"}
+      subtitle={"Please enter your email and password to access your account."}
+    >
+      <div className="sm:w-full lg:w-[40%]">
+        <form action="#">
+          {fields.map((field, index) => (
+            <InputField
+              key={index}
+              type={field.type}
+              name={field.name}
+              placeholder={field.placeholder}
+              required={field.required}
+              className="mb-4 h-[50px] w-full"
+            />
+          ))}
+          <div className="flex justify-between items-center">
+            <Button type="submit">SIGN IN</Button>
+            <a href="/forgot-password" className="">
+              <small>Forgot Password?</small>
+            </a>
           </div>
-          <div className="sm:p-4 p-4">
-            <h4 className="sm:text-base">DON'T HAVE AN ACCOUNT?</h4>
-            <p className="text-light p-2 mb-5 sm:text-sm lg:text-base">
-              {pDescription}
-            </p>
-            <div>
-              <a href="/register" className="btn">
-                Create Account
-              </a>
-            </div>
-          </div>
+        </form>
+
+        <div className="mt-10 relative text-center">
+          <p className="z-[20] relative inline-block bg-white px-4 text-light">
+            DON'T HAVE AN ACCOUNT?
+          </p>
+          <span className="w-full bg-transparent sm:block h-[0.5px] border border-gray-200 absolute top-4 z-[1] hidden"></span>
         </div>
-      </section>
-      <div className="pb-16"></div>
-    </>
+        <div className="text-center">
+          <a href="/register" className="border border-secondary p-4">
+            Create Account
+          </a>
+        </div>
+      </div>
+    </Layout>
   );
 }

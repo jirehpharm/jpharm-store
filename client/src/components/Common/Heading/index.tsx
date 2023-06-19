@@ -10,9 +10,12 @@ import { IHeadingProps } from "./types";
 export default function Index({ title, subtitle }: IHeadingProps): JSX.Element {
   return (
     <div className="flex justify-center flex-col items-center ">
-      <h1 className="text-center text-2xl sm:text-3xl xl:text-[44px]">{title}</h1>
-      {subtitle && <p className="text-center text-light text-sm lg:text-lg">{subtitle}</p>}
-      <br />
+      <h1 className="text-center text-2xl sm:text-3xl xl:text-[44px]">
+        {title}
+      </h1>
+      {subtitle && (
+        <p className="text-center text-light text-sm lg:text-lg">{subtitle}</p>
+      )}
     </div>
   );
 }

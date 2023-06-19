@@ -15,7 +15,7 @@ export default function PopularTags(props: IPopularTags) {
               <li key={index} className="mx-1 my-1">
                 <a
                   href={item.link}
-                  className="p-2 flex flex-wrap font-bold text-sm bg-gray-100 text-light hover:bg-secondary hover:text-white uppercase"
+                  className="p-2 flex flex-wrap font-josefin font-bold text-sm bg-gray-100 text-light hover:bg-secondary hover:text-white uppercase"
                 >
                   {item.tagName}
                 </a>

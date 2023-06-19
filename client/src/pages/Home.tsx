@@ -25,18 +25,18 @@ export default function Home() {
   return (
     <div>
       <HeroSection {...heroSectionData} />
-      <div className="mx-auto max-w-6xl">
+      {/* <div className="mx-auto max-w-6xl">
         <Carousel slidesPerView={7} slides={slideData} />
       </div>
       <FeaturedProduct2 data={bestSellerData} featureProduct2={featureProduct2} />
       <OfferBanner {...offerSectionData} />
-      <TrendingProduct data={bestSellerData} />
-      <div className="pb-20 max-w-6xl mx-auto grid grid-cols-3 gap-5">
+      <TrendingProduct data={bestSellerData} /> */}
+      <div className="max-w-sm md:max-w-2xl pb-20 lg:max-w-5xl xl:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {offerCardData.map((item, index) => (
           <OfferCard data={item} key={index} />
         ))}
       </div>
-      <FeaturedProduct />
+      {/* <FeaturedProduct />
       <BestSeller data={bestSellerData} />
       <Banner
         miniTitle={"N95 Facial Covering Mask"}
@@ -49,7 +49,7 @@ export default function Home() {
         bgImage={"/placeholder/1920x623.png"}
       />
       <TrendingBlog blogDetails={blogDetails} />
-      <Stats stats={statsData} />
+      <Stats stats={statsData} /> */}
     </div>
   );
 }

@@ -6,6 +6,9 @@ import PrimaryNav from "./components/Common/PrimaryNav";
 import Footer from "./components/Common/Footer";
 import CTA from "./components/Common/CTA";
 import SecondaryNav from "./components/Common/SecondaryNav";
+import Login from "./pages/Login";
+import ForgotPassword from "./pages/ForgotPassword";
+import Register from "./pages/Register";
 import "./style/App.css";
 // import { client, gql } from "./apolloClient";
 
@@ -43,16 +46,26 @@ function App() {
 
   return (
     <>
-      <ContactNav />
-      <PrimaryNav />
-      <SecondaryNav />
       <BrowserRouter>
         <Routes>
-          <Route path="*" element={<AppContainer />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="*"
+            element={
+              <>
+                <ContactNav />
+                <PrimaryNav />
+                <SecondaryNav />
+                <AppContainer />
+                <CTA />
+                <Footer />
+              </>
+            }
+          />
         </Routes>
       </BrowserRouter>
-      <CTA />
-      <Footer />
     </>
   );
 }

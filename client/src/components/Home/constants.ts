@@ -9,14 +9,31 @@ export const heroSectionData = {
       title: "SGold Standard Pre-Workout",
       price: "Starting at &16.99",
       buttonUrl: "#",
-      image: "/img/herosection/p-1.png",
+      image: "img/herosection/hero1.png",
     },
     {
       offer: "Up To 70% Off Today Only!",
       title: "Standard Pre-Workout",
       price: "Starting at &16.99",
       buttonUrl: "#",
-      image: "/img/herosection/p-2.png",
+      image: "img/herosection/hero1.png",
+    },
+  ],
+  offerCardData: [
+    {
+      imageSrc: "/img/offerCard/1.png",
+      shopNowLink: "#",
+      shopLink: "#",
+      description: "50% of in all products",
+      price: "Starting at &16.99",
+    },
+    {
+      imageSrc: "/img/offerCard/3.png",
+      shopNowLink: "#",
+      shopLink: "#",
+      description: "50% of in all products",
+      price: "$199.00 /60%",
+      contentRight: true,
     },
   ],
 };
@@ -27,10 +44,8 @@ export const offerSectionData = {
   title: "Today's Hot Offer",
   subtitle1: "Free Covid-19 Vaccine",
   subtitle2: "Campaign Ticket",
-  description1:
-    "Get vaccinated against Covid-19 for free and protect yourself and others. Don't miss out on this opportunity!",
-  description2:
-    "Join our campaign and get a chance to win an exclusive ticket to an exciting event. Experience it like never before!",
+  description1: "Get vaccinated against Covid-19 for free and protect yourself and others. Don't miss out on this opportunity!",
+  description2: "Join our campaign and get a chance to win an exclusive ticket to an exciting event. Experience it like never before!",
 };
 
 export const featuredProductsData = [
@@ -174,16 +189,53 @@ export const featureProduct2 = [
     title: "sanitizer",
     description: "50% off in covid Vaccine",
     buyNowLink: "#" /* TODO: add buy now link */,
-    imgSrc:
-      "img/banner/mask.png" /* TODO: add img src img\salesWidgetbanner\banner-2.jpg/*/,
+    imgSrc: "img/banner/mask.png" /* TODO: add img src img\salesWidgetbanner\banner-2.jpg/*/,
     imgAlt: "mask image",
   },
   {
     title: "- 29% OFF",
     description: "Antiseptic Dry Hand Gel",
     buyNowLink: "#" /* TODO: add buy now link */,
-    imgSrc:
-      "img/banner/bottle.png" /* TODO: add img src img\salesWidgetbanner\banner-2.jpg/*/,
+    imgSrc: "img/banner/bottle.png" /* TODO: add img src img\salesWidgetbanner\banner-2.jpg/*/,
     imgAlt: "bottle image",
+  },
+];
+export const offerCardData = [
+  {
+    imageSrc: "/img/offerCard/1.png",
+    shopNowLink: "#",
+    shopLink: "#",
+    description: "50% of in all products",
+  },
+  {
+    imageSrc: "/img/offerCard/2.png",
+    shopNowLink: "#",
+    shopLink: "#",
+    description: "28% of in all products",
+  },
+  {
+    imageSrc: "/img/offerCard/3.png",
+    shopNowLink: "#",
+    shopLink: "#",
+    description: "50% of in all products",
+    contentRight: true,
+  },
+];
+
+export const herosectionofferData = [
+  {
+    imageSrc: "/img/offerCard/1.png",
+    shopNowLink: "#",
+    shopLink: "#",
+    description: "50% of in all products",
+    price: "Starting at &16.99",
+  },
+  {
+    imageSrc: "/img/offerCard/3.png",
+    shopNowLink: "#",
+    shopLink: "#",
+    description: "50% of in all products",
+    price: "$199.00 /60%",
+    contentRight: true,
   },
 ];

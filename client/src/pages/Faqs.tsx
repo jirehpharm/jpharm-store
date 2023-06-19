@@ -9,7 +9,11 @@ import { faqCategory } from "../components/Faq/constants";
 
 export default function Faqs() {
   const [searchText, setSearchText] = useState("");
-  console.log("%c 🍿 searchText: ", "font-size:12px;background-color: #7F2B82;color:#fff;", searchText);
+  console.log(
+    "%c 🍿 searchText: ",
+    "font-size:12px;background-color: #7F2B82;color:#fff;",
+    searchText
+  );
 
   return (
     <div>
@@ -22,7 +26,7 @@ export default function Faqs() {
           <WidgetLayout title={"Search Objects"}>
             <Search setSearchText={setSearchText} />
           </WidgetLayout>
-          <SaleWidgetCard saleWidgetCard={[salesWidgetCard]} />
+          <SaleWidgetCard saleWidgetCard={salesWidgetCard} />
         </div>
       </div>
     </div>

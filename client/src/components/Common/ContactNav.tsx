@@ -27,7 +27,7 @@ export default function ContactNav() {
   return (
     <div className="p-2 border-b border-gray-200">
       <div className="mx-auto max-w-6xl flex flex-row justify-between items-center ">
-        <ul className="flex items-center space-x-4 text-sm">
+        <ul className="flex items-center space-x-2 sm:space-x-4 text-sm">
           <li className="font-bold mt-0">
             <a
               href={`mailto:${email}?subject=${emailSubject}`}

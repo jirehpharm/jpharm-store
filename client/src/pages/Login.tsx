@@ -1,10 +1,10 @@
-import "../style/index.css";
-import Button from "../components/Common/Button";
-import Heading from "../components/Common/Heading";
-import { InputField } from "../components/Form/InputField";
+import {  useState } from "react";
 import { gql, useQuery } from "@apollo/client";
-import { useEffect, useState } from "react";
+
+import Button from "../components/Common/Button";
+import { InputField } from "../components/Form/InputField";
 import Layout from "../components/Common/Layout";
+import "../style/index.css";
 
 const GET_USER = gql`
   query Query($email: String) {

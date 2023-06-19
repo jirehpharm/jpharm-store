@@ -14,15 +14,15 @@ export default function ContactMessage(props: IContactMessage) {
   const { contactMessage } = props;
   return (
     <>
-      <section className=" max-w-5xl mx-auto">
-        <div className="relative max-w-5xl mx-auto gap-3 mb--25 mb-10">
-          <div className="mb--25 mb-40 mt-7 z-[1] pt-10 pb-12 px-12 shadow-lg bg-white">
+      <section className="lg:max-w-6xl mx-auto p-3">
+        <div className="relative gap-3 mb-25">
+          <div className="mb-25 m-5 mb-40 mt-7 z-[1] pt-10 pb-12 px-6 md:px-12 lg:px-12 shadow-lg bg-white">
             <Heading title="Get A Quote" />
             <form
               id="contact-form"
               action="#"
               method="post"
-              className="grid grid-cols-2 gap-8 mb-7 mx-1 p-3"
+              className="md:grid grid-cols-2 gap-8 mb-7 space-y-4 md:space-y-0 mx-1 p-3"
             >
               {contactMessage.map((con, index) => (
                 <InputField
@@ -41,7 +41,7 @@ export default function ContactMessage(props: IContactMessage) {
                 />
               </div>
               <p className="col-span-2">
-                <label className="input-info-save mb-0  text-sm ">
+                <label className="input-info-save mb-0 text-sm">
                   <Checkbox name={"agree"} id={"agree"} className="mr-2" />
                   Save my name, email, and website in this browser for the next
                   time I comment.

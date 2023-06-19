@@ -8,7 +8,7 @@ export default function Stats(props: IStats) {
   const { data } = props;
   return (
     <div className="bg-[#F2F6F7] py-24 my-16">
-      <div className=" max-w-6xl mx-auto grid grid-cols-4">
+      <div className=" max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
         {data.map((item, index) => (
           <div key={index} className="flex flex-col items-center">
             {item.icon && (

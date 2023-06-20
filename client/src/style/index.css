@@ -46,6 +46,12 @@ body {
   @apply inline-block text-base bg-secondary text-white font-bold text-center cursor-pointer transition-all duration-[0.3s] ease-[ease] delay-[0s] z-[1] mr-[15px] px-10 py-[17px] rounded-none;
 }
 
+@media (max-width: 1024px) {
+  .btn {
+    @apply px-5 py-3 text-sm;
+  }
+}
+
 .btn:hover,
 .btn:focus,
 .btn:active {

@@ -118,7 +118,7 @@ export default function Register(): JSX.Element {
         <div className="text-center text-sm text-grey-dark mt-4">
           <p className="text-light">By creating an account, you agree to our:</p>
           <div className="flex space-x-4 justify-center">
-            <a href="/terms-of-conditions">TERMS OF CONDITIONS</a>{" "}
+            <a href="/terms-and-conditions">TERMS OF CONDITIONS</a>{" "}
             <span className="text-secondary">|</span>
             <a href="/privacy-policy">PRIVACY POLICY</a>
           </div>

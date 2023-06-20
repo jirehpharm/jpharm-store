@@ -3,7 +3,6 @@ import Layout from "../components/Common/Layout";
 import Checkbox from "../components/Form/Checkbox";
 import { InputField } from "../components/Form/InputField";
 import { gql, useMutation } from "@apollo/client";
-import { useNavigate } from "react-router-dom";
 import { showErrorToast, showSuccessToast } from "../components/Toast/Toast";
 
 /**

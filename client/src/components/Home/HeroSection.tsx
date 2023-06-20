@@ -8,7 +8,7 @@ const pagination = {
 
 const HeroSection = ({ carouselData, offerCardData }: IHeroSectionProps) => {
   const content = carouselData.map((items: IHeroSectionPropsData, index: number) => (
-    <div className={` h-full flex items-center relative `} key={index}>
+    <div className="h-full flex items-center relative mx-3" key={index}>
       <img src={items.image} alt="" className=" h-full " />
       <div className="ml-10 w-[60%] sm:w-[40%] text-left absolute">
         <p className="text-secondary lg:font-bold text-sm lg:text-base mb-2 lg:mb-5">{items.offer}</p>

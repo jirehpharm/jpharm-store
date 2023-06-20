@@ -36,10 +36,10 @@ export default function TrendingProduct(props: ITrendingProduct) {
     <ProductOverViewCard isTextCenter={false} {...item} showStars={true} key={index} />
   ));
   return (
-    <section>
+    <section className="mx-3">
       <div className="max-w-sm md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto py-14">
         <Heading title={"Trending Product"} />
-        <Carousel slidesPerView={cardNo} spaceBetween={25} slides={content} />
+        <Carousel slidesPerView={cardNo} spaceBetween={10} slides={content} />
       </div>
     </section>
   );

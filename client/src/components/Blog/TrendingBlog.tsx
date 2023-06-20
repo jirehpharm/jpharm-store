@@ -40,7 +40,7 @@ export default function TrendingBlog({
   }, [screensize]);
 
   return (
-    <section className="pt-28 pb-[70px] mx-auto md:max-w-xl lg:max-w-6xl">
+    <section className="pt-14  lg:pt-28 lg:pb-[70px] mx-auto md:max-w-xl lg:max-w-6xl">
       <div className="relative px-4">
         <div className="relative mb-12 text-center">
           <h6 className="font-semibold text-secondary text-lg lg:text-xl">

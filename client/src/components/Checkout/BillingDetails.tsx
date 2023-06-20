@@ -30,7 +30,7 @@ export default function BillingDetails() {
           <InputField placeholder={"Company name (optional)"} type="text" Icon={GlobeAltIcon} />
           <InputField placeholder={"Company address (optional)"} type="text" Icon={GlobeAltIcon} />
         </div>
-        <div className="w-1/3 mt-6">
+        <div className="md:w-1/3 mt-6">
           <h5 className="text-base">Country</h5>
           <SelectField selectData={selectData} handleSelect={handleSelect} selected={selected} />
         </div>

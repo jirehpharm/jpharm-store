@@ -14,6 +14,7 @@ import Modal from "../../Modal";
 import AddToWishList from "../../Cards/AddToWishListCard/AddToWishList";
 import { addWish } from "../../Cards/AddToWishListCard/constants";
 import { get } from "lodash";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 const socialData = [
   {
@@ -42,12 +43,35 @@ const content = productPreview?.map(
   )
 );
 export default function Detail() {
+  const [screensize, setScreensize] = useState(window.innerWidth);
+  const [cardNo, setCardNo] = useState<any>(7);
+
+  useLayoutEffect(() => {
+    window.addEventListener("resize", () => {
+      setScreensize(window.innerWidth);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (screensize < 640) {
+      setCardNo(3);
+    } else if (screensize >= 640 && screensize < 770) {
+      setCardNo(3);
+    } else if (screensize >= 770 && screensize < 1024) {
+      setCardNo(4);
+    } else if (screensize >= 1024 && screensize < 1280) {
+      setCardNo(4);
+    } else if (screensize > 1280) {
+      setCardNo(4);
+    }
+  }, [screensize]);
+
   const image = get(productPreview, "0.imgSrc", "");
   return (
-    <div className="md:grid grid-cols-2 gap-4 pr-4">
+    <div className="md:grid grid-cols-2 gap-4 lg:pr-4">
       <div className="px-5">
         <img src={image} alt="600x701" />
-        <Carousel slidesPerView={4} slides={content} />
+        <Carousel slidesPerView={cardNo} slides={content} />
       </div>
       <div className="mt-9 px-3">
         <div className="flex items-center text-xs lg:text-lg">

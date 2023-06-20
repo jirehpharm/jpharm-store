@@ -19,7 +19,7 @@ export default function Reviews(props: IReviews) {
       {reviewData?.comments?.map((review, index) => (
         <div
           key={index}
-          className="grid grid-cols-6 py-8 items-center border-b border-gray-200"
+          className="md:grid grid-cols-6 py-8 items-center border-b border-gray-200"
         >
           <div className="col-span-1 flex ">
             <img
@@ -29,9 +29,11 @@ export default function Reviews(props: IReviews) {
             />
           </div>
           <div className="col-span-5">
-            <div className="flex justify-between">
-              <p className="mb-0 font-medium">{review.name}</p>
-              <div className="rounded-full px-5 py-1  border border-gray-200 hover:border-secondary flex items-center text-medium">
+            <div className="md:flex justify-between">
+              <p className="mb-0 font-medium font-josefin text-lg">
+                {review.name}
+              </p>
+              <div className="rounded-full px-5 py-1  border border-gray-200 hover:border-secondary md:flex items-center text-medium">
                 {review.date}
               </div>
             </div>

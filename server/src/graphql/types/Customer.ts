@@ -2,6 +2,7 @@ import { extendType, intArg, nonNull, objectType, stringArg } from "nexus";
 import { hashPassword } from "../../utils/crypto";
 import { Context } from "../graphql";
 
+// Query to generate graphQL schema
 export const Customer = objectType({
   name: "Customer",
   definition(t) {
@@ -33,6 +34,7 @@ export const Customer = objectType({
   },
 });
 
+//Query to fetch the data from the database
 export const customerQuery = extendType({
   type: "Query",
   definition(t) {
@@ -58,9 +60,11 @@ export const customerQuery = extendType({
   },
 });
 
+// Mutation for CRUD Operations
 export const customerMutation = extendType({
   type: "Mutation",
   definition(t) {
+    // Mutation to create a new customer
     t.nonNull.field("createCustomer", {
       type: "Customer",
       args: {
@@ -78,6 +82,7 @@ export const customerMutation = extendType({
         }) as any;
       },
     });
+    // Mutation to Update an existing customer
     t.nonNull.field("updateCustomer", {
       type: "Customer",
       args: {
@@ -97,6 +102,7 @@ export const customerMutation = extendType({
         }) as any;
       },
     });
+    // Mutation to create a new customer with pre-check for existing email
     t.field("registerCustomer", {
       type: "Customer",
       args: {

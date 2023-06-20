@@ -40,12 +40,11 @@ export const heroSectionData = {
 
 export const offerSectionData = {
   offerEndDate: "2023-06-20",
-  image: "path/to/image.jpg",
+  image: "img/banner/offerbanner.png",
   title: "Today's Hot Offer",
-  subtitle1: "Free Covid-19 Vaccine",
-  subtitle2: "Campaign Ticket",
-  description1: "Get vaccinated against Covid-19 for free and protect yourself and others. Don't miss out on this opportunity!",
-  description2: "Join our campaign and get a chance to win an exclusive ticket to an exciting event. Experience it like never before!",
+  subtitle: "Free Covid-19 Vaccine Campaign Ticket",
+  description:
+    "Get vaccinated against Covid-19 for free and protect yourself and others. Don't miss out on this opportunity! Join our campaign and get a chance to win an exclusive ticket to an exciting event. Experience it like never before!",
 };
 
 export const featuredProductsData = [
@@ -189,14 +188,16 @@ export const featureProduct2 = [
     title: "sanitizer",
     description: "50% off in covid Vaccine",
     buyNowLink: "#" /* TODO: add buy now link */,
-    imgSrc: "img/banner/mask.png" /* TODO: add img src img\salesWidgetbanner\banner-2.jpg/*/,
+    imgSrc:
+      "img/banner/mask.png" /* TODO: add img src img\salesWidgetbanner\banner-2.jpg/*/,
     imgAlt: "mask image",
   },
   {
     title: "- 29% OFF",
     description: "Antiseptic Dry Hand Gel",
     buyNowLink: "#" /* TODO: add buy now link */,
-    imgSrc: "img/banner/bottle.png" /* TODO: add img src img\salesWidgetbanner\banner-2.jpg/*/,
+    imgSrc:
+      "img/banner/bottle.png" /* TODO: add img src img\salesWidgetbanner\banner-2.jpg/*/,
     imgAlt: "bottle image",
   },
 ];

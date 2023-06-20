@@ -28,10 +28,8 @@ export interface IOfferBannerProps {
   offerEndDate?: string;
   image?: string;
   title?: string;
-  subtitle1?: string;
-  subtitle2?: string;
-  description1?: string;
-  description2?: string;
+  subtitle?: string;
+  description?: string;
 }
 
 export interface IFeaturedProductProps {

@@ -16,7 +16,7 @@ export default function ProductDetails() {
   return (
     <>
       <BreadcrumbBanner title={"Antiseptic Spray"} />
-      <div className="grid grid-cols-6 gap-5 mx-auto max-w-6xl my-20">
+      <div className="lg:grid grid-cols-6 gap-5 mx-auto max-w-6xl my-20">
         <div className="col-span-4">
           <Details />
           <HorizontalTab tabsData={tabsData} />

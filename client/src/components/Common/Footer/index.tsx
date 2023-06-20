@@ -22,7 +22,7 @@ const navigation: TNavigation = [
       { name: "Wish List", href: "/wishlist" },
       { name: "Login", href: "/login" },
       { name: "My Account", href: "/my-account" },
-      { name: "Terms & Conditions", href: "#" },
+      { name: "Terms & Conditions", href: "/terms-and-conditions" },
       { name: "Promotional Offers", href: "#" },
     ],
   },

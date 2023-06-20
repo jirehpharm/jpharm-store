@@ -12,6 +12,7 @@ import Wishlist from "../../pages/Wishlist";
 import Faqs from "../../pages/Faqs";
 import Contact from "../../pages/Contact";
 import PrivacyPolicy from "../../pages/PrivacyPolicy";
+import TermsAndConditions from "../../pages/TermsAndConditions";
 
 export default function AppContainer() {
   return (
@@ -20,7 +21,7 @@ export default function AppContainer() {
         <Route path="/about" element={<About />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/wishlist" element={<Wishlist />} />
-        
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="products" element={<Products />} />

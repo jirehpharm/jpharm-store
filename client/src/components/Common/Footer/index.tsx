@@ -63,7 +63,7 @@ export default function Footer() {
   return (
     <div>
       <footer className="ltn__footer-area bg-primary text-white pt-28">
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-7 gap-4 p-9">
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-7 gap-4 p-6">
           <div className="col-span-2">
             <a href="/" className="cursor-pointer">
               <img src="full_logo.png" alt="logo" className="w-[250px]" />

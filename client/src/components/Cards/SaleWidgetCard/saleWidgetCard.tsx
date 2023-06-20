@@ -9,12 +9,12 @@ export default function SaleWidgetCard({
   return (
     <section>
       <a href={saleWidgetCard.buyNowLink}>
-        <div className="pt-16 pr-7 pb-10 pl-9 p-0 max-w-xs sm:max-w-xl md:mx-auto bg-[#e3efed] border-0">
+        <div className="pt-16 pr-7 pb-10 pl-7 p-0 max-w-xs sm:max-w-xl md:mx-auto bg-[#e3efed] border-0">
           <div className="">
-            <div className="uppercase text-secondary text-xs font-medium font-nunito">
+            <div className="uppercase text-secondary text-xs font-medium font-nunito ">
               {saleWidgetCard.title}
             </div>
-            <h2 className="font-josefin text-xl md:text-[22px] lg:text-2xl pt-2 mb-0">
+            <h2 className="font-josefin text-xl md:text-[22px] lg:text-2xl pt-2 mb-0 pb-2">
               {saleWidgetCard.description}
             </h2>
             <a

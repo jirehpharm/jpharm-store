@@ -8,10 +8,10 @@ export default function Banner(props: IBannerProps) {
     widgets,
     link } = props;
   return (
-    <section style={{backgroundImage: `url(${bgImage})`, backgroundSize:`100% 100%`, backgroundRepeat: `no-repeat`}}>
+    <section style={{backgroundImage: `url(${bgImage})`,backgroundSize:`auto 100%`, backgroundRepeat: `no-repeat`}}>
       <div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 p-8 py-32">
+      <div className="grid grid-cols-1 lg:grid-cols-2 p-8 py-20 lg:py-32">
         <div></div>
         <div>
           <h6 className="text-secondary text-sm">{miniTitle}</h6>

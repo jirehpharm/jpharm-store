@@ -23,7 +23,7 @@ const HeroSection = ({ carouselData, offerCardData }: IHeroSectionProps) => {
     </div>
   ));
   return (
-    <div className="max-w-sm md:max-w-2xl lg:max-w-5xl xl:max-w-6x mx-auto my-14 lg:grid grid-cols-5 space-y-4 lg:space-y-0 text-center gap-7">
+    <div className="max-w-md md:max-w-2xl lg:max-w-5xl xl:max-w-6x mx-auto my-14 lg:grid grid-cols-5 space-y-4 lg:space-y-0 text-center gap-7">
       <div className="col-span-3 h-full">
         <Carousel slides={content} slidesPerView={1} className="h-full" pagination={pagination} navigation={false} />
       </div>

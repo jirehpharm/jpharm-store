@@ -40,13 +40,13 @@ export default function TrendingBlog({
   }, [screensize]);
 
   return (
-    <section className="pt-28 pb-[70px] mx-auto md:max-w-xl lg:max-w-6xl">
+    <section className="pt-14  lg:pt-28 lg:pb-[70px] mx-auto md:max-w-xl lg:max-w-6xl">
       <div className="relative px-4">
         <div className="relative mb-12 text-center">
           <h6 className="font-semibold text-secondary text-lg lg:text-xl">
             News & Blogs
           </h6>
-          <h1 className="text-2xl ld:text-3xl">Leatest Feeds</h1>
+          <h1 className="text-2xl lg:text-4xl">Leatest Feeds</h1>
           <Carousel
             slidesPerView={cardNo}
             slides={content}

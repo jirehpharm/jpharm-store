@@ -15,11 +15,7 @@ export const getProductList = async (
   try {
     const products: any[] = await pg("product")
       .select("*")
-      .join(
-        "product_description",
-        "product_description_product_id",
-        "product.product_id"
-      );
+      .join("product_description", "product_description_product_id", "product.product_id");
 
     res.status(200).json({
       status: true,

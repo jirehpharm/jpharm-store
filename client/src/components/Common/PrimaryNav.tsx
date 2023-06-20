@@ -7,6 +7,7 @@ import { useState } from "react";
 
 import Badge from "./Badge";
 import ViewCartDrawer from "./CartDrawer/ViewCartDrawer";
+import { InputField } from "../Form/InputField";
 
 export default function PrimaryNav(): JSX.Element {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -14,30 +15,30 @@ export default function PrimaryNav(): JSX.Element {
     <div className="mx-auto max-w-6xl flex flex-row justify-between py-7">
       <div className="flex items-center">
         <a href="/" className="cursor-pointer">
-          <img src="full_logo.png" alt="logo" className="w-[250px]" />
+          <div className="w-[200px]">
+            <img src="full_logo.png" alt="logo" className="w-full h-full object-contain" />
+          </div>
         </a>
       </div>
       <div className="flex items-center gap-4 text-light">
-        <div className="min-w-[500px] rounded-full shadow-light">
-          <form className="flex h-10">
-            <input
+        <form className="flex h-10">
+          <div className="w-[500px]">
+            <InputField
+              placeholder={"Search here..."}
               type="search"
-              placeholder="Search here..."
-              className="w-full bg-white pl-4 pr-8 rounded-full focus-visible:outline-0"
+              Icon={MagnifyingGlassIcon}
+              className="rounded-full h-[30px]"
             />
-            <button
-              type="submit"
-              className="p-2 border-0 focus-visible:outline-0"
-            >
-              <MagnifyingGlassIcon className="h-6 w-6" />
-            </button>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
       <div className="flex items-center gap-4">
         <UserIcon className="h-8 w-6" />
         <div>
-          <span className="flex items-center cursor-pointer">
+          <span
+            className="flex items-center cursor-pointer"
+            onClick={() => setIsOpen(true)}
+          >
             <ShoppingCartIcon className="h-8 w-6 relative hover:text-black" />
             <Badge value={2} />
           </span>
@@ -46,21 +47,16 @@ export default function PrimaryNav(): JSX.Element {
           onClick={() => setIsOpen(true)}
           className="flex items-center space-x-2 text-black"
         >
-          <h6 className="mb-0 hover:text-secondary">View Cart</h6>
+          <p className="mb-0 hover:text-secondary font-bold text-sm">
+            YOUR CART
+          </p>
         </button>
         {isOpen && (
           <ViewCartDrawer
-            productName={""}
-            productLink={""}
-            productImageSrc={""}
-            productImageAltText={""}
-            productPrice={""}
-            productQuantity={0}
-            amount={undefined}
-            viewCartLink={"/cart"}
-            checkOutCartLink={"/checkout"}
-            productCount={undefined}
             closeDrawer={setIsOpen}
+            checkOutCartLink={"/checkout"}
+            viewCartLink={"/cart"}
+            setDrawer={setIsOpen}
           />
         )}
       </div>

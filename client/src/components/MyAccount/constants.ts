@@ -14,3 +14,61 @@ export const addressData = [
     mobile: "Mobile: (123) 456-7890",
   },
 ];
+
+export const downloadData = [
+  {
+    product: "Carsafe - Car Service PSD Template",
+    date: "	Nov 22, 2020",
+    expire: "Yes",
+    download: "#",
+  },
+  {
+    product: "Carsafe - Car Service HTML Template",
+    date: "Nov 10, 2020",
+    expire: "Yes",
+    download: "#",
+  },
+  {
+    product: "Carsafe - Car Service WordPress Theme",
+    date: "Nov 12, 2020",
+    expire: "Yes",
+    download: "#",
+  },
+  {
+    product: "Carsafe - Car Service PSD Template",
+    date: "Nov 12, 2020",
+    expire: "Yes",
+    download: "#",
+  },
+];
+
+export const ordersData = [
+  {
+    order: "1",
+    date: "Jun 22, 2019",
+    status: "Pending",
+    total: "	$3000",
+    action: "#",
+  },
+  {
+    order: "2",
+    date: "Nov 22, 2019",
+    status: "	Approved",
+    total: "$200",
+    action: "#",
+  },
+  {
+    order: "3",
+    date: "Jan 12, 2020",
+    status: "On Hold",
+    total: "	$990",
+    action: "#",
+  },
+  {
+    order: "4",
+    date: "Jan 12, 2020",
+    status: "On Hold",
+    total: "	$990",
+    action: "#",
+  },
+];

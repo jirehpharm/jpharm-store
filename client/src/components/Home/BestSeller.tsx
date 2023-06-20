@@ -1,70 +1,15 @@
+import { JSX } from "react/jsx-runtime";
 import ProductOverViewCard from "../Cards/ProductOverViewCard";
+import Heading from "../Common/Heading";
 import { IProductProps } from "./types";
-const data = [
-  {
-    isNew: true,
-    image: "img/product/5.png",
-    quickView: "#",
-    addToCard: "#",
-    wishlist: "#",
-    stars: 5,
-    productName: "Antiseptic Spray",
-    price: "$32.00",
-    originalPrice: "$46.00",
-  },
-  {
-    isNew: true,
-    image: "img/product/5.png",
-    quickView: "#",
-    addToCard: "#",
-    wishlist: "#",
-    stars: 3,
-    productName: "Antiseptic Spray",
-    price: "$32.00",
-    originalPrice: "$46.00",
-  },
-  {
-    isNew: false,
-    image: "img/product/5.png",
-    quickView: "#",
-    addToCard: "#",
-    wishlist: "#",
-    stars: 4,
-    productName: "Antiseptic Spray",
-    price: "$32.00",
-    originalPrice: "$46.00",
-  },
-  {
-    isNew: true,
-    image: "img/product/5.png",
-    quickView: "#",
-    addToCard: "#",
-    wishlist: "#",
-    stars: 2,
-    productName: "Antiseptic Spray",
-    price: "$32.00",
-    originalPrice: "$46.00",
-  },
-  {
-    isNew: false,
-    image: "img/product/5.png",
-    quickView: "#",
-    addToCard: "#",
-    wishlist: "#",
-    stars: 3,
-    productName: "Antiseptic Spray",
-    price: "$32.00",
-    originalPrice: "$46.00",
-  },
-];
 
-export default function BestSeller() {
+export default function BestSeller({ data }: { data: IProductProps[] }) {
   return (
-    <section>
-      <div className="max-w-6xl mx-auto py-14">
-        <h1 className="text-center mb-11 text-5xl">Best Selling Item</h1>
-        <div className="grid grid-cols-4 gap-5 ">
-          {data.map((item: IProductProps, index: number) => (
+    <section className="mx-3">
+      <div className="max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto py-14">
+        <Heading title={"Best Selling Item"} />
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 ">
+          {data?.map((item: JSX.IntrinsicAttributes & IProductProps, index: number) => (
             <ProductOverViewCard isTextCenter={false} {...item} showStars={true} key={index} />
           ))}
         </div>

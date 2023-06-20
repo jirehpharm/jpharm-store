@@ -1,7 +1,7 @@
 export interface ISaleWidgetCardProps {
   title: string;
   description: string;
-  BuyNowLink: string;
+  buyNowLink: string;
   imgSrc: string;
   imgAlt: string;
 }

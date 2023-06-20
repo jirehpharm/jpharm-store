@@ -9,13 +9,9 @@ interface TabProps {
 const VerticalTab = (props: TabProps) => {
   const { tabsData } = props;
   return (
-    <div className="max-w-6xl mx-auto my-16">
-      <Tabs.Root
-        className="mt-4 grid grid-cols-11"
-        defaultValue={get(tabsData, "0.title")}
-        orientation="vertical"
-      >
-        <Tabs.List className="border-b border-gray-200 col-span-3">
+    <div className="max-w-6xl mx-auto my-24">
+      <Tabs.Root className="mt-4 grid grid-cols-11 gap-10" defaultValue={get(tabsData, "0.title")} orientation="vertical">
+        <Tabs.List className="col-span-3">
           {tabsData?.map((item, idx) => (
             <Tabs.Trigger
               key={idx}
@@ -30,11 +26,7 @@ const VerticalTab = (props: TabProps) => {
           ))}
         </Tabs.List>
         {tabsData?.map((item, idx) => (
-          <Tabs.Content
-            key={idx}
-            className=" px-7 bg-white rounded-b-md outline-none text-light col-span-8"
-            value={item.title}
-          >
+          <Tabs.Content key={idx} className=" px-7 bg-white rounded-b-md outline-none text-light col-span-8" value={item.title}>
             {item.content}
           </Tabs.Content>
         ))}

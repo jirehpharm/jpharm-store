@@ -1,9 +1,12 @@
-import ProductOverViewCard from "../Cards/ProductOverViewCard";
-import { IProductProps } from "../Home/types";
-
 import ReactPaginate from "react-paginate";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+
+import ProductOverViewCard from "../Cards/ProductOverViewCard";
+import SelectField from "../Form/SelectField";
+import { selectData } from "./constant";
+import { IProductProps } from "../Home/types";
 import { IItemsProps, IPaginatedItemsProps, IPaginationProps } from "./types";
+import { IOptionProps } from "../Form/types";
 
 function Pagination({
   pageCount,
@@ -53,7 +56,7 @@ function Pagination({
 
 function Items({ currentItems }: IItemsProps) {
   return (
-    <div className="items grid grid-cols-3 gap-5">
+    <div className="items grid grid-cols-2 xl:grid-cols-3 gap-5">
       {currentItems &&
         currentItems.map((item: IProductProps, index: number) => <ProductOverViewCard isTextCenter={false} {...item} showStars={true} key={index} />)}
     </div>
@@ -85,16 +88,16 @@ function PaginatedItems({ items, itemsPerPage }: IPaginatedItemsProps) {
         previousLabel="<<"
         nextLabel=">>"
         pageClassName="page-item"
-        pageLinkClassName="border h-12 w-12  rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
+        pageLinkClassName="border h-8 w-8 lg:h-12 lg:w-12 text-sm lg:text-base rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
         previousClassName="page-item"
-        previousLinkClassName="border h-12 w-12  rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
+        previousLinkClassName="border h-8 w-8 lg:h-12 lg:w-12 text-sm lg:text-base rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
         nextClassName="page-item"
-        nextLinkClassName="border h-12 w-12  rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
+        nextLinkClassName="border h-8 w-8 lg:h-12 lg:w-12 text-sm lg:text-base rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
         breakLabel="..."
         breakClassName="page-item"
-        breakLinkClassName="border h-12 w-12  rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
+        breakLinkClassName="border h-8 w-8 lg:h-12 lg:w-12 text-sm lg:text-base rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
         containerClassName="my-5  flex justify-between max-w-lg mx-auto "
-        activeClassName=" border h-12 w-12  rounded-full text-white paginationActive"
+        activeClassName=" border h-8 w-8 lg:h-12 lg:w-12 text-sm lg:text-base rounded-full text-white paginationActive"
         renderOnZeroPageCount={null}
       />
     </>
@@ -102,27 +105,26 @@ function PaginatedItems({ items, itemsPerPage }: IPaginatedItemsProps) {
 }
 
 export default function ProductsGrid({ gridData }: { gridData: IProductProps[] }) {
-  const [selectedSortOption, setSelectedSortOption] = useState<string>("default");
   const [sortedGridData, setSortedGridData] = useState(gridData);
+  const [selected, setSelected] = useState<IOptionProps>();
+
+  const handleSelect = (event: IOptionProps) => {
+    setSelected(event);
+    sortGridData(event.value);
+  };
 
   useEffect(() => {
     setSortedGridData(gridData);
   }, [gridData]);
-
-  const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const value = event.target.value;
-    setSelectedSortOption(value);
-    sortGridData(value);
-  };
 
   const sortGridData = (value: string) => {
     let sortedData = [...gridData];
 
     if (value === "popularity") {
       sortedData.sort((a, b) => b.stars - a.stars);
-    } else if (value === "low to high") {
+    } else if (value === "lowToHigh") {
       sortedData.sort((a, b) => parseFloat(a.price.replace("$", "")) - parseFloat(b.price.replace("$", "")));
-    } else if (value === "high to low") {
+    } else if (value === "highToLow") {
       sortedData.sort((a, b) => parseFloat(b.price.replace("$", "")) - parseFloat(a.price.replace("$", "")));
     }
 
@@ -132,12 +134,7 @@ export default function ProductsGrid({ gridData }: { gridData: IProductProps[] }
   return (
     <div className="my-10">
       <div className="mb-10 flex justify-end">
-        <select className="leading-[1.8] mt-0 py-2.5 bg-white border-2 border-borderColor" value={selectedSortOption} onChange={handleSortChange}>
-          <option value="default">Default sorting</option>
-          <option value={"popularity"}>Sort by popularity</option>
-          <option value={"low to high"}>Sort by price: low to high</option>
-          <option value={"high to low"}>Sort by price: high to low</option>
-        </select>
+        <SelectField selectData={selectData} handleSelect={handleSelect} selected={selected} />
       </div>
       <PaginatedItems items={sortedGridData} itemsPerPage={9} />
     </div>

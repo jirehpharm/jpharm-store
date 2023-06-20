@@ -9,11 +9,16 @@ export default function Categories(props: ICategoryProps) {
       <ul>
         {list.map((item, index) => (
           <li key={index} className="flex justify-between items-center">
-            <a href={item.link} className="p-1 text-light font-semibold">{item.title}</a>
+            <a
+              href={item.link}
+              className="p-1 text-light lg:font-semibold md:text-sm text-sm"
+            >
+              {item.title}
+            </a>
             <ArrowLongRightIcon className="h-4 w-4 text-light" />
           </li>
         ))}
       </ul>
     </WidgetLayout>
-  )
+  );
 }

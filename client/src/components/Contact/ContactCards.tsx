@@ -1,48 +1,30 @@
-import ContactMessage from "./ContactMessage";
-import ContactMap from "./contactMap";
+import { IContactCardDetailsProps } from "./types";
 
-export default function Contact() {
-  const contact = [
-    {
-      src: "contact-cards/Email.png",
-      title: "Email Address",
-      description1: "info@webmail.com",
-      description2: "jobs@webexample.com",
-    },
-    {
-      src: "contact-cards/Office.png",
-      title: "Phone Number",
-      description1: "+0123-456789",
-      description2: "987-6543210",
-    },
-    {
-      src: "contact-cards/Phone.png",
-      title: "Office Address",
-      description1: "18/A, New Born Town Hall",
-      description2: "New York, US",
-    },
-  ];
+interface IContactCardDetails {
+  contact: IContactCardDetailsProps[];
+}
+
+export default function ContactCards(props: IContactCardDetails) {
+  const { contact } = props;
   return (
     <>
-      <section className="grid grid-row-3 grid-flow-col max-w-5xl mx-auto gap-3">
-        {contact.map((con, index) => (
+      <section className="grid grid-row-1 grid-flow-row lg:grid-row-3 lg:grid-flow-col max-w-md md:max-w-xl lg:max-w-6xl mx-auto mt-20 gap-9 mb-20 p-3">
+        {contact?.map((con, index) => (
           <div
             key={index}
-            className="text-center mb-7 pl-0 pr-[30px] pt-10 pb-2.5 shadow-[0_0_4px_rgba(0,0,0,0.1)] -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.1)"
+            className="text-center mb-7 pt-12 px-7 pb-7 shadow-lg"
           >
             <div className="mb-9 w-20 block mx-auto">
-              <img src={con.src} alt="Icon Image" />
+              <img src={con.src} alt="Icon Image" className="text-lg" />
             </div>
-            <h3>{con.title}</h3>
-            <p>
+            <h3 className="text-lg md:text-xl lg:text-xl">{con.title}</h3>
+            <p className="text-sm lg:text-base">
               {con.description1} <br />
               {con.description2}
             </p>
           </div>
         ))}
       </section>
-      <ContactMessage />
-      <ContactMap />
     </>
   );
 }

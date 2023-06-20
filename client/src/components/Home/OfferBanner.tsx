@@ -57,13 +57,13 @@ export default function OfferBanner({
         <div className=" lg:max-w-6xl mx-auto lg:grid grid-cols-2 px-3">
           <div>
             <div>
-              <h6 className="text-secondary font-nunito text-sm lg:text-base">
+              <h6 className="text-secondary text-sm lg:text-base">
                 {title}
               </h6>
-              <h1 className="max-w-xs md:max-w-xs text-primary text-2xl lg:text-3xl font-josefin">
+              <h1 className="max-w-xs md:max-w-xs text-primary text-2xl lg:text-3xl">
                 {subtitle}
               </h1>
-              <p className="max-w-md md:max-w-md text-light text-sm lg:text-base font-josefin">
+              <p className="max-w-md md:max-w-md text-light text-sm lg:text-base">
                 {description}
               </p>
             </div>

@@ -73,10 +73,10 @@ export default function OfferBanner({
             >
               {map(countDownObj, (value: number, key: string) => (
                 <div className=" mr-7 last:mr-0 " key={key}>
-                  <h1 className="h-12 w-14 text-2xl leading-10 mb-1 text-center bg-white text-secondary shadow">
+                  <h1 className="h-12 w-14 py-2 text-2xl leading-10 mb-1 text-center bg-white text-secondary shadow">
                     {value.toString().padStart(2, "0")}
                   </h1>
-                  <p className="text-center text-lg text-light capitalize ">
+                  <p className="text-center text-sm lg:text-lg text-light capitalize ">
                     {key}
                   </p>
                 </div>

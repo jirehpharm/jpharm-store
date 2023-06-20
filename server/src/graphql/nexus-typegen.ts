@@ -157,6 +157,7 @@ export interface NexusGenFieldTypes {
   }
   Mutation: { // field return type
     createCustomer: NexusGenRootTypes['Customer']; // Customer!
+    registerCustomer: NexusGenRootTypes['Customer'] | null; // Customer
     updateCustomer: NexusGenRootTypes['Customer']; // Customer!
   }
   Query: { // field return type
@@ -230,6 +231,7 @@ export interface NexusGenFieldTypeNames {
   }
   Mutation: { // field return type name
     createCustomer: 'Customer'
+    registerCustomer: 'Customer'
     updateCustomer: 'Customer'
   }
   Query: { // field return type name
@@ -246,6 +248,11 @@ export interface NexusGenFieldTypeNames {
 export interface NexusGenArgTypes {
   Mutation: {
     createCustomer: { // args
+      email: string; // String!
+      fullName: string; // String!
+      password: string; // String!
+    }
+    registerCustomer: { // args
       email: string; // String!
       fullName: string; // String!
       password: string; // String!

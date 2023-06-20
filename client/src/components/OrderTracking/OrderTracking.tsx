@@ -9,7 +9,7 @@ export default function OrderTracking(props: IOrderTracking): JSX.Element {
   const { order } = props;
   return (
     <>
-      {/* <BreadcrumbBanner title={"Order Tracking"} /> */}
+      <BreadcrumbBanner title={"Order Tracking"} />
       <section>
         <div className="block py-20 px-4 mx-auto max-w-3xl mb-27 py-21">
           <div className="bg-white">

@@ -25,17 +25,14 @@ export default function Products() {
       const productName = item.productName.toLowerCase();
       const price = parseFloat(item.price.replace("$", ""));
       const isMatchingSearch = productName.includes(searchText.toLowerCase());
-      const isWithinPriceRange =
-        price >= range.lowestPrice && price <= range.highestPrice;
+      const isWithinPriceRange = price >= range.lowestPrice && price <= range.highestPrice;
       return isMatchingSearch && isWithinPriceRange;
     });
 
     setSortedGridData(filteredData);
   }, [searchText, range]);
 
-  let highestPrice = parseFloat(
-    get(gridData, "[0].price", "").replace("$", "")
-  );
+  let highestPrice = parseFloat(get(gridData, "[0].price", "").replace("$", ""));
   let lowestPrice = parseFloat(get(gridData, "[0].price", "").replace("$", ""));
 
   for (let i = 1; i < gridData.length; i++) {
@@ -58,16 +55,11 @@ export default function Products() {
   return (
     <div>
       <BreadcrumbBanner title={"Antiseptic Spray"} />
-      <div className="lg:grid grid-cols-6 gap-5 md:max-w-xl lg:max-w-6xl mx-auto">
+      <div className="flex flex-col-reverse lg:grid grid-cols-6 gap-5 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-4xl  mx-auto xl:max-w-6xl my-10 md:my-20">
         <div className="col-span-2 my-10">
           <Categories title={"Product Categories"} list={listData} />
           <WidgetLayout title={"Filter By Price"}>
-            <PriceRange
-              highestPrice={highestPrice}
-              lowestPrice={lowestPrice}
-              setRange={setRange}
-              range={range}
-            />
+            <PriceRange highestPrice={highestPrice} lowestPrice={lowestPrice} setRange={setRange} range={range} />
           </WidgetLayout>
           <WidgetLayout title={"Search Objects"}>
             <Search setSearchText={setSearchText} />

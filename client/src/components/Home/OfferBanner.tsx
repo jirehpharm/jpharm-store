@@ -47,14 +47,14 @@ export default function OfferBanner({
   return (
     <section className="mt-12 mb-14">
       <div
-        className="pt-28 pb-28 px-3 bg-auto"
+        className="py-28 px-3 bg-auto"
         style={{
           background: `url(${image})`,
-          backgroundSize: `100% 100%`,
+          backgroundSize: `auto 100%`,
           backgroundRepeat: `no-repeat`,
         }}
       >
-        <div className="lg:max-w-6xl mx-auto lg:grid grid-cols-2 px-3">
+        <div className=" lg:max-w-6xl mx-auto lg:grid grid-cols-2 px-3">
           <div>
             <div>
               <h6 className="text-secondary font-nunito text-sm lg:text-base">

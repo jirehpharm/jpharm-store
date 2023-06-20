@@ -46,7 +46,7 @@ export default function TrendingBlog({
           <h6 className="font-semibold text-secondary text-lg lg:text-xl">
             News & Blogs
           </h6>
-          <h1 className="text-2xl ld:text-3xl">Leatest Feeds</h1>
+          <h1 className="text-2xl lg:text-4xl">Leatest Feeds</h1>
           <Carousel
             slidesPerView={cardNo}
             slides={content}

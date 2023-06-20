@@ -31,7 +31,7 @@ export default function ClientsFeedBack({ testimonialsData }: { testimonialsData
   return (
     <section className="bg-sectionColor">
       <div className="max-w-sm sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-6xl mx-auto py-20 ">
-        <h1 className="text-center mb-4 text-2xl">Clients FeedBack</h1>
+        <h1 className="text-center mb-4 text-2xl lg:text-4xl">Clients FeedBack</h1>
         <Carousel slides={carouselContent} slidesPerView={cardNo} spaceBetween={20} />{" "}
       </div>
     </section>

@@ -26,8 +26,8 @@ export default function About() {
       <OfferBanner {...offerSectionData} />
       <CoreFeatureCard data={coreFeatureData} />
       <Stats data={statsData} />
-      <ClientsFeedBack testimonialsData={testimonialsData} />
       <QuestionsSection faqCategory={questionCategory}></QuestionsSection>
+      <ClientsFeedBack testimonialsData={testimonialsData} />
       <WhyChooseUs data={whyChooseUsData} />
       <TrendingBlog blogDetails={blogDetails} />
     </div>

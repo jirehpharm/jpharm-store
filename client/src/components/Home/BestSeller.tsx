@@ -6,7 +6,7 @@ import { IProductProps } from "./types";
 export default function BestSeller({ data }: { data: IProductProps[] }) {
   return (
     <section>
-      <div className="max-w-sm md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto py-14">
+      <div className="max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto py-14">
         <Heading title={"Best Selling Item"} />
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 ">
           {data?.map((item: JSX.IntrinsicAttributes & IProductProps, index: number) => (

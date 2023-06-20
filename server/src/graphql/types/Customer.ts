@@ -49,9 +49,7 @@ export const customerQuery = extendType({
         email: stringArg(),
       },
       resolve(parent, { email, customerId }, context: Context, info) {
-        const whereCondition = customerId
-          ? { customer_id: customerId }
-          : { email };
+        const whereCondition = customerId ? { customer_id: customerId } : { email };
         return context.prisma.customer.findUnique({
           where: whereCondition,
         }) as any;
@@ -88,11 +86,7 @@ export const customerMutation = extendType({
         password: nonNull(stringArg()),
         fullName: nonNull(stringArg()),
       },
-      resolve(
-        parent,
-        { customerId, email, password, fullName },
-        context: Context
-      ) {
+      resolve(parent, { customerId, email, password, fullName }, context: Context) {
         return context.prisma.customer.update({
           where: { customer_id: customerId },
           data: {
@@ -101,6 +95,32 @@ export const customerMutation = extendType({
             full_name: fullName,
           },
         }) as any;
+      },
+    });
+    t.field("registerCustomer", {
+      type: "Customer",
+      args: {
+        email: nonNull(stringArg()),
+        password: nonNull(stringArg()),
+        fullName: nonNull(stringArg()),
+      },
+      async resolve(parent, { email, password, fullName }, context: Context) {
+        const isUserExist = await context.prisma.customer.findUnique({
+          where: {
+            email,
+          },
+        });
+        if (isUserExist) {
+          return null;
+        } else {
+          return context.prisma.customer.create({
+            data: {
+              email: email,
+              password: hashPassword(password),
+              full_name: fullName,
+            },
+          }) as any;
+        }
       },
     });
   },

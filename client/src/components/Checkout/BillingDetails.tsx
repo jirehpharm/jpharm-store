@@ -18,11 +18,11 @@ export default function BillingDetails() {
   };
 
   return (
-    <div className="mx-auto max-w-6xl my-8">
+    <div className="max-w-[300px] sm:max-w-lg md:max-w-2xl lg:max-w-4xl  mx-auto xl:max-w-6xl my-8">
       <h4 className="border-l-2 border-secondary pl-3 mb-10">Billing Details</h4>
       <div className="p-5 border border-gray-200 py-10">
         <h5 className="text-base">Personal Information</h5>
-        <div className="grid grid-cols-2 gap-8">
+        <div className="lg:grid grid-cols-2 gap-8 space-y-8 lg:space-y-0">
           <InputField placeholder={"First Name"} type="text" Icon={UserIcon} />
           <InputField placeholder={"Last Name"} type="text" Icon={UserIcon} />
           <InputField placeholder={"Email address"} type="email" Icon={RiMailFill} />
@@ -36,12 +36,12 @@ export default function BillingDetails() {
         </div>
         <div className="mt-8">
           <h5 className="text-base">Country</h5>
-          <div className="grid grid-cols-2 gap-8">
+          <div className="lg:grid grid-cols-2 gap-8 space-y-8 lg:space-y-0">
             <InputField placeholder={"House number and street name"} type="text" />
             <InputField placeholder={"Apartment, suite, unit etc."} type="text" />
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-8 mt-8">
+        <div className="lg:grid grid-cols-3 gap-8 space-y-8 lg:space-y-0 mt-8">
           <div>
             <h5 className="text-base">Town / City</h5>
             <InputField placeholder={"City"} type="text" />
@@ -56,7 +56,7 @@ export default function BillingDetails() {
           </div>
         </div>
         <div className="mt-4">
-          <Checkbox name={"accept"} id="accept"/>
+          <Checkbox name={"accept"} id="accept" />
           <label htmlFor="accept" className="text-light">
             {" "}
             Create an account?
@@ -64,13 +64,7 @@ export default function BillingDetails() {
         </div>
         <div className="mt-8">
           <h5 className="text-base">Order Notes (optional)</h5>
-          <Textarea
-            placeholder={
-              "Notes about your order, e.g. special notes for delivery."
-            }
-            Icon={PencilIcon}
-            name={"orderNotes"}
-          />
+          <Textarea placeholder={"Notes about your order, e.g. special notes for delivery."} Icon={PencilIcon} name={"orderNotes"} />
         </div>
       </div>
     </div>

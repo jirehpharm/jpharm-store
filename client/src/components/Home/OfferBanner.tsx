@@ -47,7 +47,7 @@ export default function OfferBanner({
   return (
     <section className="mt-12 mb-14">
       <div
-        className="py-28 px-3 bg-auto"
+        className="py-16 lg:py-28 px-3 bg-auto"
         style={{
           background: `url(${image})`,
           backgroundSize: `auto 100%`,
@@ -82,15 +82,14 @@ export default function OfferBanner({
                 </div>
               ))}
             </div>
-            <div className="btn-wrapper mt-5">
-              <a href="/contact" className="btn">
+            <div className="mt-5">
+              <a href="/contact" className="btn block">
                 Book Now
               </a>
-              <a href="#" className="sm:text-xs">
+              <a href="#" className="text-md block pt-6 sm:pt-0 sm:inline">
                 Deal of The Day
               </a>
             </div>
-            <div className="relative px-4"></div>
           </div>
         </div>
       </div>

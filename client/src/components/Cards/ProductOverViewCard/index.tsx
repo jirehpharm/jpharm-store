@@ -16,7 +16,8 @@ export default function ProductOverViewCard({
   originalPrice = "",
 }: IProductProps) {
   return (
-    <div className="ltn__product-item relative ltn__product-item-3 text-left hover:shadow-xl">
+    <div className="">
+      <div className="ltn__product-item relative ltn__product-item-3 text-left hover:shadow-xl ">
       <div className="product-img relative">
         <a href="product-details">
           <img src={image} alt="#" />
@@ -60,5 +61,7 @@ export default function ProductOverViewCard({
         </div>
       </div>
     </div>
+    </div>
+    
   );
 }

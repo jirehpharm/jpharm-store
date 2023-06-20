@@ -7,7 +7,7 @@ interface IStatsData {
 export default function Stats(props: IStatsData) {
   const { stats } = props;
   return (
-    <div className="bg-sectionColor p-9 mt-8">
+    <div className="bg-sectionColor p-9">
       <div className="max-w-xs mx-auto md:max-w-lg lg:max-w-xl xl:max-w-6xl">
         <div className=" grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
           {stats?.map(

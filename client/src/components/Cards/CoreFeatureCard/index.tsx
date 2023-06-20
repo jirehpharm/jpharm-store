@@ -8,7 +8,7 @@ export default function index(props: ICoreFeature) {
   const { data } = props;
   return (
     <div className="max-w-[290px] sm:max-w-xl md:max-w-3xl lg:max-w-6xl mx-auto py-10">
-      <h1 className="text-center text-2xl sm:text-3xl">Core Features</h1>
+      <h1 className="text-center text-2xl sm:text-4xl">Core Features</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-5">
         {data.map((item, index) => (
           <div

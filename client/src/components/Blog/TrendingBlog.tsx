@@ -3,8 +3,14 @@ import BlogCard from "../Cards/BlogCard/BlogCard";
 import Carousel from "../Carousel";
 import { ITrendingBlogProps } from "./types";
 
-export default function TrendingBlog({ blogDetails }: { blogDetails: ITrendingBlogProps[] }) {
-  const content = blogDetails.map((item: ITrendingBlogProps, index: number) => <BlogCard {...item} key={index} />);
+export default function TrendingBlog({
+  blogDetails,
+}: {
+  blogDetails: ITrendingBlogProps[];
+}) {
+  const content = blogDetails.map((item: ITrendingBlogProps, index: number) => (
+    <BlogCard {...item} key={index} />
+  ));
 
   const [screensize, setScreensize] = useState(window.innerWidth);
   const [cardNo, setCardNo] = useState<any>(7);
@@ -14,6 +20,10 @@ export default function TrendingBlog({ blogDetails }: { blogDetails: ITrendingBl
       setScreensize(window.innerWidth);
     });
   }, []);
+
+  const pagination = {
+    clickable: true,
+  };
 
   useEffect(() => {
     if (screensize < 640) {
@@ -33,9 +43,15 @@ export default function TrendingBlog({ blogDetails }: { blogDetails: ITrendingBl
     <section className="pt-28 pb-[70px] mx-auto md:max-w-xl lg:max-w-6xl">
       <div className="relative px-4">
         <div className="relative mb-12 text-center">
-          <h6 className="font-semibold text-secondary text-xl">News & Blogs</h6>
-          <h1 className="">Leatest Feeds</h1>
-          <Carousel slidesPerView={cardNo} slides={content} />
+          <h6 className="font-semibold text-secondary text-lg lg:text-xl">
+            News & Blogs
+          </h6>
+          <h1 className="text-2xl ld:text-3xl">Leatest Feeds</h1>
+          <Carousel
+            slidesPerView={cardNo}
+            slides={content}
+            pagination={pagination}
+          />
         </div>
       </div>
       {/* blog items starts */}

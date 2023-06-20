@@ -7,9 +7,9 @@ interface IStatsData {
 export default function Stats(props: IStatsData) {
   const { stats } = props;
   return (
-    <div className="ltn__feature-area bg-sectionColor mt-24 py-7 lg:mt-16">
-      <div className="max-w-6xl mx-auto">
-        <div className=" grid grid-cols-4">
+    <div className="bg-sectionColor p-9 mt-8">
+      <div className="max-w-xs mx-auto md:max-w-lg lg:max-w-xl xl:max-w-6xl">
+        <div className=" grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
           {stats?.map(
             (
               item: { title: string; description: string; image: string },
@@ -19,9 +19,9 @@ export default function Stats(props: IStatsData) {
                 <div className="mb-5 mr-2 flex w-[20%]">
                   <img src={item.image} alt="#" />
                 </div>
-                <div>
-                  <h4>{item.title}</h4>
-                  <p>{item.description}</p>
+                <div className="flex flex-col justify-center ml-10">
+                  <h4 className="text-lg">{item.title}</h4>
+                  <p  className="text-light text-sm">{item.description}</p>
                 </div>
               </div>
             )

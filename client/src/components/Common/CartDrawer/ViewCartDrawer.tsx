@@ -2,7 +2,7 @@ import { AiOutlineClose } from "react-icons/ai";
 
 import { ICartDrawerProps } from "./types";
 import { productCartCard } from "./constant";
-import CartItems from "../../Cards/CartCards/cartItems";
+import CartItems from "../../Cards/CartCards/CartItems";
 
 export default function ViewCartDrawer(product: ICartDrawerProps) {
   function closeDrawer(drawer: boolean) {
@@ -39,9 +39,6 @@ export default function ViewCartDrawer(product: ICartDrawerProps) {
           </a>
         </div>
       </div>
-      {/*  </>
-        )
-      )} */}
     </section>
   );
 }

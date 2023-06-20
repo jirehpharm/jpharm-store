@@ -14,7 +14,7 @@ export default function ReviewForm() {
         <h3 className=" pl-4 mx-7 mt-6 mb-4 border-l-2 border-secondary">
           Add a Review
         </h3>
-        <p className=" py-3 mx-7 mt-2 mb-0 flex flex-wrap">
+        <p className=" py-3 mx-7 mt-2 mb-0 font-josefin text-sm font-bold flex flex-wrap">
           Your Ratings: {getStars({ stars: 4 })}
         </p>
         <div className="px-7 space-y-6">
@@ -24,17 +24,14 @@ export default function ReviewForm() {
             Icon={PencilIcon}
           />
           {fields?.map((field, index) => (
-            <InputField
-              key={index}
-              {...field}
-            />
+            <InputField key={index} {...field} />
           ))}
         </div>
         <div className="flex items-center py-3 mx-7 mt-5 mb-0">
           <Checkbox name={"save"} id="default-checkbox" />
           <label
             htmlFor="default-checkbox"
-            className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500"
+            className="ml-2 text-sm lg:text-base font-medium font-josefin dark:text-gray-500"
           >
             {" "}
             Save my name, email, and website in this browser for the next time I

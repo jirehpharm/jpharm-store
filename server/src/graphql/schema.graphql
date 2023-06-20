@@ -66,6 +66,7 @@ type CustomerGroup {
 
 type Mutation {
   createCustomer(email: String!, fullName: String!, password: String!): Customer!
+  registerCustomer(email: String!, fullName: String!, password: String!): Customer
   updateCustomer(customerId: Int!, email: String!, fullName: String!, password: String!): Customer!
 }
 

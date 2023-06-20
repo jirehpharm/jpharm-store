@@ -58,15 +58,13 @@ export default function Register(): JSX.Element {
         const { data } = await registerCustomer({
           variables: { email, password, fullName },
         });
-        const isRegistered = data.registerCustomer;
+        const isRegistered = data?.registerCustomer;
 
-        if (isRegistered === null) {
-          showErrorToast("User already registered please login.");
-        }
-        if (error) {
-          showErrorToast("Something went wrong");
-        }
-        showSuccessToast("Registration successful");
+        isRegistered === null
+          ? showErrorToast("User already registered please login.")
+          : error
+          ? showErrorToast("Something went wrong")
+          : showSuccessToast("Registration successful");
       }
     }
   };

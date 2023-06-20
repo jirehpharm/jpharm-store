@@ -56,7 +56,7 @@ function Pagination({
 
 function Items({ currentItems }: IItemsProps) {
   return (
-    <div className="items grid grid-cols-3 gap-5">
+    <div className="items grid grid-cols-2 xl:grid-cols-3 gap-5">
       {currentItems &&
         currentItems.map((item: IProductProps, index: number) => <ProductOverViewCard isTextCenter={false} {...item} showStars={true} key={index} />)}
     </div>
@@ -88,16 +88,16 @@ function PaginatedItems({ items, itemsPerPage }: IPaginatedItemsProps) {
         previousLabel="<<"
         nextLabel=">>"
         pageClassName="page-item"
-        pageLinkClassName="border h-12 w-12  rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
+        pageLinkClassName="border h-8 w-8 lg:h-12 lg:w-12 text-sm lg:text-base rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
         previousClassName="page-item"
-        previousLinkClassName="border h-12 w-12  rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
+        previousLinkClassName="border h-8 w-8 lg:h-12 lg:w-12 text-sm lg:text-base rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
         nextClassName="page-item"
-        nextLinkClassName="border h-12 w-12  rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
+        nextLinkClassName="border h-8 w-8 lg:h-12 lg:w-12 text-sm lg:text-base rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
         breakLabel="..."
         breakClassName="page-item"
-        breakLinkClassName="border h-12 w-12  rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
+        breakLinkClassName="border h-8 w-8 lg:h-12 lg:w-12 text-sm lg:text-base rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
         containerClassName="my-5  flex justify-between max-w-lg mx-auto "
-        activeClassName=" border h-12 w-12  rounded-full text-white paginationActive"
+        activeClassName=" border h-8 w-8 lg:h-12 lg:w-12 text-sm lg:text-base rounded-full text-white paginationActive"
         renderOnZeroPageCount={null}
       />
     </>

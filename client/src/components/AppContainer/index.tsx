@@ -13,6 +13,7 @@ import Faqs from "../../pages/Faqs";
 import Contact from "../../pages/Contact";
 import PrivacyPolicy from "../../pages/PrivacyPolicy";
 import TermsAndConditions from "../../pages/TermsAndConditions";
+import ErrorPage from "../../pages/404";
 
 export default function AppContainer() {
   return (
@@ -31,6 +32,7 @@ export default function AppContainer() {
         <Route path="/my-account" element={<MyAccount />} />
         <Route path="/order-tracking" element={<OrderTrackingPage />} />
         <Route path="/faq" element={<Faqs />} />
+        <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>
   );

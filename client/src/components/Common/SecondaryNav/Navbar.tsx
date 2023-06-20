@@ -68,7 +68,7 @@ export default function Navbar(props: INavProps) {
             </ul>
           </div>
         ) : (
-          <a href={nav.link} className="text-black font-bold font-nunito text-base">
+          <a href={nav.link} className="text-black font-bold font-ibm text-base">
             <li className="list-none">{nav.title}</li>
           </a>
         )

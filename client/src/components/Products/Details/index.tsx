@@ -14,6 +14,7 @@ import Modal from "../../Modal";
 import AddToWishList from "../../Cards/AddToWishListCard/AddToWishList";
 import { addWish } from "../../Cards/AddToWishListCard/constants";
 import { get } from "lodash";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 const socialData = [
   {
@@ -42,12 +43,35 @@ const content = productPreview?.map(
   )
 );
 export default function Detail() {
+  const [screensize, setScreensize] = useState(window.innerWidth);
+  const [cardNo, setCardNo] = useState<any>(7);
+
+  useLayoutEffect(() => {
+    window.addEventListener("resize", () => {
+      setScreensize(window.innerWidth);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (screensize < 640) {
+      setCardNo(3);
+    } else if (screensize >= 640 && screensize < 770) {
+      setCardNo(3);
+    } else if (screensize >= 770 && screensize < 1024) {
+      setCardNo(4);
+    } else if (screensize >= 1024 && screensize < 1280) {
+      setCardNo(4);
+    } else if (screensize > 1280) {
+      setCardNo(4);
+    }
+  }, [screensize]);
+
   const image = get(productPreview, "0.imgSrc", "");
   return (
-    <div className="md:grid grid-cols-2 gap-4 pr-4">
+    <div className="md:grid grid-cols-2 gap-4 lg:pr-4">
       <div className="px-5">
         <img src={image} alt="600x701" />
-        <Carousel slidesPerView={4} slides={content} />
+        <Carousel slidesPerView={cardNo} slides={content} />
       </div>
       <div className="mt-9 px-3">
         <div className="flex items-center text-xs lg:text-lg">
@@ -56,11 +80,11 @@ export default function Detail() {
         </div>
         <h2 className="text-xl md:text-2xl lg:text-2xl">Hand Sanitizer</h2>
         <div className="flex items-center space-x-4 border-b border-gray-200 pb-4">
-          <p className="text-secondary font-nunito  font-bold text-3xl md:text-4xl lg:text-4xl mb-0">
+          <p className="text-secondary font-bold text-3xl md:text-4xl lg:text-4xl mb-0">
             {" "}
             $32.00
           </p>
-          <p className="text-secondary font-nunito font-bold text-2xl md:text-3xl lg:text-3xl line-through opacity-60 mb-0">
+          <p className="text-secondary font-bold text-2xl md:text-3xl lg:text-3xl line-through opacity-60 mb-0">
             $46.00
           </p>
         </div>

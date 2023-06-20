@@ -19,7 +19,7 @@ export default function Partners(props: IPartners) {
           />
         </div>
         <div>
-          <h1 className="text-2xl leading-relaxed sm:text-3xl font-josefin xl:text-4xl">{partnersData?.title}</h1>
+          <h1 className="text-2xl leading-relaxed sm:text-3xl font-noto xl:text-4xl">{partnersData?.title}</h1>
           <p className="text-light text-sm leading-6 md:text-base">{partnersData?.description}</p>
           <ul className="flex flex-col space-y-5">
             {partnersData?.list.map((item, idx) => (

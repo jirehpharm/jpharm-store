@@ -16,12 +16,12 @@ export default function ProductDetails() {
   return (
     <>
       <BreadcrumbBanner title={"Antiseptic Spray"} />
-      <div className="lg:grid grid-cols-6 gap-5 mx-auto lg:max-w-4xl xl:max-w-6xl sm:max-w-lg max-w-sm md:max-w-2xl my-20">
+      <div className="flex flex-col lg:grid grid-cols-6 gap-5 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-4xl  mx-auto xl:max-w-6xl my-10 md:my-20">
         <div className="col-span-4">
           <Details />
           <HorizontalTab tabsData={tabsData} />
         </div>
-        <div className="col-span-2">
+        <div className="col-span-2 mx-2 sm:mx-0">
           <Categories title={"Product Categories"} list={listData} />
           <WidgetLayout title={"Top Rated Products"}>
             <TopRatedProductCard productData={topRated} />

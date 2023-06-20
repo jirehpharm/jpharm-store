@@ -17,7 +17,7 @@ const HorizontalTab = (props: TabProps) => {
         {tabsData?.map((item, idx) => (
           <Tabs.Trigger
             key={idx}
-            className="p-3 data-[state=active]:text-secondary border-b-2 border-transparent data-[state=active]:border-b-2 focus-visible:outline-0 data-[state=active]:border-secondary font-bold"
+            className="p-3 text-sm md:text-base lg:text-lg data-[state=active]:text-secondary border-b-2 border-transparent data-[state=active]:border-b-2 focus-visible:outline-0 data-[state=active]:border-secondary font-bold"
             value={item.tabTitle}
           >
             {item.tabTitle}
@@ -30,7 +30,7 @@ const HorizontalTab = (props: TabProps) => {
           className="p-5 bg-white rounded-b-md outline-none text-light"
           value={item.tabTitle}
         >
-          <h4 className="text-lg font-medium">
+          <h4 className="text-2xl lg:text-lg font-josefin font-medium">
             <span className="text-secondary">|</span> {item.title}
           </h4>
           {item.content}

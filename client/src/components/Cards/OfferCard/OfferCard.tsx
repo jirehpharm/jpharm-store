@@ -14,7 +14,7 @@ export default function OfferCard({ data }: { data: IOfferCardProps }) {
               {data.description}
             </a>
           </h4>
-          {data.price && <p className="text-xs text-orange-400 font-nunito">{data.price}</p>}
+          {data.price && <p className="text-xs text-orange-400 font-ibm">{data.price}</p>}
           <a href={data.shopNowLink} className="text-white bg-secondary border border-secondary hover:text-white text-sm lg:text-base px-5 py-3">
             Shop Now <ArrowRightIcon className="w-5 h-5 inline" />
           </a>

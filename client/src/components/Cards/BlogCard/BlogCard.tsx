@@ -61,7 +61,7 @@ export default function BlogCard({
                 <div>
                   <a
                     href={blogLink}
-                    className="my-auto flex md:max-w-2xl font-semibold lg:font-bold font-nunito  text-xs lg:text-lg"
+                    className="my-auto flex md:max-w-2xl font-semibold lg:font-bold font-ibm  text-xs lg:text-lg"
                   >
                     READ MORE
                   </a>

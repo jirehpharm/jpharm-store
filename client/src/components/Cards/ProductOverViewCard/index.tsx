@@ -56,7 +56,7 @@ export default function ProductOverViewCard({
             {productName}
           </a>
         </h2>
-        <div className="product-price text-sm font-nunito">
+        <div className="product-price text-sm font-ibm">
           <span>{price}</span> <del>{originalPrice}</del>
         </div>
       </div>

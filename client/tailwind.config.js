@@ -18,8 +18,8 @@ export default {
         medium: "0 16px 32px 0 rgba(7, 28, 31, 0.1)",
       },
       fontFamily: {
-        nunito: ["Nunito Sans", "sans-serif"],
-        josefin: ["Josefin Sans", "sans-serif"],
+        ibm: ["IBM Plex Sans KR", "sans-serif"],
+        noto: ["Noto Sans", "sans-serif"],
       },
     },
   },

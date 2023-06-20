@@ -80,11 +80,11 @@ export default function Detail() {
         </div>
         <h2 className="text-xl md:text-2xl lg:text-2xl">Hand Sanitizer</h2>
         <div className="flex items-center space-x-4 border-b border-gray-200 pb-4">
-          <p className="text-secondary font-nunito  font-bold text-3xl md:text-4xl lg:text-4xl mb-0">
+          <p className="text-secondary font-bold text-3xl md:text-4xl lg:text-4xl mb-0">
             {" "}
             $32.00
           </p>
-          <p className="text-secondary font-nunito font-bold text-2xl md:text-3xl lg:text-3xl line-through opacity-60 mb-0">
+          <p className="text-secondary font-bold text-2xl md:text-3xl lg:text-3xl line-through opacity-60 mb-0">
             $46.00
           </p>
         </div>

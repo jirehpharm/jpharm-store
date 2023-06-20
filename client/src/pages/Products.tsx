@@ -58,7 +58,7 @@ export default function Products() {
   return (
     <div>
       <BreadcrumbBanner title={"Antiseptic Spray"} />
-      <div className="grid grid-cols-6 gap-5 max-w-6xl mx-auto">
+      <div className="lg:grid grid-cols-6 gap-5 md:max-w-xl lg:max-w-6xl mx-auto">
         <div className="col-span-2 my-10">
           <Categories title={"Product Categories"} list={listData} />
           <WidgetLayout title={"Filter By Price"}>

@@ -13,6 +13,8 @@ import Register from "./pages/Register";
 import { AuthContext } from "./context/authContext";
 
 import "./style/App.css";
+import ConventionalNav from "./components/Common/SecondaryNav/ConventionalNav";
+import { navbarData } from "./components/Common/SecondaryNav/content";
 
 function App() {
   const { isLoggedIn } = useContext(AuthContext);
@@ -32,7 +34,9 @@ function App() {
                 <ContactNav />
                 <PrimaryNav />
                 <SecondaryNav />
-                {<AppContainer />}
+                <ConventionalNav navbarData={navbarData} />
+                <AppContainer />
+                <AppContainer />
                 <CTA />
                 <Footer />
               </>

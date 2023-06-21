@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useContext } from "react";
 
 import AppContainer from "./components/AppContainer";
 import ContactNav from "./components/Common/ContactNav";
@@ -9,41 +10,15 @@ import SecondaryNav from "./components/Common/SecondaryNav";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import Register from "./pages/Register";
+import { AuthContext } from "./context/authContext";
+
 import "./style/App.css";
 import ConventionalNav from "./components/Common/SecondaryNav/ConventionalNav";
 import { navbarData } from "./components/Common/SecondaryNav/content";
 
 function App() {
-  // (async () => {
-  //   // const data = await fetch("http://localhost:4002", {
-  //   //   headers: {
-  //   //     "Content-Type": "application/json",
-  //   //   },
-  //   //   method: "POST",
-  //   //   body: JSON.stringify({
-  //   //     query: `
-  //   //       query getCollection {
-  //   //         name
-  //   //         code
-  //   //         uuid
-  //   //         description
-  //   //         collection_id
-  //   //         updated_at
-  //   //         created_at
-  //   //       }
-  //   //     `,
-  //   //   }),
-  //   // });
-
-  //   const data = await client.query({
-  //     query: gql`
-  //       query listCollection {
-  //         name
-  //       }
-  //     `,
-  //   });
-  //   console.log("collection", data);
-  // })();
+  const { isLoggedIn } = useContext(AuthContext);
+  console.log("isLoggedIn: ", isLoggedIn);
 
   return (
     <>
@@ -60,6 +35,7 @@ function App() {
                 <PrimaryNav />
                 <SecondaryNav />
                 <ConventionalNav navbarData={navbarData} />
+                <AppContainer />
                 <AppContainer />
                 <CTA />
                 <Footer />

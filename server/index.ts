@@ -17,6 +17,7 @@ import prisma from "./src/utils/prisma";
 import routes from "./src/routes";
 import { schema } from "./src/graphql/schema";
 import { IGraphQLContext } from "./src/graphql/graphql";
+import { authenticate } from "./src/middleware/authenticate";
 
 // Setting up port
 const port: number = process.env.PORT ? parseInt(process.env.PORT, 10) : 4001;
@@ -53,6 +54,7 @@ const port: number = process.env.PORT ? parseInt(process.env.PORT, 10) : 4001;
       // Adding a plugin to drain the HTTP server when the Apollo server is stopped
       ApolloServerPluginDrainHttpServer({ httpServer }),
     ],
+    introspection: process.env.NODE_ENV !== "production",
   });
 
   // Starting the Apollo server
@@ -60,9 +62,24 @@ const port: number = process.env.PORT ? parseInt(process.env.PORT, 10) : 4001;
   app.use(
     "/graphql",
     expressMiddleware(server, {
-      context: async () => {
+      context: async ({ req }) => {
+        const prisma = new PrismaClient();
+        if (req.headers["x-access-mode"] === "public") {
+          return {
+            prisma,
+            user: null,
+          };
+        }
+
+        const isAuthenticated = authenticate(req);
+
+        if (!isAuthenticated.success) {
+          throw new Error(isAuthenticated.message);
+        }
+
         return {
-          prisma: prisma as PrismaClient,
+          prisma,
+          user: isAuthenticated?.user || {},
         };
       },
     })

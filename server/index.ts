@@ -63,7 +63,6 @@ const port: number = process.env.PORT ? parseInt(process.env.PORT, 10) : 4001;
     "/graphql",
     expressMiddleware(server, {
       context: async ({ req }) => {
-        const prisma = new PrismaClient();
         if (req.headers["x-access-mode"] === "public") {
           return {
             prisma,
@@ -71,15 +70,15 @@ const port: number = process.env.PORT ? parseInt(process.env.PORT, 10) : 4001;
           };
         }
 
-        const isAuthenticated = authenticate(req);
+        // const isAuthenticated = authenticate(req);
 
-        if (!isAuthenticated.success) {
-          throw new Error(isAuthenticated.message);
-        }
+        // if (!isAuthenticated.success) {
+        //   throw new Error(isAuthenticated.message);
+        // }
 
         return {
           prisma,
-          user: isAuthenticated?.user || {},
+          // user: isAuthenticated?.user || {},
         };
       },
     })

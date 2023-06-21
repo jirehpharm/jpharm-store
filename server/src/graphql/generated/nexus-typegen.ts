@@ -38,6 +38,60 @@ export interface NexusGenObjects {
     updated_at?: string | null; // String
     uuid: string; // String!
   }
+  Attribute: { // root type
+    attribute_code: string; // String!
+    attribute_id: number; // Int!
+    attribute_name: string; // String!
+    display_on_frontend: boolean; // Boolean!
+    is_filterable: boolean; // Boolean!
+    is_required: boolean; // Boolean!
+    sort_order: number; // Int!
+    type: string; // String!
+    uuid: string; // String!
+  }
+  AttributeGroup: { // root type
+    attribute_group_id: number; // Int!
+    created_at?: string | null; // String
+    group_name: string; // String!
+    updated_at?: string | null; // String
+    uuid: string; // String!
+  }
+  AttributeGroupLink: { // root type
+    attribute_group_link_id: number; // Int!
+    attribute_id: number; // Int!
+    group_id: number; // Int!
+  }
+  AttributeOption: { // root type
+    attribute_code: string; // String!
+    attribute_id: number; // Int!
+    attribute_option_id: number; // Int!
+    created_at: string; // String!
+    option_text: string; // String!
+    updated_at: string; // String!
+    uuid: string; // String!
+  }
+  Category: { // root type
+    category_id: number; // Int!
+    created_at?: string | null; // String
+    include_in_nav: boolean; // Boolean!
+    parent_id?: number | null; // Int
+    position?: number | null; // Int
+    status: boolean; // Boolean!
+    updated_at?: string | null; // String
+    uuid: string; // String!
+  }
+  CategoryDescription: { // root type
+    category_description_category_id: number; // Int!
+    category_description_id: number; // Int!
+    description?: string | null; // String
+    image?: string | null; // String
+    meta_description?: string | null; // String
+    meta_keywords?: string | null; // String
+    meta_title?: string | null; // String
+    name: string; // String!
+    short_description?: string | null; // String
+    url_key: string; // String!
+  }
   Collection: { // root type
     code: string; // String!
     collection_id: number; // Int!
@@ -84,7 +138,107 @@ export interface NexusGenObjects {
     uuid: string; // String!
   }
   Mutation: {};
+  Product: { // root type
+    created_at?: string | null; // String
+    group_id?: number | null; // Int
+    image?: string | null; // String
+    manage_stock: boolean; // Boolean!
+    price: string; // String!
+    product_id: number; // Int!
+    qty: number; // Int!
+    sku: string; // String!
+    status: boolean; // Boolean!
+    stock_availability: boolean; // Boolean!
+    type: string; // String!
+    updated_at?: string | null; // String
+    uuid: string; // String!
+    variant_group_id?: number | null; // Int
+    visibility: boolean; // Boolean!
+    weight?: number | null; // Float
+  }
+  ProductAttributeValueIndex: { // root type
+    attribute_id?: number | null; // Int
+    option_id?: number | null; // Int
+    option_text?: string | null; // String
+    product_attribute_value_index_id: number; // Int!
+    product_id?: number | null; // Int
+    uuid: string; // String!
+  }
+  ProductCategory: { // root type
+    category_id: number; // Int!
+    product_category_id: number; // Int!
+    product_id: number; // Int!
+  }
+  ProductCollection: { // root type
+    collection_id: number; // Int!
+    product_collection_id: number; // Int!
+    product_id: number; // Int!
+  }
+  ProductCustomOption: { // root type
+    is_required: boolean; // Boolean!
+    option_name: string; // String!
+    option_type: string; // String!
+    product_custom_option_id: number; // Int!
+    product_custom_option_product_id: number; // Int!
+    sort_order?: number | null; // Int
+    uuid: string; // String!
+  }
+  ProductCustomOptionValue: { // root type
+    extra_price?: number | null; // Float
+    option_id: number; // Int!
+    product_custom_option_value_id: number; // Int!
+    sort_order?: number | null; // Int
+    uuid: string; // String!
+    value: string; // String!
+  }
+  ProductDescription: { // root type
+    created_at?: string | null; // String
+    description?: string | null; // String
+    meta_description?: string | null; // String
+    meta_keywords?: string | null; // String
+    meta_title?: string | null; // String
+    name: string; // String!
+    product_description_id: number; // Int!
+    product_description_product_id: number; // Int!
+    short_description?: string | null; // String
+    updated_at?: string | null; // String
+    url_key: string; // String!
+  }
+  ProductImage: { // root type
+    image: string; // String!
+    product_image_id: number; // Int!
+    product_image_product_id: string; // String!
+    uuid: string; // String!
+  }
   Query: {};
+  TaxClass: { // root type
+    name: string; // String!
+    tax_class_id: number; // Int!
+    uuid: string; // String!
+  }
+  TaxRate: { // root type
+    country: string; // String!
+    is_compound: boolean; // Boolean!
+    name: string; // String!
+    postcode: string; // String!
+    priority: number; // Int!
+    province: string; // String!
+    rate: number; // Float!
+    tax_class_id?: number | null; // Int
+    tax_rate_id: number; // Int!
+    uuid: string; // String!
+  }
+  VariantGroup: { // root type
+    attribute_five: string; // String!
+    attribute_four: string; // String!
+    attribute_group_id: number; // Int!
+    attribute_one: string; // String!
+    attribute_three: string; // String!
+    attribute_two: string; // String!
+    uuid: string; // String!
+    variant_group_id: number; // Int!
+    visibility: boolean; // Boolean!
+  }
 }
 
 export interface NexusGenInterfaces {
@@ -107,6 +261,77 @@ export interface NexusGenFieldTypes {
     status: boolean; // Boolean!
     updated_at: string | null; // String
     uuid: string; // String!
+  }
+  Attribute: { // field return type
+    attribute_code: string; // String!
+    attribute_group_link: NexusGenRootTypes['AttributeGroupLink'] | null; // AttributeGroupLink
+    attribute_id: number; // Int!
+    attribute_name: string; // String!
+    attribute_option: NexusGenRootTypes['AttributeOption'] | null; // AttributeOption
+    display_on_frontend: boolean; // Boolean!
+    is_filterable: boolean; // Boolean!
+    is_required: boolean; // Boolean!
+    product_attribute_value_index: NexusGenRootTypes['ProductAttributeValueIndex'] | null; // ProductAttributeValueIndex
+    sort_order: number; // Int!
+    type: string; // String!
+    uuid: string; // String!
+    variant_group_attributeTovariant_group_attribute_five: NexusGenRootTypes['VariantGroup'] | null; // VariantGroup
+    variant_group_attributeTovariant_group_attribute_four: NexusGenRootTypes['VariantGroup'] | null; // VariantGroup
+    variant_group_attributeTovariant_group_attribute_one: NexusGenRootTypes['VariantGroup'] | null; // VariantGroup
+    variant_group_attributeTovariant_group_attribute_three: NexusGenRootTypes['VariantGroup'] | null; // VariantGroup
+    variant_group_attributeTovariant_group_attribute_two: NexusGenRootTypes['VariantGroup'] | null; // VariantGroup
+  }
+  AttributeGroup: { // field return type
+    attribute_group_id: number; // Int!
+    attribute_group_link: Array<NexusGenRootTypes['AttributeGroupLink'] | null> | null; // [AttributeGroupLink]
+    created_at: string | null; // String
+    group_name: string; // String!
+    product: Array<NexusGenRootTypes['Product'] | null> | null; // [Product]
+    updated_at: string | null; // String
+    uuid: string; // String!
+    variant_group: Array<NexusGenRootTypes['AdminUser'] | null> | null; // [AdminUser]
+  }
+  AttributeGroupLink: { // field return type
+    attribute_group: NexusGenRootTypes['AttributeGroup']; // AttributeGroup!
+    attribute_group_link_id: number; // Int!
+    attribute_id: number; // Int!
+    group_id: number; // Int!
+  }
+  AttributeOption: { // field return type
+    attribute: NexusGenRootTypes['Attribute'] | null; // Attribute
+    attribute_code: string; // String!
+    attribute_id: number; // Int!
+    attribute_option_id: number; // Int!
+    created_at: string; // String!
+    option_text: string; // String!
+    product_attribute_value_index: NexusGenRootTypes['ProductAttributeValueIndex'] | null; // ProductAttributeValueIndex
+    updated_at: string; // String!
+    uuid: string; // String!
+  }
+  Category: { // field return type
+    category_description: NexusGenRootTypes['CategoryDescription'] | null; // CategoryDescription
+    category_id: number; // Int!
+    created_at: string | null; // String
+    include_in_nav: boolean; // Boolean!
+    parent_id: number | null; // Int
+    position: number | null; // Int
+    product_category: NexusGenRootTypes['ProductCategory'] | null; // ProductCategory
+    status: boolean; // Boolean!
+    updated_at: string | null; // String
+    uuid: string; // String!
+  }
+  CategoryDescription: { // field return type
+    category: NexusGenRootTypes['Category'] | null; // Category
+    category_description_category_id: number; // Int!
+    category_description_id: number; // Int!
+    description: string | null; // String
+    image: string | null; // String
+    meta_description: string | null; // String
+    meta_keywords: string | null; // String
+    meta_title: string | null; // String
+    name: string; // String!
+    short_description: string | null; // String
+    url_key: string; // String!
   }
   Collection: { // field return type
     code: string; // String!
@@ -160,15 +385,157 @@ export interface NexusGenFieldTypes {
     registerCustomer: NexusGenRootTypes['Customer'] | null; // Customer
     updateCustomer: NexusGenRootTypes['Customer']; // Customer!
   }
+  Product: { // field return type
+    attribute_group: NexusGenRootTypes['AttributeGroup'] | null; // AttributeGroup
+    created_at: string | null; // String
+    group_id: number | null; // Int
+    image: string | null; // String
+    manage_stock: boolean; // Boolean!
+    price: string; // String!
+    product_attribute_value_index: NexusGenRootTypes['ProductAttributeValueIndex'] | null; // ProductAttributeValueIndex
+    product_category: NexusGenRootTypes['ProductCategory'] | null; // ProductCategory
+    product_collection: NexusGenRootTypes['ProductCollection'] | null; // ProductCollection
+    product_custom_option: NexusGenRootTypes['ProductCustomOption'] | null; // ProductCustomOption
+    product_description: NexusGenRootTypes['ProductDescription'] | null; // ProductDescription
+    product_id: number; // Int!
+    product_image: NexusGenRootTypes['ProductImage'] | null; // ProductImage
+    qty: number; // Int!
+    sku: string; // String!
+    status: boolean; // Boolean!
+    stock_availability: boolean; // Boolean!
+    tax_class: NexusGenRootTypes['TaxClass'] | null; // TaxClass
+    type: string; // String!
+    updated_at: string | null; // String
+    uuid: string; // String!
+    variant_group: NexusGenRootTypes['VariantGroup'] | null; // VariantGroup
+    variant_group_id: number | null; // Int
+    visibility: boolean; // Boolean!
+    weight: number | null; // Float
+  }
+  ProductAttributeValueIndex: { // field return type
+    attribute_id: number | null; // Int
+    option_id: number | null; // Int
+    option_text: string | null; // String
+    product: NexusGenRootTypes['Product'] | null; // Product
+    product_attribute_value_index_id: number; // Int!
+    product_id: number | null; // Int
+    uuid: string; // String!
+  }
+  ProductCategory: { // field return type
+    category: NexusGenRootTypes['Category'] | null; // Category
+    category_id: number; // Int!
+    product: NexusGenRootTypes['Product'] | null; // Product
+    product_category_id: number; // Int!
+    product_id: number; // Int!
+  }
+  ProductCollection: { // field return type
+    collection: NexusGenRootTypes['Collection'] | null; // Collection
+    collection_id: number; // Int!
+    product: NexusGenRootTypes['Product'] | null; // Product
+    product_collection_id: number; // Int!
+    product_id: number; // Int!
+  }
+  ProductCustomOption: { // field return type
+    is_required: boolean; // Boolean!
+    option_name: string; // String!
+    option_type: string; // String!
+    product: NexusGenRootTypes['Product']; // Product!
+    product_custom_option_id: number; // Int!
+    product_custom_option_product_id: number; // Int!
+    product_custom_option_value: NexusGenRootTypes['ProductCustomOptionValue'][]; // [ProductCustomOptionValue!]!
+    sort_order: number | null; // Int
+    uuid: string; // String!
+  }
+  ProductCustomOptionValue: { // field return type
+    extra_price: number | null; // Float
+    option_id: number; // Int!
+    product_custom_option: NexusGenRootTypes['ProductCustomOption']; // ProductCustomOption!
+    product_custom_option_value_id: number; // Int!
+    sort_order: number | null; // Int
+    uuid: string; // String!
+    value: string; // String!
+  }
+  ProductDescription: { // field return type
+    created_at: string | null; // String
+    description: string | null; // String
+    meta_description: string | null; // String
+    meta_keywords: string | null; // String
+    meta_title: string | null; // String
+    name: string; // String!
+    product: NexusGenRootTypes['Product'] | null; // Product
+    product_description_id: number; // Int!
+    product_description_product_id: number; // Int!
+    short_description: string | null; // String
+    updated_at: string | null; // String
+    url_key: string; // String!
+  }
+  ProductImage: { // field return type
+    image: string; // String!
+    product: NexusGenRootTypes['Product']; // Product!
+    product_image_id: number; // Int!
+    product_image_product_id: string; // String!
+    uuid: string; // String!
+  }
   Query: { // field return type
     getAdminById: NexusGenRootTypes['AdminUser']; // AdminUser!
     getCustomerByIdOrEmail: NexusGenRootTypes['Customer']; // Customer!
     listAdminUsers: NexusGenRootTypes['AdminUser'][]; // [AdminUser!]!
+    listAttributeGroupLinks: Array<NexusGenRootTypes['AttributeGroupLink'] | null>; // [AttributeGroupLink]!
+    listAttributeGroups: Array<NexusGenRootTypes['AttributeGroup'] | null>; // [AttributeGroup]!
+    listAttributeOptions: NexusGenRootTypes['AttributeOption'][]; // [AttributeOption!]!
+    listCategories: Array<NexusGenRootTypes['Category'] | null>; // [Category]!
+    listCategoryDescriptions: Array<NexusGenRootTypes['CategoryDescription'] | null>; // [CategoryDescription]!
     listCollections: NexusGenRootTypes['Collection'][]; // [Collection!]!
     listCustomerAddresses: Array<NexusGenRootTypes['CustomerAddress'] | null> | null; // [CustomerAddress]
     listCustomerGroups: Array<NexusGenRootTypes['CustomerGroup'] | null>; // [CustomerGroup]!
     listCustomers: Array<NexusGenRootTypes['Customer'] | null>; // [Customer]!
+    listProductAttributeValueIndexes: NexusGenRootTypes['ProductAttributeValueIndex'][]; // [ProductAttributeValueIndex!]!
+    listProductCategories: Array<NexusGenRootTypes['ProductCategory'] | null>; // [ProductCategory]!
+    listProductCollections: NexusGenRootTypes['ProductCollection'][]; // [ProductCollection!]!
+    listProductImages: NexusGenRootTypes['ProductImage'][]; // [ProductImage!]!
+    listProducts: NexusGenRootTypes['Product'][]; // [Product!]!
+    listTaxClasses: Array<NexusGenRootTypes['TaxClass'] | null>; // [TaxClass]!
+    listTaxRates: Array<NexusGenRootTypes['TaxRate'] | null>; // [TaxRate]!
+    product_description: NexusGenRootTypes['ProductDescription'][]; // [ProductDescription!]!
     verifyCustomer: NexusGenRootTypes['Customer'] | null; // Customer
+  }
+  TaxClass: { // field return type
+    name: string; // String!
+    product: NexusGenRootTypes['Product']; // Product!
+    tax_class_id: number; // Int!
+    tax_rate: NexusGenRootTypes['TaxRate']; // TaxRate!
+    uuid: string; // String!
+  }
+  TaxRate: { // field return type
+    country: string; // String!
+    is_compound: boolean; // Boolean!
+    name: string; // String!
+    postcode: string; // String!
+    priority: number; // Int!
+    province: string; // String!
+    rate: number; // Float!
+    tax_class: NexusGenRootTypes['TaxClass'] | null; // TaxClass
+    tax_class_id: number | null; // Int
+    tax_rate_id: number; // Int!
+    uuid: string; // String!
+  }
+  VariantGroup: { // field return type
+    attribute_attributeTovariant_group_attribute_five: NexusGenRootTypes['Attribute'] | null; // Attribute
+    attribute_attributeTovariant_group_attribute_four: NexusGenRootTypes['Attribute'] | null; // Attribute
+    attribute_attributeTovariant_group_attribute_one: NexusGenRootTypes['Attribute'] | null; // Attribute
+    attribute_attributeTovariant_group_attribute_three: NexusGenRootTypes['Attribute'] | null; // Attribute
+    attribute_attributeTovariant_group_attribute_two: NexusGenRootTypes['Attribute'] | null; // Attribute
+    attribute_five: string; // String!
+    attribute_four: string; // String!
+    attribute_group: NexusGenRootTypes['AttributeGroup'] | null; // AttributeGroup
+    attribute_group_id: number; // Int!
+    attribute_one: string; // String!
+    attribute_three: string; // String!
+    attribute_two: string; // String!
+    product: NexusGenRootTypes['Product'] | null; // Product
+    uuid: string; // String!
+    variant_group_id: number; // Int!
+    visibility: boolean; // Boolean!
   }
 }
 
@@ -182,6 +549,77 @@ export interface NexusGenFieldTypeNames {
     status: 'Boolean'
     updated_at: 'String'
     uuid: 'String'
+  }
+  Attribute: { // field return type name
+    attribute_code: 'String'
+    attribute_group_link: 'AttributeGroupLink'
+    attribute_id: 'Int'
+    attribute_name: 'String'
+    attribute_option: 'AttributeOption'
+    display_on_frontend: 'Boolean'
+    is_filterable: 'Boolean'
+    is_required: 'Boolean'
+    product_attribute_value_index: 'ProductAttributeValueIndex'
+    sort_order: 'Int'
+    type: 'String'
+    uuid: 'String'
+    variant_group_attributeTovariant_group_attribute_five: 'VariantGroup'
+    variant_group_attributeTovariant_group_attribute_four: 'VariantGroup'
+    variant_group_attributeTovariant_group_attribute_one: 'VariantGroup'
+    variant_group_attributeTovariant_group_attribute_three: 'VariantGroup'
+    variant_group_attributeTovariant_group_attribute_two: 'VariantGroup'
+  }
+  AttributeGroup: { // field return type name
+    attribute_group_id: 'Int'
+    attribute_group_link: 'AttributeGroupLink'
+    created_at: 'String'
+    group_name: 'String'
+    product: 'Product'
+    updated_at: 'String'
+    uuid: 'String'
+    variant_group: 'AdminUser'
+  }
+  AttributeGroupLink: { // field return type name
+    attribute_group: 'AttributeGroup'
+    attribute_group_link_id: 'Int'
+    attribute_id: 'Int'
+    group_id: 'Int'
+  }
+  AttributeOption: { // field return type name
+    attribute: 'Attribute'
+    attribute_code: 'String'
+    attribute_id: 'Int'
+    attribute_option_id: 'Int'
+    created_at: 'String'
+    option_text: 'String'
+    product_attribute_value_index: 'ProductAttributeValueIndex'
+    updated_at: 'String'
+    uuid: 'String'
+  }
+  Category: { // field return type name
+    category_description: 'CategoryDescription'
+    category_id: 'Int'
+    created_at: 'String'
+    include_in_nav: 'Boolean'
+    parent_id: 'Int'
+    position: 'Int'
+    product_category: 'ProductCategory'
+    status: 'Boolean'
+    updated_at: 'String'
+    uuid: 'String'
+  }
+  CategoryDescription: { // field return type name
+    category: 'Category'
+    category_description_category_id: 'Int'
+    category_description_id: 'Int'
+    description: 'String'
+    image: 'String'
+    meta_description: 'String'
+    meta_keywords: 'String'
+    meta_title: 'String'
+    name: 'String'
+    short_description: 'String'
+    url_key: 'String'
   }
   Collection: { // field return type name
     code: 'String'
@@ -235,15 +673,157 @@ export interface NexusGenFieldTypeNames {
     registerCustomer: 'Customer'
     updateCustomer: 'Customer'
   }
+  Product: { // field return type name
+    attribute_group: 'AttributeGroup'
+    created_at: 'String'
+    group_id: 'Int'
+    image: 'String'
+    manage_stock: 'Boolean'
+    price: 'String'
+    product_attribute_value_index: 'ProductAttributeValueIndex'
+    product_category: 'ProductCategory'
+    product_collection: 'ProductCollection'
+    product_custom_option: 'ProductCustomOption'
+    product_description: 'ProductDescription'
+    product_id: 'Int'
+    product_image: 'ProductImage'
+    qty: 'Int'
+    sku: 'String'
+    status: 'Boolean'
+    stock_availability: 'Boolean'
+    tax_class: 'TaxClass'
+    type: 'String'
+    updated_at: 'String'
+    uuid: 'String'
+    variant_group: 'VariantGroup'
+    variant_group_id: 'Int'
+    visibility: 'Boolean'
+    weight: 'Float'
+  }
+  ProductAttributeValueIndex: { // field return type name
+    attribute_id: 'Int'
+    option_id: 'Int'
+    option_text: 'String'
+    product: 'Product'
+    product_attribute_value_index_id: 'Int'
+    product_id: 'Int'
+    uuid: 'String'
+  }
+  ProductCategory: { // field return type name
+    category: 'Category'
+    category_id: 'Int'
+    product: 'Product'
+    product_category_id: 'Int'
+    product_id: 'Int'
+  }
+  ProductCollection: { // field return type name
+    collection: 'Collection'
+    collection_id: 'Int'
+    product: 'Product'
+    product_collection_id: 'Int'
+    product_id: 'Int'
+  }
+  ProductCustomOption: { // field return type name
+    is_required: 'Boolean'
+    option_name: 'String'
+    option_type: 'String'
+    product: 'Product'
+    product_custom_option_id: 'Int'
+    product_custom_option_product_id: 'Int'
+    product_custom_option_value: 'ProductCustomOptionValue'
+    sort_order: 'Int'
+    uuid: 'String'
+  }
+  ProductCustomOptionValue: { // field return type name
+    extra_price: 'Float'
+    option_id: 'Int'
+    product_custom_option: 'ProductCustomOption'
+    product_custom_option_value_id: 'Int'
+    sort_order: 'Int'
+    uuid: 'String'
+    value: 'String'
+  }
+  ProductDescription: { // field return type name
+    created_at: 'String'
+    description: 'String'
+    meta_description: 'String'
+    meta_keywords: 'String'
+    meta_title: 'String'
+    name: 'String'
+    product: 'Product'
+    product_description_id: 'Int'
+    product_description_product_id: 'Int'
+    short_description: 'String'
+    updated_at: 'String'
+    url_key: 'String'
+  }
+  ProductImage: { // field return type name
+    image: 'String'
+    product: 'Product'
+    product_image_id: 'Int'
+    product_image_product_id: 'String'
+    uuid: 'String'
+  }
   Query: { // field return type name
     getAdminById: 'AdminUser'
     getCustomerByIdOrEmail: 'Customer'
     listAdminUsers: 'AdminUser'
+    listAttributeGroupLinks: 'AttributeGroupLink'
+    listAttributeGroups: 'AttributeGroup'
+    listAttributeOptions: 'AttributeOption'
+    listCategories: 'Category'
+    listCategoryDescriptions: 'CategoryDescription'
     listCollections: 'Collection'
     listCustomerAddresses: 'CustomerAddress'
     listCustomerGroups: 'CustomerGroup'
     listCustomers: 'Customer'
+    listProductAttributeValueIndexes: 'ProductAttributeValueIndex'
+    listProductCategories: 'ProductCategory'
+    listProductCollections: 'ProductCollection'
+    listProductImages: 'ProductImage'
+    listProducts: 'Product'
+    listTaxClasses: 'TaxClass'
+    listTaxRates: 'TaxRate'
+    product_description: 'ProductDescription'
     verifyCustomer: 'Customer'
+  }
+  TaxClass: { // field return type name
+    name: 'String'
+    product: 'Product'
+    tax_class_id: 'Int'
+    tax_rate: 'TaxRate'
+    uuid: 'String'
+  }
+  TaxRate: { // field return type name
+    country: 'String'
+    is_compound: 'Boolean'
+    name: 'String'
+    postcode: 'String'
+    priority: 'Int'
+    province: 'String'
+    rate: 'Float'
+    tax_class: 'TaxClass'
+    tax_class_id: 'Int'
+    tax_rate_id: 'Int'
+    uuid: 'String'
+  }
+  VariantGroup: { // field return type name
+    attribute_attributeTovariant_group_attribute_five: 'Attribute'
+    attribute_attributeTovariant_group_attribute_four: 'Attribute'
+    attribute_attributeTovariant_group_attribute_one: 'Attribute'
+    attribute_attributeTovariant_group_attribute_three: 'Attribute'
+    attribute_attributeTovariant_group_attribute_two: 'Attribute'
+    attribute_five: 'String'
+    attribute_four: 'String'
+    attribute_group: 'AttributeGroup'
+    attribute_group_id: 'Int'
+    attribute_one: 'String'
+    attribute_three: 'String'
+    attribute_two: 'String'
+    product: 'Product'
+    uuid: 'String'
+    variant_group_id: 'Int'
+    visibility: 'Boolean'
   }
 }
 

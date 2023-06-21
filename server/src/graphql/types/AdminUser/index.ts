@@ -1,6 +1,6 @@
 // Importing the `objectType` function from the `nexus` module
 import { extendType, intArg, nonNull, objectType, stringArg } from "nexus";
-import { Context } from "../graphql";
+import { IGraphQLContext } from "../../graphql";
 
 export const AdminUser = objectType({
   name: "AdminUser",
@@ -21,7 +21,7 @@ export const Query = extendType({
   definition(t) {
     t.nonNull.list.nonNull.field("listAdminUsers", {
       type: "AdminUser",
-      resolve(parent, args, context: Context, info) {
+      resolve(parent, args, context: IGraphQLContext, info) {
         return context.prisma.admin_user.findMany() as any;
       },
     });
@@ -30,7 +30,7 @@ export const Query = extendType({
       args: {
         id: nonNull(intArg()),
       },
-      resolve(parent, args, context: Context, info) {
+      resolve(parent, args, context: IGraphQLContext, info) {
         return context.prisma.admin_user.findUnique({
           where: { admin_user_id: args.id },
         }) as any;

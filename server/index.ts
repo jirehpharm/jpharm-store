@@ -1,38 +1,77 @@
-import express, { Express, Request, Response } from "express";
+import express, { Express, Response } from "express";
+import http from "http";
+import { ApolloServer } from "@apollo/server";
+import { expressMiddleware } from "@apollo/server/express4";
+import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHttpServer";
+import { GraphQLSchema } from "graphql";
 import bodyParser from "body-parser";
+import cors from "cors";
 import dotenv from "dotenv";
+import { PrismaClient } from "@prisma/client";
 
+// Load environment variables from .env file
 dotenv.config();
 
+// Importing custom modules
+import prisma from "./src/utils/prisma";
 import routes from "./src/routes";
-import pg from "./src/utils/database";
-import "./src/utils/graphql"; // Initializing and Starting the GraphQL Server
+import { schema } from "./src/graphql/schema";
+import { IGraphQLContext } from "./src/graphql/graphql";
 
+// Setting up port
+const port: number = process.env.PORT ? parseInt(process.env.PORT, 10) : 4001;
 
-declare global {
-  namespace NodeJS {
-    interface Global {
-      pg: typeof pg;
-    }
-  }
-}
+(async (): Promise<void> => {
+  // Initializing Express app
+  const app: Express = express();
 
-// Declare the type of global object
-declare const global: NodeJS.Global & { pg: typeof pg };
-global.pg = pg;
+  // Creating a http server
+  const httpServer: http.Server = http.createServer(app);
 
-const app: Express = express();
-const port = process.env.PORT || 4001;
+  // Adding middlewares to the Express app
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(cors<cors.CorsRequest>());
 
-app.use(bodyParser.json({ limit: "5mb" }));
-app.use(bodyParser.urlencoded({ extended: true }));
+  // Adding custom routes to Express app
+  app.use(routes());
 
-app.use(routes());
+  // Setting up a route to test Express server
+  app.get("/", (_, res: Response) =>
+    res.send({
+      status: "OK",
+      message: `JPharm Server is up and running`,
+      express: `http://localhost:${port}`,
+      graphql: `http://localhost:${port}/graphql`,
+    })
+  );
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
-});
+  // Creating an Apollo server
+  const server: ApolloServer = new ApolloServer<IGraphQLContext>({
+    schema: schema as GraphQLSchema,
+    plugins: [
+      // Adding a plugin to drain the HTTP server when the Apollo server is stopped
+      ApolloServerPluginDrainHttpServer({ httpServer }),
+    ],
+  });
 
-app.listen(port, () => {
-  console.log(`⚡️[Express]: Server is running at http://localhost:${port}/`);
-});
+  // Starting the Apollo server
+  await server.start();
+  app.use(
+    "/graphql",
+    expressMiddleware(server, {
+      context: async () => {
+        return {
+          prisma: prisma as PrismaClient,
+        };
+      },
+    })
+  );
+
+  // Starting the http server
+  await new Promise<void>((resolve) => httpServer.listen({ port }, resolve));
+
+  // Logging the server URLs
+  console.log(`[Express] server ready at http://localhost:${port}/`);
+  console.log(`[GraphQL] server ready at http://localhost:${port}/graphql`);
+})();

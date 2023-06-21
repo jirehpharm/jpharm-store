@@ -4,5 +4,8 @@
     "Jireh",
     "jpharm",
     "tailwindcss"
+  ],
+  "githubPullRequests.ignoredPullRequestBranches": [
+    "development"
   ]
 }

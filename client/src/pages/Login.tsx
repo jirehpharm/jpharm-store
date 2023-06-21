@@ -1,67 +1,69 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { gql, useQuery } from "@apollo/client";
 import { RiMailFill } from "react-icons/ri";
 import { MdPassword } from "react-icons/md";
-import { gql, useQuery } from "@apollo/client";
+import { get } from "lodash";
 
 import Button from "../components/Common/Button";
 import { InputField } from "../components/Form/InputField";
 import Layout from "../components/Common/Layout";
 import "../style/index.css";
 
-const GET_USER = gql`
-  query Query($email: String) {
-    getCustomerByIdOrEmail(email: $email) {
-      full_name
-      password
+const fields = [
+  {
+    name: "email",
+    type: "email",
+    placeholder: "Email*",
+    required: true,
+    Icon: RiMailFill,
+  },
+  {
+    name: "password",
+    type: "password",
+    placeholder: "Password*",
+    required: true,
+    Icon: MdPassword,
+  },
+];
+
+const VERIFY_CUSTOMER = gql`
+  query VerifyCustomer($email: String!, $password: String!) {
+    verifyCustomer(email: $email, password: $password) {
+      customer_id
       email
+      full_name
+      group_id
       status
+      uuid
     }
   }
 `;
 
-export default function Login() {
-  const [loginInputs, setLoginInputs] = useState({
+export default function Login({ setIsLoggedIn }: any) {
+  const [loginData, setLoginData] = useState({
     email: "",
     password: "",
   });
-  const fields = [
-    {
-      name: "email",
-      type: "email",
-      placeholder: "Email*",
-      required: true,
-      Icon: RiMailFill,
-    },
-    {
-      name: "password",
-      type: "password",
-      placeholder: "Password*",
-      required: true,
-      Icon: MdPassword,
-    },
-  ];
 
-  const {
-    loading,
-    error,
-    data: userData,
-  } = useQuery(GET_USER, {
-    variables: { email: loginInputs?.email },
-    skip: loginInputs?.email === "",
+  const verifiedCustomer = useQuery(VERIFY_CUSTOMER, {
+    variables: loginData,
+    skip: loginData?.email === "" && loginData?.password === "",
   });
-  console.log("color: ~ userData:", userData);
-  console.log("color: ~ loading:", loading);
-  console.log("color: ~ error:", error);
+
+  useEffect(() => {
+    const userData = get(verifiedCustomer, "data.verifyCustomer", null);
+    if (userData) {
+      sessionStorage.setItem("currentUser", JSON.stringify(userData));
+      setIsLoggedIn(true);
+    }
+  }, [verifiedCustomer]);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-
-    setLoginInputs({
-      email,
-      password,
+    setLoginData({
+      email: e.target.email.value,
+      password: e.target.password.value,
     });
   };
 
@@ -88,7 +90,9 @@ export default function Login() {
             />
           ))}
           <div className="flex justify-between items-center">
-            <Button type="submit">SIGN IN</Button>
+            <Button type="submit" isLoading={verifiedCustomer.loading}>
+              SIGN IN
+            </Button>
             <a href="/forgot-password" className="">
               <small>Forgot Password?</small>
             </a>

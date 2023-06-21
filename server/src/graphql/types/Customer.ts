@@ -1,5 +1,5 @@
 import { extendType, intArg, nonNull, objectType, stringArg } from "nexus";
-import { hashPassword } from "../../utils/crypto";
+import { hashPassword, verifyPassword } from "../../utils/crypto";
 import { Context } from "../graphql";
 
 // Query to generate graphQL schema
@@ -55,6 +55,26 @@ export const customerQuery = extendType({
         return context.prisma.customer.findUnique({
           where: whereCondition,
         }) as any;
+      },
+    });
+
+    /* verifyCustomer Query */
+    t.field("verifyCustomer", {
+      type: "Customer",
+      args: {
+        email: nonNull(stringArg()),
+        password: nonNull(stringArg()),
+      },
+      async resolve(parent, { email, password }, context: Context, info) {
+        const user = (await context.prisma.customer.findUnique({
+          where: { email },
+        })) as any;
+
+        if (!user || !(await verifyPassword(password, user.password))) {
+          return;
+        }
+
+        return user;
       },
     });
   },

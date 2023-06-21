@@ -78,4 +78,5 @@ type Query {
   listCustomerAddresses: [CustomerAddress]
   listCustomerGroups: [CustomerGroup]!
   listCustomers: [Customer]!
+  verifyCustomer(email: String!, password: String!): Customer
 }

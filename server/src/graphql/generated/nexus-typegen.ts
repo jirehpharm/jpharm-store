@@ -168,6 +168,7 @@ export interface NexusGenFieldTypes {
     listCustomerAddresses: Array<NexusGenRootTypes['CustomerAddress'] | null> | null; // [CustomerAddress]
     listCustomerGroups: Array<NexusGenRootTypes['CustomerGroup'] | null>; // [CustomerGroup]!
     listCustomers: Array<NexusGenRootTypes['Customer'] | null>; // [Customer]!
+    verifyCustomer: NexusGenRootTypes['Customer'] | null; // Customer
   }
 }
 
@@ -242,6 +243,7 @@ export interface NexusGenFieldTypeNames {
     listCustomerAddresses: 'CustomerAddress'
     listCustomerGroups: 'CustomerGroup'
     listCustomers: 'Customer'
+    verifyCustomer: 'Customer'
   }
 }
 
@@ -271,6 +273,10 @@ export interface NexusGenArgTypes {
     getCustomerByIdOrEmail: { // args
       customerId?: number | null; // Int
       email?: string | null; // String
+    }
+    verifyCustomer: { // args
+      email: string; // String!
+      password: string; // String!
     }
   }
 }

@@ -19,6 +19,10 @@ import {
  * @returns Promise<void>
  */
 
+// Use this route to populate data in the database: http://localhost:4001/datafix/populate
+// Edit count as per your requirement
+const populateCount = 100;
+
 const oneNumber: any = randNumber({ min: 0, max: 2 });
 
 const randData: any = {
@@ -31,7 +35,6 @@ const randData: any = {
   name: randUser(),
   boolean: oneNumber === 1,
   image: randImg(),
-  productName: randMotorcylceManufacturer(),
   paragraph: randParagraph(),
   phase: randPhrase(),
   text: randText(),
@@ -42,26 +45,33 @@ export const populateData = async (
   res: Response<{ status: boolean; message?: string }>
 ): Promise<void> => {
   try {
-    for (let i = 1; i <= 100; i++) {
-      const customer = await createCustomer();
-      const cart = await createCartItems();
-      // const cartAddress = await createCartAddress();
-      const order = await createOrder({
-        customer_id: customer.customer_id,
-        customer_email: customer.email,
-        customer_full_name: customer.full_name,
-        cart_id: cart.cart_id,
-      });
-      const product = await createProduct();
-      const orderItem = await createOrderItem({
-        order_item_order_id: order.order_id,
-        product_id: product.product_id,
-        product_sku: product.sku,
-        product_name: product.product_description.name,
-        product_price: product.price,
-        product_weight: product.weight,
-      });
-      console.log("Created Count:", i);
+    let errorCount = 0;
+    for (let i = 1; i <= populateCount; i++) {
+      try {
+        const customer = await createCustomer();
+        const cart = await createCartItems();
+        const cartAddress = await createCartAddress();
+        const order = await createOrder({
+          customer_id: customer.customer_id,
+          customer_email: customer.email,
+          customer_full_name: customer.full_name,
+          cart_id: cart.cart_id,
+        });
+        const product = await createProduct();
+        const orderItem = await createOrderItem({
+          order_item_order_id: order.order_id,
+          product_id: product.product_id,
+          product_sku: product.sku,
+          product_name: product.product_description.name,
+          product_price: product.price,
+          product_weight: product.weight,
+        });
+        console.log("Created Count:", i);
+      } catch (e) {
+        console.log(e);
+        errorCount++;
+      }
+      console.log("Error Count:", errorCount);
     }
 
     res.status(200).json({
@@ -212,6 +222,7 @@ async function createProduct() {
   const text = randText();
   const oneNumber: any = randNumber({ min: 0, max: 2 });
   const boolean = oneNumber === 1;
+  const productName = randMotorcylceManufacturer();
 
   try {
     const product = await prisma.product.create({
@@ -229,7 +240,7 @@ async function createProduct() {
         status: boolean,
         product_description: {
           create: {
-            name: randData.productName,
+            name: productName,
             description: randData.paragraph,
             short_description: randData.phase,
             url_key: text,

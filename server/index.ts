@@ -19,7 +19,7 @@ import { schema } from "./src/graphql/schema";
 import { IGraphQLContext } from "./src/graphql/graphql";
 
 // Setting up port
-const port: number = process.env.PORT ? parseInt(process.env.PORT, 10) : 4000;
+const port: number = process.env.PORT ? parseInt(process.env.PORT, 10) : 4001;
 
 (async (): Promise<void> => {
   // Initializing Express app

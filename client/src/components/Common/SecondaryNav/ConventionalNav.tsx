@@ -41,8 +41,8 @@ export default function Example(props: INavProps) {
   const { navbarData } = props;
 
   return (
-    <Disclosure as="nav" className="bg-white shadow lg:hidden ">
-      <div className="flex flex-1 border m-2 items-center justify-between px-2 lg:ml-6 lg:justify-end">
+    <Disclosure as="nav" className="bg-white lg:hidden ">
+      <div className="flex pb-2 flex-1 border max-w-md mx-auto md:max-w-2xl lg:max-w-5xl xl:max-w-6xl m-2 items-center justify-between px-2 lg:ml-6 lg:justify-end">
         <span className="text-sm font-medium font-noto">MENU</span>
         <div className="w-full max-w-lg lg:max-w-xs"></div>
         <div className="flex items-center lg:hidden">
@@ -107,8 +107,8 @@ export default function Example(props: INavProps) {
                   <div className="flex justify-between">
                     <Menu.Button
                       key={idx}
-                      // as="a"
-                      // href={nav.link}
+                      as="a"
+                      href={nav.link}
                       className="flex justify-between w-full items-center py-2 pl-3 pr-4 text-base font-medium text-light hover:text-secondary"
                     >
                       <p className="mb-0 text-light text-sm lg:text-lg hover:text-secondary">
@@ -132,51 +132,24 @@ export default function Example(props: INavProps) {
                   >
                     <Menu.Items className="right-0 z-10 mt-2 w-full origin-top-right bg-white shadow-lg focus:outline-none">
                       <div className="py-1 w-full">
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href="#"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-light",
-                                "block px-4 py-2 text-sm text-light font-noto lg:text-lg hover:text-secondary"
-                              )}
-                            >
-                              Pricing
-                            </a>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href="#"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-gray-700",
-                                "block px-4 py-2 text-sm text-light lg:text-lg font-noto hover:text-secondary"
-                              )}
-                            >
-                              Support
-                            </a>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href="#"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-gray-700",
-                                "block px-4 py-2 text-sm text-light lg:text-lg font-noto hover:text-secondary"
-                              )}
-                            >
-                              License
-                            </a>
-                          )}
-                        </Menu.Item>
+                        {nav?.list.map((item, idx: number) => (
+                          <Menu.Item>
+                            {({ active }) => (
+                              <a
+                                key={idx}
+                                href={item.link}
+                                className={classNames(
+                                  active
+                                    ? "bg-gray-100 text-gray-900"
+                                    : "text-light",
+                                  "block px-4 py-2 text-sm text-light font-noto lg:text-lg hover:text-secondary"
+                                )}
+                              >
+                                {item.title}
+                              </a>
+                            )}
+                          </Menu.Item>
+                        ))}
                       </div>
                     </Menu.Items>
                   </Transition>
@@ -195,30 +168,7 @@ export default function Example(props: INavProps) {
           </div>
         </div>
         <div className="border-t border-gray-200 pb-3 pt-4">
-          <div className="flex items-center px-4">
-            {/* <div className="flex-shrink-0">
-          <img
-            className="h-10 w-10 rounded-full"
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-            alt=""
-          />
-        </div>
-        <div className="ml-3">
-          <div className="text-base font-medium text-gray-800">
-            MyAccount
-          </div>
-          <div className="text-sm font-medium text-gray-500">
-            tom@example.com
-          </div>
-        </div>
-        <button
-          type="button"
-          className="ml-auto flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-        >
-          <span className="sr-only">View notifications</span>
-          <BellIcon className="h-6 w-6" aria-hidden="true" />
-        </button> */}
-          </div>
+          <div className="flex items-center px-4"></div>
           <div className="mt-3 space-y-1">
             {disclosureData?.map((nav, idx: number) => (
               <Disclosure.Button

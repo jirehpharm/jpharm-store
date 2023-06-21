@@ -54,6 +54,7 @@ const port: number = process.env.PORT ? parseInt(process.env.PORT, 10) : 4001;
       // Adding a plugin to drain the HTTP server when the Apollo server is stopped
       ApolloServerPluginDrainHttpServer({ httpServer }),
     ],
+    introspection: process.env.NODE_ENV !== "production",
   });
 
   // Starting the Apollo server

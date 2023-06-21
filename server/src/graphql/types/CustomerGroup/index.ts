@@ -1,5 +1,5 @@
 import { extendType, objectType } from "nexus";
-import { Context } from "../graphql";
+import { IGraphQLContext } from "../../graphql";
 
 export const CustomerGroup = objectType({
   name: "CustomerGroup",
@@ -18,7 +18,7 @@ export const customerGroupQuery = extendType({
   definition(t) {
     t.nonNull.list.field("listCustomerGroups", {
       type: "CustomerGroup",
-      resolve(parent, args, context: Context) {
+      resolve(parent, args, context: IGraphQLContext) {
         return context.prisma.customer_group.findMany() as any;
       },
     });

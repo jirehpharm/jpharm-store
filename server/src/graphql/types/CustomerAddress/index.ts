@@ -1,5 +1,5 @@
 import { objectType } from "nexus";
-import { Context } from "../graphql";
+import { IGraphQLContext } from "../../graphql";
 
 export const CustomerAddress = objectType({
   name: "CustomerAddress",
@@ -27,7 +27,7 @@ export const customerAddressQuery = objectType({
   definition(t) {
     t.list.field("listCustomerAddresses", {
       type: "CustomerAddress",
-      resolve: (parent, args, context: Context) => {
+      resolve: (parent, args, context: IGraphQLContext) => {
         return context.prisma.customer_address.findMany() as any;
       },
     });

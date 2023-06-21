@@ -9,7 +9,7 @@ interface IViewCartCard {
 export default function CartItems(props: IViewCartCard) {
   const { product } = props;
   return (
-    <section className="overflow-y-auto scrollbar-thin scrollbar-track-rounded-full scrollbar-thumb-rounded-md scrollbar-thumb-gray-200 max-h-96">
+    <section className="overflow-y-auto scrollbar-thin scrollbar-track-rounded-full scrollbar-thumb-rounded-md scrollbar-thumb-gray-200 max-h-80">
       {product?.map((item, index) => (
         <div className="">
           <div className="py-5 pl-2 d-block clear-both shadow">
@@ -24,11 +24,11 @@ export default function CartItems(props: IViewCartCard) {
                   </span>
                 </>
               </div>
-              <div className="overflow-hidden p-5 top-0">
-                <h6>
+              <div className="p-5 pt-0 mr-10">
+                <h6 className="font-josefin mb-1 font-medium text-sm lg:text-base">
                   <a href="#">{item.productName}</a>
                 </h6>
-                <span className="text-light">
+                <span className="text-light text-sm lg:text-base">
                   {item.productQuantity} x ${item.amount}
                 </span>
               </div>

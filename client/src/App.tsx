@@ -10,7 +10,8 @@ import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import Register from "./pages/Register";
 import "./style/App.css";
-// import { client, gql } from "./apolloClient";
+import ConventionalNav from "./components/Common/SecondaryNav/ConventionalNav";
+import { navbarData } from "./components/Common/SecondaryNav/content";
 
 function App() {
   // (async () => {
@@ -58,6 +59,7 @@ function App() {
                 <ContactNav />
                 <PrimaryNav />
                 <SecondaryNav />
+                <ConventionalNav navbarData={navbarData} />
                 <AppContainer />
                 <CTA />
                 <Footer />

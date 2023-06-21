@@ -22,3 +22,9 @@ export interface ICategory {
   link: string;
   icon?: React.ElementType;
 }
+
+export interface IDisclosureProps {
+  title?: string;
+  link?: string;
+  icon?: React.ReactSVGElement | any;
+}

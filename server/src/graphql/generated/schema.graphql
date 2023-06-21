@@ -13,6 +13,83 @@ type AdminUser {
   uuid: String!
 }
 
+type Attribute {
+  attribute_code: String!
+  attribute_group_link: AttributeGroupLink
+  attribute_id: Int!
+  attribute_name: String!
+  attribute_option: AttributeOption
+  display_on_frontend: Boolean!
+  is_filterable: Boolean!
+  is_required: Boolean!
+  product_attribute_value_index: ProductAttributeValueIndex
+  sort_order: Int!
+  type: String!
+  uuid: String!
+  variant_group_attributeTovariant_group_attribute_five: VariantGroup
+  variant_group_attributeTovariant_group_attribute_four: VariantGroup
+  variant_group_attributeTovariant_group_attribute_one: VariantGroup
+  variant_group_attributeTovariant_group_attribute_three: VariantGroup
+  variant_group_attributeTovariant_group_attribute_two: VariantGroup
+}
+
+type AttributeGroup {
+  attribute_group_id: Int!
+  attribute_group_link: [AttributeGroupLink]
+  created_at: String
+  group_name: String!
+  product: [Product]
+  updated_at: String
+  uuid: String!
+  variant_group: [AdminUser]
+}
+
+type AttributeGroupLink {
+  attribute_group: AttributeGroup!
+  attribute_group_link_id: Int!
+  attribute_id: Int!
+  group_id: Int!
+}
+
+type AttributeOption {
+  attribute: Attribute
+  attribute_code: String!
+  attribute_id: Int!
+  attribute_option_id: Int!
+  created_at: String!
+  option_text: String!
+  product_attribute_value_index: ProductAttributeValueIndex
+  updated_at: String!
+  uuid: String!
+}
+
+type Category {
+  category_description: CategoryDescription
+  category_id: Int!
+  created_at: String
+  include_in_nav: Boolean!
+  parent_id: Int
+  position: Int
+  product_category: ProductCategory
+  status: Boolean!
+  updated_at: String
+  uuid: String!
+}
+
+type CategoryDescription {
+  category: Category
+  category_description_category_id: Int!
+  category_description_id: Int!
+  description: String
+  image: String
+  meta_description: String
+  meta_keywords: String
+  meta_title: String
+  name: String!
+  short_description: String
+  url_key: String!
+}
+
 type Collection {
   code: String!
   collection_id: Int!
@@ -70,13 +147,166 @@ type Mutation {
   updateCustomer(customerId: Int!, email: String!, fullName: String!, password: String!): Customer!
 }
 
+type Product {
+  attribute_group: AttributeGroup
+  created_at: String
+  group_id: Int
+  image: String
+  manage_stock: Boolean!
+  price: String!
+  product_attribute_value_index: ProductAttributeValueIndex
+  product_category: ProductCategory
+  product_collection: ProductCollection
+  product_custom_option: ProductCustomOption
+  product_description: ProductDescription
+  product_id: Int!
+  product_image: ProductImage
+  qty: Int!
+  sku: String!
+  status: Boolean!
+  stock_availability: Boolean!
+  tax_class: TaxClass
+  type: String!
+  updated_at: String
+  uuid: String!
+  variant_group: VariantGroup
+  variant_group_id: Int
+  visibility: Boolean!
+  weight: Float
+}
+
+type ProductAttributeValueIndex {
+  attribute_id: Int
+  option_id: Int
+  option_text: String
+  product: Product
+  product_attribute_value_index_id: Int!
+  product_id: Int
+  uuid: String!
+}
+
+type ProductCategory {
+  category: Category
+  category_id: Int!
+  product: Product
+  product_category_id: Int!
+  product_id: Int!
+}
+
+type ProductCollection {
+  collection: Collection
+  collection_id: Int!
+  product: Product
+  product_collection_id: Int!
+  product_id: Int!
+}
+
+type ProductCustomOption {
+  is_required: Boolean!
+  option_name: String!
+  option_type: String!
+  product: Product!
+  product_custom_option_id: Int!
+  product_custom_option_product_id: Int!
+  product_custom_option_value: [ProductCustomOptionValue!]!
+  sort_order: Int
+  uuid: String!
+}
+
+type ProductCustomOptionValue {
+  extra_price: Float
+  option_id: Int!
+  product_custom_option: ProductCustomOption!
+  product_custom_option_value_id: Int!
+  sort_order: Int
+  uuid: String!
+  value: String!
+}
+
+type ProductDescription {
+  created_at: String
+  description: String
+  meta_description: String
+  meta_keywords: String
+  meta_title: String
+  name: String!
+  product: Product
+  product_description_id: Int!
+  product_description_product_id: Int!
+  short_description: String
+  updated_at: String
+  url_key: String!
+}
+
+type ProductImage {
+  image: String!
+  product: Product!
+  product_image_id: Int!
+  product_image_product_id: String!
+  uuid: String!
+}
+
 type Query {
   getAdminById(id: Int!): AdminUser!
   getCustomerByIdOrEmail(customerId: Int, email: String): Customer!
   listAdminUsers: [AdminUser!]!
+  listAttributeGroupLinks: [AttributeGroupLink]!
+  listAttributeGroups: [AttributeGroup]!
+  listAttributeOptions: [AttributeOption!]!
+  listCategories: [Category]!
+  listCategoryDescriptions: [CategoryDescription]!
   listCollections: [Collection!]!
   listCustomerAddresses: [CustomerAddress]
   listCustomerGroups: [CustomerGroup]!
   listCustomers: [Customer]!
+  listProductAttributeValueIndexes: [ProductAttributeValueIndex!]!
+  listProductCategories: [ProductCategory]!
+  listProductCollections: [ProductCollection!]!
+  listProductImages: [ProductImage!]!
+  listProducts: [Product!]!
+  listTaxClasses: [TaxClass]!
+  listTaxRates: [TaxRate]!
+  product_description: [ProductDescription!]!
   verifyCustomer(email: String!, password: String!): Customer
+}
+
+type TaxClass {
+  name: String!
+  product: Product!
+  tax_class_id: Int!
+  tax_rate: TaxRate!
+  uuid: String!
+}
+
+type TaxRate {
+  country: String!
+  is_compound: Boolean!
+  name: String!
+  postcode: String!
+  priority: Int!
+  province: String!
+  rate: Float!
+  tax_class: TaxClass
+  tax_class_id: Int
+  tax_rate_id: Int!
+  uuid: String!
+}
+
+type VariantGroup {
+  attribute_attributeTovariant_group_attribute_five: Attribute
+  attribute_attributeTovariant_group_attribute_four: Attribute
+  attribute_attributeTovariant_group_attribute_one: Attribute
+  attribute_attributeTovariant_group_attribute_three: Attribute
+  attribute_attributeTovariant_group_attribute_two: Attribute
+  attribute_five: String!
+  attribute_four: String!
+  attribute_group: AttributeGroup
+  attribute_group_id: Int!
+  attribute_one: String!
+  attribute_three: String!
+  attribute_two: String!
+  product: Product
+  uuid: String!
+  variant_group_id: Int!
+  visibility: Boolean!
 }

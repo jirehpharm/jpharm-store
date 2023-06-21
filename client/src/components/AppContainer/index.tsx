@@ -15,7 +15,39 @@ import PrivacyPolicy from "../../pages/PrivacyPolicy";
 import TermsAndConditions from "../../pages/TermsAndConditions";
 import ErrorPage from "../../pages/404";
 
+import { apolloClient, gql } from "../../apolloClient";
+import { useEffect, useState } from "react";
+
+const GET_PRODUCTS = gql(`
+  query ListProducts {
+    listProducts {
+      product_id
+      uuid
+      price
+      qty
+      visibility
+      image
+      status
+      type
+    }
+  }
+`);
+
 export default function AppContainer() {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    apolloClient
+      .query({
+        query: GET_PRODUCTS,
+      })
+      .then((res) => {
+        console.log("res: ", res);
+        setProducts(res.data.listProducts);
+      });
+  });
+
+  console.log("products: ", products);
+
   return (
     <Routes>
       <Route>

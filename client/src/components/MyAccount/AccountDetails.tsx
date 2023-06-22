@@ -4,7 +4,7 @@ import { InputField } from "../Form/InputField";
 export default function AccountDetails() {
   return (
     <form>
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 gap-8 mx-3">
         <label>
           First Name:
           <InputField placeholder={""} className="mt-2"/>

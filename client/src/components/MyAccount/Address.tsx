@@ -7,7 +7,7 @@ interface Address{
 export default function Address(props: Address) {
   const { data } = props;
   return (
-    <div className="grid grid-cols-2 ml-7">
+    <div className="grid sm:grid-cols-2 ml-7 gap-2">
       {data?.map((item,index)=> (
         <div key={index}>
           <p className="font-bold">{item.title}</p>

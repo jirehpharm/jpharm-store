@@ -1,6 +1,6 @@
 import { extendType, intArg, nonNull, objectType, stringArg } from "nexus";
-import { hashPassword } from "../../utils/crypto";
-import { Context } from "../graphql";
+import { hashPassword, verifyPassword } from "../../../utils/crypto";
+import { IGraphQLContext } from "../../graphql";
 
 // Query to generate graphQL schema
 export const Customer = objectType({
@@ -17,18 +17,18 @@ export const Customer = objectType({
     t.string("updated_at");
     t.nullable.field("customer_group", {
       type: "CustomerGroup",
-      resolve: (parent, args, context) => {
+      resolve: (parent, args, context: IGraphQLContext) => {
         return context.prisma.customer
           .findUnique({ where: { customer_id: parent.customer_id } })
-          .customer_group();
+          .customer_group() as any;
       },
     });
     t.list.nullable.field("customer_address", {
       type: "CustomerAddress",
-      resolve: (parent, args, context) => {
+      resolve: (parent, args, context: IGraphQLContext) => {
         return context.prisma.customer_address.findMany({
           where: { customer_id: parent.customer_id },
-        });
+        }) as any;
       },
     });
   },
@@ -40,7 +40,7 @@ export const customerQuery = extendType({
   definition(t) {
     t.nonNull.list.field("listCustomers", {
       type: "Customer",
-      resolve(parent, arg, context: Context, info) {
+      resolve(parent, arg, context: IGraphQLContext, info) {
         return context.prisma.customer.findMany() as any;
       },
     });
@@ -50,11 +50,33 @@ export const customerQuery = extendType({
         customerId: intArg(),
         email: stringArg(),
       },
-      resolve(parent, { email, customerId }, context: Context, info) {
-        const whereCondition = customerId ? { customer_id: customerId } : { email };
+      resolve(parent, { email, customerId }, context: IGraphQLContext, info) {
+        const whereCondition = customerId
+          ? { customer_id: customerId }
+          : { email };
         return context.prisma.customer.findUnique({
           where: whereCondition,
         }) as any;
+      },
+    });
+
+    /* verifyCustomer Query */
+    t.field("verifyCustomer", {
+      type: "Customer",
+      args: {
+        email: nonNull(stringArg()),
+        password: nonNull(stringArg()),
+      },
+      async resolve(parent, { email, password }, context: IGraphQLContext, info) {
+        const user = (await context.prisma.customer.findUnique({
+          where: { email },
+        })) as any;
+
+        if (!user || !(await verifyPassword(password, user.password))) {
+          return;
+        }
+
+        return user;
       },
     });
   },
@@ -72,7 +94,7 @@ export const customerMutation = extendType({
         password: nonNull(stringArg()),
         fullName: nonNull(stringArg()),
       },
-      resolve(parent, { email, password, fullName }, context: Context) {
+      resolve(parent, { email, password, fullName }, context: IGraphQLContext) {
         return context.prisma.customer.create({
           data: {
             email: email,
@@ -91,7 +113,11 @@ export const customerMutation = extendType({
         password: nonNull(stringArg()),
         fullName: nonNull(stringArg()),
       },
-      resolve(parent, { customerId, email, password, fullName }, context: Context) {
+      resolve(
+        parent,
+        { customerId, email, password, fullName },
+        context: IGraphQLContext
+      ) {
         return context.prisma.customer.update({
           where: { customer_id: customerId },
           data: {
@@ -110,7 +136,11 @@ export const customerMutation = extendType({
         password: nonNull(stringArg()),
         fullName: nonNull(stringArg()),
       },
-      async resolve(parent, { email, password, fullName }, context: Context) {
+      async resolve(
+        parent,
+        { email, password, fullName },
+        context: IGraphQLContext
+      ) {
         const isUserExist = await context.prisma.customer.findUnique({
           where: {
             email,

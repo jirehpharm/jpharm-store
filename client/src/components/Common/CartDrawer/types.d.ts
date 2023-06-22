@@ -15,4 +15,5 @@ export interface ICartDrawerProps {
   viewCartLink: string;
   productCount?: number;
   closeDrawer?: any;
+  subTotal?: number;
 }

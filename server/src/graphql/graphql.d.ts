@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
 
-interface Context {
-  prisma: PrismaClient;
+export interface IGraphQLContext {
+  prisma?: PrismaClient;
 }

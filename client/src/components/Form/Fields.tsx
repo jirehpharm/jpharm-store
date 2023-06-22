@@ -1,12 +1,21 @@
+import React, {
+  ReactElement,
+  ReactNode,
+  Ref,
+  useState,
+  forwardRef,
+} from "react";
+import type {
+  FieldValues,
+  SubmitHandler,
+  UseFormReturn,
+} from "react-hook-form";
 import { useId } from "@radix-ui/react-id";
-import { ReactElement, ReactNode, Ref, useState } from "react";
-import React, { forwardRef } from "react";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
-import type { FieldValues, SubmitHandler, UseFormReturn } from "react-hook-form";
 import { FormProvider, useFormContext } from "react-hook-form";
 import classNames from "classnames";
 
-import { getErrorFromUnknown } from "../../../lib/errors";
+import { getErrorFromUnknown } from "../../util/processError";
 import { Alert } from "../Alert";
 import { showErrorToast } from "../Toast/Toast";
 
@@ -14,7 +23,10 @@ type InputProps = Omit<JSX.IntrinsicElements["input"], "name"> & {
   name: string;
 };
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(props, ref) {
+export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
+  props,
+  ref
+) {
   return (
     <input
       {...props}
@@ -57,152 +69,166 @@ type InputFieldProps = {
     labelProps?: React.ComponentProps<typeof Label>;
   };
 
-export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(function InputField(
-  props,
-  ref
-) {
-  const id = useId();
-  const methods = useFormContext();
-  const {
-    label = props.name,
-    labelProps,
-    placeholder = props.name + "_placeholder" !== props.name + "_placeholder"
-      ? props.name + "_placeholder"
-      : "",
-    className,
-    addOnLeading,
-    hint,
-    ...passThrough
-  } = props;
-  return (
-    <div>
-      {!!props.name && (
-        <Label htmlFor={id} {...labelProps}>
-          {label}
-        </Label>
-      )}
-      {addOnLeading ? (
-        <div className="mt-1 flex rounded-md shadow-sm">
-          {addOnLeading}
+export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
+  function InputField(props, ref) {
+    const id = useId();
+    const methods = useFormContext();
+    const {
+      label = props.name,
+      labelProps,
+      placeholder = props.name + "_placeholder" !== props.name + "_placeholder"
+        ? props.name + "_placeholder"
+        : "",
+      className,
+      addOnLeading,
+      hint,
+      ...passThrough
+    } = props;
+    return (
+      <div>
+        {!!props.name && (
+          <Label htmlFor={id} {...labelProps}>
+            {label}
+          </Label>
+        )}
+        {addOnLeading ? (
+          <div className="mt-1 flex rounded-md shadow-sm">
+            {addOnLeading}
+            <Input
+              id={id}
+              placeholder={placeholder}
+              className={classNames(
+                "mt-0",
+                props.addOnLeading && "rounded-l-none",
+                className
+              )}
+              {...passThrough}
+              ref={ref}
+            />
+          </div>
+        ) : (
           <Input
             id={id}
             placeholder={placeholder}
-            className={classNames("mt-0", props.addOnLeading && "rounded-l-none", className)}
+            className={className}
             {...passThrough}
             ref={ref}
           />
-        </div>
-      ) : (
-        <Input id={id} placeholder={placeholder} className={className} {...passThrough} ref={ref} />
-      )}
-      {hint}
-      {methods?.formState?.errors[props.name]?.message && (
-        <Alert
-          className="mt-1"
-          severity="error"
-          message={<>{methods.formState.errors[props.name]!.message}</>}
-        />
-      )}
-    </div>
-  );
-});
-
-export const TextField = forwardRef<HTMLInputElement, InputFieldProps>(function TextField(
-  props,
-  ref
-) {
-  return <InputField ref={ref} {...props} />;
-});
-
-export const ShowPassword = forwardRef<HTMLInputElement, InputFieldProps>(function ShowPassword(
-  props,
-  ref
-) {
-  const [type, setType] = useState("password");
-  const [Icon, setIcon] = useState<any>(EyeSlashIcon);
-
-  const show = () => {
-    type === "password" ? setType("text") : setType("password");
-    Icon === EyeIcon ? setIcon(EyeSlashIcon) : setIcon(EyeIcon);
-  };
-  return (
-    <div className="relative mt-1">
-      <Input type={type} required={true} minLength={8} maxLength={40} ref={ref} {...props} />
-      <div className="absolute inset-y-0 right-0 flex cursor-pointer items-center pr-3">
-        <Icon className="h-5 w-5 cursor-pointer text-gray-400 " aria-hidden="true" onClick={show} />
+        )}
+        {hint}
+        {methods?.formState?.errors[props.name]?.message && (
+          <Alert
+            className="mt-1"
+            severity="error"
+            message={<>{methods.formState.errors[props.name]!.message}</>}
+          />
+        )}
       </div>
-    </div>
-  );
-});
+    );
+  }
+);
 
-export const PasswordField = forwardRef<HTMLInputElement, InputFieldProps>(function PasswordField(
-  props,
-  ref
-) {
-  return (
-    <InputField
-      data-testid="password"
-      type="password"
-      placeholder="•••••••••••••"
-      ref={ref}
-      {...props}
-    />
-  );
-});
+export const TextField = forwardRef<HTMLInputElement, InputFieldProps>(
+  function TextField(props, ref) {
+    return <InputField ref={ref} {...props} />;
+  }
+);
 
-export const EmailInput = forwardRef<HTMLInputElement, InputFieldProps>(function EmailInput(
-  props,
-  ref
-) {
-  return (
-    <Input
-      ref={ref}
-      type="email"
-      autoCapitalize="none"
-      autoComplete="email"
-      autoCorrect="off"
-      inputMode="email"
-      {...props}
-    />
-  );
-});
+export const ShowPassword = forwardRef<HTMLInputElement, InputFieldProps>(
+  function ShowPassword(props, ref) {
+    const [type, setType] = useState("password");
+    const [Icon, setIcon] = useState<any>(EyeSlashIcon);
 
-export const EmailField = forwardRef<HTMLInputElement, InputFieldProps>(function EmailField(
-  props,
-  ref
-) {
-  return (
-    <InputField
-      ref={ref}
-      type="email"
-      autoCapitalize="none"
-      autoComplete="email"
-      autoCorrect="off"
-      inputMode="email"
-      {...props}
-    />
-  );
-});
+    const show = () => {
+      type === "password" ? setType("text") : setType("password");
+      Icon === EyeIcon ? setIcon(EyeSlashIcon) : setIcon(EyeIcon);
+    };
+    return (
+      <div className="relative mt-1">
+        <Input
+          type={type}
+          required={true}
+          minLength={8}
+          maxLength={40}
+          ref={ref}
+          {...props}
+        />
+        <div className="absolute inset-y-0 right-0 flex cursor-pointer items-center pr-3">
+          <Icon
+            className="h-5 w-5 cursor-pointer text-gray-400 "
+            aria-hidden="true"
+            onClick={show}
+          />
+        </div>
+      </div>
+    );
+  }
+);
+
+export const PasswordField = forwardRef<HTMLInputElement, InputFieldProps>(
+  function PasswordField(props, ref) {
+    return (
+      <InputField
+        data-testid="password"
+        type="password"
+        placeholder="•••••••••••••"
+        ref={ref}
+        {...props}
+      />
+    );
+  }
+);
+
+export const EmailInput = forwardRef<HTMLInputElement, InputFieldProps>(
+  function EmailInput(props, ref) {
+    return (
+      <Input
+        ref={ref}
+        type="email"
+        autoCapitalize="none"
+        autoComplete="email"
+        autoCorrect="off"
+        inputMode="email"
+        {...props}
+      />
+    );
+  }
+);
+
+export const EmailField = forwardRef<HTMLInputElement, InputFieldProps>(
+  function EmailField(props, ref) {
+    return (
+      <InputField
+        ref={ref}
+        type="email"
+        autoCapitalize="none"
+        autoComplete="email"
+        autoCorrect="off"
+        inputMode="email"
+        {...props}
+      />
+    );
+  }
+);
 
 type TextAreaProps = Omit<JSX.IntrinsicElements["textarea"], "name"> & {
   name: string;
 };
 
-export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(function TextAreaInput(
-  props,
-  ref
-) {
-  return (
-    <textarea
-      ref={ref}
-      {...props}
-      className={classNames(
-        "block w-full rounded-sm dark:bg-gray-900 dark:border-gray-900 dark:text-gray-200 border-gray-300 shadow-sm focus:border-neutral-900 focus:ring-neutral-900 sm:text-sm",
-        props.className
-      )}
-    />
-  );
-});
+export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
+  function TextAreaInput(props, ref) {
+    return (
+      <textarea
+        ref={ref}
+        {...props}
+        className={classNames(
+          "block w-full rounded-sm dark:bg-gray-900 dark:border-gray-900 dark:text-gray-200 border-gray-300 shadow-sm focus:border-neutral-900 focus:ring-neutral-900 sm:text-sm",
+          props.className
+        )}
+      />
+    );
+  }
+);
 
 type TextAreaFieldProps = {
   label?: ReactNode;
@@ -210,10 +236,10 @@ type TextAreaFieldProps = {
     labelProps?: React.ComponentProps<typeof Label>;
   };
 
-export const TextAreaField = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(function TextField(
-  props,
-  ref
-) {
+export const TextAreaField = forwardRef<
+  HTMLTextAreaElement,
+  TextAreaFieldProps
+>(function TextField(props, ref) {
   const id = useId();
   const methods = useFormContext();
   const {
@@ -248,7 +274,10 @@ type FormProps<T extends object> = {
   handleSubmit: SubmitHandler<T>;
 } & Omit<JSX.IntrinsicElements["form"], "onSubmit">;
 
-const PlainForm = <T extends FieldValues>(props: FormProps<T>, ref: Ref<HTMLFormElement>) => {
+const PlainForm = <T extends FieldValues>(
+  props: FormProps<T>,
+  ref: Ref<HTMLFormElement>
+) => {
   const { form, handleSubmit, ...passThrough } = props;
 
   return (
@@ -297,7 +326,13 @@ export const Form = forwardRef(PlainForm) as <T extends FieldValues>(
 
 export function FieldsetLegend(props: JSX.IntrinsicElements["legend"]) {
   return (
-    <legend {...props} className={classNames("text-sm font-medium text-gray-700", props.className)}>
+    <legend
+      {...props}
+      className={classNames(
+        "text-sm font-medium text-gray-700",
+        props.className
+      )}
+    >
       {props.children}
     </legend>
   );
@@ -328,53 +363,52 @@ interface SelectFieldProps {
   onChange?: any;
 }
 
-export const SelectField = forwardRef<HTMLSelectElement, SelectFieldProps>(function SelectField(
-  props,
-  ref
-) {
-  const methods = useFormContext();
-  const {
-    name,
-    label = props.name,
-    labelProps,
-    placeholder = props.placeholder ? props.placeholder : "",
-    className,
-    options,
-    defaultValue,
-    ...passThrough
-  } = props;
-  return (
-    <>
-      {!!props.name && (
-        <Label htmlFor={props.name} {...labelProps}>
-          {label}
-        </Label>
-      )}
-      <div className="customSelect">
-        <select
-          id={name}
-          name={name}
-          placeholder={placeholder}
-          defaultValue={defaultValue}
-          className={classNames(
-            "block w-full rounded-sm border dark:bg-gray-900 dark:border-gray-900 border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm  focus:outline-none  sm:text-sm dark:text-gray-200 focus:ring-gray-100 focus:border-gray-400",
-            props.className
-          )}
-          ref={ref}
-          {...passThrough}
-        >
-          {options.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-      </div>
-      {methods?.formState?.errors[props.name]?.message && (
-        <p className="mt-1 text-yellow-700">
-          {<>{methods.formState.errors[props.name]!.message}</>}
-        </p>
-      )}
-    </>
-  );
-});
+export const SelectField = forwardRef<HTMLSelectElement, SelectFieldProps>(
+  function SelectField(props, ref) {
+    const methods = useFormContext();
+    const {
+      name,
+      label = props.name,
+      labelProps,
+      placeholder = props.placeholder ? props.placeholder : "",
+      className,
+      options,
+      defaultValue,
+      ...passThrough
+    } = props;
+    return (
+      <>
+        {!!props.name && (
+          <Label htmlFor={props.name} {...labelProps}>
+            {label}
+          </Label>
+        )}
+        <div className="customSelect">
+          <select
+            id={name}
+            name={name}
+            placeholder={placeholder}
+            defaultValue={defaultValue}
+            className={classNames(
+              "block w-full rounded-sm border dark:bg-gray-900 dark:border-gray-900 border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm  focus:outline-none  sm:text-sm dark:text-gray-200 focus:ring-gray-100 focus:border-gray-400",
+              props.className
+            )}
+            ref={ref}
+            {...passThrough}
+          >
+            {options.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </div>
+        {methods?.formState?.errors[props.name]?.message && (
+          <p className="mt-1 text-yellow-700">
+            {<>{methods.formState.errors[props.name]!.message}</>}
+          </p>
+        )}
+      </>
+    );
+  }
+);

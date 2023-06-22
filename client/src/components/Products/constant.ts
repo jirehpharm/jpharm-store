@@ -1,11 +1,21 @@
+import { GlobeAltIcon, UserIcon } from "@heroicons/react/20/solid";
+import { RiMailFill } from "react-icons/ri";
+
 import { IListProps } from "./Categories/types";
+
+export const selectData = [
+  { id: 1, label: "Default sorting", value: "default" },
+  { id: 2, label: "Sort by popularity", value: "popularity" },
+  { id: 3, label: "Sort by price: low to high", value: "lowToHigh" },
+  { id: 4, label: "Sort by price: high to low", value: "highToLow" },
+];
 
 export const featuredProductDetails = [
   {
     showStars: true,
     isTextCenter: true,
     isNew: false,
-    image: "/placeholder/600x701.png ",
+    image: "/img/product/produc1.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -18,7 +28,7 @@ export const featuredProductDetails = [
     showStars: true,
     isTextCenter: true,
     isNew: false,
-    image: "/placeholder/600x701.png ",
+    image: "img/product/product4.png ",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -31,7 +41,7 @@ export const featuredProductDetails = [
     showStars: true,
     isTextCenter: true,
     isNew: false,
-    image: "/placeholder/600x701.png ",
+    image: "img/product/product3.png ",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -44,7 +54,7 @@ export const featuredProductDetails = [
     showStars: true,
     isTextCenter: true,
     isNew: false,
-    image: "/placeholder/600x701.png ",
+    image: "img/product/product2.png ",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -57,7 +67,7 @@ export const featuredProductDetails = [
     showStars: true,
     isTextCenter: true,
     isNew: false,
-    image: "/placeholder/600x701.png ",
+    image: "img/product/produc1.png ",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -70,7 +80,7 @@ export const featuredProductDetails = [
     showStars: true,
     isTextCenter: true,
     isNew: false,
-    image: "/placeholder/600x701.png ",
+    image: "img/product/product2.png ",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -83,7 +93,7 @@ export const featuredProductDetails = [
     showStars: true,
     isTextCenter: true,
     isNew: false,
-    image: "/placeholder/600x701.png ",
+    image: "img/product/product3.png ",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -128,7 +138,7 @@ export const listData: IListProps[] = [
 export const gridData = [
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -139,7 +149,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product3.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -150,7 +160,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product2.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -161,7 +171,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/produc1.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -172,7 +182,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -183,7 +193,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product3.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -194,7 +204,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product2.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -205,7 +215,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -216,7 +226,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/produc1.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -227,7 +237,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product3.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -238,7 +248,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product2.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -249,7 +259,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -260,7 +270,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -271,7 +281,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -282,7 +292,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -293,7 +303,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -304,7 +314,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -315,7 +325,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -326,7 +336,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -337,7 +347,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -348,7 +358,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -359,7 +369,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -370,7 +380,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -381,7 +391,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -392,7 +402,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -403,7 +413,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -414,7 +424,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -425,7 +435,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -436,7 +446,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -447,7 +457,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -458,7 +468,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -469,7 +479,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -480,7 +490,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -491,7 +501,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -502,7 +512,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -513,7 +523,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -524,7 +534,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -535,7 +545,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -546,7 +556,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -557,7 +567,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -568,7 +578,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -579,7 +589,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -590,7 +600,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -601,7 +611,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -612,7 +622,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -623,7 +633,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -634,7 +644,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -645,7 +655,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -656,7 +666,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -667,7 +677,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -678,7 +688,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -689,7 +699,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -700,7 +710,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -711,7 +721,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -722,7 +732,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -733,7 +743,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -744,7 +754,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -755,7 +765,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -766,7 +776,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -777,7 +787,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -788,7 +798,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -799,7 +809,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -810,7 +820,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -821,7 +831,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -832,7 +842,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -843,7 +853,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -854,7 +864,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -865,7 +875,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -876,7 +886,7 @@ export const gridData = [
   },
   {
     isNew: true,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -887,7 +897,7 @@ export const gridData = [
   },
   {
     isNew: false,
-    image: "img/product/5.png",
+    image: "img/product/product4.png",
     quickView: "#",
     addToCard: "#",
     wishlist: "#",
@@ -928,7 +938,6 @@ export const reviewData = {
   ],
 };
 
-
 export const additionalInfo = [
   {
     name: "Weight",
@@ -945,21 +954,42 @@ export const additionalInfo = [
 ];
 export const productPreview = [
   {
-    imgSrc: "placeholder/600x701.png",
+    imgSrc: "img/product/produc1.png",
   },
   {
-    imgSrc: "placeholder/600x701.png",
+    imgSrc: "img/product/product2.png",
   },
   {
-    imgSrc: "placeholder/600x701.png",
+    imgSrc: "img/product/product3.png",
   },
   {
-    imgSrc: "placeholder/600x701.png",
+    imgSrc: "img/product/product4.png",
   },
   {
-    imgSrc: "placeholder/600x701.png",
+    imgSrc: "img/product/produc1.png",
   },
   {
-    imgSrc: "placeholder/600x701.png",
+    imgSrc: "img/product/product2.png",
+  },
+];
+
+export const fields = [
+  {
+    placeholder: "Type your name...",
+    type: "text",
+    name: "name",
+    Icon: UserIcon,
+  },
+  {
+    placeholder: "Type your email...",
+    type: "email",
+    name: "email",
+    Icon: RiMailFill,
+  },
+  {
+    placeholder: "Type your website...",
+    type: "text",
+    name: "website",
+    Icon: GlobeAltIcon,
   },
 ];

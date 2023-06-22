@@ -1,74 +1,50 @@
-//import React from "react";
-import { FaUser, FaEnvelope, FaEye, FaPhone } from "react-icons/fa";
+import { PencilIcon } from "@heroicons/react/20/solid";
 
+import { IContactMessageFormProps } from "./types";
 import Heading from "../Common/Heading";
-import "../../style/index.css";
+import { InputField } from "../Form/InputField";
+import Textarea from "../Form/Textarea";
+import Checkbox from "../Form/Checkbox";
 
-export default function ContactMessage() {
-  const ContactMessage = [
-    {
-      name: "name",
-      type: "text",
-      placeholder: "Enter email address",
-      icon: <FaUser />,
-    },
-    {
-      type: "email",
-      name: "email",
-      placeholder: "Enter the Email",
-      icon: <FaEnvelope />,
-    },
-    {
-      type: "text",
-      name: "subject",
-      placeholder: "Enter the subject",
-      icon: <FaEye />,
-    },
-    {
-      type: "text",
-      name: "phone",
-      placeholder: "Enter the Phone Number",
-      icon: <FaPhone />,
-    },
-  ];
+interface IContactMessage {
+  contactMessage: IContactMessageFormProps[];
+}
+
+export default function ContactMessage(props: IContactMessage) {
+  const { contactMessage } = props;
   return (
     <>
-      <section className="max-w-5xl mx-auto">
-        <div className="contact-msg max-w-5xl mx-auto gap-3 mb--25 mb-10">
-          <div className=" mb--25 mb-40 relative mt-7 z-[1] pt-10 pb-12 px-12 shadow -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.1) bg-white">
+      <section className="lg:max-w-6xl mx-auto p-3">
+        <div className="relative gap-3 mb-25">
+          <div className="mb-25 m-5 mb-40 mt-7 z-[1] pt-10 pb-12 px-6 md:px-12 lg:px-12 shadow-lg bg-white">
             <Heading title="Get A Quote" />
             <form
               id="contact-form"
               action="#"
               method="post"
-              className="grid grid-cols-2 gap-8 mb-7 mx-1 p-3"
+              className="md:grid grid-cols-2 gap-8 mb-7 space-y-4 md:space-y-0 mx-1 p-3"
             >
-              {ContactMessage.map((con, index) => (
-                <div
+              {contactMessage.map((con, index) => (
+                <InputField
                   key={index}
-                  className="relative border-2 border-borderColor flex items-center pr-3"
-                >
-                  <input
-                    key={index}
-                    className="focus:border-secondary focus-visible:outline-0 bg-white w-full p-5 py-5 pr-10 pl-5"
-                    type={con.type}
-                    name={con.type}
-                    placeholder={con.placeholder}
-                  />
-                  {con.icon && <span className="">{con.icon}</span>}
-                </div>
+                  placeholder={con.placeholder}
+                  type={con.type}
+                  name={con.name}
+                  Icon={con.icon}
+                />
               ))}
               <div className=" top-7 col-span-2">
-                <textarea
-                  name="message"
-                  placeholder="Enter message"
-                  className="border-2 border-borderColor w-full p-5 mb-7 pr-10 pl-5 px-5 py-3"
-                ></textarea>
+                <Textarea
+                  placeholder={"Enter message"}
+                  name={"message"}
+                  Icon={PencilIcon}
+                />
               </div>
               <p className="col-span-2">
-                <label className="input-info-save mb-0  text-sm ">
-                  <input type="checkbox" name="agree" /> Save my name, email,
-                  and website in this browser for the next time I comment.
+                <label className="input-info-save mb-0 text-sm">
+                  <Checkbox name={"agree"} id={"agree"} className="mr-2" />
+                  Save my name, email, and website in this browser for the next
+                  time I comment.
                 </label>
               </p>
               <div className="btn-wrapper mt-0 col-span-2">

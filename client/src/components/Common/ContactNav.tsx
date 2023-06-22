@@ -26,9 +26,9 @@ const socialData = [
 export default function ContactNav() {
   return (
     <div className="p-2 border-b border-gray-200">
-      <div className="mx-auto max-w-6xl flex flex-row justify-between items-center ">
-        <ul className="flex space-x-4 text-sm">
-          <li className="font-bold">
+      <div className="max-w-md md:max-w-2xl lg:max-w-5xl xl:max-w-6x mx-auto flex flex-col sm:flex-row justify-between items-center ">
+        <ul className="flex items-center space-x-2 sm:space-x-4 text-sm">
+          <li className="font-bold mt-0">
             <a
               href={`mailto:${email}?subject=${emailSubject}`}
               className="flex items-center text-light gap-1 hover:text-secondary"
@@ -37,7 +37,7 @@ export default function ContactNav() {
               {email}
             </a>
           </li>
-          <li className="text-light font-bold">
+          <li className="text-light font-bold mt-0">
             <a
               href="locations.html"
               className="flex items-center gap-1 text-light"

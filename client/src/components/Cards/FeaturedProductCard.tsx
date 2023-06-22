@@ -27,26 +27,22 @@ export default function FeaturedProductCard({
   stars,
 }: FeaturedProductCardProps): JSX.Element {
   return (
-    <section className="bg-white">
-      <div className="border border-gray-300 h-[190px] p-8 flex">
-        <div className="small-product-item-img">
-          <a href="#">
-            <img src={image} className="w-[111px] h-[131px]" alt="Image" />
-          </a>
-        </div>
-        <div className="p-5">
-          <div className="flex items-center pb-3">
-            {getStars({ stars: stars || 0 })}
-          </div>
-          <h5 className="text-base">
-            <a className="text-primary" href="#">
+    <div className="bg-white hover:shadow hover:shadow-light ">
+      <a href="/product-details">
+        <div className="border border-gray-300 px-2 py-6 flex items-center">
+          <img src={image} className="w-[90px] h-[105px]" alt="Image" />
+          <div className="px-3 lg:p-5">
+            <div className="flex items-center pb-3">
+              {getStars({ stars: stars || 0 })}
+            </div>
+            <h6 className="text-base mb-1">
               {productName}
-            </a>
-          </h5>
-          <span className="text-sm text-secondary">{discountedPrice}</span>
-          <del className="text-xs mx-2 text-secondary">{originalPrice}</del>
+            </h6>
+            <span className="text-sm text-secondary">{discountedPrice}</span>
+            <del className="text-xs mx-2 text-secondary">{originalPrice}</del>
+          </div>
         </div>
-      </div>
-    </section>
+      </a>
+    </div>
   );
 }

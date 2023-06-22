@@ -1,12 +1,44 @@
-const viewCartDrawer = {
-  productName: "Antiseptic Spray",
-  productLink: "#" /* TODO: create the products Link page */,
-  productImageSrc: "img/product/1.jpg",
-  productImageAlt: "product image",
-  productPrice: "$10.00",
-  productQuantity: "1",
-  amount: 10,
+export const productCartCard = [
+  {
+    productName: "Antiseptic Spray",
+    productLink: "#" /* TODO: create the products Link page */,
+    imageSrc: "/img/product/produc1.png",
+    imageAlt: "product image",
+    productPrice: "$10.00",
+    productQuantity: 1,
+    amount: 10,
+  },
+  {
+    productName: "Asthetic spray",
+    productLink: "#",
+    imageSrc: "/img/product/product2.png",
+    imageAlt: "image",
+    productPrice: "$20",
+    productQuantity: 1,
+    amount: 30.0,
+  },
+  {
+    productName: "Asthetic spray",
+    productLink: "#",
+    imageSrc: "/img/product/product3.png",
+    imageAlt: "image",
+    productPrice: "$20",
+    productQuantity: 1,
+    amount: 30.0,
+  },
+  {
+    productName: "Asthetic spray",
+    productLink: "#",
+    imageSrc: "/img/product/product4.png",
+    imageAlt: "image",
+    productPrice: "$20",
+    productQuantity: 1,
+    amount: 30.0,
+  },
+];
+
+export const drawerItems = {
   productCount: 2,
-  viewCartLink: "#" /* TODO: create the view Cart Link */,
-  checkOutCartLink: "#" /* TODO: create the checkout Cart Link */,
+  viewCartLink: "/cart" /* TODO: create the view Cart Link */,
+  checkOutCartLink: "/checkout" /* TODO: create the checkout Cart Link */,
 };

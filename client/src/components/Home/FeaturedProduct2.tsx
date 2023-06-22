@@ -1,84 +1,21 @@
 import ProductOverViewCard from "../Cards/ProductOverViewCard";
+import SaleWidgetCard from "../Cards/SaleWidgetCard/saleWidgetCard";
+import Heading from "../Common/Heading";
 import { IProductProps } from "./types";
+import { ISaleWidgetCardProps } from "../Cards/SaleWidgetCard/types";
 
-const promationsimages = [
-  { image: "placeholder/540x688.jpg", link: "#" },
-  { image: "placeholder/540x884.jpg", link: "#" },
-];
-const data = [
-  {
-    isNew: true,
-    image: "placeholder/600x701.png",
-    quickView: "#",
-    addToCard: "#",
-    wishlist: "#",
-    stars: 5,
-    productName: "Antiseptic Spray",
-    price: "$32.00",
-    originalPrice: "$46.00",
-  },
-  {
-    isNew: true,
-    image: "placeholder/600x701.png",
-    quickView: "#",
-    addToCard: "#",
-    wishlist: "#",
-    stars: 3,
-    productName: "Antiseptic Spray",
-    price: "$32.00",
-    originalPrice: "$46.00",
-  },
-  {
-    isNew: false,
-    image: "placeholder/600x701.png",
-    quickView: "#",
-    addToCard: "#",
-    wishlist: "#",
-    stars: 4,
-    productName: "Antiseptic Spray",
-    price: "$32.00",
-    originalPrice: "$46.00",
-  },
-  {
-    isNew: true,
-    image: "placeholder/600x701.png",
-    quickView: "#",
-    addToCard: "#",
-    wishlist: "#",
-    stars: 2,
-    productName: "Antiseptic Spray",
-    price: "$32.00",
-    originalPrice: "$46.00",
-  },
-  {
-    isNew: false,
-    image: "placeholder/600x701.png",
-    quickView: "#",
-    addToCard: "#",
-    wishlist: "#",
-    stars: 3,
-    productName: "Antiseptic Spray",
-    price: "$32.00",
-    originalPrice: "$46.00",
-  },
-];
-
-export default function FeaturedProduct2() {
+export default function FeaturedProduct2({ data, featureProduct2 }: { data: IProductProps[]; featureProduct2: ISaleWidgetCardProps[] }) {
   return (
-    <section>
-      <div className="max-w-6xl mx-auto py-14">
-        <h1 className="text-center mb-11 text-5xl">Featured Product</h1>
-        <div className="grid grid-cols-4 gap-5 ">
-          <div className="flex flex-col justify-between">
-            {promationsimages.map((item: { image: string; link: string }, index: number) => (
-              <div>
-                <a href={item.link} key={index}>
-                  <img src={item.image} alt="error" />
-                </a>
-              </div>
+    <section className="mx-3">
+      <div className="max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto py-14">
+        <Heading title={"Featured Product"} />
+        <div className="grid grid-cols-1 lg:grid-cols-4 lg:gap-5 ">
+          <div className="grid grid-cols-2 gap-4 lg:flex flex-col justify-between mb-5 lg:mb-0">
+            {featureProduct2?.map((item, index) => (
+              <SaleWidgetCard saleWidgetCard={item} key={index} />
             ))}
           </div>
-          <div className="col-span-3 grid grid-cols-3 gap-5 ">
+          <div className="col-span-3 grid grid-cols-2 md:grid-cols-3 gap-5 ">
             {data.map((item: IProductProps, index: number) => (
               <ProductOverViewCard isTextCenter={false} {...item} showStars={false} key={index} />
             ))}

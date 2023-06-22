@@ -1,9 +1,11 @@
 import { GiCampingTent } from "react-icons/gi";
-import { TbDental } from "react-icons/tb";
+import { TbDental, TbLogout } from "react-icons/tb";
 import { FiTarget } from "react-icons/fi";
 import { BsStack } from "react-icons/bs";
 
 import { ICategory, INavData, INavList, INavSubListGroup } from "./types";
+import { FaUser } from "react-icons/fa";
+import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 
 export const coldMedicine: INavData[] = [
   {
@@ -74,7 +76,7 @@ export const shopList: INavSubListGroup[] = [
   },
 ];
 
-export const CategoryOptions:ICategory[] = [
+export const CategoryOptions: ICategory[] = [
   {
     title: "Medical Cap",
     link: "#",
@@ -104,7 +106,7 @@ export const navbarData: INavList = [
   },
   {
     title: "About",
-    link: "#",
+    link: "/about",
   },
   {
     title: "Shop",
@@ -124,5 +126,28 @@ export const navbarData: INavList = [
   {
     title: "Contact",
     link: "/contact",
+  },
+];
+
+export const disclosureData = [
+  {
+    title: "Your Profile",
+    link: "#",
+    icon: FaUser,
+  },
+  {
+    title: "Wish List",
+    link: "#",
+    icon: AiOutlineHeart,
+  },
+  {
+    title: "Shopping Cart",
+    link: "#",
+    icon: AiOutlineShoppingCart,
+  },
+  {
+    title: "Sign Out",
+    link: "#",
+    icon: TbLogout,
   },
 ];

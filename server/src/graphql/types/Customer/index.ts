@@ -18,9 +18,8 @@ export const Customer = objectType({
     t.nullable.field("customer_group", {
       type: "CustomerGroup",
       resolve: (parent, args, context: IGraphQLContext) => {
-        return context.prisma.customer
-          .findUnique({ where: { customer_id: parent.customer_id } })
-          .customer_group() as any;
+        return context.prisma.customer_group
+          .findUnique({ where: { customer_group_id: parent.group_id } }) as any;
       },
     });
     t.list.nullable.field("customer_address", {

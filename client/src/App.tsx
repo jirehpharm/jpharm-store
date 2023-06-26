@@ -36,7 +36,6 @@ function App() {
                 <SecondaryNav />
                 <ConventionalNav navbarData={navbarData} />
                 <AppContainer />
-                <AppContainer />
                 <CTA />
                 <Footer />
               </>

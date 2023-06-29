@@ -3,6 +3,6 @@ import { populateData } from "./controller";
 
 const router = express.Router();
 
-router.post("/populate", populateData);
+router.get("/populate", populateData);
 
 export default router;

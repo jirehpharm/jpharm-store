@@ -475,6 +475,7 @@ model product_collection {
   product_collection_id Int        @id @default(autoincrement())
   collection_id         Int
   product_id            Int
+  order_sequence        Int?
   collection            collection @relation(fields: [collection_id], references: [collection_id], onDelete: Cascade, onUpdate: NoAction)
   product               product    @relation(fields: [product_id], references: [product_id], onDelete: Cascade, onUpdate: NoAction)
 

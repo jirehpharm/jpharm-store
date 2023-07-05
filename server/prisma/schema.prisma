@@ -103,6 +103,7 @@ model cart {
   shipping_note         String?
   created_at            DateTime?      @default(now()) @db.Timestamptz(6)
   updated_at            DateTime?      @default(now()) @db.Timestamptz(6)
+  customer              customer?      @relation(fields: [customer_id], references: [customer_id], onUpdate: NoAction, map: "FK_CART_CUSTOMER_ID")
   shipping_zone         shipping_zone? @relation(fields: [shipping_zone_id], references: [shipping_zone_id], onUpdate: NoAction)
   cart_item             cart_item[]
 
@@ -163,6 +164,7 @@ model category {
   updated_at           DateTime?             @default(now()) @db.Timestamptz(6)
   category_description category_description?
   product_category     product_category[]
+  sub_category         sub_category[]
 }
 
 model category_description {
@@ -248,6 +250,10 @@ model customer {
   full_name        String?            @db.VarChar
   created_at       DateTime?          @default(now()) @db.Timestamptz(6)
   updated_at       DateTime?          @default(now()) @db.Timestamptz(6)
+  tax_email        String?            @db.VarChar
+  type             String             @default("personal") @db.VarChar
+  is_approved      Boolean            @default(false)
+  cart             cart[]
   customer_group   customer_group?    @relation(fields: [group_id], references: [customer_group_id], onUpdate: NoAction)
   customer_address customer_address[]
 
@@ -427,16 +433,17 @@ model product {
   status                        Boolean                         @default(false)
   created_at                    DateTime?                       @default(now()) @db.Timestamptz(6)
   updated_at                    DateTime?                       @default(now()) @db.Timestamptz(6)
-  attribute_group               attribute_group?                @relation(fields: [group_id], references: [attribute_group_id], onUpdate: NoAction)
-  tax_class_productTotax_class  tax_class?                      @relation(fields: [tax_class], references: [tax_class_id], onUpdate: NoAction, map: "FK_TAX_CLASS")
-  variant_group                 variant_group?                  @relation(fields: [variant_group_id], references: [variant_group_id], onUpdate: NoAction)
   cart_item                     cart_item[]
+  attribute_group               attribute_group?                @relation(fields: [group_id], references: [attribute_group_id], onUpdate: NoAction)
+  variant_group                 variant_group?                  @relation(fields: [variant_group_id], references: [variant_group_id], onUpdate: NoAction)
+  tax_class_productTotax_class  tax_class?                      @relation(fields: [tax_class], references: [tax_class_id], onUpdate: NoAction, map: "FK_TAX_CLASS")
   product_attribute_value_index product_attribute_value_index[]
   product_category              product_category[]
   product_collection            product_collection[]
   product_custom_option         product_custom_option[]
   product_description           product_description?
   product_image                 product_image[]
+  sub_category                  sub_category[]
 
   @@index([group_id], map: "FK_PRODUCT_ATTRIBUTE_GROUP")
   @@index([variant_group_id], map: "FK_PRODUCT_VARIANT_GROUP")
@@ -449,8 +456,8 @@ model product_attribute_value_index {
   attribute_id                     Int
   option_id                        Int?
   option_text                      String?
-  attribute                        attribute         @relation(fields: [attribute_id], references: [attribute_id], onDelete: Cascade, onUpdate: NoAction)
   attribute_option                 attribute_option? @relation(fields: [option_id], references: [attribute_option_id], onDelete: Cascade, onUpdate: NoAction)
+  attribute                        attribute         @relation(fields: [attribute_id], references: [attribute_id], onDelete: Cascade, onUpdate: NoAction)
   product                          product           @relation(fields: [product_id], references: [product_id], onDelete: Cascade, onUpdate: NoAction)
 
   @@unique([product_id, attribute_id, option_id], map: "OPTION_VALUE_UNIQUE")
@@ -644,13 +651,13 @@ model variant_group {
   attribute_four                                     Int?
   attribute_five                                     Int?
   visibility                                         Boolean         @default(false)
+  product                                            product[]
+  attribute_group                                    attribute_group @relation(fields: [attribute_group_id], references: [attribute_group_id], onDelete: Cascade, onUpdate: NoAction)
   attribute_attributeTovariant_group_attribute_five  attribute?      @relation("attributeTovariant_group_attribute_five", fields: [attribute_five], references: [attribute_id], onDelete: Cascade, onUpdate: NoAction)
   attribute_attributeTovariant_group_attribute_four  attribute?      @relation("attributeTovariant_group_attribute_four", fields: [attribute_four], references: [attribute_id], onDelete: Cascade, onUpdate: NoAction)
-  attribute_group                                    attribute_group @relation(fields: [attribute_group_id], references: [attribute_group_id], onDelete: Cascade, onUpdate: NoAction)
   attribute_attributeTovariant_group_attribute_one   attribute?      @relation("attributeTovariant_group_attribute_one", fields: [attribute_one], references: [attribute_id], onDelete: Cascade, onUpdate: NoAction)
   attribute_attributeTovariant_group_attribute_three attribute?      @relation("attributeTovariant_group_attribute_three", fields: [attribute_three], references: [attribute_id], onDelete: Cascade, onUpdate: NoAction)
   attribute_attributeTovariant_group_attribute_two   attribute?      @relation("attributeTovariant_group_attribute_two", fields: [attribute_two], references: [attribute_id], onDelete: Cascade, onUpdate: NoAction)
-  product                                            product[]
 
   @@index([attribute_group_id], map: "FK_ATTRIBUTE_GROUP_VARIANT")
   @@index([attribute_five], map: "FK_ATTRIBUTE_VARIANT_FIVE")
@@ -658,4 +665,104 @@ model variant_group {
   @@index([attribute_one], map: "FK_ATTRIBUTE_VARIANT_ONE")
   @@index([attribute_three], map: "FK_ATTRIBUTE_VARIANT_THREE")
   @@index([attribute_two], map: "FK_ATTRIBUTE_VARIANT_TWO")
+}
+
+model banner {
+  banner_id         Int       @id @default(autoincrement())
+  uuid              String    @unique(map: "BANNER_UUID_UNIQUE") @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name              String    @db.VarChar(255)
+  code              String    @unique(map: "BANNER_CODE_UNIQUE") @db.VarChar(255)
+  desktop_image_url String?   @db.VarChar(255)
+  tablet_image_url  String?   @db.VarChar(255)
+  mobile_image_url  String?   @db.VarChar(255)
+  link              String    @db.VarChar(255)
+  status            Boolean?
+  created_at        DateTime? @default(now()) @db.Timestamptz(6)
+  updated_at        DateTime? @default(now()) @db.Timestamptz(6)
+}
+
+model discount {
+  discount_id    Int       @id @default(autoincrement())
+  uuid           String    @unique(map: "DISCOUNT_UUID_UNIQUE") @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  discount_title String    @db.VarChar(255)
+  discount_rate  String    @db.VarChar(255)
+  from           DateTime  @db.Date
+  to             DateTime  @db.Date
+  target         String    @db.VarChar(255)
+  created_at     DateTime? @default(now()) @db.Timestamptz(6)
+  updated_at     DateTime? @default(now()) @db.Timestamptz(6)
+}
+
+model fee_setting_for_region {
+  region_fee_id             Int     @id @default(autoincrement())
+  uuid                      String  @unique(map: "REGION_FEE_UUID_UNIQUE") @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  special_regional_name     String  @db.VarChar
+  code_range                String  @db.VarChar
+  region_from               String? @db.VarChar
+  region_to                 String? @db.VarChar
+  postal_from               Int?
+  postal_to                 Int?
+  region_extra_shipment_fee Int?
+}
+
+model payment_details {
+  payment_details_id Int       @id @default(autoincrement())
+  uuid               String    @unique(map: "PAYMENT_DETAILS_UUID_UNIQUE") @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name               String    @unique @db.VarChar
+  value              String    @db.VarChar
+  is_json            Boolean   @default(false)
+  created_at         DateTime? @default(now()) @db.Timestamptz(6)
+  updated_at         DateTime? @default(now()) @db.Timestamptz(6)
+}
+
+model product_optional_name {
+  product_optional_name_id Int       @id @default(autoincrement())
+  uuid                     String    @unique(map: "PRODUCT_OPTIONAL_NAME_UUID_UNIQUE") @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  optional_product_name    String    @db.VarChar(255)
+  product_count            Int?
+  product_price            Float?
+  created_at               DateTime? @default(now()) @db.Timestamptz(6)
+  updated_at               DateTime? @default(now()) @db.Timestamptz(6)
+}
+
+model shipment_fee {
+  shipment_fee_id        Int     @id @default(autoincrement())
+  uuid                   String  @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  shipping_method        String  @db.VarChar
+  domestic               String  @db.VarChar
+  delivery_area          String? @db.VarChar
+  delivery_period        Int
+  delivery_period2       Int
+  shipping_rate          String? @db.VarChar
+  purchase_amount        Int
+  shipment_amount        Int
+  product_classification String? @db.VarChar
+  order____              String? @map("order    ") @db.VarChar
+  shipping               String? @db.VarChar
+}
+
+model shipping_company {
+  shipping_company_id   Int       @id @default(autoincrement())
+  uuid                  String    @unique(map: "SHIPPING_COMPANY_UUID_UNIQUE") @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  delivery_company_name String    @db.VarChar(255)
+  contact_number        String    @db.VarChar
+  second_contact_number String?   @db.VarChar
+  email                 String    @db.VarChar
+  shipment_fee          Decimal   @db.Decimal(12, 4)
+  homepage_address      String?   @db.VarChar
+  deferred_payment      String    @db.VarChar
+  additional_info       String    @db.VarChar
+  created_at            DateTime? @default(now()) @db.Timestamptz(6)
+  updated_at            DateTime? @default(now()) @db.Timestamptz(6)
+}
+
+model sub_category {
+  sub_category_id Int      @id @default(autoincrement())
+  uuid            String   @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  category_id     Int
+  product_id      Int
+  description     String?  @db.VarChar(255)
+  title           String   @db.VarChar(255)
+  category        category @relation(fields: [category_id], references: [category_id], onDelete: Cascade, onUpdate: NoAction, map: "FK_SUB_CATEGORY")
+  product         product  @relation(fields: [product_id], references: [product_id], onDelete: Cascade, onUpdate: NoAction, map: "FK_SUB_PRODUCT")
 }

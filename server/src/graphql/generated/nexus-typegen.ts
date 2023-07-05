@@ -70,6 +70,61 @@ export interface NexusGenObjects {
     updated_at: string; // String!
     uuid: string; // String!
   }
+  Cart: { // root type
+    billing_address_id?: number | null; // Int
+    cart_id: number; // Int!
+    coupon?: string | null; // String
+    created_at?: string | null; // String
+    currency: string; // String!
+    customer_email?: string | null; // String
+    customer_full_name?: string | null; // String
+    customer_group_id?: number | null; // Int
+    customer_id?: number | null; // Int
+    discount_amount?: number | null; // Float
+    grand_total: number; // Float!
+    payment_method?: string | null; // String
+    payment_method_name?: string | null; // String
+    shipping_address_id?: number | null; // Int
+    shipping_fee_excl_tax?: number | null; // Float
+    shipping_fee_incl_tax?: number | null; // Float
+    shipping_method?: string | null; // String
+    shipping_method_name?: string | null; // String
+    shipping_note?: string | null; // String
+    shipping_zone_id?: number | null; // Int
+    sid?: string | null; // String
+    status: boolean; // Boolean!
+    sub_total: number; // Float!
+    tax_amount: number; // Float!
+    total_qty: number; // Int!
+    total_weight?: number | null; // Float
+    updated_at?: string | null; // String
+    user_ip?: string | null; // String
+    uuid: string; // String!
+  }
+  CartItem: { // root type
+    cart_id: number; // Int!
+    cart_item_id: number; // Int!
+    created_at?: string | null; // String
+    discount_amount: number; // Float!
+    final_price: number; // Float!
+    final_price_incl_tax: number; // Float!
+    product_custom_options?: string | null; // String
+    product_id: number; // Int!
+    product_name: string; // String!
+    product_price: number; // Float!
+    product_price_incl_tax: number; // Float!
+    product_sku: string; // String!
+    product_weight?: number | null; // Float
+    qty: number; // Int!
+    tax_amount: number; // Float!
+    tax_percent: number; // Float!
+    thumbnail?: string | null; // String
+    total: number; // Float!
+    updated_at?: string | null; // String
+    uuid: string; // String!
+    variant_group_id?: number | null; // Int
+    variant_options?: string | null; // String
+  }
   Category: { // root type
     category_id: number; // Int!
     created_at?: string | null; // String
@@ -107,8 +162,11 @@ export interface NexusGenObjects {
     email: string; // String!
     full_name?: string | null; // String
     group_id?: number | null; // Int
+    is_approved: boolean; // Boolean!
     password: string; // String!
     status: number; // Int!
+    tax_email?: string | null; // String
+    type: string; // String!
     updated_at?: string | null; // String
     uuid: string; // String!
   }
@@ -211,6 +269,34 @@ export interface NexusGenObjects {
     uuid: string; // String!
   }
   Query: {};
+  ShippingMethod: { // root type
+    name: string; // String!
+    shipping_method_id: number; // Int!
+    uuid: string; // String!
+  }
+  ShippingZone: { // root type
+    country: string; // String!
+    name: string; // String!
+    shipping_zone_id: number; // Int!
+    uuid: string; // String!
+  }
+  ShippingZoneMethod: { // root type
+    calculate_api?: string | null; // String
+    condition_type?: string | null; // String
+    cost?: number | null; // Float
+    is_enabled: boolean; // Boolean!
+    max?: number | null; // Float
+    method_id: number; // Int!
+    min?: number | null; // Float
+    shipping_zone_id: number; // Int!
+    zone_id: number; // Int!
+  }
+  ShippingZoneProvince: { // root type
+    province: string; // String!
+    shipping_zone_province_id: number; // Int!
+    uuid: string; // String!
+    zone_id: number; // Int!
+  }
   TaxClass: { // root type
     name: string; // String!
     tax_class_id: number; // Int!
@@ -308,6 +394,65 @@ export interface NexusGenFieldTypes {
     updated_at: string; // String!
     uuid: string; // String!
   }
+  Cart: { // field return type
+    billing_address_id: number | null; // Int
+    cart_id: number; // Int!
+    coupon: string | null; // String
+    created_at: string | null; // String
+    currency: string; // String!
+    customer: NexusGenRootTypes['Customer'] | null; // Customer
+    customer_email: string | null; // String
+    customer_full_name: string | null; // String
+    customer_group_id: number | null; // Int
+    customer_id: number | null; // Int
+    discount_amount: number | null; // Float
+    grand_total: number; // Float!
+    payment_method: string | null; // String
+    payment_method_name: string | null; // String
+    shipping_address_id: number | null; // Int
+    shipping_fee_excl_tax: number | null; // Float
+    shipping_fee_incl_tax: number | null; // Float
+    shipping_method: string | null; // String
+    shipping_method_name: string | null; // String
+    shipping_note: string | null; // String
+    shipping_zone: Array<NexusGenRootTypes['AdminUser'] | null> | null; // [AdminUser]
+    shipping_zone_id: number | null; // Int
+    sid: string | null; // String
+    status: boolean; // Boolean!
+    sub_total: number; // Float!
+    tax_amount: number; // Float!
+    total_qty: number; // Int!
+    total_weight: number | null; // Float
+    updated_at: string | null; // String
+    user_ip: string | null; // String
+    uuid: string; // String!
+  }
+  CartItem: { // field return type
+    cart: NexusGenRootTypes['Cart']; // Cart!
+    cart_id: number; // Int!
+    cart_item_id: number; // Int!
+    created_at: string | null; // String
+    discount_amount: number; // Float!
+    final_price: number; // Float!
+    final_price_incl_tax: number; // Float!
+    product: NexusGenRootTypes['Product']; // Product!
+    product_custom_options: string | null; // String
+    product_id: number; // Int!
+    product_name: string; // String!
+    product_price: number; // Float!
+    product_price_incl_tax: number; // Float!
+    product_sku: string; // String!
+    product_weight: number | null; // Float
+    qty: number; // Int!
+    tax_amount: number; // Float!
+    tax_percent: number; // Float!
+    thumbnail: string | null; // String
+    total: number; // Float!
+    updated_at: string | null; // String
+    uuid: string; // String!
+    variant_group_id: number | null; // Int
+    variant_options: string | null; // String
+  }
   Category: { // field return type
     category_description: NexusGenRootTypes['CategoryDescription'] | null; // CategoryDescription
     category_id: number; // Int!
@@ -350,8 +495,11 @@ export interface NexusGenFieldTypes {
     email: string; // String!
     full_name: string | null; // String
     group_id: number | null; // Int
+    is_approved: boolean; // Boolean!
     password: string; // String!
     status: number; // Int!
+    tax_email: string | null; // String
+    type: string; // String!
     updated_at: string | null; // String
     uuid: string; // String!
   }
@@ -483,6 +631,8 @@ export interface NexusGenFieldTypes {
     listAttributeGroupLinks: Array<NexusGenRootTypes['AttributeGroupLink'] | null>; // [AttributeGroupLink]!
     listAttributeGroups: Array<NexusGenRootTypes['AttributeGroup'] | null>; // [AttributeGroup]!
     listAttributeOptions: NexusGenRootTypes['AttributeOption'][]; // [AttributeOption!]!
+    listCartItems: Array<NexusGenRootTypes['CartItem'] | null>; // [CartItem]!
+    listCarts: Array<NexusGenRootTypes['Cart'] | null>; // [Cart]!
     listCategories: Array<NexusGenRootTypes['Category'] | null>; // [Category]!
     listCategoryDescriptions: Array<NexusGenRootTypes['CategoryDescription'] | null>; // [CategoryDescription]!
     listCollections: NexusGenRootTypes['Collection'][]; // [Collection!]!
@@ -494,10 +644,46 @@ export interface NexusGenFieldTypes {
     listProductCollections: NexusGenRootTypes['ProductCollection'][]; // [ProductCollection!]!
     listProductImages: NexusGenRootTypes['ProductImage'][]; // [ProductImage!]!
     listProducts: NexusGenRootTypes['Product'][]; // [Product!]!
+    listShippingMethods: Array<NexusGenRootTypes['ShippingMethod'] | null>; // [ShippingMethod]!
+    listShippingZoneMethods: Array<NexusGenRootTypes['ShippingZoneMethod'] | null>; // [ShippingZoneMethod]!
+    listShippingZoneProvinces: Array<NexusGenRootTypes['ShippingZoneProvince'] | null>; // [ShippingZoneProvince]!
+    listShippingZones: Array<NexusGenRootTypes['ShippingZone'] | null>; // [ShippingZone]!
     listTaxClasses: Array<NexusGenRootTypes['TaxClass'] | null>; // [TaxClass]!
     listTaxRates: Array<NexusGenRootTypes['TaxRate'] | null>; // [TaxRate]!
     product_description: NexusGenRootTypes['ProductDescription'][]; // [ProductDescription!]!
     verifyCustomer: NexusGenRootTypes['Customer'] | null; // Customer
+  }
+  ShippingMethod: { // field return type
+    name: string; // String!
+    shipping_method_id: number; // Int!
+    shipping_zone_method: Array<NexusGenRootTypes['ShippingZoneMethod'] | null>; // [ShippingZoneMethod]!
+    uuid: string; // String!
+  }
+  ShippingZone: { // field return type
+    cart: Array<NexusGenRootTypes['Cart'] | null>; // [Cart]!
+    country: string; // String!
+    name: string; // String!
+    shipping_zone_id: number; // Int!
+    shipping_zone_method: Array<NexusGenRootTypes['ShippingZoneMethod'] | null>; // [ShippingZoneMethod]!
+    uuid: string; // String!
+  }
+  ShippingZoneMethod: { // field return type
+    calculate_api: string | null; // String
+    condition_type: string | null; // String
+    cost: number | null; // Float
+    is_enabled: boolean; // Boolean!
+    max: number | null; // Float
+    method_id: number; // Int!
+    min: number | null; // Float
+    shipping_zone_id: number; // Int!
+    zone_id: number; // Int!
+  }
+  ShippingZoneProvince: { // field return type
+    province: string; // String!
+    shipping_zone: NexusGenRootTypes['ShippingZone']; // ShippingZone!
+    shipping_zone_province_id: number; // Int!
+    uuid: string; // String!
+    zone_id: number; // Int!
   }
   TaxClass: { // field return type
     name: string; // String!
@@ -596,6 +782,65 @@ export interface NexusGenFieldTypeNames {
     updated_at: 'String'
     uuid: 'String'
   }
+  Cart: { // field return type name
+    billing_address_id: 'Int'
+    cart_id: 'Int'
+    coupon: 'String'
+    created_at: 'String'
+    currency: 'String'
+    customer: 'Customer'
+    customer_email: 'String'
+    customer_full_name: 'String'
+    customer_group_id: 'Int'
+    customer_id: 'Int'
+    discount_amount: 'Float'
+    grand_total: 'Float'
+    payment_method: 'String'
+    payment_method_name: 'String'
+    shipping_address_id: 'Int'
+    shipping_fee_excl_tax: 'Float'
+    shipping_fee_incl_tax: 'Float'
+    shipping_method: 'String'
+    shipping_method_name: 'String'
+    shipping_note: 'String'
+    shipping_zone: 'AdminUser'
+    shipping_zone_id: 'Int'
+    sid: 'String'
+    status: 'Boolean'
+    sub_total: 'Float'
+    tax_amount: 'Float'
+    total_qty: 'Int'
+    total_weight: 'Float'
+    updated_at: 'String'
+    user_ip: 'String'
+    uuid: 'String'
+  }
+  CartItem: { // field return type name
+    cart: 'Cart'
+    cart_id: 'Int'
+    cart_item_id: 'Int'
+    created_at: 'String'
+    discount_amount: 'Float'
+    final_price: 'Float'
+    final_price_incl_tax: 'Float'
+    product: 'Product'
+    product_custom_options: 'String'
+    product_id: 'Int'
+    product_name: 'String'
+    product_price: 'Float'
+    product_price_incl_tax: 'Float'
+    product_sku: 'String'
+    product_weight: 'Float'
+    qty: 'Int'
+    tax_amount: 'Float'
+    tax_percent: 'Float'
+    thumbnail: 'String'
+    total: 'Float'
+    updated_at: 'String'
+    uuid: 'String'
+    variant_group_id: 'Int'
+    variant_options: 'String'
+  }
   Category: { // field return type name
     category_description: 'CategoryDescription'
     category_id: 'Int'
@@ -638,8 +883,11 @@ export interface NexusGenFieldTypeNames {
     email: 'String'
     full_name: 'String'
     group_id: 'Int'
+    is_approved: 'Boolean'
     password: 'String'
     status: 'Int'
+    tax_email: 'String'
+    type: 'String'
     updated_at: 'String'
     uuid: 'String'
   }
@@ -771,6 +1019,8 @@ export interface NexusGenFieldTypeNames {
     listAttributeGroupLinks: 'AttributeGroupLink'
     listAttributeGroups: 'AttributeGroup'
     listAttributeOptions: 'AttributeOption'
+    listCartItems: 'CartItem'
+    listCarts: 'Cart'
     listCategories: 'Category'
     listCategoryDescriptions: 'CategoryDescription'
     listCollections: 'Collection'
@@ -782,10 +1032,46 @@ export interface NexusGenFieldTypeNames {
     listProductCollections: 'ProductCollection'
     listProductImages: 'ProductImage'
     listProducts: 'Product'
+    listShippingMethods: 'ShippingMethod'
+    listShippingZoneMethods: 'ShippingZoneMethod'
+    listShippingZoneProvinces: 'ShippingZoneProvince'
+    listShippingZones: 'ShippingZone'
     listTaxClasses: 'TaxClass'
     listTaxRates: 'TaxRate'
     product_description: 'ProductDescription'
     verifyCustomer: 'Customer'
+  }
+  ShippingMethod: { // field return type name
+    name: 'String'
+    shipping_method_id: 'Int'
+    shipping_zone_method: 'ShippingZoneMethod'
+    uuid: 'String'
+  }
+  ShippingZone: { // field return type name
+    cart: 'Cart'
+    country: 'String'
+    name: 'String'
+    shipping_zone_id: 'Int'
+    shipping_zone_method: 'ShippingZoneMethod'
+    uuid: 'String'
+  }
+  ShippingZoneMethod: { // field return type name
+    calculate_api: 'String'
+    condition_type: 'String'
+    cost: 'Float'
+    is_enabled: 'Boolean'
+    max: 'Float'
+    method_id: 'Int'
+    min: 'Float'
+    shipping_zone_id: 'Int'
+    zone_id: 'Int'
+  }
+  ShippingZoneProvince: { // field return type name
+    province: 'String'
+    shipping_zone: 'ShippingZone'
+    shipping_zone_province_id: 'Int'
+    uuid: 'String'
+    zone_id: 'Int'
   }
   TaxClass: { // field return type name
     name: 'String'

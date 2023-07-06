@@ -11,9 +11,9 @@ export default function BreadcrumbBanner(props: IBreadcrumbProps) {
     <div
       className={`bg-[url(https://themexriver.com/wp/vicodin/wp-content/themes/vicodin/assets/images/bg/14.jpg)] bg-cover py-28`}
     >
-      <div className="lg:max-w-6xl mx-6 sm:mx-10 lg:mx-14">
+      <div className="lg:max-w-6xl mx-auto">
         <h1>{title}</h1>
-        <div className="">
+        <div>
           <ul className="flex items-center text-base gap-2">
             <li>
               <a

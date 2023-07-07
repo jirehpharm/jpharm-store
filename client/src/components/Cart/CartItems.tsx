@@ -1,28 +1,65 @@
+import Checkbox from "../Form/Checkbox";
 import Counter from "../Products/Details/Counter";
 import { ICartData } from "./types";
 
 interface ICart {
-  data: ICartData[]
+  data: ICartData[];
 }
 
 export default function CartItems(props: ICart) {
   const { data } = props;
   return (
     <div className="mx-auto mt-8 max-w-[300px] sm:max-w-lg md:max-w-2xl lg:max-w-6xl">
-      {data.map((item, index) => (
-        <div className="py-5 grid grid-cols-1 md:grid-cols-6 border-b-2" key={index}>
-          <div className="flex items-center justify-center">
-            <button className="w-20 h-10 " >x</button>
-          </div>
-          <div className="pt-3 flex justify-center items-center">
-            <img src={item.image} className="h-[120px] w-[100px]" alt="Cart Items" />
-          </div>
-          <h5 className="pt-3 mb-0 flex items-center justify-center text-base lg:text-lg">{item.title}</h5>
-          <p className="pt-3 mb-0 flex items-center justify-center text-sm lg:text-base">{item.price}</p>
-          <div className="mb-0 flex items-center justify-center"><Counter /></div>
-          <p className="mb-0 flex items-center justify-center">$889</p>
-        </div >
-      ))}
+      <table className="w-full border-y-2 border-gray-400">
+        <tr className="space-x-8 text-left">
+          <th className="p-2">
+            <Checkbox name={"check"} />
+          </th>
+          <th className="p-2">Classification</th>
+          <th className="p-2">Image</th>
+          <th className="p-2">Product Name</th>
+          <th className="p-2">Size</th>
+          <th className="p-2">Manufacturer</th>
+          <th className="p-2">Quantity</th>
+          <th className="p-2">Price</th>
+          <th className="p-2">Total</th>
+          <th className="p-2">Delete</th>
+        </tr>
+        {data.map((item, index) => (
+          <tr key={index} className=" mt-3 text-left">
+            <td className="p-2">
+              <Checkbox name={"check"} />
+            </td>
+            <td className="p-2">medicine</td>
+            <td className="p-2">
+              <img
+                src={"/img/banner/mask.png"}
+                className="h-10 w-10"
+                alt="Cart Items"
+              />
+            </td>
+            <td className="p-2">{item.title}</td>
+            <td className="p-2">md</td>
+            <td className="p-2">abcd</td>
+            <td className="p-2">
+              <Counter />
+            </td>
+            <td className="p-2">{item.price}</td>
+            <td className="p-2">$889</td>
+            <td className="p-2">
+              <button className="w-20 h-10 ">x</button>
+            </td>
+          </tr>
+        ))}
+      </table>
+      <div className="border-y-2 border-gray-300 mt-12 flex justify-between">
+        <div className="p-4 text-grayText font-bold text-xl">Total 2 Cases</div>
+        <div className="flex justify-center items-center">
+          <span className="text-grayText">Total</span>
+          <div className="p-4 font-bold text-xl text-secondary">$889</div>
+          <span>Won</span>
+        </div>
+      </div>
     </div>
-  )
+  );
 }

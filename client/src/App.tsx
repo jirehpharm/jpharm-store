@@ -5,7 +5,6 @@ import AppContainer from "./components/AppContainer";
 import ContactNav from "./components/Common/ContactNav";
 import PrimaryNav from "./components/Common/PrimaryNav";
 import Footer from "./components/Common/Footer";
-import CTA from "./components/Common/CTA";
 import SecondaryNav from "./components/Common/SecondaryNav";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
@@ -36,7 +35,6 @@ function App() {
                 <SecondaryNav />
                 <ConventionalNav navbarData={navbarData} />
                 <AppContainer />
-                <CTA />
                 <Footer />
               </>
             }

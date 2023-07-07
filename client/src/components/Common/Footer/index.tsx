@@ -2,6 +2,7 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { AiOutlineTwitter } from "react-icons/ai";
 
 import SocialLinks from "../SocialLinks";
+import { MapPinIcon } from "@heroicons/react/24/outline";
 
 const navigation: TNavigation = [
   {
@@ -63,67 +64,25 @@ export default function Footer() {
   return (
     <div>
       <footer className="ltn__footer-area bg-primary text-white pt-28">
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-7 gap-4 p-6">
-          <div className="col-span-2">
-            <a href="/" className="cursor-pointer">
-              <img src="full_logo.png" alt="logo" className="w-[250px]" />
-            </a>
-            <p className=" text-white py-3 m-0 text-sm lg:text-base">{companyInfo}</p>
-            <div>
-              <ul>
-                <li>
-                  <p className=" text-white text-sm lg:text-base">{location}</p>
-                </li>
-                <li>
-                  <p>
-                    <a className=" text-white text-sm lg:text-base" href="tel:+0123-456789">
-                      {phone}
-                    </a>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <a className=" text-white text-sm lg:text-base" href={`mailto:${email}`}>
-                      {email}
-                    </a>
-                  </p>
-                </li>
-              </ul>
-            </div>
-            <SocialLinks socialData={socialData} />
+        <div className="flex flex-col items-center text-light">
+          <p className="text-light">About US Term of Service Privacy Policy User Guide</p>
+          <a href="/" className="cursor-pointer my-5">
+            <img src="full_logo.png" alt="logo" className="w-[250px]" />
+          </a>
+          <div className="flex space-x-3 divide-x divide-light mt-6">
+            <p className="text-light ">Company Name: Iremal Co., Ltd</p>
+            <p className="text-light pl-3">Representative: Donghyun Lee</p>
+            <p className="text-light pl-3">Mail Order Number: No. 2019-Anyang Dong-an-0812</p>
+            <p className="text-light pl-3">Business Registration number: 138-81-52608</p>
           </div>
-
-          {navigation.map((category: any, index: number) => (
-            <div key={index}>
-              <h4 className="text-white text-xl">{category.name}</h4>
-              <ul className="mt-6">
-                {category.list.map((item: any, index: number) => (
-                  <li key={index} className="mb-6">
-                    <a href={item.href} className=" text-white text-sm lg:text-base">
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-
-          <div className="col-span-2">
-            <div>
-              <h4 className=" text-white">Newsletter</h4>
-              <p className=" text-white text-sm lg:text-base">Subscribe to our weekly Newsletter and receive updates via email.</p>
-              <div className="pb-4">
-                <form action="#" className="flex">
-                  <input type="email" name="email" placeholder="Email*" className="bg-white p-3 h-11 w-48" />
-                  <button type="submit" className="bg-secondary p-3 h-11">
-                    Submit
-                  </button>
-                </form>
-              </div>
-              <h5 className="text-white text-xl">We Accept</h5>
-              <img src="/payment.png" alt="Payment Image" />
-            </div>
+          <div className="flex space-x-3 divide-x divide-light">
+            <p className="text-light ">Contact: 031-427-3851</p>
+            <p className="text-light pl-3">Fax: 031-427-1404</p>
+            <p className="text-light pl-3">Email: jirehpharm09@naver.com</p>
           </div>
+          <p className="text-light">Personal Information Manager: Donghyun Lee {"("}dreamch83@naver.com{")"}</p>
+          <p className="text-light mt-10 "><MapPinIcon className="text-light h-6 w-6 inline mr-3" />14109 Irefarm, 4th floor, 604 Gyeongsu-daero, Dongan-gu, Anyang-si, Gyeonggi-do {"("}Hogye- dong{")"}</p>
+          <p className="text-light ">Copyright © 2014 Irefarm Co., Ltd. All rights reserved</p>
         </div>
       </footer>
     </div>

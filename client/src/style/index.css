@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -77,6 +77,13 @@ body {
 
 .theme-btn-2:hover {
   @apply bg-secondary text-white;
+}
+
+.theme-btn-3 {
+  @apply bg-danger text-white;
+}
+.theme-btn-3:hover {
+  @apply bg-danger text-white;
 }
 
 .btn-white {

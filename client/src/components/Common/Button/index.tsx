@@ -7,6 +7,7 @@ const theme: ITheme = {
     light: "btn-white",
     primary: "theme-btn-1",
     secondary: "theme-btn-2",
+    danger: "theme-btn-3",
   },
 };
 

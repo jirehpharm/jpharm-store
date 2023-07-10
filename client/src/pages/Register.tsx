@@ -1,130 +1,117 @@
-import Button from "../components/Common/Button";
-import Layout from "../components/Common/Layout";
+import { FaSchool } from "react-icons/fa";
+import { ImOffice } from "react-icons/im";
+import BreadcrumbBanner from "../components/Common/BreadcrumbBanner";
 import Checkbox from "../components/Form/Checkbox";
-import { InputField } from "../components/Form/InputField";
-import { gql, useMutation } from "@apollo/client";
-import { showErrorToast, showSuccessToast } from "../components/Toast/Toast";
 
-/**
- * Renders a registration form with input fields for first name, last name, email, password, and confirm password.
- *
- * @return {JSX.Element} The JSX element representing the register form
- */
-
-const fields = [
-  { name: "firstName", type: "text", placeholder: "First Name" },
-  { name: "lastName", type: "text", placeholder: "Last Name" },
-  { name: "email", type: "email", placeholder: "Email*", required: true },
+const memeber = [
   {
-    name: "password",
-    type: "password",
-    placeholder: "Password*",
-    required: true,
+    icon: FaSchool,
+    title: "School Member",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    btnLink: "/school-register",
+    btnName: "School Register",
   },
   {
-    name: "confirmPassword",
-    type: "password",
-    placeholder: "Confirm Password*",
-    required: true,
+    icon: ImOffice,
+    title: "Company Member",
+    description: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    btnLink: "/company-register",
+    btnName: "Company Register",
   },
 ];
 
-const REGISTER_CUSTOMER = gql`
-  mutation Mutation($email: String!, $password: String!, $fullName: String!) {
-    registerCustomer(email: $email, password: $password, fullName: $fullName) {
-      email
-    }
-  }
-`;
+const agree = [
+  {
+    title: "Terms of use",
+    description1:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?",
+    description2:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?",
+    description3:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?",
+  },
+  {
+    title: "Privacy Policy",
+    description1:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?",
+    description2:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?",
+    description3:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?",
+  },
+  {
+    title: "SMS and Email Agree",
+    description1:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?",
+    description2:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?",
+    description3:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?",
+  },
+];
 
-export default function Register(): JSX.Element {
-  const [registerCustomer, { loading, error }] = useMutation(REGISTER_CUSTOMER);
-
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-
-    const firstName = e.target.firstName.value;
-    const lastName = e.target.lastName.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    const confirmPassword = e.target.confirmPassword.value;
-
-    if (email) {
-      const fullName = `${firstName} ${lastName}`;
-      const isValidPassword = password === confirmPassword;
-      if (!isValidPassword) {
-        showErrorToast("Passwords do not match");
-      } else {
-        const { data } = await registerCustomer({
-          variables: { email, password, fullName },
-        });
-        const isRegistered = data?.registerCustomer;
-
-        isRegistered === null
-          ? showErrorToast("User already registered please login.")
-          : error
-          ? showErrorToast("Something went wrong")
-          : showSuccessToast("Registration successful");
-      }
-    }
-  };
-
+export default function Register() {
   return (
-    <Layout
-      title={"Create an Account"}
-      subtitle={"Sign up for our service to access exclusive content and features."}
-    >
-      <div className="sm:w-full lg:w-[470px]">
-        <form action="#" onSubmit={handleSubmit}>
-          {fields.map(({ name, type, placeholder, required }, index) => (
-            <InputField
-              key={index}
-              type={type}
-              name={name}
-              placeholder={placeholder}
-              required={required}
-              className="mb-4 h-[50px] w-full"
-            />
+    <>
+      <section>
+        <BreadcrumbBanner title="Register" />
+        <div className="my-24 max-w-5xl mx-auto">
+          <h3 className="text-xl p-3 text-center">
+            To sign up for membership, you must agree to the terms and condition
+            of membership and personal information processing policy.
+          </h3>
+          <div className="flex justify-end my-auto">
+            <span className="mr-2 my-auto">All Agree</span>
+            <div className="flex items-center">
+              <Checkbox name="agree" />
+            </div>
+          </div>
+          {agree.map((item, index) => (
+            <>
+              <h3 key={index} className="text-center pt-16">
+                {item.title}
+              </h3>
+              <div className="p-3 bg-slate-200">
+                <p>{item.description1}</p>
+                <p>{item.description2}</p>
+                <p>{item.description3}</p>
+              </div>
+              <div className="flex justify-end pt-5">
+                <span className="mr-2 my-auto">{item.title}</span>
+                <div className="flex items-center">
+                  <Checkbox name="agree" />
+                </div>
+              </div>
+            </>
           ))}
-          <div className="flex items-start my-3">
-            <div className="flex items-center h-5">
-              <Checkbox name={"consent"} id="consent" required={true} />
-            </div>
-            <div className="ml-3 text-sm">
-              <label htmlFor="consent" className="text-light text-sm">
-                I consent to Gerbil processing my personal data in order to send personalized
-                marketing material in accordance with the consent form and the privacy policy.
-              </label>
+          <div className="flex justify-end pt-5">
+            <span className="mr-2 my-auto">All Agree</span>
+            <div className="flex items-center">
+              <Checkbox name="agree" />
             </div>
           </div>
-          <div className="flex items-start my-3">
-            <div className="flex items-center h-5">
-              <Checkbox name={"consent"} id="privacy" required={true} />
-            </div>
-            <div className="ml-3 text-sm">
-              <label htmlFor="privacy" className="text-light text-sm">
-                I consent to the privacy policy.
-              </label>
-            </div>
-          </div>
-          <div className="flex justify-center">
-            <Button type="submit" variant="default" isLoading={loading}>
-              CREATE ACCOUNT
-            </Button>
-          </div>
-        </form>
-        <div className="text-center text-sm text-grey-dark mt-4">
-          <p className="text-light">By creating an account, you agree to our:</p>
-          <div className="flex space-x-4 justify-center">
-            <a href="/terms-and-conditions">TERMS OF CONDITIONS</a>{" "}
-            <span className="text-secondary">|</span>
-            <a href="/privacy-policy">PRIVACY POLICY</a>
-          </div>
-          <div className="my-3">
-            <a href="/login">ALREADY HAVE AN ACCOUNT ?</a>
+          <div className="mt-20 flex justify-between">
+            {memeber.map((item, index) => (
+              <div key={index} className="flex justify-center ">
+                <div className="border-2 p-6 bg-slate-200">
+                  <div className="flex justify-center">
+                    {item.icon && (
+                      <item.icon className="h-20 w-16 text-secondary data-[state=active]:hover:text-white data-[state=active]:text-white" />
+                    )}
+                  </div>
+                  <h3 className="text-center">{item.title}</h3>
+                  <p className="text-center">{item.description}</p>
+                  <div className="flex justify-center">
+                    <a href={item.btnLink} className="btn mt-5">
+                      {item.btnName}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-    </Layout>
+      </section>
+    </>
   );
 }

@@ -17,6 +17,7 @@ import ErrorPage from "../../pages/404";
 
 import { apolloClient, gql } from "../../apolloClient";
 import { useEffect, useState } from "react";
+import Login from "../../pages/Login";
 
 const GET_PRODUCTS = gql(`
   query ListProducts {
@@ -51,6 +52,7 @@ export default function AppContainer() {
   return (
     <Routes>
       <Route>
+        <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/wishlist" element={<Wishlist />} />

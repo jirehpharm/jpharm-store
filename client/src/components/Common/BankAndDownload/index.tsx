@@ -8,14 +8,14 @@ export default function Bank(props: IBankStats) {
   const { stats } = props;
   return (
     <div>
-      <div className="lg:max-w-6xl mx-auto pb-8">
+      <div className="lg:max-w-4xl xl:max-w-6xl mx-auto pb-8">
         <div className="grid lg:grid-cols-10">
-          <div className="flex flex-col items-center lg:col-span-4">
+          <div className="flex flex-col items-center lg:block lg:col-span-4">
             <h3 className="text-lg md:text-xl">Bank Account Number</h3>
             <h4 className="text-sm md:text-base text-[#5d5959]">185-102680-01-019</h4>
             <h4 className="text-sm md:text-base text-[#5d5959]">Account holder: Jirepharm Co., Ltd</h4>
           </div>
-          <div className="flex flex-col items-center mt-5 lg:mt-0 lg:col-span-6">
+          <div className="flex flex-col items-center lg:block mt-5 lg:mt-0 lg:col-span-6">
             <h3 className="text-lg md:text-xl">Download document for certificate</h3>
             <div className="grid md:grid-cols-2">
               {stats.map((item) => (

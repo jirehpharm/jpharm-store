@@ -3,7 +3,7 @@ import { MapPinIcon } from "@heroicons/react/24/outline";
 export default function Footer() {
   return (
     <div>
-      <footer className="ltn__footer-area bg-primary text-white pt-28">
+      <footer className="ltn__footer-area bg-primary text-white pt-12">
         <div className="flex flex-col items-center text-light">
           <p className="text-light">About US Term of Service Privacy Policy User Guide</p>
           <a href="/" className="cursor-pointer my-5">

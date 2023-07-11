@@ -6,7 +6,6 @@ import ContactNav from "./components/Common/ContactNav";
 import PrimaryNav from "./components/Common/PrimaryNav";
 import Footer from "./components/Common/Footer";
 import SecondaryNav from "./components/Common/SecondaryNav";
-import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import { AuthContext } from "./context/authContext";
 
@@ -22,7 +21,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login />} />
+
           <Route path="/forgot-password" element={<ForgotPassword />} />
 
           <Route

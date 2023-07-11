@@ -15,7 +15,9 @@ function ProductInquiry() {
                     <span>Title:</span>
                     </td>
                     <td>
+                        <div className="w-[85%]">
                     <InputField type="text" placeholder={""}/>
+                    </div>
                     </td>
                 </tr>
                 <tr>
@@ -23,14 +25,16 @@ function ProductInquiry() {
                     <span>Content:</span>
                     </td>
                     <td>
+                        <div className="w-[85%]">
                     <Textarea placeholder={""} name={""} />
+                        </div>
                     </td>
                 </tr>
             </table>
         </form>
-        <div className="flex justify-end items center my-4">
+        <div className="flex justify-end my-4">
         <Button>Done</Button>
-        <Button>Cancel</Button>
+        <Button variant="danger">Cancel</Button>
         </div>
     </div>
   )

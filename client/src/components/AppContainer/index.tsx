@@ -17,6 +17,9 @@ import ErrorPage from "../../pages/404";
 
 import { apolloClient, gql } from "../../apolloClient";
 import { useEffect, useState } from "react";
+import Register from "../../pages/Register";
+import SchoolRegister from "../../pages/SchoolRegister";
+import CompanyRegister from "../../pages/CompanyRegister";
 import Login from "../../pages/Login";
 
 const GET_PRODUCTS = gql(`
@@ -52,6 +55,9 @@ export default function AppContainer() {
   return (
     <Routes>
       <Route>
+        <Route path="/register" element={<Register />} />
+        <Route path="/school-register" element={<SchoolRegister />} />
+        <Route path="/company-register" element={<CompanyRegister />} />
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

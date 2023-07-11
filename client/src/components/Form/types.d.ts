@@ -35,4 +35,6 @@ export interface ICheckboxProps {
   className?: string;
   required?: boolean;
   name: string;
+  checked?: boolean;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }

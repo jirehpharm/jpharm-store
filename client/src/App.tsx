@@ -7,7 +7,6 @@ import PrimaryNav from "./components/Common/PrimaryNav";
 import Footer from "./components/Common/Footer";
 import SecondaryNav from "./components/Common/SecondaryNav";
 import ForgotPassword from "./pages/ForgotPassword";
-import Register from "./pages/Register";
 import { AuthContext } from "./context/authContext";
 
 import "./style/App.css";
@@ -24,7 +23,7 @@ function App() {
         <Routes>
 
           <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/register" element={<Register />} />
+
           <Route
             path="*"
             element={

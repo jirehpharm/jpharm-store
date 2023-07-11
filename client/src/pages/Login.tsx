@@ -10,6 +10,9 @@ import "../style/index.css";
 import { useLogin } from "./hooks/useLogin";
 import { AuthContext } from "../context/authContext";
 import BreadcrumbBanner from "../components/Common/BreadcrumbBanner";
+import Modal from "../components/Modal";
+import ForgotPassword from "./ForgotPassword";
+import Widgets from "../components/Products/Details/Widgets";
 
 const fields = [
   {
@@ -81,24 +84,26 @@ export default function Login() {
                         className="h-[50px] w-full"
                       />
                     ))}
-                    <a href="/forgot-password" className="">
-                      <small>Forgot Password?</small>
-                    </a>
+                    <Modal
+                      ModalTrigger={
+                        <Widgets tittle={"ID or password forgot?"} />
+                      }
+                      ModalTitle={<></>}
+                      ModalContent={<ForgotPassword />}
+                    />
                     <div>
                       <button className="w-full text-secondary p-4 border-2 border-secondary hover:text-white hover:bg-secondary" type="submit">SIGN IN</button>
                     </div>
                   </form>
                   <div className="mt-10 relative text-center">
                     <p className="z-[20] relative inline-block bg-white px-4 text-light">
-                      Don't have account? 
+                      Don't have account?
                       <a href="/register" className="text-light">
                         &nbsp; Register
                       </a>
                     </p>
-
                   </div>
                   <div className="text-center">
-
                   </div>
                 </div>
               </Layout>

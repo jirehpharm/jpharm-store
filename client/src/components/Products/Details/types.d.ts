@@ -1,5 +1,5 @@
 export interface WidgetsProps {
-  Icon: React.ReactElement | any;
+  Icon?: React.ReactElement | any;
   tittle: string;
 }
 

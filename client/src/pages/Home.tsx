@@ -17,6 +17,8 @@ import { blogDetails } from "../components/Blog/constant";
 import { statsData } from "../components/Common/Stats/constants";
 import { bestSellerData } from "../components/Home/constants";
 import OfferCard from "../components/Cards/OfferCard/OfferCard";
+import Bank from "../components/Common/BankAndDownload";
+import { bankData } from "../components/Common/BankAndDownload/constants";
 
 export default function Home() {
   const slideData = categoryData.map((item, idx: number) => <Category key={idx} Icon={item.Icon} title={item.title} />);
@@ -73,6 +75,7 @@ export default function Home() {
         bgImage={"/img/banner/N95.png"}
       />
       <TrendingBlog blogDetails={blogDetails} />
+      <Bank stats={bankData} />
       <Stats stats={statsData} />
     </div>
   );

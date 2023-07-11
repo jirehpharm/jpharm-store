@@ -1,22 +1,22 @@
 export const statsData = [
   {
     title: "Free shipping",
-    description: "On all orders over $49.00",
+    description: "Free shipping for all products",
     image: "img/icons/svg/8-trolley.svg",
   },
   {
-    title: "15 days returns",
-    description: "Moneyback guarantee",
+    title: "Easy refund",
+    description: "Not difficult to return",
     image: "img/icons/svg/9-money.svg",
   },
   {
-    title: "Secure checkout",
-    description: "Protected by Paypal",
+    title: "Secure payment",
+    description: "We consider secure payments",
     image: "img/icons/svg/10-credit-card.svg",
   },
   {
-    title: "Offer & gift here",
-    description: "On all orders over",
+    title: "Fast response",
+    description: "We are fast to respond for customer responsiveness",
     image: "img/icons/svg/11-gift-card.svg",
   },
 ];

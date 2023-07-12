@@ -11,6 +11,7 @@ import { topRated } from "../components/Cards/TopRatedProductCard/constants";
 import PopularTags from "../components/Products/PopularTags/index";
 import { popularTags } from "../components/Products/PopularTags/constants";
 import { tabsData } from "../components/Tabs/constants";
+import WriteInquiry from "../components/Products/ProductTab/WriteInquiry";
 
 export default function ProductDetails() {
   return (
@@ -32,6 +33,7 @@ export default function ProductDetails() {
         </div>
       </div>
       <RelatedProducts />
+      <WriteInquiry />
     </>
   );
 }

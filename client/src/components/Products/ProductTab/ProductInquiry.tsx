@@ -36,6 +36,10 @@ function ProductInquiry() {
         <Button>Done</Button>
         <Button variant="danger">Cancel</Button>
         </div>
+        {/* <div className="flex justify-end">
+        <Button>WriteInquiry</Button>
+        <Button className="btn-white">More</Button>
+        </div> */}
     </div>
   )
 }

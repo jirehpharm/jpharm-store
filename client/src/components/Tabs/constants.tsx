@@ -17,7 +17,8 @@ import SectionBackground from "../Common/SectionBackground";
 import AccountDetails from "../MyAccount/AccountDetails";
 import ProductDetail from "../Products/ProductTab/ProductDetail";
 import RefundInformation from "../Products/ProductTab/RefundInformation";
-import ProductInquiry from "../Products/ProductTab/ProductInquiry";
+import ShipmentInformation from "../Products/ProductTab/ShipmentInformation";
+import WriteInquiry from "../Products/ProductTab/WriteInquiry";
 
 export const tabsData: HTabsProp[] = [
   {
@@ -28,7 +29,7 @@ export const tabsData: HTabsProp[] = [
   {
     tabTitle: "Product Inquiry",
     title: "Product Inquiry",
-    content: <ProductInquiry />,
+    content: <WriteInquiry />,
   },
   {
     tabTitle: "Additional Information",
@@ -39,6 +40,11 @@ export const tabsData: HTabsProp[] = [
     tabTitle: "Reviews",
     title: "Customer Reviews",
     content: <Reviews reviewData={reviewData} />,
+  },
+  {
+    tabTitle: "Shipment Information",
+    title: "Shipment Information",
+    content: <ShipmentInformation />,
   },
   {
     tabTitle: "Refund Information",

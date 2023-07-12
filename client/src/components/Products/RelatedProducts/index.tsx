@@ -34,7 +34,7 @@ export default function index() {
     <section className="pt-10 pb-[70px] mx-auto max-w-6xl">
       <div className="relative px-4">
         <div className="relative mb-12">
-          <h4 className="border-l-2 border-secondary pl-3 mb-10">Related Products</h4>
+          <h1 className="flex justify-center mb-10">Related Products</h1>
           <Carousel slidesPerView={cardNo} spaceBetween={30} slides={content} />
         </div>
       </div>

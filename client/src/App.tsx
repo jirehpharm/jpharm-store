@@ -8,6 +8,10 @@ import Footer from "./components/Common/Footer";
 import SecondaryNav from "./components/Common/SecondaryNav";
 import ForgotPassword from "./pages/ForgotPassword";
 import { AuthContext } from "./context/authContext";
+import Bank from "./components/Common/BankAndDownload";
+import { bankData } from "./components/Common/BankAndDownload/constants";
+import Stats from "./components/Common/Stats";
+import { statsData } from "./components/Common/Stats/constants";
 
 import "./style/App.css";
 import ConventionalNav from "./components/Common/SecondaryNav/ConventionalNav";
@@ -33,6 +37,8 @@ function App() {
                 <SecondaryNav />
                 <ConventionalNav navbarData={navbarData} />
                 <AppContainer />
+                <Bank stats={bankData} />
+                <Stats stats={statsData} />
                 <Footer />
               </>
             }

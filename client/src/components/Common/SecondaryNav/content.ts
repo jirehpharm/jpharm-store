@@ -94,7 +94,7 @@ export const CategoryOptions: ICategory[] = [
   },
   {
     title: "All Products",
-    link: "#",
+    link: "/products",
     icon: BsStack,
   },
 ];

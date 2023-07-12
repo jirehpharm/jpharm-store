@@ -21,7 +21,7 @@ export default function Stats(props: IStatsData) {
                 </div>
                 <div className="flex flex-col justify-center ml-4">
                   <h4 className="text-lg">{item.title}</h4>
-                  <p  className="text-light text-sm">{item.description}</p>
+                  <p className="text-light text-sm">{item.description}</p>
                 </div>
               </div>
             )

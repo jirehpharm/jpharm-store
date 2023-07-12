@@ -101,6 +101,10 @@ export const CategoryOptions: ICategory[] = [
 
 export const navbarData: INavList = [
   {
+    title: "Home",
+    link: "/",
+  },
+  {
     title: "Login",
     link: "/login",
   },

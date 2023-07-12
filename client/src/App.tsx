@@ -6,7 +6,6 @@ import ContactNav from "./components/Common/ContactNav";
 import PrimaryNav from "./components/Common/PrimaryNav";
 import Footer from "./components/Common/Footer";
 import SecondaryNav from "./components/Common/SecondaryNav";
-import ForgotPassword from "./pages/ForgotPassword";
 import { AuthContext } from "./context/authContext";
 import Bank from "./components/Common/BankAndDownload";
 import { bankData } from "./components/Common/BankAndDownload/constants";
@@ -16,6 +15,7 @@ import { statsData } from "./components/Common/Stats/constants";
 import "./style/App.css";
 import ConventionalNav from "./components/Common/SecondaryNav/ConventionalNav";
 import { navbarData } from "./components/Common/SecondaryNav/content";
+import Login from "./pages/Login";
 
 function App() {
   const { isLoggedIn } = useContext(AuthContext);
@@ -25,9 +25,17 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-
+          <Route path="/login" element={
+            <>
+              <ContactNav />
+              <PrimaryNav />
+              <SecondaryNav />
+              <ConventionalNav navbarData={navbarData} />
+              <Login />
+              <Stats stats={statsData} />
+              <Footer />
+            </>
+          } />
           <Route
             path="*"
             element={

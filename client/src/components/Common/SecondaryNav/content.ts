@@ -94,12 +94,16 @@ export const CategoryOptions: ICategory[] = [
   },
   {
     title: "All Products",
-    link: "#",
+    link: "/products",
     icon: BsStack,
   },
 ];
 
 export const navbarData: INavList = [
+  {
+    title: "Home",
+    link: "/",
+  },
   {
     title: "Login",
     link: "/login",

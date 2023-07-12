@@ -1,13 +1,13 @@
 export default function RefundInformation() {
   return (
     <div>
-    <div className="max-w-5xl bg-white p-5 mx-auto">
-     <h5>Exchange and Return Information</h5>
-     <ul className="list-disc pl-5">
-        <li>If the value of the product is damaged due to product opening, exchange or return is not possible even within 7 days after receiving the product.</li>
-        <li>Customers must pay shipping costs for exchanges and returns due to customers change of heart(except for the product defects and delivery errors).</li>
-        <li>The price of some products may change due to manufacturer circumstance, such as new  model launches and parts price changes.</li>
-        <li>Exchange inquiries: 031-427-3851</li>
+    <div className="max-w-5xl bg-white p-3 md:p-[5px] mx-auto text-base">
+     <h5 className="text-base">Exchange and Return Information</h5>
+     <ul className="list-disc p-3 md:pl-5 text-base">
+        <li className="text-base">If the value of the product is damaged due to product opening, exchange or return is not possible even within 7 days after receiving the product.</li>
+        <li className="text-base">Customers must pay shipping costs for exchanges and returns due to customers change of heart(except for the product defects and delivery errors).</li>
+        <li className="text-base">The price of some products may change due to manufacturer circumstance, such as new  model launches and parts price changes.</li>
+        <li className="text-base">Exchange inquiries: 031-427-3851</li>
      </ul>
     </div>
     </div>

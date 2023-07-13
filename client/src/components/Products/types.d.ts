@@ -3,8 +3,8 @@ import { IProductProps } from "../Home/types";
 export interface IPaginationProps {
   pageCount: number;
   onPageChange: (event: { selected: number }) => void;
-  previousLabel: string;
-  nextLabel: string;
+  previousLabel: React.ReactElement;
+  nextLabel: React.ReactElement;
   pageClassName: string;
   pageLinkClassName: string;
   previousClassName: string;

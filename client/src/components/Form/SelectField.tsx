@@ -12,7 +12,7 @@ export default function SelectField({ selectData, handleSelect, selected, classN
       {({ open }) => (
         <>
           <div className={classNames("relative", className)}>
-            <Listbox.Button className="relative w-full text-left border-2 bg-white border-borderColor pl-5 pr-10 py-4 text-base text-light focus:outline-0  focus-visible:outine-0">
+            <Listbox.Button className="relative w-full text-left border-2 bg-white border-borderColor pl-5 pr-10 py-2 text-base text-light focus:outline-0  focus-visible:outine-0">
               <span className="block truncate text-gray-500 font-bold text-sm">{selected ? selected.label : get(selectData, "[0].label", "")}</span>
               <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                 <ArrowDownIcon className="h-5 w-5 text-secondary" aria-hidden="true" />

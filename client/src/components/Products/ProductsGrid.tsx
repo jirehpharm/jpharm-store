@@ -7,6 +7,7 @@ import { selectData } from "./constant";
 import { IProductProps } from "../Home/types";
 import { IItemsProps, IPaginatedItemsProps, IPaginationProps } from "./types";
 import { IOptionProps } from "../Form/types";
+import { ArrowLongLeftIcon, ArrowLongRightIcon } from "@heroicons/react/24/outline";
 
 function Pagination({
   pageCount,
@@ -56,9 +57,11 @@ function Pagination({
 
 function Items({ currentItems }: IItemsProps) {
   return (
-    <div className="items grid grid-cols-2 xl:grid-cols-3 gap-5">
+    <div className="items grid grid-cols-2 xl:grid-cols-4 gap-5">
       {currentItems &&
-        currentItems.map((item: IProductProps, index: number) => <ProductOverViewCard isTextCenter={false} {...item} showStars={true} key={index} />)}
+        currentItems.map((item: IProductProps, index: number) => (
+          <ProductOverViewCard isTextCenter={false} {...item} showStars={false} key={index} />
+        ))}
     </div>
   );
 }
@@ -85,14 +88,14 @@ function PaginatedItems({ items, itemsPerPage }: IPaginatedItemsProps) {
       <Pagination
         onPageChange={handlePageChange}
         pageCount={pageCount}
-        previousLabel="<<"
-        nextLabel=">>"
+        previousLabel={<ArrowLongLeftIcon width={25} height={25} />}
+        nextLabel={<ArrowLongRightIcon width={25} height={25} />}
         pageClassName="page-item"
-        pageLinkClassName="border h-8 w-8 lg:h-12 lg:w-12 text-sm lg:text-base rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
+        pageLinkClassName="shadow-[0px_0px_8px_0px_#3227C114] h-8 w-8 lg:h-12 lg:w-12 text-sm lg:text-base rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
         previousClassName="page-item"
-        previousLinkClassName="border h-8 w-8 lg:h-12 lg:w-12 text-sm lg:text-base rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
+        previousLinkClassName=" h-8 w-8 lg:h-12 lg:w-12 text-sm lg:text-base rounded-full flex justify-center items-center text-secondary font-black hover:bg-secondary hover:text-white hover:border-0"
         nextClassName="page-item"
-        nextLinkClassName="border h-8 w-8 lg:h-12 lg:w-12 text-sm lg:text-base rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
+        nextLinkClassName="h-8 w-8 lg:h-12 lg:w-12 text-sm lg:text-base rounded-full flex justify-center items-center text-secondary font-black hover:bg-secondary hover:text-white hover:border-0"
         breakLabel="..."
         breakClassName="page-item"
         breakLinkClassName="border h-8 w-8 lg:h-12 lg:w-12 text-sm lg:text-base rounded-full flex justify-center items-center text-light font-black hover:bg-secondary hover:text-white hover:border-0"
@@ -104,7 +107,7 @@ function PaginatedItems({ items, itemsPerPage }: IPaginatedItemsProps) {
   );
 }
 
-export default function ProductsGrid({ gridData }: { gridData: IProductProps[] }) {
+export default function ProductsGrid({ gridData, children }: { gridData: IProductProps[]; children: React.ReactElement<any> }) {
   const [sortedGridData, setSortedGridData] = useState(gridData);
   const [selected, setSelected] = useState<IOptionProps>();
 
@@ -133,10 +136,11 @@ export default function ProductsGrid({ gridData }: { gridData: IProductProps[] }
 
   return (
     <div className="my-10">
-      <div className="mb-10 flex justify-end">
+      <div className="mb-10 flex justify-end space-x-2">
         <SelectField selectData={selectData} handleSelect={handleSelect} selected={selected} />
+        {children}
       </div>
-      <PaginatedItems items={sortedGridData} itemsPerPage={9} />
+      <PaginatedItems items={sortedGridData} itemsPerPage={12} />
     </div>
   );
 }

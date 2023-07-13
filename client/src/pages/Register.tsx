@@ -25,17 +25,17 @@ const agree = [
   {
     title: "Terms of use",
     description:
-      "<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?</p><br/>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?<br/>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?",
+      "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?<br/>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?</p>",
   },
   {
     title: "Privacy Policy",
     description:
-      "<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?</p><br/>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?<br/>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?",
+      "<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?<br/>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?./p>",
   },
   {
     title: "SMS and Email Agree",
     description:
-      "<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?</p><br/>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?<br/>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?",
+      "<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?<br/>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nam nostrum odio fugiat iure sapiente iste esse vero incidunt optio laudantium non suscipit vel, cum eaque doloremque eum? Pariatur, ex?</p>",
   },
 ];
 

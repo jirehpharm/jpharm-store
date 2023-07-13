@@ -1,25 +1,19 @@
-import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Disclosure } from "@headlessui/react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { AiOutlineTwitter } from "react-icons/ai";
 import {
   Bars3Icon,
-  ChevronDownIcon,
   MagnifyingGlassIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { InputField } from "../../Form/InputField";
 
-import { INavList } from "./types";
+import { IPrimaryNavProps } from "./types";
 import { disclosureData } from "./content";
-import { Fragment } from "react";
 import SocialLinks from "../SocialLinks";
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
-
 interface INavProps {
-  navbarData: INavList;
+  navbarData: IPrimaryNavProps[];
 }
 
 const socialData = [
@@ -37,11 +31,12 @@ const socialData = [
   },
 ];
 
-export default function Example(props: INavProps) {
+export default function NavbarHidden(props: INavProps) {
   const { navbarData } = props;
+
   return (
-    <Disclosure as="nav" className="bg-white lg:hidden px-2">
-      <div className="flex pb-2 flex-1 border max-w-md mx-auto md:max-w-2xl lg:max-w-5xl xl:max-w-6xl m-2 items-center justify-between px-2 lg:ml-6 lg:justify-end">
+    <Disclosure as="nav" className="bg-[#F2F5F7] lg:hidden px-2">
+      <div className="bg-white px-2 flex pb-2 flex-1 border max-w-md mx-auto md:max-w-2xl lg:max-w-5xl xl:max-w-6xl items-center justify-between lg:ml-6 lg:justify-end">
         <span className="text-sm font-medium font-noto">MENU</span>
         <div className="w-full max-w-lg lg:max-w-xs"></div>
         <div className="flex items-center lg:hidden">
@@ -56,6 +51,7 @@ export default function Example(props: INavProps) {
           </Disclosure.Button>
         </div>
       </div>
+
       <Disclosure.Panel className="lg:hidden overflow-y-scroll border border-borderColor shadow-light grid max-w-86 py-12 px-5 absolute z-[999999] w-[90%] sm:w-[60%] md:w-[60%] h-screen left-0 top-0 bg-white">
         <div className="p-4 flex justify-between">
           <span className="flex items-center font-bold text-secondary">
@@ -98,68 +94,11 @@ export default function Example(props: INavProps) {
         </div>
         <div className="space-y-5 pb-3 pt-4">
           <div className="grid">
-            {navbarData?.map((nav, idx: number) =>
-              nav?.list ? (
-                <Menu as="div" className="">
-                  <div className="flex justify-between">
-                    <Menu.Button
-                      key={idx}
-                      as="a"
-                      href={nav.link}
-                      className="flex justify-between w-full items-center py-2 pl-3 pr-4 text-base font-medium text-light hover:text-secondary"
-                    >
-                      <p className="mb-0 text-light text-sm lg:text-lg hover:text-secondary">
-                        {nav.title}{" "}
-                      </p>
-                      <ChevronDownIcon
-                        className="h-5 w-5 my-auto text-gray-400"
-                        aria-hidden="true"
-                      />
-                    </Menu.Button>
-                  </div>
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="right-0 z-10 mt-2 w-full origin-top-right bg-white shadow-lg focus:outline-none">
-                      <div className="py-1 w-full">
-                        {nav?.list.map((item, idx: number) => (
-                          <Menu.Item>
-                            {({ active }) => (
-                              <a
-                                key={idx}
-                                href={item.link}
-                                className={classNames(
-                                  active
-                                    ? "bg-gray-100 text-gray-900"
-                                    : "text-light",
-                                  "block px-4 py-2 text-sm text-light font-noto lg:text-lg hover:text-secondary"
-                                )}
-                              >
-                                {item.title}
-                              </a>
-                            )}
-                          </Menu.Item>
-                        ))}
-                      </div>
-                    </Menu.Items>
-                  </Transition>
-                </Menu>
-              ) : (
-                <a
-                  href={nav.link}
-                  className="flex justify-between w-full items-center py-2 pl-3 pr-4 text-base font-medium text-light hover:text-secondary"
-                >
-                  <p className="mb-0 text-light text-sm lg:text-lg hover:text-secondary">
-                    {nav.title}
-                  </p>
-                </a>
-              )
+            {navbarData?.map((nav, idx) => (
+              <a key={idx} href={nav.link} className="text-black font-ibm text-base mb-2 ml-2">
+                <li className="list-none">{nav.title}</li>
+              </a>
+            )
             )}
           </div>
         </div>

@@ -4,7 +4,6 @@ import RelatedProducts from "../components/Products/RelatedProducts";
 
 import HorizontalTab from "../components/Tabs/HorizontalTab";
 import { tabsData } from "../components/Tabs/constants";
-import WriteInquiry from "../components/Products/ProductTab/WriteInquiry";
 
 export default function ProductDetails() {
   return (
@@ -19,7 +18,6 @@ export default function ProductDetails() {
         </div>
       </div>
       <RelatedProducts />
-      <WriteInquiry />
     </>
   );
 }

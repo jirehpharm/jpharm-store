@@ -1,47 +1,44 @@
-import BreadcrumbBanner from "../components/Common/BreadcrumbBanner";
-import Button from "../components/Common/Button";
-import { InputField } from "../components/Form/InputField";
+import { InputField } from "../../Form/InputField";
+import BreadcrumbBanner from "../BreadcrumbBanner";
+import Button from "../Button";
 
-export default function CompanyRegister() {
+export default function EditCompanyUser() {
   return (
     <div>
-      <BreadcrumbBanner title="Company Register" />
+      <BreadcrumbBanner title="Edit Company User" />
       <div className="my-24 max-w-md mx-auto md:max-w-2xl lg:max-w-5xl xl:max-w-6xl">
         <div className="mt-10 pt-10 pl-5 md:pl-10">
           <h3 className="text-base lg:text-2xl lg:pl-10 sm:pl-0">
-            Website User Information Register
+            Enter site usage information
           </h3>
         </div>
         <div className="mt-1 pl-5 lg:pl-10">
           <div className="sm:grid grid-cols-2 text-center border border-gray-400">
             <h5 className="bg-slate-200 text-base lg:text-lg md:max-w-[310px] p-2 my-auto">
-              Type of User
+              Membership type
             </h5>
-            <div className="text-center md:text-left text-base lg:text-lg my-auto md:pl-10 text-primary">
+            <div className="text-center md:text-left text-base lg:text-lg my-auto mx-auto md:pl-10 text-primary">
               <strong>Company Member</strong>
-            </div>
-          </div>
-
-          <div className="sm:grid grid-cols-2 border border-gray-400">
-            <h5 className="bg-slate-200 text-center py-10 text-base lg:text-lg md:w-[310px] mb-0 ">
-              ID
-            </h5>
-            <div className="md:pl-1 text-center md:text-left text-light">
-              English,number._ only available, You need to put more than 3
-              <div className="w-[52%] mx-auto">
-                <InputField
-                  type="text"
-                  name="ID"
-                  placeholder="ID"
-                  className="mb-2 h-[50px] w-full"
-                />
-              </div>
             </div>
           </div>
 
           <div className="sm:grid grid-cols-2 text-center border border-gray-400">
             <h5 className="bg-slate-200 md:w-[310px] mb-0 py-5 text-base lg:text-lg">
-              Password*
+              ID
+            </h5>
+            <div className="w-[80%] md:w-[50%] mx-auto my-2">
+              <InputField
+                type="text"
+                name="ID"
+                placeholder={""}
+                className="mt-2 h-[50px] w-full"
+              />
+            </div>
+          </div>
+
+          <div className="sm:grid grid-cols-2 text-center border border-gray-400">
+            <h5 className="bg-slate-200 md:w-[310px] mb-0 py-5 text-base lg:text-lg">
+              Password
             </h5>
             <div className="w-[80%] md:w-[50%] mx-auto my-2">
               <InputField
@@ -55,7 +52,7 @@ export default function CompanyRegister() {
 
           <div className="sm:grid grid-cols-2 text-center border border-gray-400">
             <h5 className="md:w-[310px] bg-slate-200 mb-0 py-5 text-base lg:text-lg">
-              Password Check*
+              Verify Password
             </h5>
             <div className="w-[80%] md:w-[50%] mx-auto">
               <InputField
@@ -70,13 +67,13 @@ export default function CompanyRegister() {
 
         <div className="mt-10 pt-10 pl-5 md:pl-10">
           <h3 className="text-base lg:text-2xl lg:pl-10 sm:pl-0">
-            User Information
+            Enter Member Information
           </h3>
           <div className="mt-1">
             <div className="border border-gray-400">
               <div className="sm:grid grid-cols-2 text-center border border-gray-400">
                 <h5 className="md:w-[310px] bg-slate-200 mb-0 py-5 text-base lg:text-lg">
-                  Name*
+                  Name
                 </h5>
                 <div className="w-[80%] md:w-[50%] mx-auto">
                   <InputField
@@ -249,7 +246,7 @@ export default function CompanyRegister() {
                 <h5 className="mb-0 py-5 md:w-[310px] bg-slate-200 text-base lg:text-lg">
                   Bussiness Registration
                 </h5>
-                <div className="lg:grid grid-cols-2">
+                <div className="xl:grid xl:grid-cols-2">
                   <div className="w-[80%] md:w-[50%] mx-auto">
                     <InputField
                       type="file"
@@ -363,33 +360,10 @@ export default function CompanyRegister() {
                     </div>
                   </div>
                 </div>
-                <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-                  <h5 className="mb-0 py-5 md:w-[310px] bg-slate-200 text-base lg:text-lg">
-                    Privacy Open
-                  </h5>
-                  <div className="my-auto">
-                    <div className="flex sm:flex-wrap w-[10%] h-[10%] md:w-full ml-10 mx-auto">
-                      <InputField
-                        type="radio"
-                        name="Privacy Open"
-                        placeholder={""}
-                        className="my-2 p-[0.75rem] pr-0 pl-0 pb-1"
-                      />
-                      <label className="pl-2 pr-3 my-auto">Yes</label>
-                      <InputField
-                        type="radio"
-                        name="Privacy Open"
-                        placeholder={""}
-                        className="my-2 p-[0.75rem] w-5 h-5  pr-0 pl-0 pb-1"
-                      />
-                      <label className="pl-2 my-auto">No</label>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
-            <div className="mt-10 pt-10 flex justify-center">
-              <Button className="btn">Register</Button>
+            <div className="mt-10 pt-10 flex justify-center pb-[50%]">
+              <Button className="btn">Save</Button>
               <Button className="btn" variant="danger">
                 Cancel
               </Button>

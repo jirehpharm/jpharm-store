@@ -1,47 +1,44 @@
-import BreadcrumbBanner from "../components/Common/BreadcrumbBanner";
-import Button from "../components/Common/Button";
-import { InputField } from "../components/Form/InputField";
+import { InputField } from "../../Form/InputField";
+import BreadcrumbBanner from "../BreadcrumbBanner";
+import Button from "../Button";
 
-export default function CompanyRegister() {
+export default function EditSchoolUser() {
   return (
     <div>
-      <BreadcrumbBanner title="Company Register" />
+      <BreadcrumbBanner title="Edit School User" />
       <div className="my-24 max-w-md mx-auto md:max-w-2xl lg:max-w-5xl xl:max-w-6xl">
         <div className="mt-10 pt-10 pl-5 md:pl-10">
           <h3 className="text-base lg:text-2xl lg:pl-10 sm:pl-0">
-            Website User Information Register
+            Enter site usage information
           </h3>
         </div>
         <div className="mt-1 pl-5 lg:pl-10">
           <div className="sm:grid grid-cols-2 text-center border border-gray-400">
             <h5 className="bg-slate-200 text-base lg:text-lg md:max-w-[310px] p-2 my-auto">
-              Type of User
+              Membership type
             </h5>
-            <div className="text-center md:text-left text-base lg:text-lg my-auto md:pl-10 text-primary">
-              <strong>Company Member</strong>
-            </div>
-          </div>
-
-          <div className="sm:grid grid-cols-2 border border-gray-400">
-            <h5 className="bg-slate-200 text-center py-10 text-base lg:text-lg md:w-[310px] mb-0 ">
-              ID
-            </h5>
-            <div className="md:pl-1 text-center md:text-left text-light">
-              English,number._ only available, You need to put more than 3
-              <div className="w-[52%] mx-auto">
-                <InputField
-                  type="text"
-                  name="ID"
-                  placeholder="ID"
-                  className="mb-2 h-[50px] w-full"
-                />
-              </div>
+            <div className="text-center mx-auto md:text-left text-base lg:text-lg my-auto md:pl-10 text-primary">
+              <strong>School Member</strong>
             </div>
           </div>
 
           <div className="sm:grid grid-cols-2 text-center border border-gray-400">
             <h5 className="bg-slate-200 md:w-[310px] mb-0 py-5 text-base lg:text-lg">
-              Password*
+              ID
+            </h5>
+            <div className="w-[80%] md:w-[50%] mx-auto my-2">
+              <InputField
+                type="text"
+                name="ID"
+                placeholder={""}
+                className="mt-2 h-[50px] w-full"
+              />
+            </div>
+          </div>
+
+          <div className="sm:grid grid-cols-2 text-center border border-gray-400">
+            <h5 className="bg-slate-200 md:w-[310px] mb-0 py-5 text-base lg:text-lg">
+              Password
             </h5>
             <div className="w-[80%] md:w-[50%] mx-auto my-2">
               <InputField
@@ -55,7 +52,7 @@ export default function CompanyRegister() {
 
           <div className="sm:grid grid-cols-2 text-center border border-gray-400">
             <h5 className="md:w-[310px] bg-slate-200 mb-0 py-5 text-base lg:text-lg">
-              Password Check*
+              Password Check
             </h5>
             <div className="w-[80%] md:w-[50%] mx-auto">
               <InputField
@@ -70,18 +67,18 @@ export default function CompanyRegister() {
 
         <div className="mt-10 pt-10 pl-5 md:pl-10">
           <h3 className="text-base lg:text-2xl lg:pl-10 sm:pl-0">
-            User Information
+            Enter member information
           </h3>
           <div className="mt-1">
             <div className="border border-gray-400">
               <div className="sm:grid grid-cols-2 text-center border border-gray-400">
                 <h5 className="md:w-[310px] bg-slate-200 mb-0 py-5 text-base lg:text-lg">
-                  Name*
+                  name
                 </h5>
                 <div className="w-[80%] md:w-[50%] mx-auto">
                   <InputField
                     type="text"
-                    name="Name"
+                    name="name"
                     placeholder={""}
                     className="my-2 h-[50px] w-full"
                   />
@@ -104,12 +101,12 @@ export default function CompanyRegister() {
 
               <div className=" sm:grid grid-cols-2 text-center border border-gray-400">
                 <h5 className="bg-slate-200 md:w-[310px] mb-0 py-5 text-base lg:text-lg">
-                  Email for Tax
+                  Tax invoice issuance email
                 </h5>
                 <div className="w-[80%] md:w-[50%] mx-auto">
                   <InputField
                     type="text"
-                    name="Email for Tax"
+                    name="Tax invoice email"
                     placeholder={""}
                     className="my-2 h-[50px] w-full"
                   />
@@ -146,12 +143,12 @@ export default function CompanyRegister() {
 
               <div className="sm:grid grid-cols-2 text-center border border-gray-400">
                 <h5 className="mb-0 py-5 md:w-[310px] bg-slate-200 text-base lg:text-lg">
-                  Company Name
+                  School Name
                 </h5>
                 <div className="w-[80%] md:w-[50%] mx-auto">
                   <InputField
                     type="text"
-                    name="Company Name"
+                    name="School Name"
                     placeholder={""}
                     className="my-2 h-[50px] w-full"
                   />
@@ -160,12 +157,12 @@ export default function CompanyRegister() {
 
               <div className="sm:grid grid-cols-2 text-center border border-gray-400">
                 <h5 className="mb-0 py-5 md:w-[310px] bg-slate-200 text-base lg:text-lg">
-                  Company Register Number
+                  School Original Number
                 </h5>
                 <div className="w-[80%] md:w-[50%] mx-auto">
                   <InputField
                     type="number"
-                    name="Company Original Number"
+                    name="School Original Number"
                     placeholder={""}
                     className="my-2 h-[50px] w-full"
                   />
@@ -180,20 +177,6 @@ export default function CompanyRegister() {
                   <InputField
                     type="text"
                     name="Representative Name"
-                    placeholder={""}
-                    className="my-2 h-[50px] w-full"
-                  />
-                </div>
-              </div>
-
-              <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-                <h5 className="mb-0 py-5 md:w-[310px] text-base lg:text-lg  bg-slate-200">
-                  Department
-                </h5>
-                <div className="w-[80%] md:w-[50%] mx-auto">
-                  <InputField
-                    type="text"
-                    name="Department"
                     placeholder={""}
                     className="my-2 h-[50px] w-full"
                   />
@@ -246,14 +229,42 @@ export default function CompanyRegister() {
               </div>
 
               <div className="sm:grid grid-cols-2 text-center border border-gray-400">
+                <h5 className="mb-0 py-5 md:w-[310px] text-base lg:text-lg  bg-slate-200">
+                  Department
+                </h5>
+                <div className="py-2">
+                  <div className="flex flex-wrap w-[20%] h-[20%] md:w-full ml-10 mx-auto">
+                    <InputField
+                      type="radio"
+                      name="Department"
+                      placeholder={""}
+                      className="my-2 pl-0 pr-0 pb-1"
+                    />
+                    <label className="flex xs:w-full pl-2 md:pr-3 my-auto text-sm md:text-base lg:text-lg">
+                      Administrative office
+                    </label>
+                    <InputField
+                      type="radio"
+                      name="Department"
+                      placeholder={""}
+                      className="my-2 p-[0.75rem] pr-0 pl-0 pb-1"
+                    />
+                    <label className="flex pl-2 md:pr-3 my-auto text-sm md:text-base lg:text-lg">
+                      Health Room
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div className="sm:grid grid-cols-2 text-center border border-gray-400">
                 <h5 className="mb-0 py-5 md:w-[310px] bg-slate-200 text-base lg:text-lg">
-                  Bussiness Registration
+                  Unique Identification number
                 </h5>
                 <div className="lg:grid grid-cols-2">
                   <div className="w-[80%] md:w-[50%] mx-auto">
                     <InputField
                       type="file"
-                      name="Bussiness Registration"
+                      name="Unique Identification number"
                       placeholder={""}
                       className="my-2 h-[50px] w-full pt-2"
                     />
@@ -269,7 +280,7 @@ export default function CompanyRegister() {
                   <div className="w-[80%] md:w-[50%] mx-auto">
                     <InputField
                       type="file"
-                      name="Nurse Certificate Number"
+                      name="NurseCertificateNumber"
                       placeholder={""}
                       className="my-2 h-[50px] w-full pt-2"
                     />
@@ -307,13 +318,13 @@ export default function CompanyRegister() {
                   process your membership.
                 </li>
                 <li className="text-base lg:text-lg">
-                  {"*"} For the other inquiries, please call 031-427-3851 :)
+                  {"*"} For the other inquiries, please call 031-427-3851{" :)"}
                 </li>
               </ul>
             </div>
 
             <h3 className="text-base lg:text-2xl lg:pl-10 pt-10 sm:pl-0">
-              Etc. Personal Settings
+              Other Personalization
             </h3>
             <div className="mt-1">
               <div className="border border-gray-400">
@@ -363,33 +374,10 @@ export default function CompanyRegister() {
                     </div>
                   </div>
                 </div>
-                <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-                  <h5 className="mb-0 py-5 md:w-[310px] bg-slate-200 text-base lg:text-lg">
-                    Privacy Open
-                  </h5>
-                  <div className="my-auto">
-                    <div className="flex sm:flex-wrap w-[10%] h-[10%] md:w-full ml-10 mx-auto">
-                      <InputField
-                        type="radio"
-                        name="Privacy Open"
-                        placeholder={""}
-                        className="my-2 p-[0.75rem] pr-0 pl-0 pb-1"
-                      />
-                      <label className="pl-2 pr-3 my-auto">Yes</label>
-                      <InputField
-                        type="radio"
-                        name="Privacy Open"
-                        placeholder={""}
-                        className="my-2 p-[0.75rem] w-5 h-5  pr-0 pl-0 pb-1"
-                      />
-                      <label className="pl-2 my-auto">No</label>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
-            <div className="mt-10 pt-10 flex justify-center">
-              <Button className="btn">Register</Button>
+            <div className="mt-10 pt-10 flex justify-center pb-[50%]">
+              <Button className="btn">Save</Button>
               <Button className="btn" variant="danger">
                 Cancel
               </Button>

@@ -236,7 +236,7 @@ export default function SchoolRegister() {
                   Department
                 </h5>
                 <div className="py-2">
-                  <div className="flex sm:flex-wrap w-[20%] h-[20%] md:w-full ml-10 mx-auto">
+                  <div className="flex flex-wrap w-[20%] h-[20%] md:w-full ml-10 mx-auto">
                     <InputField
                       type="radio"
                       name="Department"
@@ -267,7 +267,7 @@ export default function SchoolRegister() {
                   <div className="w-[80%] md:w-[50%] mx-auto">
                     <InputField
                       type="file"
-                      name="Representative Name"
+                      name="NurseOriginalNUmber"
                       placeholder={""}
                       className="my-2 h-[50px] w-full pt-2"
                     />
@@ -283,7 +283,7 @@ export default function SchoolRegister() {
                   <div className="w-[80%] md:w-[50%] mx-auto">
                     <InputField
                       type="file"
-                      name="Representative Name"
+                      name="NurseCertificateNumber"
                       placeholder={""}
                       className="my-2 h-[50px] w-full pt-2"
                     />

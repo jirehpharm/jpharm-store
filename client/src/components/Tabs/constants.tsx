@@ -19,6 +19,7 @@ import ProductDetail from "../Products/ProductTab/ProductDetail";
 import RefundInformation from "../Products/ProductTab/RefundInformation";
 import ShipmentInformation from "../Products/ProductTab/ShipmentInformation";
 import WriteInquiry from "../Products/ProductTab/WriteInquiry";
+import { InquiryData } from "../Products/ProductTab/constant";
 
 export const tabsData: HTabsProp[] = [
   {
@@ -29,7 +30,7 @@ export const tabsData: HTabsProp[] = [
   {
     tabTitle: "Product Inquiry",
     title: "Product Inquiry",
-    content: <WriteInquiry />,
+    content: <WriteInquiry data={InquiryData} />,
   },
   {
     tabTitle: "Additional Information",

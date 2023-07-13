@@ -28,7 +28,7 @@ const HorizontalTab = (props: TabProps) => {
         {tabsData?.map((item, idx) => (
           <Tabs.Content
             key={idx}
-            className="mt-10 p-10 bg-white rounded-b-md outline-none text-light"
+            className="mt-10 p-3 md:p-10 bg-white rounded-b-md outline-none text-light"
             value={item.tabTitle}
           >
             {item.content}

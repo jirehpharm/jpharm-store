@@ -15,3 +15,9 @@ export interface ITableProp {
   name: string;
   value: string;
 }
+
+export interface IInquiryProps {
+  question: string;
+  content: string;
+  answer: string;
+}

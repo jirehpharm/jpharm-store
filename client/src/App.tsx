@@ -7,7 +7,7 @@ import PrimaryNav from "./components/Common/PrimaryNav";
 import Footer from "./components/Common/Footer";
 import SecondaryNav from "./components/Common/SecondaryNav";
 import Bank from "./components/Common/BankAndDownload";
-import NavbarHidden from "./components/Common/NavBar/NavbarHidden";
+import NavbarMobile from "./components/Common/NavBar/NavbarMobile";
 import Stats from "./components/Common/Stats";
 import NavbarContact from "./components/Common/NavBar/NavbarContact";
 import ConventionalNav from "./components/Common/SecondaryNav/ConventionalNav";
@@ -22,7 +22,6 @@ import "./style/App.css";
 function App() {
   const { isLoggedIn } = useContext(AuthContext);
   console.log("isLoggedIn: ", isLoggedIn);
-  ;
   return (
     <>
       <BrowserRouter>
@@ -42,7 +41,7 @@ function App() {
                 <>
                   <NavbarContact />
                   <NavbarPrimary navbarData={PrimaryNavData} />
-                  <NavbarHidden navbarData={PrimaryNavData} />
+                  <NavbarMobile navbarData={PrimaryNavData} />
                 </>}
                 <AppContainer />
                 <Bank stats={bankData} />

@@ -31,7 +31,7 @@ const socialData = [
   },
 ];
 
-export default function NavbarHidden(props: INavProps) {
+export default function NavbarMobile(props: INavProps) {
   const { navbarData } = props;
 
   return (

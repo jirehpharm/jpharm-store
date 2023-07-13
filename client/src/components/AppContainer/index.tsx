@@ -22,6 +22,8 @@ import SchoolRegister from "../../pages/SchoolRegister";
 import CompanyRegister from "../../pages/CompanyRegister";
 import Login from "../../pages/Login";
 import MyPage from "../Common/MyPage/MyPage";
+import EditCompanyUser from "../Common/MyPage/EditCompanyUser";
+import EditSchoolUser from "../Common/MyPage/EditSchoolUser";
 
 const GET_PRODUCTS = gql(`
   query ListProducts {
@@ -60,6 +62,8 @@ export default function AppContainer() {
         <Route path="/school-register" element={<SchoolRegister />} />
         <Route path="/company-register" element={<CompanyRegister />} />
         <Route path="/my-page" element={<MyPage />} />
+        <Route path="/edit-schoolUser" element={<EditSchoolUser />} />
+        <Route path="/edit-companyUser" element={<EditCompanyUser />} />
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

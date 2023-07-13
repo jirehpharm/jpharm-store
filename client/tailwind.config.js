@@ -11,6 +11,7 @@ export default {
         grayText: "#4F4D4D",
         sectionColor: "#F2F6F7",
         borderColor: "#E4ECF2",
+        input: "#ECECEC",
       },
       backgroundColor: {
         background: "#f3f4f6",

@@ -81,7 +81,7 @@ export default function CompanyRegister() {
                 <div className="w-[80%] md:w-[50%] mx-auto">
                   <InputField
                     type="text"
-                    name="Type of User"
+                    name="Name"
                     placeholder={""}
                     className="my-2 h-[50px] w-full"
                   />
@@ -253,7 +253,7 @@ export default function CompanyRegister() {
                   <div className="w-[80%] md:w-[50%] mx-auto">
                     <InputField
                       type="file"
-                      name="Representative Name"
+                      name="Bussiness Registration"
                       placeholder={""}
                       className="my-2 h-[50px] w-full pt-2"
                     />
@@ -269,7 +269,7 @@ export default function CompanyRegister() {
                   <div className="w-[80%] md:w-[50%] mx-auto">
                     <InputField
                       type="file"
-                      name="Representative Name"
+                      name="Nurse Certificate Number"
                       placeholder={""}
                       className="my-2 h-[50px] w-full pt-2"
                     />

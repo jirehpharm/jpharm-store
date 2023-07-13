@@ -19,7 +19,9 @@ export default function WhishListProducts(props: IWhishList) {
           {/* column 1 */}
           <div>
             <div className="bg-slate-300 border border-slate-200">
-              <h5 className="py-3 mx-5 text-base text-center mb-0">Image</h5>
+              <h5 className="py-3 mx-5 text-sm sm:text-base md:text-lg text-center mb-0">
+                Image
+              </h5>
             </div>
             {whishlist?.map((item, index) => (
               <div key={index} className="border border-slate-200 h-24">
@@ -29,7 +31,7 @@ export default function WhishListProducts(props: IWhishList) {
           </div>
           <div>
             <div className="bg-slate-300 border border-slate-200">
-              <h5 className="py-3 sm:mx-5 sm:flex text-base text-center mb-0">
+              <h5 className="py-3 sm:mx-5 text-sm sm:text-base md:text-lg text-center mb-0">
                 Product Name
               </h5>
             </div>

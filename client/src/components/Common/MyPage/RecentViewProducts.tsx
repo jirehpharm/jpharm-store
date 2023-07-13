@@ -16,7 +16,7 @@ export default function RecentViewProducts(props: {
         <div className="overflow-x-auto grid grid-cols-2 border-t-4 border-slate-500">
           <div className="">
             <div className="bg-slate-300">
-              <h5 className="py-3 sm:mx-5 sm:flex text-base text-center mb-0">
+              <h5 className="py-3 mx-5 text-sm sm:text-base md:text-lg text-center mb-0">
                 Image
               </h5>
             </div>
@@ -28,7 +28,7 @@ export default function RecentViewProducts(props: {
           </div>
           <div>
             <div className="bg-slate-300">
-              <h5 className="py-3 sm:mx-5 sm:flex text-base text-center mb-0">
+              <h5 className="py-3 sm:mx-5 text-sm sm:text-base md:text-lg text-center mb-0">
                 Product Name
               </h5>
             </div>

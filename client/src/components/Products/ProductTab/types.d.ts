@@ -1,3 +1,4 @@
+import { IInquiryProps } from './types.d';
 export interface ICommentsProps {
   image: string;
   name: string;

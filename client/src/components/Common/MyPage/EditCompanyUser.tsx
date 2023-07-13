@@ -291,19 +291,17 @@ export default function EditcompanyUser() {
                 Etc.,
               </h5>
               <div className="flex p-2">
-                <div className="sm:flex my-2 mx-auto items-center">
-                  <div className="pl-2 border border-slate-200 h-[40px] mx-auto xl:ml-6 md:ml-8 bg-[#ECECEC]">
-                    <label htmlFor="fileInput" className="file-label">
-                      Attachment
-                      <InputField
-                        type="file"
-                        name="Etc."
-                        className="my-2 h-[23px] w-[116.27px] pt-2 opacity-0 mx-auto  top-[-34px]"
-                        placeholder={""}
-                      />
-                    </label>
-                  </div>
-                </div>
+                <div className="pl-2 border border-slate-200 h-[40px] mx-auto my-auto md:ml-8 lg:ml-16 xl:ml-20 bg-[#ECECEC]">
+                  <label htmlFor="fileInput" className="file-label">
+                    <span className="">Attachment</span>
+                    <InputField
+                      type="file"
+                      name="Etc."
+                      className=" h-[23px] w-[116.27px] my-auto pt-2 opacity-0 top-[-34px]"
+                      placeholder={""}
+                    />
+                  </label>
+                </div>{" "}
               </div>
               <div className="pl-10 md:pl-10 my-auto text-center p-2">
                 <Button className="btn h-12 w-36">Add</Button>

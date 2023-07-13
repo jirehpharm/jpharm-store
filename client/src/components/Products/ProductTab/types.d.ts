@@ -1,3 +1,4 @@
+import { IInquiryProps } from './types.d';
 export interface ICommentsProps {
   image: string;
   name: string;
@@ -14,4 +15,10 @@ export interface IReviewsProp {
 export interface ITableProp {
   name: string;
   value: string;
+}
+
+export interface IInquiryProps {
+  question: string;
+  content: string;
+  answer: string;
 }

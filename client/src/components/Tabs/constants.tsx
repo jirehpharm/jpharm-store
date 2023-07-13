@@ -17,18 +17,29 @@ import SectionBackground from "../Common/SectionBackground";
 import AccountDetails from "../MyAccount/AccountDetails";
 import ProductDetail from "../Products/ProductTab/ProductDetail";
 import RefundInformation from "../Products/ProductTab/RefundInformation";
-import ProductInquiry from "../Products/ProductTab/ProductInquiry";
+import ShipmentInformation from "../Products/ProductTab/ShipmentInformation";
+import WriteInquiry from "../Products/ProductTab/WriteInquiry";
+import { InquiryData } from "../Products/ProductTab/constant";
 
 export const tabsData: HTabsProp[] = [
   {
     tabTitle: "Description",
     title: "Description",
-    content: <ProductDetail />
+    content: <ProductDetail productData={`
+    <h4 class="md:text-2xl">Viverra a consectectur</h4>
+      <p class="md:p-[3px] text-sm md:text-base">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+      <h4 class="md:text-2xl">More Details</h4>
+      <ul class="list-disc pl-5">
+        <li class="md:p-[3px] text-sm md:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li class="md:p-[3px] text-sm md:text-base">Nulla non ex vitae nisi ornare venenatis.</li>
+        <li class="md:p-[3px] text-sm md:text-base" >Mauris viverra purus id consectetur facilisis.</li>
+        <li class="md:p-[3px] text-sm md:text-base">Mauris fringilla velit eget nunc mollis commodo.</li>
+      </ul>`} />
   },
   {
     tabTitle: "Product Inquiry",
     title: "Product Inquiry",
-    content: <ProductInquiry />,
+    content: <WriteInquiry data={InquiryData} />,
   },
   {
     tabTitle: "Additional Information",
@@ -41,9 +52,23 @@ export const tabsData: HTabsProp[] = [
     content: <Reviews reviewData={reviewData} />,
   },
   {
+    tabTitle: "Shipment Information",
+    title: "Shipment Information",
+    content: <ShipmentInformation shipmentData={`
+    <p className="text-sm md:text-base">If shipping information is not entered separately, it would be appreciated if you check the product information or contact us separately</p>`} />,
+  },
+  {
     tabTitle: "Refund Information",
     title: "Refund Information",
-    content: <RefundInformation />,
+    content: <RefundInformation refundData={`
+    <h4 class="md:text-2xl mb-1">Exchange and Return Information</h4>
+          <ul class="list-disc p-3 md:pl-5 text-lg font-normal">
+            <li class="text-sm md:text-base">Customers must pay shipping costs for exchanges and returns due to customers change of heart(except for the product defects and delivery errors).</li>
+            <li class="text-sm md:text-base">If the value of the product is damaged due to product opening, exchange or return is not possible even within 7 days after receiving the product.</li>
+            <li class="text-sm md:text-base">The price of some products may change due to manufacturer circumstance, such as new  model launches and parts price changes.</li>
+            <li class="text-sm md:text-base">Exchange inquiries: 031-427-385</li>
+          </ul>
+          `} />,
   },
 ];
 

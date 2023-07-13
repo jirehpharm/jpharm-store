@@ -31,17 +31,17 @@ const WriteInquiry = (props: IInquiry) => {
             {data?.map((item, idx) => (
               <div key={idx} className="mb-10">
                 <li>
-                  <h6 className="text-base font-normal mb-0">{item.question}</h6>
+                  <h6 className="text-sm md:text-base mb-0">{item.question}</h6>
                 </li>
-                <p className="text-xs my-2">Jire Middle School &nbsp; <span className="font-normal text-xs">Answered</span></p>
+                <p className="text-xs my-2">Jire Middle School &nbsp; <span className="text-xs">Answered</span></p>
                 <div className="bg-[#f3f3f3] p-3 sm:w-">
-                  <h6 className="font-normal text-base">Inquiry Content</h6>
+                  <h6 className="text-sm md:text-base">Inquiry Content</h6>
                   <div className="mb-4">
-                    <p className="mb-1 text-base font-normal">{item.content}</p>
+                    <p className="mb-1 text-sm md:text-base">{item.content}</p>
                   </div>
                   <div className="border border-white"></div>
-                  <h6 className="pt-3 text-base font-normal">Answer</h6>
-                  <p className="font-normal text-base">{item.answer}</p>
+                  <h6 className="pt-3 text-sm md:text-base">Answer</h6>
+                  <p className="text-sm md:text-base">{item.answer}</p>
                 </div>
               </div>
             ))}

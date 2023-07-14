@@ -24,6 +24,7 @@ import Login from "../../pages/Login";
 import MyPage from "../Common/MyPage/MyPage";
 import EditCompanyUser from "../Common/MyPage/EditCompanyUser";
 import EditSchoolUser from "../Common/MyPage/EditSchoolUser";
+import InquiryWrite from "../../pages/InquiryWrite";
 
 const GET_PRODUCTS = gql(`
   query ListProducts {
@@ -59,6 +60,7 @@ export default function AppContainer() {
     <Routes>
       <Route>
         <Route path="/register" element={<Register />} />
+        <Route path="/inquiry-write" element={<InquiryWrite />} />
         <Route path="/school-register" element={<SchoolRegister />} />
         <Route path="/company-register" element={<CompanyRegister />} />
         <Route path="/my-page" element={<MyPage />} />

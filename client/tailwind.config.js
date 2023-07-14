@@ -6,12 +6,11 @@ export default {
       colors: {
         primary: "#071c1f",
         secondary: "#46CEB6;",
-        danger: "#f44336",
+        danger: "#FF9494",
         light: "#657984",
         grayText: "#4F4D4D",
         sectionColor: "#F2F6F7",
         borderColor: "#E4ECF2",
-        input: "#ECECEC",
       },
       backgroundColor: {
         background: "#f3f4f6",

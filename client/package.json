@@ -13,6 +13,9 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.15",
+    "@ckeditor/ckeditor5-basic-styles": "^38.1.1",
+    "@ckeditor/ckeditor5-build-classic": "^38.1.1",
+    "@ckeditor/ckeditor5-react": "^6.1.0",
     "@coreui/react": "^5.0.0-alpha.0",
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.18",
@@ -37,6 +40,7 @@
     "tailwind-scrollbar": "^3.0.4"
   },
   "devDependencies": {
+    "@ckeditor/ckeditor5-alignment": "^38.1.1",
     "@types/lodash": "^4.14.195",
     "@types/node": "^20.2.5",
     "@types/react": "^18.0.37",

@@ -11,7 +11,7 @@ export default function BreadcrumbBanner(props: IBreadcrumbProps) {
     <div
       className={`bg-[#F2F5F7] py-28`}
     >
-      <div className="lg:max-w-6xl mx-auto">
+      <div className="max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-6xl mx-auto">
         <div className="mx-4">
           <h1>{title}</h1>
           <div>

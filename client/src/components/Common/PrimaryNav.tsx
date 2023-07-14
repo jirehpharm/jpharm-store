@@ -18,11 +18,18 @@ export default function PrimaryNav(): JSX.Element {
   return (
     <div className="px-5">
       <div className="mx-auto max-w-6xl lg:flex flex-row justify-between py-2 hidden">
-        <div className="flex items-center">
-          <a href="/" className="cursor-pointer">
-            <div className="w-[200px]">
+        <div>
+          <a href="/" className="flex items-center space-x-4 cursor-pointer">
+            <div className="w-[45px] shadow-lg">
               <img
-                src="full_logo.png"
+                src="logo1.png"
+                alt="logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="w-[150px] shadow-lg">
+              <img
+                src="logo2.png"
                 alt="logo"
                 className="w-full h-full object-contain"
               />
@@ -36,7 +43,7 @@ export default function PrimaryNav(): JSX.Element {
                 placeholder={"Search here..."}
                 type="search"
                 Icon={MagnifyingGlassIcon}
-                className="bg-[#f2f2f2] h-[30px] lg:w-[750px] xl:w-[920px] shadow-lg"
+                className="bg-[#F2F2F2] h-[30px] lg:w-[750px] xl:w-[900px] shadow-lg"
               />
             </div>
           </form>

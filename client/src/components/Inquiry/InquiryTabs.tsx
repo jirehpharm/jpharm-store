@@ -10,7 +10,7 @@ export const InquiryTabs = (props: TabProps) => {
   const { tabsData } = props;
   return (
     <div className="mx-auto max-w-6xl">
-      <div className="mt-24 mb-52">0
+      <div className="mt-24 mb-52">
         <Tabs.Root
           className="flex flex-col mt-4"
           defaultValue={get(tabsData, "0.tabTitle")}

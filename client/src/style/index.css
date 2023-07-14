@@ -351,7 +351,7 @@ ol li {
 }
 
 .swiper-pagination-bullet-active {
-  @apply bg-secondary !important;
+  @apply bg-secondary;
 }
 
 .sub-dropdown ul {
@@ -372,4 +372,8 @@ ol li {
 
 .paginationActive a {
   @apply text-white bg-secondary border-0;
+}
+
+.ck-content {
+  height: 200px;
 }

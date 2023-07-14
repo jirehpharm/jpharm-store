@@ -1,4 +1,3 @@
-import Button from "../Button";
 import { IRecentlyViewedProps } from "./types";
 
 export default function RecentViewProducts(props: {

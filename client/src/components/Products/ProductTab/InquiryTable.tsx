@@ -3,55 +3,51 @@ import CKEditors from "../../Common/CKEditors";
 
 export default function InquiryTable() {
     return (
-        <div>
-            <table className="flex lg:m-auto w-[500px] lg:w-[900px] ml-4 md:ml-[50px] md:w-[500px]">
-                <thead>
-                    <tr className="border border-slate-400">
-                        <td className="bg-[#D6D6D6] md:w-[250px] h-[50px] text-[15px]">
-                            Classification</td>
-                        <td className="border border-slate-400">
-                            <select className="m-2">
-                                <option>Choose</option>
-                                <option>Order</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr className="border border-slate-400">
-                        <td className="bg-[#D6D6D6] text-[15px]">Email</td>
-                        <td className="sm:flex border border-slate-400">
-                            <div className="w-[240px]">
-                                <input type="email" className="m-2" />
-                            </div>
-                            <input type="checkbox" value="mail" className="my-auto" /><span className="text-[15px] my-auto mx-2">Send Answer to Email</span>
-                        </td>
-                    </tr>
-                    <tr className="border border-slate-400">
-                        <td className="bg-[#D6D6D6] text-[15px]">Title</td>
-                        <td className="border border-slate-400">
-                            <div>
-                                <input type="text" className="m-2" placeholder={""} />
-                            </div>
-                        </td>
-                    </tr>
-                    <tr className="border border-slate-400">
-                        <td className="bg-[#D6D6D6] text-[15px]">Content</td>
-                        <td className="border border-slate-400">
-                            <CKEditors />
-                        </td>
-                    </tr>
-                    <tr className="border border-slate-400">
-                        <td className="bg-[#D6D6D6] text-[15px]">File</td>
-                        <td className="border border-slate-400">
-                            <input type="file" className="m-2 w-[105px]" />
-                            <button className="bg-secondary rounded p-1">Add File</button>
-                        </td>
-                    </tr>
-                </thead>
-            </table>
+        <div className="m-10 sm:m-[10]">
+            <div className="grid grid-cols-3 mx-auto max-w-3xl ">
+                <p className="border h-full bg-[#d6d6d6] p-2 flex items-center text-[14px]">
+                    Classification
+                </p>
+                <div className="col-span-2 border ">
+                    <select className="m-2 text-[14px] border-borderColor">
+                        <option>Choose</option>
+                        <option>Order</option>
+                    </select>
+                </div>
+                <p className="border h-full bg-[#d6d6d6] p-2 flex items-center text-[14px]">
+                    Email
+                </p>
+                <div className="md:flex space-x-2 col-span-2 border ">
+                    <div className="w-[240px] lg:flex lg:space-x-5 items-center">
+                        <input type="email" className="m-2 w-[full] border border-borderColor" />
+                    </div>
+                    <input type="checkbox" value="mail" className="my-auto" />
+                    <span className="my-auto mx-2 text-[14px]">Send Answer to Email</span>
+                </div>
+                <p className="border h-full bg-[#d6d6d6] p-2 flex items-center text-[14px]">
+                    Title
+                </p>
+                <div className="col-span-2 border">
+                    <input type="text" className="m-2 border-borderColor" placeholder={""} />
+                </div>
+                <p className="border h-full bg-[#d6d6d6] p-2 flex items-center text-[14px]">
+                    Content
+                </p>
+                <div className="col-span-2 border p-2">
+                    <CKEditors />
+                </div>
+                <p className="border h-full bg-[#d6d6d6] p-2 flex items-center text-[14px]">
+                    File
+                </p>
+                <div className="border col-span-2 space-x-2 pb-3 p-2 flex items-center">
+                    <input type="file" className=" text-[14px] border-borderColor" />
+                    <button className="bg-secondary rounded p-1 text-[14px]">Add File</button>
+                </div>
+            </div>
             <div className="text-center my-10">
                 <Button>Submit</Button>
                 <Button variant="danger">Cancel</Button>
             </div>
-        </div>
+        </div >
     )
 }

@@ -1,15 +1,7 @@
 import { useState } from "react";
-import {
-  CDropdown,
-  CDropdownItem,
-  CDropdownMenu,
-  CDropdownToggle,
-} from "@coreui/react";
+import { CDropdown, CDropdownItem, CDropdownMenu } from "@coreui/react";
 
-import { FaLessThan } from "react-icons/fa";
-import Button from "../Button";
 import { IRecentOrdersProps } from "./types";
-import { AiOutlineDown } from "react-icons/ai";
 
 export default function RecentOrdersTable(props: {
   IRecentOrders: IRecentOrdersProps[];

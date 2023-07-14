@@ -3,12 +3,12 @@ import { IButtonProps, ITheme } from "./types";
 
 const theme: ITheme = {
   variant: {
-    default: "btn",
+    default: "",
     light: "btn-white",
     primary: "theme-btn-1",
     secondary: "theme-btn-2",
-    danger: "theme-btn-3",
-  },
+    danger: "theme-btn-3"
+  }
 };
 
 /**
@@ -31,7 +31,7 @@ export default function Button(props: IButtonProps): JSX.Element {
     onClick,
     type = "button",
     variant = "default",
-    isLoading = false,
+    isLoading = false
   } = props;
   return (
     <button

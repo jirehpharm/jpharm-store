@@ -20,15 +20,15 @@ const fields = [
     type: "email",
     placeholder: "Email*",
     required: true,
-    Icon: RiMailFill,
+    Icon: RiMailFill
   },
   {
     name: "password",
     type: "password",
     placeholder: "Password*",
     required: true,
-    Icon: MdPassword,
-  },
+    Icon: MdPassword
+  }
 ];
 
 export default function Login() {
@@ -39,15 +39,15 @@ export default function Login() {
   return (
     <div>
       <BreadcrumbBanner title="Login" />
-      <div className="max-w-5xl mx-auto">
-        <div className="my-20 grid xl:grid-cols-8">
-          <div className="xl:col-span-3">
+      <div className="max-w-lg lg:max-w-4xl xl:max-w-6xl mx-auto p-4">
+        <div className="my-20 grid lg:grid-cols-2 items-center gap-16">
+          <div className="border border-gray-50 drop-shadow-sm drop-shadow-[0px_3px_16px_rgba(39, 28, 145, 0.07)] flex flex-col items-center p-4">
             {isLoggedIn ? (
               <Layout
                 title={"Already Logged In"}
                 subtitle={"Click Logout to go back to the login page. "}
               >
-                <div className="sm:w-full lg:w-[470px]">
+                <div className="w-full sm:w-[80%]">
                   <div className="text-center">
                     <div
                       className="border border-secondary p-4 cursor-pointer"
@@ -64,11 +64,9 @@ export default function Login() {
             ) : (
               <Layout
                 title={"Login"}
-                subtitle={
-                  "Please fill login information"
-                }
+                subtitle={"Please fill login information"}
               >
-                <div className="sm:w-full lg:w-[470px]">
+                <div className="w-full sm:w-[80%] lg:w-[90%]">
                   <form
                     action="#"
                     onSubmit={handleLoginSubmit}
@@ -81,7 +79,7 @@ export default function Login() {
                         name={field.name}
                         placeholder={field.placeholder}
                         required={field.required}
-                        className="h-[50px] w-full"
+                        className="h-[50px] w-full filter-none"
                       />
                     ))}
                     <Modal
@@ -92,26 +90,33 @@ export default function Login() {
                       ModalContent={<ForgotPassword />}
                     />
                     <div>
-                      <button className="w-full text-secondary p-4 border-2 border-secondary hover:text-white hover:bg-secondary" type="submit">SIGN IN</button>
+                      <button
+                        className="w-full text-secondary p-4 border-2 border-secondary hover:text-white hover:bg-secondary"
+                        type="submit"
+                      >
+                        SIGN IN
+                      </button>
                     </div>
                   </form>
-                  <div className="mt-10 relative text-center">
-                    <p className="z-[20] relative inline-block bg-white px-4 text-light">
+                  <div className="mt-10 text-center">
+                    <p className="px-4 text-light">
                       Don't have account?
                       <a href="/register" className="text-light">
                         &nbsp; Register
                       </a>
                     </p>
                   </div>
-                  <div className="text-center">
-                  </div>
+                  <div className="text-center"></div>
                 </div>
               </Layout>
             )}
           </div>
-          <div></div>
-          <div className="xl:col-span-4">
-            <img src="/img/login/login_image.png" className="mt-14 hidden xl:block" alt="login" />
+          <div className="">
+            <img
+              src="/img/login/login_image.png"
+              className="hidden lg:block object-contain"
+              alt="login"
+            />
           </div>
         </div>
       </div>

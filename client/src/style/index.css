@@ -377,3 +377,9 @@ ol li {
 .ck-content {
   height: 200px;
 }
+
+select {
+  background-image: url("/icons/Vector.png");
+  background-size: 12px;
+  padding-right: 1.5rem;
+}

@@ -63,17 +63,5 @@ export const cartTabData: ICartTabsProp[] = [
     icon: BsCart3,
     title: "Cart 4",
     content: <CartItems data={cartData} />
-  },
-  {
-    tabTitle: "Cart 5",
-    icon: BsCart3,
-    title: "Cart 5",
-    content: <CartItems data={cartData} />
-  },
-  {
-    tabTitle: "Cart 6",
-    icon: BsCart3,
-    title: "Cart 6",
-    content: <CartItems data={cartData} />
   }
 ];

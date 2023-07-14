@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { ICheckboxProps } from "./types";
 
 export default function Checkbox(props: ICheckboxProps) {
-  const { id, className, required, name } = props;
+  const { id, className, required, name, checked, onChange } = props;
 
   return (
     <input
@@ -15,6 +15,8 @@ export default function Checkbox(props: ICheckboxProps) {
       )}
       required={required}
       name={name}
+      checked={checked}
+      onChange={onChange}
     />
   );
 }

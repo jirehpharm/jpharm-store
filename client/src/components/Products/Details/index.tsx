@@ -1,39 +1,11 @@
-import { BsCartFill } from "react-icons/bs";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { ArrowsRightLeftIcon, HeartIcon } from "@heroicons/react/24/outline";
-
 import Counter from "./Counter";
 import Button from "../../Common/Button";
 import getStars from "../../getStars";
-import Widgets from "./Widgets";
-import SocialLinks from "../../Common/SocialLinks";
 import { productPreview } from "../constant";
 import Carousel from "../../Carousel";
 import { IProductPreviewProps } from "./types";
-import Modal from "../../Modal";
-import AddToWishList from "../../Cards/AddToWishListCard/AddToWishList";
-import { addWish } from "../../Cards/AddToWishListCard/constants";
 import { get } from "lodash";
 import { useEffect, useLayoutEffect, useState } from "react";
-
-const socialData = [
-  {
-    url: "#",
-    icon: FaFacebook,
-  },
-  {
-    url: "#",
-    icon: FaTwitter,
-  },
-  {
-    url: "#",
-    icon: FaLinkedin,
-  },
-  {
-    url: "#",
-    icon: FaInstagram,
-  },
-];
 
 const content = productPreview?.map(
   (item: IProductPreviewProps, index: number) => (
@@ -74,54 +46,51 @@ export default function Detail() {
         <Carousel slidesPerView={cardNo} slides={content} />
       </div>
       <div className="mt-9 px-3">
-        <div className="flex items-center text-xs lg:text-lg">
-          {getStars({ stars: 4 || 0 })}
-          <div className="ml-4 text-gray-400 font-medium text-xs lg:text-sm">{`(1 Customer Review)`}</div>
+        <div className="grid grid-cols-2">
+          <div>
+            <h2 className="text-xl md:text-2xl lg:text-2xl">Hand Sanitizer</h2>
+            <div className="flex items-center text-xs lg:text-lg">
+              {getStars({ stars: 4 || 0 })}
+              <div className="ml-4 text-gray-400 font-medium text-xs lg:text-sm">{`(1)`}</div>
+            </div>
+          </div>
+          <div className="flex flex-col items-end space-x-4 pb-4">
+            <p className="text-secondary font-bold text-3xl md:text-2xl lg:text-2xl mb-0">
+              {" "}
+              $32.00
+            </p>
+            <p className="text-secondary font-bold text-xl md:text-1xl lg:text-1xl line-through opacity-60 mb-0">
+              $46.00
+            </p>
+          </div>
         </div>
-        <h2 className="text-xl md:text-2xl lg:text-2xl">Hand Sanitizer</h2>
-        <div className="flex items-center space-x-4 border-b border-gray-200 pb-4">
-          <p className="text-secondary font-bold text-3xl md:text-4xl lg:text-4xl mb-0">
-            {" "}
-            $32.00
-          </p>
-          <p className="text-secondary font-bold text-2xl md:text-3xl lg:text-3xl line-through opacity-60 mb-0">
-            $46.00
-          </p>
-        </div>
-        <div className="flex lg:grid lgrid-cols-4 border-b border-gray-200 py-5">
-          <p className="mb-0 text-sm col-span-1 pr-4">Categories:</p>
+        <p className="mt-4 mb-2">vbir vufhj uhofdhjvfhufhbjvfhujjkd d vbhosld sbfenk dvsbufedwndm vjfbfon dbfvbueonl dmvfhbv dmbshbend mbjshbfen dmfjvhebdb shfebdn smb bfnd nffhbfen </p>
+        <Counter />
+        <div className="flex py-2">
+          <p className="mb-0 text-sm col-span-1 pr-2">Categories:</p>
           <h6 className="mb-0 text-sm text-light col-span-3">
             {`face-mask, ppe-kit, safety-suits`}
           </h6>
         </div>
-
+        <div className="flex py-2">
+          <p className="mb-0 text-sm col-span-1 pr-2">Tags:</p>
+          <h6 className="mb-0 text-sm text-light col-span-3">
+            {`Black, Brown, Red, Shoes, €0.00 - €150.00`}
+          </h6>
+        </div>
         {/* Add To Cart */}
         <div className="md:flex items-center justify-between md:space-x-4 pt-4">
-          <Counter />
           <Button className="md:flex items-center">
-            <BsCartFill className="h-5 w-5 inline " />
+            ADD TO CART
+          </Button>
+          <Button className="md:flex items-center">
             ADD TO CART
           </Button>
         </div>
-        <div className="flex space-x-6 py-4 border-b border-gray-100">
-          <Modal
-            ModalTrigger={
-              <Widgets Icon={HeartIcon} tittle={"Add to Wishlist"} />
-            }
-            ModalTitle={<></>}
-            ModalContent={<AddToWishList wishList={addWish} />}
-          />
-          <Widgets Icon={ArrowsRightLeftIcon} tittle={"Compare"} />
-        </div>
-        <div className="flex items-center space-x-6 py-4 border-b border-gray-100">
-          <p className="mb-0 text-light text-sm lg:text-lg">Share:</p>
-          <SocialLinks socialData={socialData} />
-        </div>
-        <div className="pt-2 my-auto border-b border-gray-100">
-          <h5 className="mb-3 text-base lg:text-xl">
-            Guaranteed Safe Checkout
-          </h5>
-          <img src="/payment-2.png" alt="image" />
+        <div className="my-4">
+          <Button className="flex items-center w-full">
+            Order Now
+          </Button>
         </div>
       </div>
     </div>

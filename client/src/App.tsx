@@ -5,39 +5,47 @@ import AppContainer from "./components/AppContainer";
 import ContactNav from "./components/Common/ContactNav";
 import PrimaryNav from "./components/Common/PrimaryNav";
 import Footer from "./components/Common/Footer";
-import CTA from "./components/Common/CTA";
 import SecondaryNav from "./components/Common/SecondaryNav";
-import Login from "./pages/Login";
-import ForgotPassword from "./pages/ForgotPassword";
-import Register from "./pages/Register";
-import { AuthContext } from "./context/authContext";
-
-import "./style/App.css";
+import Bank from "./components/Common/BankAndDownload";
+import NavbarMobile from "./components/Common/NavBar/NavbarMobile";
+import Stats from "./components/Common/Stats";
+import NavbarContact from "./components/Common/NavBar/NavbarContact";
 import ConventionalNav from "./components/Common/SecondaryNav/ConventionalNav";
+import NavbarPrimary from "./components/Common/NavBar/NavbarPrimary";
+import { AuthContext } from "./context/authContext";
+import { bankData } from "./components/Common/BankAndDownload/constants";
+import { statsData } from "./components/Common/Stats/constants";
 import { navbarData } from "./components/Common/SecondaryNav/content";
+import { PrimaryNavData } from "./components/Common/NavBar/content";
+import "./style/App.css";
 
 function App() {
   const { isLoggedIn } = useContext(AuthContext);
   console.log("isLoggedIn: ", isLoggedIn);
-
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/register" element={<Register />} />
           <Route
             path="*"
             element={
-              <>
-                <ContactNav />
-                <PrimaryNav />
-                <SecondaryNav />
-                <ConventionalNav navbarData={navbarData} />
+              <>{window.location.pathname === "/"
+                ?
+                <>
+                  <ContactNav />
+                  <PrimaryNav />
+                  <SecondaryNav />
+                  <ConventionalNav navbarData={navbarData} />
+                </>
+                :
+                <>
+                  <NavbarContact />
+                  <NavbarPrimary navbarData={PrimaryNavData} />
+                  <NavbarMobile navbarData={PrimaryNavData} />
+                </>}
                 <AppContainer />
-                <AppContainer />
-                <CTA />
+                <Bank stats={bankData} />
+                <Stats stats={statsData} />
                 <Footer />
               </>
             }

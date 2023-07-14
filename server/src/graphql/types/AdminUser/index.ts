@@ -16,7 +16,7 @@ export const AdminUser = objectType({
   },
 });
 
-export const Query = extendType({
+export const adminQuery = extendType({
   type: "Query",
   definition(t) {
     t.nonNull.list.nonNull.field("listAdminUsers", {

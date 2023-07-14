@@ -1,5 +1,3 @@
-import Heading from "./Heading";
-
 interface IHeadingProps {
   title: string;
   subtitle: string;
@@ -9,16 +7,14 @@ interface IHeadingProps {
 export default function Layout(props: IHeadingProps) {
   const { title, subtitle, children } = props;
   return (
-    <section className="mx-auto max-w-2xl sm:max-w-md lg:max-w-xl flex flex-col items-center p-4 mt-4 lg:mt-0 lg:py-10">
-      <a href="/" className="cursor-pointer">
-        <img
-          src="full_logo.png"
-          alt="logo"
-          className="w-[150px] sm:w-[250px] h-full object-contain mb-8"
-        />
-      </a>
-      <Heading title={title} subtitle={subtitle} />
+    <>
+      <p className="text-xl lg:text-[32px] text-[#232323] m-0">{title}</p>
+      {subtitle && (
+        <p className="text-center text-[#546375] text-sm lg:text-lg">
+          {subtitle}
+        </p>
+      )}
       {children}
-    </section>
+    </>
   );
 }

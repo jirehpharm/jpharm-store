@@ -39,9 +39,8 @@ const socialData = [
 
 export default function Example(props: INavProps) {
   const { navbarData } = props;
-
   return (
-    <Disclosure as="nav" className="bg-white lg:hidden ">
+    <Disclosure as="nav" className="bg-white lg:hidden px-2">
       <div className="flex pb-2 flex-1 border max-w-md mx-auto md:max-w-2xl lg:max-w-5xl xl:max-w-6xl m-2 items-center justify-between px-2 lg:ml-6 lg:justify-end">
         <span className="text-sm font-medium font-noto">MENU</span>
         <div className="w-full max-w-lg lg:max-w-xs"></div>
@@ -57,7 +56,6 @@ export default function Example(props: INavProps) {
           </Disclosure.Button>
         </div>
       </div>
-
       <Disclosure.Panel className="lg:hidden overflow-y-scroll border border-borderColor shadow-light grid max-w-86 py-12 px-5 absolute z-[999999] w-[90%] sm:w-[60%] md:w-[60%] h-screen left-0 top-0 bg-white">
         <div className="p-4 flex justify-between">
           <span className="flex items-center font-bold text-secondary">
@@ -98,7 +96,6 @@ export default function Example(props: INavProps) {
             </div>
           </div>
         </div>
-        {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800" */}
         <div className="space-y-5 pb-3 pt-4">
           <div className="grid">
             {navbarData?.map((nav, idx: number) =>
@@ -120,7 +117,6 @@ export default function Example(props: INavProps) {
                       />
                     </Menu.Button>
                   </div>
-
                   <Transition
                     as={Fragment}
                     enter="transition ease-out duration-100"

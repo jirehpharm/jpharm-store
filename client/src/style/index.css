@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -77,6 +77,14 @@ body {
 
 .theme-btn-2:hover {
   @apply bg-secondary text-white;
+}
+
+.theme-btn-3 {
+  @apply bg-danger text-white;
+}
+
+.theme-btn-3:hover {
+  @apply bg-danger text-white;
 }
 
 .btn-white {
@@ -194,7 +202,7 @@ ol li {
 }
 
 .product-badge {
-  @apply absolute right-[18px] top-[15px];
+  @apply absolute right-[10px] top-[0px];
 }
 
 .product-badge ul {
@@ -202,7 +210,7 @@ ol li {
 }
 
 .product-badge li {
-  @apply inline-block text-[13px] font-semibold bg-secondary text-white uppercase leading-[25px] pt-[3px] pb-0 px-[15px];
+  @apply inline-block text-xs bg-[#FF9898] text-white uppercase py-[2px] px-[10px];
   list-style: none;
 }
 
@@ -219,9 +227,7 @@ ol li {
 }
 
 .product-hover-action {
-  @apply absolute text-center -translate-y-2/4 opacity-0 invisible transition-all duration-[0.3s] ease-[ease] delay-[0s] top-[60%] inset-x-0;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
+  @apply absolute -translate-y-2/4 opacity-0 invisible transition-all duration-[0.3s] ease-[ease] delay-[0s] top-[60%] inset-x-0;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
 }
@@ -231,11 +237,11 @@ ol li {
 }
 
 .product-hover-action ul {
-  @apply inline-block shadow m-0 p-0;
+  @apply m-0 p-0;
 }
 
 .product-hover-action li {
-  @apply h-[50px] w-[50px] leading-[50px] text-sm text-center float-left border-r-[#d1dae0] mr-0 mt-0 border-r border-solid;
+  @apply h-[30px] w-[30px] leading-[50px] text-sm text-center mr-0 mt-0;
   list-style: none;
 }
 
@@ -244,11 +250,11 @@ ol li {
 }
 
 .product-hover-action li a {
-  @apply bg-white text-light font-bold h-full w-full flex justify-center items-center;
+  @apply text-light font-bold h-full w-full flex justify-center items-center;
 }
 
 .product-hover-action li:hover a {
-  @apply bg-secondary text-white;
+  @apply rounded-full bg-white;
 }
 
 .ltn__product-item-3 {
@@ -303,7 +309,7 @@ ol li {
 }
 
 .ltn__product-item-3:hover .product-hover-action {
-  @apply top-[70%];
+  @apply top-[35%] right-3 left-auto;
 }
 
 .dropdown ul {
@@ -345,7 +351,7 @@ ol li {
 }
 
 .swiper-pagination-bullet-active {
-  @apply bg-secondary !important;
+  @apply bg-secondary;
 }
 
 .sub-dropdown ul {
@@ -366,4 +372,8 @@ ol li {
 
 .paginationActive a {
   @apply text-white bg-secondary border-0;
+}
+
+.ck-content {
+  height: 200px;
 }

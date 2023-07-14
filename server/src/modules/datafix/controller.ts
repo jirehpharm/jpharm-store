@@ -10,6 +10,7 @@ import {
   randParagraph,
   randPhrase,
   randText,
+  randUrl,
 } from "@ngneat/falso";
 
 /**
@@ -21,7 +22,7 @@ import {
 
 // Use this route to populate data in the database: http://localhost:4001/datafix/populate
 // Edit count as per your requirement
-const populateCount = 100;
+const populateCount = 50;
 
 const oneNumber: any = randNumber({ min: 0, max: 2 });
 
@@ -153,7 +154,7 @@ async function createOrder({
       data: {
         order_number: oneNumber.toString(),
         cart_id,
-        currency: randData.fourNumber.toString(),
+        currency: "USD",
         customer_id,
         customer_email,
         customer_full_name,
@@ -166,8 +167,10 @@ async function createOrder({
         tax_amount: randData.twoNumber,
         shipping_note: "Special instructions for shipping",
         grand_total: randData.fourNumber,
-        shipment_status: "0",
-        payment_status: "0",
+        shipment_status: "Under shipping",
+        payment_status: "refunded",
+        payment_method: "credit_card",
+        shipping_address_id: 1,
       },
     });
 
@@ -219,7 +222,11 @@ async function createOrderItem({
 
 async function createProduct() {
   const twoNumber = randNumber({ min: 10, max: 9999 });
+  const threeNumber = randNumber({ min: 10, max: 99999 });
+  const sku = `${twoNumber}_${threeNumber}`;
   const text = randText();
+  const url = randUrl();
+  const url_key = `${text}_${url}`;
   const oneNumber: any = randNumber({ min: 0, max: 2 });
   const boolean = oneNumber === 1;
   const productName = randMotorcylceManufacturer();
@@ -231,7 +238,7 @@ async function createProduct() {
         visibility: boolean,
         image:
           "/catalog/2898/6093/6b237ddc-f894-4dfd-a474-2435f93e6611_600x.webp",
-        sku: twoNumber.toString(),
+        sku,
         price: randData.fourNumber,
         qty: oneNumber,
         weight: randData.oneNumber,
@@ -243,7 +250,7 @@ async function createProduct() {
             name: productName,
             description: randData.paragraph,
             short_description: randData.phase,
-            url_key: text,
+            url_key,
             meta_title: "Meta Title",
             meta_description: randData.phase,
             meta_keywords: "Meta Keywords",

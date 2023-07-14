@@ -1,37 +1,33 @@
-import { RiMailFill } from "react-icons/ri";
 import Button from "../components/Common/Button";
-import Layout from "../components/Common/Layout";
 import { InputField } from "../components/Form/InputField";
 
 export default function ForgotPassword() {
   return (
-    <Layout
-      title={"Forgot your password? No worries!"}
-      subtitle={
-        "Enter your email address. We'll send you a link to reset your password, if you have already registered with us."
-      }
-    >
-      <div className=" sm:w-full lg:w-[470px]">
-        <form action="#" className="ltn__form-box contact-form-box">
+    <div className="max-w-[700px]">
+      <h3 className="py-5 pl-3 border-b-2 text-lg md:text-2xl">Find member information</h3>
+      <form action="#" className="my-4">
+        <div className="py-3">
+          <p className="pl-3 mb-2 text-sm lg:text-lg">Put your email that you filled when registered</p>
+          <p className="pl-3 mb-2 text-sm lg:text-lg">We will send ID and password to your email</p>
+        </div>
+        <div className="sm:pl-3 sm:flex space-x-2 items-center">
+          <p className="mb-2 lg:text-xl">E-mail</p>
           <InputField
-            placeholder={"abc@abc.com"}
+            placeholder={""}
             type="email"
             required={true}
-            className="h-[50px] w-full"
-            Icon={RiMailFill}
+            className="h-[50px] min-w-[100px] sm:w-[400px] ml-0 sm:pl-3"
           />
-          <div className="flex justify-center mt-4">
-            <Button type="submit" variant="default">
-              SUBMIT
-            </Button>
-          </div>
-        </form>
-        <div className="text-center text-sm text-grey-dark mt-2">
-          <p className="text-light text-base">
-            Back to <a href="/login">Sing in</a>
-          </p>
         </div>
-      </div>
-    </Layout>
+        <div className="flex justify-center mt-4">
+          <Button type="submit" variant="default">
+            Done
+          </Button>
+          <Button variant="light">
+            Cancel
+          </Button>
+        </div>
+      </form>
+    </div>
   );
 }

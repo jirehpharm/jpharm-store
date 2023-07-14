@@ -13,6 +13,10 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.15",
+    "@ckeditor/ckeditor5-basic-styles": "^38.1.1",
+    "@ckeditor/ckeditor5-build-classic": "^38.1.1",
+    "@ckeditor/ckeditor5-react": "^6.1.0",
+    "@coreui/react": "^5.0.0-alpha.0",
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.18",
     "@radix-ui/react-accordion": "^1.1.2",
@@ -22,7 +26,7 @@
     "@radix-ui/react-tabs": "^1.0.4",
     "@tailwindcss/forms": "^0.5.3",
     "classnames": "^2.3.2",
-    "graphql": "^16.6.0",
+    "graphql": "^16.7.1",
     "jwt-decode": "^3.1.2",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
@@ -36,6 +40,7 @@
     "tailwind-scrollbar": "^3.0.4"
   },
   "devDependencies": {
+    "@ckeditor/ckeditor5-alignment": "^38.1.1",
     "@types/lodash": "^4.14.195",
     "@types/node": "^20.2.5",
     "@types/react": "^18.0.37",

@@ -1,5 +1,4 @@
 import BreadcrumbBanner from "../BreadcrumbBanner";
-import Button from "../Button/index";
 import RecentOrdersTable from "./RecentOrdersTable";
 import RecentViewProducts from "./RecentViewProducts";
 import WhishListProducts from "./WhishListProducts";
@@ -11,54 +10,58 @@ export default function MyPage() {
       <BreadcrumbBanner title="Mypage" />
       <div className="my-24 max-w-md mx-auto md:max-w-2xl lg:max-w-5xl xl:max-w-6xl">
         <div className="flex justify-end">
-          <a href="#" className="btn mr-2">
-            Edit User Info
+          <a href="/edit-schoolUser">
+            <div className="text-[#fff] text-sm lg:text-[13px] font-bold font-ibm p-2 my-auto bg-[#46CEB6] rounded-[5px] ml-1">
+              Edit User Info
+            </div>
           </a>
-          <Button className="mr-2" variant="danger">
-            Withdrawal
-          </Button>
+          <a href="#">
+            <div className="text-[#fff] text-sm lg:text-[13px] font-bold font-ibm p-2 my-auto bg-[#FF9494] rounded-[5px] ml-1">
+              Withdrawl
+            </div>
+          </a>
         </div>
 
-        <div className="mx-auto md:grid md:grid-cols-2 border-4 border-slate-500 mt-16">
-          <div className="flex justify-center border-b border-slate-400">
-            <h5 className="text-base lg:text-lg text-center mx-auto my-auto text-primary">
+        <div className="mx-auto md:grid md:grid-cols-2 border-[5px] border-solid border-[#C2C1C1] mt-5">
+          <div className="flex justify-center border-b border--[#D6D6D6]">
+            <h5 className="text-base lg:text-lg text-center mx-auto my-auto text-[#000]">
               Name
             </h5>
-            <div className="w-[52%] my-auto text-light">ljvorg9hep</div>
+            <div className="w-[52%] my-auto text-[#000]">ljvorg9hep</div>
           </div>
 
-          <div className="flex justify-center border-b border-slate-400">
-            <h5 className="text-base lg:text-lg text-center mx-auto my-4 text-primary">
+          <div className="flex justify-center border-b border--[#D6D6D6]">
+            <h5 className="text-base lg:text-lg text-center mx-auto my-4 text-[#000]">
               School / Company
             </h5>
-            <div className="w-[52%] my-auto text-light">sciohwe</div>
+            <div className="w-[52%] my-auto text-[#000]">sciohwe</div>
           </div>
 
-          <div className="flex justify-center border-b border-slate-400">
-            <h5 className="text-base lg:text-lg text-center mx-auto my-4 text-primary">
+          <div className="flex justify-center border-b border--[#D6D6D6]">
+            <h5 className="text-base lg:text-lg text-center mx-auto my-4 text-[#000]">
               email
             </h5>
-            <div className="w-[52%] my-auto text-light">sadcavuv</div>
+            <div className="w-[52%] my-auto text-[#000]">sadcavuv</div>
           </div>
-          <div className="flex justify-center border-b border-slate-400">
-            <h5 className="text-base lg:text-lg text-center mx-auto my-4 text-primary">
+          <div className="flex justify-center border-b border--[#D6D6D6]">
+            <h5 className="text-base lg:text-lg text-center mx-auto my-4 text-[#000]">
               Phone Number
             </h5>
-            <div className="w-[52%] my-auto text-light">,msdcno</div>
+            <div className="w-[52%] my-auto text-[#000]">,msdcno</div>
           </div>
 
           <div className="flex justify-center">
-            <h5 className="text-base lg:text-lg text-center pl-3 my-4 mx-auto text-primary">
+            <h5 className="text-base lg:text-lg text-center pl-3 my-4 mx-auto text-[#000]">
               Date of Register
             </h5>
-            <div className="w-[52%] my-auto text-light">sdmvapiva</div>
+            <div className="w-[52%] my-auto text-[#000]">sdmvapiva</div>
           </div>
 
           <div className="flex justify-center">
-            <h5 className="text-base lg:text-lg text-center mx-auto my-4 text-primary">
+            <h5 className="text-base lg:text-lg text-center mx-auto my-4 text-[#000]">
               Address
             </h5>
-            <div className="w-[52%] my-auto text-light">sdafjer0v</div>
+            <div className="w-[52%] my-auto text-[#000]">sdafjer0v</div>
           </div>
         </div>
         {/* Recent Order List */}

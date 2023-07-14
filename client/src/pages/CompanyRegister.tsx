@@ -8,294 +8,312 @@ export default function CompanyRegister() {
       <BreadcrumbBanner title="Company Register" />
       <div className="my-24 max-w-md mx-auto md:max-w-2xl lg:max-w-5xl xl:max-w-6xl">
         <div className="mt-10 pt-10 pl-5 md:pl-10">
-          <h3 className="text-base lg:text-2xl lg:pl-10 sm:pl-0">
+          <h3 className="text-base lg:text-2xl sm:pl-0">
             Website User Information Register
           </h3>
         </div>
         <div className="mt-1 pl-5 lg:pl-10">
-          <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-            <h5 className="bg-slate-200 text-base lg:text-lg md:max-w-[310px] p-2 my-auto">
+          <div className="md:grid grid-cols-4 text-center border border-[#D6D6D6]">
+            <h5 className="bg-[#F2F2F2] text-sm md:text-base lg:text-lg md:max-w-[310px] py-5 mb-0 p-2 my-auto">
               Type of User
             </h5>
-            <div className="text-center md:text-left text-base lg:text-lg my-auto md:pl-10 text-primary">
-              <strong>Company Member</strong>
+            <div className="text-center md:text-left text-sm md:text-base lg:text-lg my-auto p-3 whitespace-nowrap md:pl-[70px] text-light">
+              <strong>company Member</strong>
             </div>
           </div>
 
-          <div className="sm:grid grid-cols-2 border border-gray-400">
-            <h5 className="bg-slate-200 text-center py-10 text-base lg:text-lg md:w-[310px] mb-0 ">
+          <div className="md:grid grid-cols-4 text-center border border-[#D6D6D6]">
+            <h5 className="bg-[#F2F2F2] py-10 text-sm md:text-base lg:text-lg mb-0 ">
               ID
             </h5>
-            <div className="md:pl-1 text-center md:text-left text-light">
-              English,number._ only available, You need to put more than 3
-              <div className="w-[52%] mx-auto">
+            <div className="md:pl-1 text-center md:text-left text-light lg:whitespace-nowrap">
+              <span className="p-3 sm:flex md:pl-16 flex text-light text-sm md:text-base lg:text-lg pb-0">
+                {" "}
+                English,number._ only available, You need to put more than 3
+              </span>
+              <div className="w-[80%] md:w-[50%] mx-auto my-2">
                 <InputField
                   type="text"
-                  name="ID"
-                  placeholder="ID"
-                  className="mb-2 h-[50px] w-full"
+                  name="id"
+                  placeholder={""}
+                  className="mt-2 h-[23px] w-[117px] bg-[#ECECEC]"
                 />
               </div>
             </div>
           </div>
 
-          <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-            <h5 className="bg-slate-200 md:w-[310px] mb-0 py-5 text-base lg:text-lg">
+          <div className="md:grid grid-cols-4 text-center border border-[#D6D6D6]">
+            <h5 className="bg-[#F2F2F2] mb-0 py-5 text-sm md:text-base lg:text-lg">
               Password*
             </h5>
             <div className="w-[80%] md:w-[50%] mx-auto my-2">
               <InputField
                 type="text"
-                name="Password"
+                name="password"
                 placeholder={""}
-                className="mt-2 h-[50px] w-full"
+                className="mt-2 h-[23px] w-[117px] bg-[#ECECEC]"
               />
             </div>
           </div>
 
-          <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-            <h5 className="md:w-[310px] bg-slate-200 mb-0 py-5 text-base lg:text-lg">
+          <div className="md:grid grid-cols-4 text-center border border-[#D6D6D6]">
+            <h5 className=" bg-[#F2F2F2] mb-0 py-5 text-sm md:text-base lg:text-lg">
               Password Check*
             </h5>
             <div className="w-[80%] md:w-[50%] mx-auto">
               <InputField
                 type="text"
-                name="Password Check"
+                name="passwordCheck"
                 placeholder={""}
-                className="my-2 h-[50px] w-full"
+                className="my-2 h-[23px] w-[117px] bg-[#ECECEC]"
               />
             </div>
           </div>
         </div>
 
         <div className="mt-10 pt-10 pl-5 md:pl-10">
-          <h3 className="text-base lg:text-2xl lg:pl-10 sm:pl-0">
-            User Information
-          </h3>
+          <h3 className="text-base lg:text-2xl sm:pl-0">User Information</h3>
           <div className="mt-1">
-            <div className="border border-gray-400">
-              <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-                <h5 className="md:w-[310px] bg-slate-200 mb-0 py-5 text-base lg:text-lg">
+            <div className="border border-[#D6D6D6]">
+              <div className="md:grid grid-cols-4 text-center border border-[#D6D6D6]">
+                <h5 className=" bg-[#F2F2F2] mb-0 py-5 text-sm md:text-base lg:text-lg">
                   Name*
                 </h5>
                 <div className="w-[80%] md:w-[50%] mx-auto">
                   <InputField
                     type="text"
-                    name="Name"
+                    name="name"
                     placeholder={""}
-                    className="my-2 h-[50px] w-full"
+                    className="my-2 h-[23px] w-[117px] bg-[#ECECEC]"
                   />
                 </div>
               </div>
 
-              <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-                <h5 className="bg-slate-200 md:w-[310px] mb-0 py-5 text-base lg:text-lg">
+              <div className="md:grid grid-cols-4 text-center border border-[#D6D6D6] lg:space-x-16">
+                <h5 className="bg-[#F2F2F2] mb-0 py-5 text-sm md:text-base lg:text-lg">
                   Email
                 </h5>
-                <div className="w-[80%] md:w-[50%] mx-auto">
+                <div className="w-[80%] md:w-[70%] col-span-1 md:col-span-2 mx-auto">
                   <InputField
                     type="email"
-                    name="Email"
+                    name="email"
                     placeholder={""}
-                    className="my-2 h-[50px] w-full"
+                    className="my-2 h-[23px] bg-[#ECECEC] w-[239px]"
                   />
                 </div>
               </div>
 
-              <div className=" sm:grid grid-cols-2 text-center border border-gray-400">
-                <h5 className="bg-slate-200 md:w-[310px] mb-0 py-5 text-base lg:text-lg">
+              <div className=" md:grid grid-cols-4 text-center border border-[#D6D6D6] lg:space-x-16">
+                <h5 className="bg-[#F2F2F2] text-sm mb-0 py-5 md:text-base lg:text-lg">
                   Email for Tax
                 </h5>
-                <div className="w-[80%] md:w-[50%] mx-auto">
+                <div className="w-[80%] md:w-[70%] col-span-1 md:col-span-2 mx-auto">
                   <InputField
                     type="text"
-                    name="Email for Tax"
+                    name="emailForTax"
                     placeholder={""}
-                    className="my-2 h-[50px] w-full"
+                    className="my-2 h-[23px] w-[239px] bg-[#ECECEC]"
                   />
                 </div>
               </div>
 
-              <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-                <h5 className="mb-0 py-5 md:w-[310px] bg-slate-200 text-base lg:text-lg">
+              <div className="md:grid grid-cols-4 text-center border border-[#D6D6D6]">
+                <h5 className="mb-0 py-5  bg-[#F2F2F2] text-sm md:text-base lg:text-lg">
                   Telephone Number
                 </h5>
                 <div className="w-[80%] md:w-[50%] mx-auto">
                   <InputField
                     type="number"
-                    name="Telephone Number"
+                    name="telephoneNumber"
                     placeholder={""}
-                    className="my-2 h-[50px] w-full"
+                    className="my-2 h-[23px] w-[117px] bg-[#ECECEC]"
                   />
                 </div>
               </div>
 
-              <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-                <h5 className="mb-0 py-5 md:w-[310px] bg-slate-200 text-base lg:text-lg">
+              <div className="md:grid grid-cols-4 text-center border border-[#D6D6D6]">
+                <h5 className="mb-0 py-5  bg-[#F2F2F2] text-sm md:text-base lg:text-lg">
                   phone Number
                 </h5>
                 <div className=" w-[80%] md:w-[50%] mx-auto">
                   <InputField
                     type="number"
-                    name="phone Number"
+                    name="phoneNumber"
                     placeholder={""}
-                    className="my-2 h-[50px] w-full"
+                    className="my-2 h-[23px] w-[117px] bg-[#ECECEC]"
                   />
                 </div>
               </div>
 
-              <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-                <h5 className="mb-0 py-5 md:w-[310px] bg-slate-200 text-base lg:text-lg">
+              <div className="md:grid grid-cols-4 text-center border border-[#D6D6D6]">
+                <h5 className="mb-0 py-5  bg-[#F2F2F2] text-sm md:text-base lg:text-lg">
                   Company Name
                 </h5>
                 <div className="w-[80%] md:w-[50%] mx-auto">
                   <InputField
                     type="text"
-                    name="Company Name"
+                    name="companyName"
                     placeholder={""}
-                    className="my-2 h-[50px] w-full"
+                    className="my-2 h-[23px] w-[117px]  bg-[#ECECEC]"
                   />
                 </div>
               </div>
 
-              <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-                <h5 className="mb-0 py-5 md:w-[310px] bg-slate-200 text-base lg:text-lg">
+              <div className="md:grid grid-cols-4 text-center border border-[#D6D6D6]">
+                <h5 className="mb-0 py-5 bg-[#F2F2F2] text-sm md:text-base lg:text-lg">
                   Company Register Number
                 </h5>
                 <div className="w-[80%] md:w-[50%] mx-auto">
                   <InputField
                     type="number"
-                    name="Company Original Number"
+                    name="companyRegisterNumber"
                     placeholder={""}
-                    className="my-2 h-[50px] w-full"
+                    className="my-2 h-[23px] w-[117px] bg-[#ECECEC]"
                   />
                 </div>
               </div>
 
-              <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-                <h5 className="mb-0 py-5 md:w-[310px] bg-slate-200 text-base lg:text-lg">
+              <div className="md:grid grid-cols-4 text-center border border-[#D6D6D6]">
+                <h5 className="mb-0 py-5  bg-[#F2F2F2] text-sm md:text-base lg:text-lg">
                   Representative Name
                 </h5>
                 <div className="w-[80%] md:w-[50%] mx-auto">
                   <InputField
                     type="text"
-                    name="Representative Name"
+                    name="representativeName"
                     placeholder={""}
-                    className="my-2 h-[50px] w-full"
+                    className="my-2 h-[23px] w-[117px] bg-[#ECECEC]"
                   />
                 </div>
               </div>
 
-              <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-                <h5 className="mb-0 py-5 md:w-[310px] text-base lg:text-lg  bg-slate-200">
+              <div className="md:grid grid-cols-4 text-center border border-[#D6D6D6]">
+                <h5 className="mb-0 py-5 text-sm md:text-base lg:text-lg bg-[#F2F2F2]">
                   Department
                 </h5>
                 <div className="w-[80%] md:w-[50%] mx-auto">
                   <InputField
                     type="text"
-                    name="Department"
+                    name="representativeName"
                     placeholder={""}
-                    className="my-2 h-[50px] w-full"
+                    className="my-2 h-[23px] w-[117px] bg-[#ECECEC]"
                   />
                 </div>
               </div>
 
-              <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-                <h5 className="mb-0 py-5 md:py-20 md:w-[310px] bg-slate-200 text-base lg:text-lg">
+              <div className="md:grid grid-cols-4 text-center border border-[#D6D6D6]">
+                <h5 className="mb-0 py-5 md:py-20  bg-[#F2F2F2] text-sm md:text-base lg:text-lg">
                   Address
                 </h5>
 
                 <div className="lg:flex flex-wrap">
-                  <div className="w-[80%] md:w-[50%] mx-auto lg:mx-10 lg:grid grid-cols-2 gap-4">
+                  <div className="relative w-[80%] md:w-[50%] pl-3 md:pl-10 lg:pl-[74px]">
                     <InputField
                       type="text"
-                      name="Address"
+                      name="address"
                       placeholder={""}
-                      className="my-2 h-[50px] w-full"
+                      className="my-2 h-[22.64px] w-[120px] bg-[#ECECEC]"
                     />
-                    <div className="w-[30%] lg:w-[50%] flex">
-                      <Button className="btn h-12 my-2">Address</Button>
-                      <Button className="btn h-12 my-2">Search</Button>
-                    </div>
                   </div>
-                  <div>
-                    <div className="w-[80%] md:w-[50%] mx-auto lg:mx-10 lg:grid grid-cols-2 gap-4">
+                  <div className="lg:absolute pl-8 md:pl-10 lg:ml-36 lg:pl-20 flex">
+                    <Button className="btn h-11 my-2 mb-0 text-center">
+                      Address
+                    </Button>
+                    <Button className="btn my-2 h-11 mb-0 text-center">
+                      Search
+                    </Button>
+                  </div>
+                  <div className="w-[80%] md:w-[50%] mx-auto lg:mx-10 lg:grid grid-cols-2 gap-4 lg:pl-[28px]">
+                    <div className="flex items-center ">
                       <InputField
                         type="text"
-                        name="Based Address"
-                        placeholder={"Based Address"}
-                        className="my-2 h-[50px] w-[80%] lg:w-[130%]"
-                      />{" "}
-                      <h6 className="md:my-auto lg:pl-28 text-base lg:text-lg text-light">
+                        name="basedAddress"
+                        placeholder="Based Address"
+                        className="my-2 h-[23px] w-[150px] sm:w-[200px] md:w-[305.59px] bg-[#ECECEC]"
+                      />
+                      <h5 className="w-40 flex pr-2 my-auto text-sm md:text-base lg:text-base text-light lg:whitespace-nowrap pl-4">
                         Based Address
-                      </h6>
+                      </h5>
                     </div>
-                    <div className="w-[80%] md:w-[50%] mx-auto lg:mx-10 lg:grid grid-cols-2 gap-4">
+                  </div>
+                  <div className="w-[80%] md:w-[50%] mx-auto lg:mx-10 lg:grid grid-cols-2 gap-4 lg:pl-[28px]">
+                    <div className="flex items-center">
                       <InputField
                         type="text"
-                        name="Detailed Address"
-                        placeholder={"Detailed Address"}
-                        className="my-2 h-[50px] w-[80%] lg:w-[130%]"
-                      />{" "}
-                      <h6 className="md:my-auto lg:pl-28 text-base lg:text-lg text-light">
-                        Detailed Address
-                      </h6>
+                        name="detailedAddress"
+                        placeholder="Detailed Address"
+                        className="my-2 h-[23px] w-[150px] sm:w-[200px] md:w-[305.59px] bg-[#ECECEC]"
+                      />
+                      <h5 className="w-40 pr-2 my-auto text-sm md:text-base lg:text-base text-light lg:whitespace-nowrap pl-4">
+                        detailed Address
+                      </h5>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-                <h5 className="mb-0 py-5 md:w-[310px] bg-slate-200 text-base lg:text-lg">
-                  Bussiness Registration
+              <div className="md:grid grid-cols-4 text-center border border-[#D6D6D6]">
+                <h5 className="mb-0 sm:flex flex-wrap py-5 bg-[#F2F2F2] text-sm md:text-base lg:text-lg">
+                  Business Registeration
                 </h5>
-                <div className="lg:grid grid-cols-2">
-                  <div className="w-[80%] md:w-[50%] mx-auto">
-                    <InputField
-                      type="file"
-                      name="Bussiness Registration"
-                      placeholder={""}
-                      className="my-2 h-[50px] w-full pt-2"
-                    />
-                  </div>
+                <div className="flex p-2">
+                  <div className="pl-2 border border-slate-200 h-[40px] mx-auto my-auto md:ml-8 lg:ml-16 bg-[#ECECEC]">
+                    <label htmlFor="fileInput" className="file-label">
+                      <span className="text-light">Attachment</span>
+                      <InputField
+                        type="file"
+                        name="bussinessRegisteration"
+                        className=" h-[23px] w-[116.27px] my-auto pt-2 opacity-0 top-[-34px]"
+                        placeholder={""}
+                      />
+                    </label>
+                  </div>{" "}
                 </div>
               </div>
 
-              <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-                <h5 className="mb-0 py-5 md:w-[310px] bg-slate-200 text-base lg:text-lg">
+              <div className="md:grid grid-cols-4 text-center border border-[#D6D6D6]">
+                <h5 className="mb-0 py-5  bg-[#F2F2F2] text-sm md:text-base">
                   Nurse Certificate Number
                 </h5>
-                <div className="lg:grid grid-cols-2">
-                  <div className="w-[80%] md:w-[50%] mx-auto">
-                    <InputField
-                      type="file"
-                      name="Nurse Certificate Number"
-                      placeholder={""}
-                      className="my-2 h-[50px] w-full pt-2"
-                    />
-                  </div>
+                <div className="flex p-2">
+                  <div className="pl-2 border border-slate-200 h-[40px] mx-auto my-auto md:ml-8 lg:ml-16 bg-[#ECECEC]">
+                    <label htmlFor="fileInput" className="file-label">
+                      <span className="text-light">Attachment</span>
+                      <InputField
+                        type="file"
+                        name="NurseCertificateNumber"
+                        className=" h-[23px] w-[116.27px] my-auto pt-2 opacity-0 top-[-34px]"
+                        placeholder={""}
+                      />
+                    </label>
+                  </div>{" "}
                 </div>
               </div>
 
-              <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-                <h5 className="mb-0 py-5 md:w-[310px] bg-slate-200 text-base lg:text-lg">
+              <div className="md:grid grid-cols-4 text-center border border-[#D6D6D6]">
+                <h5 className="mb-0 py-5  bg-[#F2F2F2] text-sm  md:text-base lg:text-lg">
                   Etc.,
                 </h5>
-                <div className="sm:flex my-2 mx-auto lg:grid grid-cols-2 items-center">
-                  <div className="w-[80%] md:w-[50%] mx-auto">
-                    <InputField
-                      type="file"
-                      name="Etc."
-                      placeholder={""}
-                      className="my-2 h-[50px] w-full pt-2"
-                    />
-                  </div>
+                <div className="flex p-2">
+                  <div className="pl-2 border border-slate-200 h-[40px] mx-auto my-auto md:ml-8 lg:ml-16 bg-[#ECECEC]">
+                    <label htmlFor="fileInput" className="file-label">
+                      <span className="text-light">Attachment</span>
+                      <InputField
+                        type="file"
+                        name="etc."
+                        className=" h-[23px] w-[116.27px] my-auto pt-2 opacity-0 top-[-34px]"
+                        placeholder={""}
+                      />
+                    </label>
+                  </div>{" "}
+                </div>
+                <div className="pl-10 md:pl-0 my-auto p-2">
                   <Button className="btn h-12 w-36">Add</Button>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 bg-slate-200">
+            <div className="mt-8 bg-[#F2F2F2]">
               <ul className="p-4">
                 <li className="text-base lg:text-lg">
                   {"*"} Please attach 'nurse license, license Certificate,
@@ -316,23 +334,23 @@ export default function CompanyRegister() {
               Etc. Personal Settings
             </h3>
             <div className="mt-1">
-              <div className="border border-gray-400">
-                <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-                  <h5 className="mb-0 py-5 bg-slate-200 md:w-[310px] text-base lg:text-lg">
+              <div className="border border-[#D6D6D6]">
+                <div className="md:grid grid-cols-4 text-center border border-[#D6D6D6]">
+                  <h5 className="mb-0 py-5 bg-[#F2F2F2] text-sm md:text-base lg:text-lg">
                     Mail agree
                   </h5>
-                  <div className="my-auto">
-                    <div className="flex sm:flex-wrap w-[20%] h-[20%] md:w-full ml-10 mx-auto">
-                      <InputField
+                  <div className="my-auto mx-auto">
+                    <div className="flex w-[20%] h-[20%] md:w-full ml-10 mx-auto">
+                      <input
                         type="radio"
-                        name="mail agree"
+                        name="mailAgree"
                         placeholder={""}
                         className="my-2 p-[0.75rem] pr-0 pl-0 pb-1"
                       />
                       <label className="pl-2 pr-3 my-auto">Yes</label>
-                      <InputField
+                      <input
                         type="radio"
-                        name="mail agree"
+                        name="mailAgree"
                         placeholder={""}
                         className="my-2 p-[0.75rem] pr-0 pl-0 pb-1"
                       />
@@ -340,22 +358,22 @@ export default function CompanyRegister() {
                     </div>
                   </div>
                 </div>
-                <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-                  <h5 className="mb-0 py-5 md:w-[310px] bg-slate-200 text-base lg:text-lg">
+                <div className="md:grid grid-cols-4 text-center border border-[#D6D6D6]">
+                  <h5 className="mb-0 py-5  bg-[#F2F2F2] text-sm md:text-base lg:text-lg">
                     SMS agree
                   </h5>
-                  <div className="text-center my-auto">
-                    <div className="flex sm:flex-wrap w-[20%] h-[20%] md:w-full ml-10 mx-auto">
-                      <InputField
+                  <div className="text-center my-auto mx-auto">
+                    <div className="flex w-[20%] h-[20%] md:w-full ml-10 mx-auto">
+                      <input
                         type="radio"
-                        name="sms agree"
+                        name="smsAgree"
                         placeholder={""}
                         className="my-2 p-[0.75rem] pr-0 pl-0 pb-1"
                       />
                       <label className="pl-2 pr-3 my-auto">Yes</label>
-                      <InputField
+                      <input
                         type="radio"
-                        name="sms agree"
+                        name="smsAgree"
                         placeholder={""}
                         className="my-2 p-[0.75rem] pr-0 pl-0 pb-1"
                       />
@@ -363,24 +381,24 @@ export default function CompanyRegister() {
                     </div>
                   </div>
                 </div>
-                <div className="sm:grid grid-cols-2 text-center border border-gray-400">
-                  <h5 className="mb-0 py-5 md:w-[310px] bg-slate-200 text-base lg:text-lg">
-                    Privacy Open
+                <div className="md:grid grid-cols-4 text-center border border-[#D6D6D6]">
+                  <h5 className="mb-0 py-5  bg-[#F2F2F2] text-sm md:text-base lg:text-lg">
+                    Privacy Agree
                   </h5>
-                  <div className="my-auto">
-                    <div className="flex sm:flex-wrap w-[10%] h-[10%] md:w-full ml-10 mx-auto">
-                      <InputField
+                  <div className="text-center my-auto mx-auto">
+                    <div className="flex w-[20%] h-[20%] md:w-full ml-10 mx-auto">
+                      <input
                         type="radio"
-                        name="Privacy Open"
+                        name="privacyAgree"
                         placeholder={""}
                         className="my-2 p-[0.75rem] pr-0 pl-0 pb-1"
                       />
                       <label className="pl-2 pr-3 my-auto">Yes</label>
-                      <InputField
+                      <input
                         type="radio"
-                        name="Privacy Open"
+                        name="privacyAgree"
                         placeholder={""}
-                        className="my-2 p-[0.75rem] w-5 h-5  pr-0 pl-0 pb-1"
+                        className="my-2 p-[0.75rem] pr-0 pl-0 pb-1"
                       />
                       <label className="pl-2 my-auto">No</label>
                     </div>

@@ -1,4 +1,3 @@
-import Button from "../Button";
 import { IWhishListProps } from "./types";
 
 interface IWhishList {
